@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.material.Card
-import androidx.compose.material.SnackbarDefaults.backgroundColor
 import androidx.compose.material.Tab
 import androidx.compose.material.TabRow
 import androidx.compose.material.TabRowDefaults
@@ -30,9 +29,9 @@ import com.google.accompanist.pager.rememberPagerState
 import kotlinx.coroutines.launch
 
 @Composable
-fun ColorItem(colorComponent: ColorComponent) {
+fun ColorItem(colorModel: ColorModel) {
   Card(
-    backgroundColor = colorComponent.color,
+    backgroundColor = colorModel.color,
     elevation = 10.dp,
     modifier = Modifier
       .fillMaxWidth()
@@ -44,13 +43,13 @@ fun ColorItem(colorComponent: ColorComponent) {
       verticalArrangement = Arrangement.Center
     ) {
       Text(
-        text = colorComponent.name,
-        color = colorComponent.textColor,
+        text = colorModel.name,
+        color = colorModel.textColor,
         textAlign = TextAlign.Center
       )
       Text(
-        text = "(${"#" + Integer.toHexString(colorComponent.color.toArgb()).uppercase()})",
-        color = colorComponent.textColor,
+        text = "(${"#" + Integer.toHexString(colorModel.color.toArgb()).uppercase()})",
+        color = colorModel.textColor,
         textAlign = TextAlign.Center
       )
     }
@@ -59,7 +58,7 @@ fun ColorItem(colorComponent: ColorComponent) {
 
 @Composable
 @ExperimentalFoundationApi
-fun ColorsGrid(colors: List<ColorComponent>) {
+fun ColorsGrid(colors: List<ColorModel>) {
   LazyVerticalGrid(
     cells = GridCells.Fixed(2)
   ) {

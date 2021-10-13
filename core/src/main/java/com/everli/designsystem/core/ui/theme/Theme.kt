@@ -16,8 +16,6 @@ fun EverliTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable
   // N.B. currently we extend MaterialTheme, with time we will end up replacing it
   CompositionLocalProvider(LocalEverliColors provides colors) {
     MaterialTheme(
-      shapes = Shapes,
-      typography = Typography,
       content = content
     )
   }
