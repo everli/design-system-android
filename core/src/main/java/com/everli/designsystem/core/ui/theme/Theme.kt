@@ -12,9 +12,12 @@ import androidx.compose.ui.graphics.Color
 fun EverliTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
   // check for darkTheme in case of future dark theme
   val colors = LightColorPalette
+  val typography = defaultTypography
 
   // N.B. currently we extend MaterialTheme, with time we will end up replacing it
-  CompositionLocalProvider(LocalEverliColors provides colors) {
+  CompositionLocalProvider(
+    LocalEverliColors provides colors,
+    LocalCustomTypography provides typography) {
     MaterialTheme(
       content = content
     )
@@ -24,6 +27,10 @@ fun EverliTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable
 
 private val LocalEverliColors = staticCompositionLocalOf<EverliColors> {
   error("No EverliColors provided")
+}
+
+val LocalCustomTypography = staticCompositionLocalOf<EverliTypography> {
+  error("No EverliTypography provided")
 }
 
 private val LightColorPalette = EverliColors(
