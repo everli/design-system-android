@@ -30,10 +30,6 @@ import java.lang.Exception
  * @return [Color] for given [hexValue] or [fallbackColor]
  */
 fun Color.Companion.fromHex(hexValue: String, fallbackColor: Color = White): Color {
-  if (hexValue.isEmpty()) {
-    return fallbackColor
-  }
-
   return try {
     Color(android.graphics.Color.parseColor(hexValue))
   } catch (exception: Exception) {
