@@ -43,6 +43,12 @@ internal class ColorExtensionsTest : FunSpec(
       }
     }
 
+    test("When converting from hex with empty string, should throw IllegalArgumentException") {
+      shouldThrow<IllegalArgumentException> {
+        Color.fromHex("")
+      }
+    }
+
     listOf(
       "white" to White,
       "walter-white" to White,
@@ -83,6 +89,6 @@ internal class ColorExtensionsTest : FunSpec(
         Color.fromName("supper-cool-color")
       }
     }
-
+    
   }
 )

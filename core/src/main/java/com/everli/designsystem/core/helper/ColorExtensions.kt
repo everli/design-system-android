@@ -30,6 +30,11 @@ import com.everli.designsystem.core.ui.theme.Yellow20
  * @throws IllegalArgumentException when invalid [hexValue] provided
  */
 fun Color.Companion.fromHex(hexValue: String): Color {
+
+  if (hexValue.isEmpty()) {
+    throw java.lang.IllegalArgumentException("Cannot convert from empty string")
+  }
+
   return Color(android.graphics.Color.parseColor(hexValue))
 }
 
