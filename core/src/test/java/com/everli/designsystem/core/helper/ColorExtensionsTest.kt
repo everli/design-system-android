@@ -19,7 +19,6 @@ import com.everli.designsystem.core.ui.theme.Violet100
 import com.everli.designsystem.core.ui.theme.White
 import com.everli.designsystem.core.ui.theme.Yellow100
 import com.everli.designsystem.core.ui.theme.Yellow20
-import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.extensions.robolectric.RobolectricTest
 import io.kotest.matchers.shouldBe
@@ -29,23 +28,45 @@ internal class ColorExtensionsTest : FunSpec(
   {
 
     listOf(
-      "#FFFFFF" to Color.White,
-      "#ffffff" to Color.White,
+      "#FFFFFF" to White,
+      "#FFFFFFFF" to White,
+      "#ffffff" to White,
+      "#FFffffff" to White,
+      "#64C828" to Green100,
+      "#FF64C828" to Green100,
+      "#64c828" to Green100,
+      "#FF64c828" to Green100,
     ).forEach { (hex, color) ->
       test("$hex should be converted to $color") {
         Color.fromHex(hex) shouldBe color
       }
     }
 
-    test("When converting from hex invalid argument, should throw IllegalArgumentException") {
-      shouldThrow<IllegalArgumentException> {
-        Color.fromHex("123")
+    listOf(
+      "",
+      "1",
+      "123",
+      "ffffff",
+      "FFFFFF",
+      "#FFFFFFF",
+      "#FFFFF",
+    ).forEach { hex ->
+      test("When converting: $hex, without fallback, should return Color.White") {
+        Color.fromHex(hex) shouldBe White
       }
     }
 
-    test("When converting from hex with empty string, should throw IllegalArgumentException") {
-      shouldThrow<IllegalArgumentException> {
-        Color.fromHex("")
+    listOf(
+      "" to Red100,
+      "1" to Green100,
+      "123" to Red100,
+      "ffffff" to White,
+      "FFFFFF" to Black100,
+      "#FFFFFFF" to Yellow100,
+      "#FFFFF" to Red100,
+    ).forEach { (hex, fallback) ->
+      test("Invalid $hex, with fallback, should be converted to $fallback") {
+        Color.fromHex(hex, fallback) shouldBe fallback
       }
     }
 
@@ -84,11 +105,31 @@ internal class ColorExtensionsTest : FunSpec(
       }
     }
 
-    test("When converting from name invalid argument, should throw IllegalArgumentException") {
-      shouldThrow<IllegalArgumentException> {
-        Color.fromName("supper-cool-color")
+    listOf(
+      "",
+      "nice-color",
+      "best color",
+      "123",
+      "#FFFFFF",
+      "#ffffff",
+    ).forEach { name ->
+      test("Invalid $name, without fallback, should return Color.White") {
+        Color.fromName(name) shouldBe White
       }
     }
-    
+
+    listOf(
+      "" to Red100,
+      "nice-color" to Green100,
+      "best color" to Red100,
+      "123" to White,
+      "#FFFFFF" to Black100,
+      "#ffffff" to Yellow100,
+    ).forEach { (name, fallback) ->
+      test("Invalid $name, with fallback, should be converted to $fallback") {
+        Color.fromName(name, fallback) shouldBe fallback
+      }
+    }
+
   }
 )

@@ -18,35 +18,40 @@ import com.everli.designsystem.core.ui.theme.Teal20
 import com.everli.designsystem.core.ui.theme.Violet100
 import com.everli.designsystem.core.ui.theme.Yellow100
 import com.everli.designsystem.core.ui.theme.Yellow20
-
-// TODO: see in the future if these should throw exception OR null OR default value for invalid cases
+import java.lang.Exception
 
 /**
- * Generic hex to [Color] converter
- * Can be used to convert any color
+ * Convert a hex value string to a [Color]
+ * If the conversion fails, [fallbackColor] will be returned
+ * If [fallbackColor] is not provided, [Color.White] will be returned
  *
- * @param hexValue hex value e.g. #FFFFFF
- * @return [Color] for given [hexValue]
- * @throws IllegalArgumentException when invalid [hexValue] provided
+ * @param hexValue hex value e.g. #FFFFFF, #ffd6ffc2
+ * @param fallbackColor used in case the conversion fails, default value [Color.White]
+ * @return [Color] for given [hexValue] or [fallbackColor]
  */
-fun Color.Companion.fromHex(hexValue: String): Color {
-
+fun Color.Companion.fromHex(hexValue: String, fallbackColor: Color = White): Color {
   if (hexValue.isEmpty()) {
-    throw java.lang.IllegalArgumentException("Cannot convert from empty string")
+    return fallbackColor
   }
 
-  return Color(android.graphics.Color.parseColor(hexValue))
+  return try {
+    Color(android.graphics.Color.parseColor(hexValue))
+  } catch (exception: Exception) {
+    fallbackColor
+  }
 }
 
 /**
- * Color name to [Color] converter
+ * Convert a color name as string to a [Color]
  * Can be used only for design system based colors
+ * If the conversion fails, [fallbackColor] will be returned
+ * If [fallbackColor] is not provided, [Color.White] will be returned
  *
  * @param name name of the color e.g. "black-100"
- * @return [Color] for given [name]
- * @throws IllegalArgumentException when invalid [name] provided
+ * @param fallbackColor used in case the conversion fails, default value [Color.White]
+ * @return [Color] for given [name] or [fallbackColor]
  */
-fun Color.Companion.fromName(name: String): Color {
+fun Color.Companion.fromName(name: String, fallbackColor: Color = White): Color {
   return when (name) {
     "white", "walter-white" -> White
     "gray-10" -> Gray10
@@ -66,6 +71,6 @@ fun Color.Companion.fromName(name: String): Color {
     "yellow-20" -> Yellow20
     "yellow-100", "yellow-sun" -> Yellow100
     "link-100", "link" -> Link100
-    else -> throw IllegalArgumentException("Color name: $name not supported by Design System")
+    else -> fallbackColor
   }
 }
