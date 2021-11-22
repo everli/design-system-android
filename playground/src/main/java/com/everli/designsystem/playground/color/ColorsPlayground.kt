@@ -74,7 +74,7 @@ fun ColorsGrid(colors: List<ColorModel>) {
 fun ColorsPlayground() {
   val pagerState = rememberPagerState()
   val scope = rememberCoroutineScope()
-  val tabs = listOf<String>("Brand", "Dev")
+  val tabs = listOf("Brand", "Dev")
 
   Column {
     TabRow(

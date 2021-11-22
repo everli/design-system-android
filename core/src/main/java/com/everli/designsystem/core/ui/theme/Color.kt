@@ -32,7 +32,7 @@ val Link100 = Color(0xFF1A73E8)
 
 // Design system "brand" names
 val WalterWhite = White
-val VioletBlack = Violet100
+val VioletBlack = Black100
 val RedHot = Red100
 val PurpleRain = Violet100
 val TealWaves = Teal100
