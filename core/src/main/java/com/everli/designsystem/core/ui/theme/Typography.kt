@@ -19,221 +19,142 @@ private val Isidora = FontFamily(
   Font(R.font.isidora_bold, FontWeight.Bold),
 )
 
-// Title 1
+private val title2LineHeight = 52.sp
+
+private val title3LineHeight = 40.sp
+
+private val title4LineHeight = 32.sp
+
+private val title4FontSize = 22.sp
+
+private val subtitleLineHeight = 28.sp
+private val subtitleFontSize = 18.sp
+
+private val bodyLineHeight = 24.sp
+private val bodyFontSize = 16.sp
+
+private val bodySmallLineHeight = 22.sp
+private val bodySmallFontSize = 18.sp
+
+private val captionLineHeight = 18.sp
+private val captionFontSize = 12.sp
+
+// Everli Typography
 @Immutable
-data class Title1(
-  val boldBrand: TextStyle,
+data class EverliTypography(
+  val title1Bold: TextStyle,
+  val title2Bold: TextStyle,
+  val title2Semibold: TextStyle,
+  val title3Bold: TextStyle,
+  val title3Semibold: TextStyle,
+  val title4Bold: TextStyle,
+  val title4Semibold: TextStyle,
+  val title4Regular: TextStyle,
+  val subtitleSemibold: TextStyle,
+  val subtitleRegular: TextStyle,
+  val bodySemibold: TextStyle,
+  val bodyRegular: TextStyle,
+  val bodySmallSemibold: TextStyle,
+  val bodySmallRegular: TextStyle,
+  val captionSemibold: TextStyle,
+  val captionRegular: TextStyle,
 )
 
-private val title1 = Title1(
-  boldBrand = TextStyle(
+val DefaultEverliTypography = EverliTypography(
+  title1Bold = TextStyle(
     fontSize = 48.sp,
     fontWeight = FontWeight.Bold,
     fontFamily = Isidora,
     lineHeight = 68.sp,
   ),
-)
-
-// Title 2
-@Immutable
-data class Title2(
-  val boldBrand: TextStyle,
-  val semibold: TextStyle,
-)
-
-private val title2LineHeight = 52.sp
-
-private val title2 = Title2(
-  boldBrand = TextStyle(
+  title2Bold = TextStyle(
     fontSize = 37.sp,
     fontWeight = FontWeight.Bold,
     fontFamily = Isidora,
     lineHeight = title2LineHeight,
   ),
-  semibold = TextStyle(
+  title2Semibold = TextStyle(
     fontSize = 36.sp,
     fontWeight = FontWeight.SemiBold,
     fontFamily = Fira,
     lineHeight = title2LineHeight,
   ),
-)
-
-// Title 3
-@Immutable
-data class Title3(
-  val boldBrand: TextStyle,
-  val semibold: TextStyle,
-)
-
-private val title3LineHeight = 40.sp
-
-private val title3 = Title3(
-  boldBrand = TextStyle(
+  title3Bold = TextStyle(
     fontSize = 29.sp,
     fontWeight = FontWeight.Bold,
     fontFamily = Isidora,
     lineHeight = title3LineHeight,
   ),
-  semibold = TextStyle(
+  title3Semibold = TextStyle(
     fontSize = 28.sp,
     fontWeight = FontWeight.SemiBold,
     fontFamily = Fira,
     lineHeight = title3LineHeight,
   ),
-)
-
-// Title 4
-@Immutable
-data class Title4(
-  val boldBrand: TextStyle,
-  val semibold: TextStyle,
-  val regular: TextStyle,
-)
-
-private val title4LineHeight = 32.sp
-private val title4FontSize = 22.sp
-
-private val title4 = Title4(
-  boldBrand = TextStyle(
+  title4Bold = TextStyle(
     fontSize = 23.sp,
     fontWeight = FontWeight.Bold,
     fontFamily = Isidora,
     lineHeight = title4LineHeight,
   ),
-  semibold = TextStyle(
+  title4Semibold = TextStyle(
     fontSize = title4FontSize,
     fontWeight = FontWeight.SemiBold,
     fontFamily = Fira,
     lineHeight = title4LineHeight,
   ),
-  regular = TextStyle(
+  title4Regular = TextStyle(
     fontSize = title4FontSize,
     fontWeight = FontWeight.Normal,
     fontFamily = Fira,
     lineHeight = title4LineHeight,
   ),
-)
-
-// Subtitle
-@Immutable
-data class Subtitle(
-  val semibold: TextStyle,
-  val regular: TextStyle,
-)
-
-private val subtitleLineHeight = 28.sp
-private val subtitleFontSize = 18.sp
-
-private val subtitle = Subtitle(
-  semibold = TextStyle(
+  subtitleSemibold = TextStyle(
     fontSize = subtitleFontSize,
     fontWeight = FontWeight.SemiBold,
     fontFamily = Fira,
     lineHeight = subtitleLineHeight,
   ),
-  regular = TextStyle(
+  subtitleRegular = TextStyle(
     fontSize = subtitleFontSize,
     fontWeight = FontWeight.Normal,
     fontFamily = Fira,
     lineHeight = subtitleLineHeight,
   ),
-)
-
-// Body
-@Immutable
-data class Body(
-  val semibold: TextStyle,
-  val regular: TextStyle,
-)
-
-private val bodyLineHeight = 24.sp
-private val bodyFontSize = 16.sp
-
-private val body = Body(
-  semibold = TextStyle(
+  bodySemibold = TextStyle(
     fontSize = bodyFontSize,
     fontWeight = FontWeight.SemiBold,
     fontFamily = Fira,
     lineHeight = bodyLineHeight,
   ),
-  regular = TextStyle(
+  bodyRegular = TextStyle(
     fontSize = bodyFontSize,
     fontWeight = FontWeight.Normal,
     fontFamily = Fira,
     lineHeight = bodyLineHeight,
   ),
-)
-
-// Body Small
-@Immutable
-data class BodySmall(
-  val semibold: TextStyle,
-  val regular: TextStyle,
-)
-
-private val bodySmallLineHeight = 22.sp
-private val bodySmallFontSize = 18.sp
-
-private val bodySmall = BodySmall(
-  semibold = TextStyle(
+  bodySmallSemibold = TextStyle(
     fontSize = bodySmallFontSize,
     fontWeight = FontWeight.SemiBold,
     fontFamily = Fira,
     lineHeight = bodySmallLineHeight,
   ),
-  regular = TextStyle(
+  bodySmallRegular = TextStyle(
     fontSize = bodySmallFontSize,
     fontWeight = FontWeight.Normal,
     fontFamily = Fira,
     lineHeight = bodySmallLineHeight,
   ),
-)
-
-// Caption
-@Immutable
-data class Caption(
-  val semibold: TextStyle,
-  val regular: TextStyle,
-)
-
-private val captionLineHeight = 18.sp
-private val captionFontSize = 12.sp
-
-private val caption = Caption(
-  semibold = TextStyle(
+  captionSemibold = TextStyle(
     fontSize = captionFontSize,
     fontWeight = FontWeight.SemiBold,
     fontFamily = Fira,
     lineHeight = captionLineHeight,
   ),
-  regular = TextStyle(
+  captionRegular = TextStyle(
     fontSize = captionFontSize,
     fontWeight = FontWeight.Normal,
     fontFamily = Fira,
     lineHeight = captionLineHeight,
   ),
-)
-
-// Everli Typography
-@Immutable
-data class EverliTypography(
-  val title1: Title1,
-  val title2: Title2,
-  val title3: Title3,
-  val title4: Title4,
-  val subtitle: Subtitle,
-  val body: Body,
-  val bodySmall: BodySmall,
-  val caption: Caption,
-)
-
-val DefaultEverliTypography = EverliTypography(
-  title1 = title1,
-  title2 = title2,
-  title3 = title3,
-  title4 = title4,
-  subtitle = subtitle,
-  body = body,
-  bodySmall = bodySmall,
-  caption = caption,
 )

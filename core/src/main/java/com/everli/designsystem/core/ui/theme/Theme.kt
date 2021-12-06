@@ -1,12 +1,10 @@
 package com.everli.designsystem.core.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.Colors
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.staticCompositionLocalOf
-import androidx.compose.ui.graphics.Color
 
 @Composable
 fun EverliTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
@@ -27,7 +25,6 @@ fun EverliTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable
 }
 
 object EverliTheme {
-
   val colors: EverliColors
     @Composable
     get() = LocalEverliColors.current
