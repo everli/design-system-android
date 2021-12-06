@@ -5,6 +5,7 @@ import androidx.compose.ui.graphics.Color
 val White = Color.White
 
 val Gray10 = Color(0xFFF8F7F8)
+val Gray15 = Color(0xFFEBE7EB)
 val Gray40 = Color(0xFFE3DFE3)
 val Gray80 = Color(0xFF9E8f9E)
 val Gray100 = Color(0xFF756075)
@@ -32,7 +33,7 @@ val Link100 = Color(0xFF1A73E8)
 
 // Design system "brand" names
 val WalterWhite = White
-val VioletBlack = Violet100
+val VioletBlack = Black100
 val RedHot = Red100
 val PurpleRain = Violet100
 val TealWaves = Teal100
