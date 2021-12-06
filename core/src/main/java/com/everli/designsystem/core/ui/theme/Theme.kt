@@ -36,6 +36,7 @@ val LocalCustomTypography = staticCompositionLocalOf<EverliTypography> {
 private val LightColorPalette = EverliColors(
   white = White,
   gray10 = Gray10,
+  gray15 = Gray15,
   gray40 = Gray40,
   gray80 = Gray80,
   gray100 = Gray100,
@@ -60,6 +61,7 @@ private val LightColorPalette = EverliColors(
 data class EverliColors(
   val white: Color,
   val gray10: Color,
+  val gray15: Color,
   val gray40: Color,
   val gray80: Color,
   val gray100: Color,

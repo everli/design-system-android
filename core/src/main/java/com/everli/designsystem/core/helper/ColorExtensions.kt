@@ -5,6 +5,7 @@ import com.everli.designsystem.core.ui.theme.Black100
 import com.everli.designsystem.core.ui.theme.Blue100
 import com.everli.designsystem.core.ui.theme.Gray10
 import com.everli.designsystem.core.ui.theme.Gray100
+import com.everli.designsystem.core.ui.theme.Gray15
 import com.everli.designsystem.core.ui.theme.Gray40
 import com.everli.designsystem.core.ui.theme.Gray80
 import com.everli.designsystem.core.ui.theme.Green10
@@ -51,6 +52,7 @@ fun Color.Companion.fromName(name: String, fallbackColor: Color = White): Color 
   return when (name) {
     "white", "walter-white" -> White
     "gray-10" -> Gray10
+    "gray-15" -> Gray15
     "gray-40" -> Gray40
     "gray-80" -> Gray80
     "gray-100" -> Gray100

@@ -4,6 +4,7 @@ import androidx.compose.ui.graphics.Color
 import com.everli.designsystem.core.ui.theme.Blue100
 import com.everli.designsystem.core.ui.theme.Gray10
 import com.everli.designsystem.core.ui.theme.Gray100
+import com.everli.designsystem.core.ui.theme.Gray15
 import com.everli.designsystem.core.ui.theme.Gray40
 import com.everli.designsystem.core.ui.theme.Gray80
 import com.everli.designsystem.core.ui.theme.Green10
@@ -28,6 +29,7 @@ data class ColorModel(
 val brandColors = listOf(
   ColorModel("Walter White", White, Color.Black),
   ColorModel("Gray 10", Gray10, Color.Black),
+  ColorModel("Gray 15", Gray15, Color.Black),
   ColorModel("Gray 40", Gray40, Color.Black),
   ColorModel("Gray 80", Gray80, White),
   ColorModel("Gray 100", Gray100, White),
@@ -49,6 +51,7 @@ val brandColors = listOf(
 val devColors = listOf(
   ColorModel("White", White, Color.Black),
   ColorModel("Gray 10", Gray10, Color.Black),
+  ColorModel("Gray 15", Gray15, Color.Black),
   ColorModel("Gray 40", Gray40, Color.Black),
   ColorModel("Gray 80", Gray80, White),
   ColorModel("Gray 100", Gray100, White),
