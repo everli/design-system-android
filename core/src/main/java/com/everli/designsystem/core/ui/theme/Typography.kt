@@ -34,7 +34,7 @@ private val bodyLineHeight = 24.sp
 private val bodyFontSize = 16.sp
 
 private val bodySmallLineHeight = 22.sp
-private val bodySmallFontSize = 18.sp
+private val bodySmallFontSize = 14.sp
 
 private val captionLineHeight = 18.sp
 private val captionFontSize = 12.sp
