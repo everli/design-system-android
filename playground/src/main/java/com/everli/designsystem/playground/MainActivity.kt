@@ -19,9 +19,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.everli.designsystem.core.ui.theme.EverliTheme
-import com.everli.designsystem.core.ui.theme.Green100
-import com.everli.designsystem.core.ui.theme.White
+import com.everli.designsystem.core.theme.EverliTheme
 import com.everli.designsystem.playground.color.ColorsPlayground
 import com.everli.designsystem.playground.typography.TypographyPlayground
 import com.google.accompanist.pager.ExperimentalPagerApi

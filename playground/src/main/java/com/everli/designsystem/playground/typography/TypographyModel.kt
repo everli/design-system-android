@@ -1,7 +1,7 @@
 package com.everli.designsystem.playground.typography
 
 import androidx.compose.ui.text.TextStyle
-import com.everli.designsystem.core.ui.theme.DefaultEverliTypography
+import com.everli.designsystem.core.theme.DefaultEverliTypography
 
 data class TypographyModel(
   val name: String,
