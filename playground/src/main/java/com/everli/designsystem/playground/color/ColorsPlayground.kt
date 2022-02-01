@@ -20,8 +20,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.everli.designsystem.core.ui.theme.Green100
-import com.everli.designsystem.core.ui.theme.White
+import com.everli.designsystem.core.theme.Green100
+import com.everli.designsystem.core.theme.White
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.pagerTabIndicatorOffset

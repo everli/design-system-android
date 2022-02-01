@@ -16,8 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
-import com.everli.designsystem.core.ui.theme.DefaultEverliTypography
-import com.everli.designsystem.core.ui.theme.EverliTheme
+import com.everli.designsystem.core.theme.DefaultEverliTypography
+import com.everli.designsystem.core.theme.EverliTheme
 import com.everli.designsystem.playground.R
 
 @Composable

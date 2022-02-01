@@ -1,11 +1,9 @@
-package com.everli.designsystem.core.ui.theme
+package com.everli.designsystem.core.theme
 
 import androidx.compose.material.Colors
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
-import com.everli.designsystem.core.R
 
 val White = Color.White
 

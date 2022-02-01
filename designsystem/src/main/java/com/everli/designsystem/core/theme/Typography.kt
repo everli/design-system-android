@@ -1,4 +1,4 @@
-package com.everli.designsystem.core.ui.theme
+package com.everli.designsystem.core.theme
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.text.TextStyle

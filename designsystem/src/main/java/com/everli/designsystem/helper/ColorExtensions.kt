@@ -1,24 +1,24 @@
-package com.everli.designsystem.core.helper
+package com.everli.designsystem.helper
 
 import androidx.compose.ui.graphics.Color
-import com.everli.designsystem.core.ui.theme.Black100
-import com.everli.designsystem.core.ui.theme.Blue100
-import com.everli.designsystem.core.ui.theme.Gray10
-import com.everli.designsystem.core.ui.theme.Gray100
-import com.everli.designsystem.core.ui.theme.Gray15
-import com.everli.designsystem.core.ui.theme.Gray40
-import com.everli.designsystem.core.ui.theme.Gray80
-import com.everli.designsystem.core.ui.theme.Green10
-import com.everli.designsystem.core.ui.theme.Green100
-import com.everli.designsystem.core.ui.theme.Green110
-import com.everli.designsystem.core.ui.theme.Link100
-import com.everli.designsystem.core.ui.theme.Red100
-import com.everli.designsystem.core.ui.theme.Red20
-import com.everli.designsystem.core.ui.theme.Teal100
-import com.everli.designsystem.core.ui.theme.Teal20
-import com.everli.designsystem.core.ui.theme.Violet100
-import com.everli.designsystem.core.ui.theme.Yellow100
-import com.everli.designsystem.core.ui.theme.Yellow20
+import com.everli.designsystem.core.theme.Black100
+import com.everli.designsystem.core.theme.Blue100
+import com.everli.designsystem.core.theme.Gray10
+import com.everli.designsystem.core.theme.Gray100
+import com.everli.designsystem.core.theme.Gray15
+import com.everli.designsystem.core.theme.Gray40
+import com.everli.designsystem.core.theme.Gray80
+import com.everli.designsystem.core.theme.Green10
+import com.everli.designsystem.core.theme.Green100
+import com.everli.designsystem.core.theme.Green110
+import com.everli.designsystem.core.theme.Link100
+import com.everli.designsystem.core.theme.Red100
+import com.everli.designsystem.core.theme.Red20
+import com.everli.designsystem.core.theme.Teal100
+import com.everli.designsystem.core.theme.Teal20
+import com.everli.designsystem.core.theme.Violet100
+import com.everli.designsystem.core.theme.Yellow100
+import com.everli.designsystem.core.theme.Yellow20
 import java.lang.Exception
 
 /**
