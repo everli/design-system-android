@@ -4,6 +4,8 @@ import androidx.compose.material.Colors
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
+import com.everli.designsystem.core.R
 
 val White = Color.White
 
@@ -68,7 +70,7 @@ data class EverliColors(
   val green110: Color,
   val yellow20: Color,
   val yellow100: Color,
-  val link100: Color
+  val link100: Color,
 )
 
 // Color Palette

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Dev Friendly Names -->
+  <color name="white">#FFFFFFFF</color>
+
+  <color name="gray_10">#FFF8F7F8</color>
+  <color name="gray_15">#FFEBE7EB</color>
+  <color name="gray_40">#FFE3DFE3</color>
+  <color name="gray_80">#FF9E8f9E</color>
+  <color name="gray_100">#FF756075</color>
+
+  <color name="black_100">#FF302030</color>
+
+  <color name="red_20">#FFFFCEDC</color>
+  <color name="red_100">#FFDC325F</color>
+
+  <color name="violet_100">#FF8A3264</color>
+
+  <color name="teal_20">#FFDAF4F4</color>
+  <color name="teal_100">#FF46C6C6</color>
+
+  <color name="blue_100">#FF006E81</color>
+
+  <color name="green_10">#FFD6FFC2</color>
+  <color name="green_100">#FF64C828</color>
+  <color name="green_110">#FF3CA000</color>
+
+  <color name="yellow_20">#FFFFF6DC</color>
+  <color name="yellow_100">#FFFFD050</color>
+
+  <color name="link_100">#FF1A73E8</color>
+  
+  <!-- Brand Names -->
+  
+  <color name="walter_white">@color/white</color>
+  <color name="violet_black">@color/black_100</color>
+  <color name="red_hot">@color/red_100</color>
+  <color name="purple_rain">@color/violet_100</color>
+  <color name="teal_waves">@color/teal_100</color>
+  <color name="blue_plus">@color/blue_100</color>
+  <color name="everli_green">@color/green_100</color>
+  <color name="deep_green">@color/green_110</color>
+  <color name="yellow_sun">@color/yellow_100</color>
+  <color name="link">@color/link_100</color>
+
+</resources>

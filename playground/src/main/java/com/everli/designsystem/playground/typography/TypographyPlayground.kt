@@ -1,6 +1,10 @@
 package com.everli.designsystem.playground.typography
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.view.LayoutInflater
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -11,9 +15,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.everli.designsystem.core.ui.theme.Black100
+import androidx.compose.ui.viewinterop.AndroidView
 import com.everli.designsystem.core.ui.theme.DefaultEverliTypography
 import com.everli.designsystem.core.ui.theme.EverliTheme
+import com.everli.designsystem.playground.R
 
 @Composable
 fun TypographyItem(typographyModel: TypographyModel) {
@@ -21,7 +26,7 @@ fun TypographyItem(typographyModel: TypographyModel) {
     style = typographyModel.style,
     text = typographyModel.name,
     modifier = Modifier.padding(8.dp),
-    color = Black100
+    color = EverliTheme.colors.black100
   )
 }
 
@@ -60,5 +65,23 @@ fun TypographyItemPreview() {
 fun TypographyPlaygroundPreview() {
   EverliTheme {
     TypographyPlayground()
+  }
+}
+
+@SuppressLint("InflateParams")
+@ExperimentalFoundationApi
+@Preview(showBackground = true)
+@Composable
+fun TypographyPlaygroundXMLPreview() {
+  EverliTheme {
+    // Adds view to Compose
+    AndroidView(
+      factory = { context: Context ->
+        val view = LayoutInflater.from(context)
+          .inflate(R.layout.layout_typography_sample, null, false)
+        view
+      },
+      modifier = Modifier.fillMaxSize(),
+    )
   }
 }

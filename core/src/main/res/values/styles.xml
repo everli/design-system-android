@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <!-- Typography -->
+  <style name="Typography" />
+
+  <!-- Title1 -->
+  <style name="Typography.Title1">
+    <item name="lineHeight">@dimen/line_height_title1</item>
+  </style>
+
+  <style name="Typography.Title1.Bold">
+    <item name="android:textSize">@dimen/font_size_title1_bold</item>
+    <item name="android:fontFamily">@font/isidora_bold</item>
+  </style>
+
+  <!-- Title2 -->
+  <style name="Typography.Title2">
+    <item name="lineHeight">@dimen/line_height_title2</item>
+  </style>
+
+  <style name="Typography.Title2.Bold">
+    <item name="android:textSize">@dimen/font_size_title2_bold</item>
+    <item name="android:fontFamily">@font/isidora_bold</item>
+  </style>
+
+  <style name="Typography.Title2.Semibold">
+    <item name="android:textSize">@dimen/font_size_title2_semibold</item>
+    <item name="android:fontFamily">@font/fira_semibold</item>
+  </style>
+
+  <!-- Title3 -->
+  <style name="Typography.Title3">
+    <item name="lineHeight">@dimen/line_height_title3</item>
+  </style>
+
+  <style name="Typography.Title3.Bold">
+    <item name="android:textSize">@dimen/font_size_title3_bold</item>
+    <item name="android:fontFamily">@font/isidora_bold</item>
+  </style>
+
+  <style name="Typography.Title3.Semibold">
+    <item name="android:textSize">@dimen/font_size_title3_semibold</item>
+    <item name="android:fontFamily">@font/fira_semibold</item>
+  </style>
+
+  <!-- Title4 -->
+  <style name="Typography.Title4">
+    <item name="lineHeight">@dimen/line_height_title4</item>
+  </style>
+
+  <style name="Typography.Title4.Bold">
+    <item name="android:textSize">@dimen/font_size_title4_bold</item>
+    <item name="android:fontFamily">@font/isidora_bold</item>
+  </style>
+
+  <style name="Typography.Title4.Semibold">
+    <item name="android:textSize">@dimen/font_size_title4_semibold</item>
+    <item name="android:fontFamily">@font/fira_semibold</item>
+  </style>
+
+  <style name="Typography.Title4.Regular">
+    <item name="android:textSize">@dimen/font_size_title4_regular</item>
+    <item name="android:fontFamily">@font/fira_regular</item>
+  </style>
+
+  <!-- Subtitle -->
+  <style name="Typography.Subtitle">
+    <item name="lineHeight">@dimen/line_height_subtitle</item>
+    <item name="android:textSize">@dimen/font_size_subtitle</item>
+  </style>
+
+  <style name="Typography.Subtitle.Semibold">
+    <item name="android:fontFamily">@font/fira_semibold</item>
+  </style>
+
+  <style name="Typography.Subtitle.Regular">
+    <item name="android:fontFamily">@font/fira_regular</item>
+  </style>
+
+  <!-- Body -->
+  <style name="Typography.Body">
+    <item name="lineHeight">@dimen/line_height_body</item>
+    <item name="android:textSize">@dimen/font_size_body</item>
+  </style>
+
+  <style name="Typography.Body.Semibold">
+    <item name="android:fontFamily">@font/fira_semibold</item>
+  </style>
+
+  <style name="Typography.Body.Regular">
+    <item name="android:fontFamily">@font/fira_regular</item>
+  </style>
+
+  <!-- Body Small -->
+  <style name="Typography.BodySmall">
+    <item name="lineHeight">@dimen/line_height_body_small</item>
+    <item name="android:textSize">@dimen/font_size_body_small</item>
+  </style>
+
+  <style name="Typography.BodySmall.Semibold">
+    <item name="android:fontFamily">@font/fira_semibold</item>
+  </style>
+
+  <style name="Typography.BodySmall.Regular">
+    <item name="android:fontFamily">@font/fira_regular</item>
+  </style>
+
+  <!-- Caption -->
+  <style name="Typography.Caption">
+    <item name="lineHeight">@dimen/line_height_caption</item>
+    <item name="android:textSize">@dimen/font_size_caption</item>
+  </style>
+
+  <style name="Typography.Caption.Semibold">
+    <item name="android:fontFamily">@font/fira_semibold</item>
+  </style>
+
+  <style name="Typography.Caption.Regular">
+    <item name="android:fontFamily">@font/fira_regular</item>
+  </style>
+
+</resources>
