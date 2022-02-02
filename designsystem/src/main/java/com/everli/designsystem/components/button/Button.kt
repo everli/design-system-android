@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import com.everli.designsystem.core.theme.EverliTheme
+import com.everli.designsystem.helper.empty
 
 /**
  * Primary Button, wrapper for [Button]
@@ -28,7 +29,7 @@ import com.everli.designsystem.core.theme.EverliTheme
 fun PrimaryButton(
   onClick: () -> Unit,
   modifier: Modifier = Modifier,
-  text: String = "",
+  text: String = String.empty,
   variant: PrimaryButtonVariant = PrimaryButtonVariant.DEFAULT,
   enabled: Boolean = true,
   content: @Composable RowScope.() -> Unit = { Text(text = text, style = variant.textStyle()) },
