@@ -16,8 +16,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
+import com.everli.designsystem.core.theme.Black100
 import com.everli.designsystem.core.theme.DefaultEverliTypography
 import com.everli.designsystem.core.theme.EverliTheme
+import com.everli.designsystem.core.theme.Green100
+import com.everli.designsystem.core.theme.White
 import com.everli.designsystem.playground.R
 
 @Composable
@@ -26,7 +29,7 @@ fun TypographyItem(typographyModel: TypographyModel) {
     style = typographyModel.style,
     text = typographyModel.name,
     modifier = Modifier.padding(8.dp),
-    color = EverliTheme.colors.black100
+    color = Black100
   )
 }
 
@@ -37,12 +40,12 @@ fun TypographyPlayground() {
     typographyModels.forEach { (name, values) ->
       stickyHeader {
         Surface(
-          color = EverliTheme.colors.white,
+          color = White,
           modifier = Modifier.fillMaxWidth()) {
           Text(
             text = name,
             modifier = Modifier.padding(8.dp),
-            color = EverliTheme.colors.green100,
+            color = Green100,
             style = EverliTheme.typography.subtitleSemibold)
         }
       }

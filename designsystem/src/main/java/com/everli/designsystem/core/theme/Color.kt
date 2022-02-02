@@ -1,5 +1,6 @@
 package com.everli.designsystem.core.theme
 
+import androidx.compose.material.CheckboxColors
 import androidx.compose.material.Colors
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Immutable
@@ -46,52 +47,37 @@ val DeepGreen = Green110
 val YellowSun = Yellow100
 val Link = Link100
 
-// Define here semantic colors (e.g. primary, link, etc...) as we progress in the design system
-// For now we will just copy paste the normal colors -> to be replaced with actual semantic ones
+// Colors data class Structures
 @Immutable
 data class EverliColors(
-  val white: Color,
-  val gray10: Color,
-  val gray15: Color,
-  val gray40: Color,
-  val gray80: Color,
-  val gray100: Color,
-  val black100: Color,
-  val red20: Color,
-  val red100: Color,
-  val violet100: Color,
-  val teal20: Color,
-  val teal100: Color,
-  val blue100: Color,
-  val green10: Color,
-  val green100: Color,
-  val green110: Color,
-  val yellow20: Color,
-  val yellow100: Color,
-  val link100: Color,
+  val buttons: ButtonsColors,
+  // tokens
 )
 
-// Color Palette
+data class ButtonsColors(
+  val primaryButton: ButtonColors,
+)
+
+@Immutable
+data class ButtonColors(
+  val backgroundEnabled: Color,
+  val backgroundDisabled: Color,
+  val textEnabled: Color,
+  val textDisabled: Color,
+)
+
+// Colors default values
+val defaultButtonColors = ButtonsColors(
+  primaryButton = ButtonColors(
+    backgroundEnabled = Green100,
+    backgroundDisabled = Gray15,
+    textEnabled = White,
+    textDisabled = Gray100,
+  ),
+)
+
 val LightColorPalette = EverliColors(
-  white = White,
-  gray10 = Gray10,
-  gray15 = Gray15,
-  gray40 = Gray40,
-  gray80 = Gray80,
-  gray100 = Gray100,
-  black100 = Black100,
-  red20 = Red20,
-  red100 = Red100,
-  violet100 = Violet100,
-  teal20 = Teal20,
-  teal100 = Teal100,
-  blue100 = Blue100,
-  green10 = Green10,
-  green100 = Green100,
-  green110 = Green110,
-  yellow20 = Yellow20,
-  yellow100 = Yellow100,
-  link100 = Link100
+  buttons = defaultButtonColors
 )
 
 /**
@@ -100,7 +86,7 @@ val LightColorPalette = EverliColors(
  */
 fun debugColors(
   darkTheme: Boolean = false,
-  debugColor: Color = Color.Magenta
+  debugColor: Color = Color.Magenta,
 ) = Colors(
   primary = debugColor,
   primaryVariant = debugColor,
