@@ -6,7 +6,7 @@ import androidx.compose.ui.unit.dp
 
 @Immutable
 data class EverliDimensions(
-  val buttonDimensions: ButtonDimensions,
+  val button: ButtonDimensions,
 )
 
 @Immutable
@@ -18,7 +18,7 @@ data class ButtonDimensions(
 )
 
 val DefaultEverliDimensions = EverliDimensions(
-  buttonDimensions = ButtonDimensions(
+  button = ButtonDimensions(
     minWidth = 112.dp,
     minHeightSmall = 36.dp,
     minHeightDefault = 44.dp,

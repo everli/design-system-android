@@ -12,13 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.everli.designsystem.components.button.PrimaryButton
-import com.everli.designsystem.components.button.PrimaryButtonVariant
+import com.everli.designsystem.components.button.Button
+import com.everli.designsystem.components.button.ButtonStyle
 import com.everli.designsystem.core.theme.Blue100
 import com.everli.designsystem.core.theme.EverliTheme
 import com.everli.designsystem.core.theme.Gray80
-import com.everli.designsystem.core.theme.Green100
-import com.everli.designsystem.core.theme.Yellow100
 
 @Composable
 fun ButtonsPlayground() {
@@ -43,15 +41,15 @@ fun ButtonsPlayground() {
          color = Gray80)
 
     Row {
-      PrimaryButton(
+      Button(
         onClick = onClick,
-        variant = PrimaryButtonVariant.SMALL,
+        style = ButtonStyle.SMALL,
         text = "Label",
         modifier = Modifier.padding(8.dp))
 
-      PrimaryButton(
+      Button(
         onClick = onClick,
-        variant = PrimaryButtonVariant.SMALL,
+        style = ButtonStyle.SMALL,
         text = "Label",
         enabled = false,
         modifier = Modifier.padding(8.dp))
@@ -62,15 +60,15 @@ fun ButtonsPlayground() {
          color = Gray80)
 
     Row {
-      PrimaryButton(
+      Button(
         onClick = onClick,
-        variant = PrimaryButtonVariant.DEFAULT,
+        style = ButtonStyle.DEFAULT,
         text = "Label",
         modifier = Modifier.padding(8.dp))
 
-      PrimaryButton(
+      Button(
         onClick = onClick,
-        variant = PrimaryButtonVariant.DEFAULT,
+        style = ButtonStyle.DEFAULT,
         text = "Label",
         enabled = false,
         modifier = Modifier.padding(8.dp))
@@ -81,15 +79,15 @@ fun ButtonsPlayground() {
          color = Gray80)
 
     Row {
-      PrimaryButton(
+      Button(
         onClick = onClick,
-        variant = PrimaryButtonVariant.LARGE,
+        style = ButtonStyle.LARGE,
         text = "Label",
         modifier = Modifier.padding(8.dp))
 
-      PrimaryButton(
+      Button(
         onClick = onClick,
-        variant = PrimaryButtonVariant.LARGE,
+        style = ButtonStyle.LARGE,
         text = "Label",
         enabled = false,
         modifier = Modifier.padding(8.dp))

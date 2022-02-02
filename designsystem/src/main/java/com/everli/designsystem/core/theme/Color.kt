@@ -54,31 +54,41 @@ data class EverliColors(
   // tokens
 )
 
+@Immutable
 data class ButtonsColors(
-  val primaryButton: ButtonColors,
+  val primary: ButtonColors,
+)
+
+@Immutable
+data class StateColor(
+  val disabled: Color,
+  val enabled: Color,
 )
 
 @Immutable
 data class ButtonColors(
-  val backgroundEnabled: Color,
-  val backgroundDisabled: Color,
-  val textEnabled: Color,
-  val textDisabled: Color,
+  val background: StateColor,
+  val text: StateColor
 )
 
 // Colors default values
 val defaultButtonColors = ButtonsColors(
-  primaryButton = ButtonColors(
-    backgroundEnabled = Green100,
-    backgroundDisabled = Gray15,
-    textEnabled = White,
-    textDisabled = Gray100,
+  primary= ButtonColors(
+    background = StateColor(
+      enabled = Green100,
+      disabled = Gray15,
+    ),
+    text = StateColor(
+      enabled = White,
+      disabled = Gray100,
+    ),
   ),
 )
 
 val LightColorPalette = EverliColors(
   buttons = defaultButtonColors
 )
+
 
 /**
  * A Material [Colors] implementation which sets all colors to [debugColor] to discourage usage of

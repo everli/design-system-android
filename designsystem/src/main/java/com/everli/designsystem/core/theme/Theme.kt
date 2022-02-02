@@ -8,7 +8,10 @@ import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.staticCompositionLocalOf
 
 @Composable
-fun EverliTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
+fun EverliTheme(
+  darkTheme: Boolean = isSystemInDarkTheme(),
+  content: @Composable() () -> Unit,
+) {
   // check for darkTheme in case of future dark theme
   val colors = LightColorPalette
   val typography = DefaultEverliTypography
@@ -66,14 +69,14 @@ private val LocalEverliColors = staticCompositionLocalOf<EverliColors> {
   error("No EverliColors provided")
 }
 
-val LocalEverliTypography = staticCompositionLocalOf<EverliTypography> {
+private val LocalEverliTypography = staticCompositionLocalOf<EverliTypography> {
   error("No EverliTypography provided")
 }
 
-val LocalEverliDimensions = staticCompositionLocalOf<EverliDimensions> {
+private val LocalEverliDimensions = staticCompositionLocalOf<EverliDimensions> {
   error("No EverliDimensions provided")
 }
 
-val LocalEverliShapes = staticCompositionLocalOf<EverliShapes> {
+private val LocalEverliShapes = staticCompositionLocalOf<EverliShapes> {
   error("No EverliShapes provided")
 }

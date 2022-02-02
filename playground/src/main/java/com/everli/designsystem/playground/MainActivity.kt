@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -19,6 +18,8 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.everli.designsystem.components.button.Button
+import com.everli.designsystem.components.button.ButtonStyle
 import com.everli.designsystem.core.theme.EverliTheme
 import com.everli.designsystem.core.theme.Green100
 import com.everli.designsystem.core.theme.White
@@ -72,14 +73,10 @@ fun Home(navController: NavController) {
 @Composable
 fun HomeButton(text: String, onClick: () -> Unit) {
   Button(
-    colors = ButtonDefaults.buttonColors(
-      backgroundColor = Green100,
-      contentColor = White),
     onClick = onClick,
     modifier = Modifier
       .fillMaxWidth()
       .padding(16.dp)
-      .height(54.dp)
   ) {
     Text(text = text)
   }
