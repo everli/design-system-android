@@ -10,14 +10,12 @@ import androidx.compose.runtime.staticCompositionLocalOf
 @Composable
 fun EverliTheme(
   darkTheme: Boolean = isSystemInDarkTheme(),
+  colors: EverliColors = EverliTheme.colors,
+  typography: EverliTypography = EverliTheme.typography,
+  dimensions: EverliDimensions = EverliTheme.dimensions,
+  shapes: EverliShapes = EverliTheme.shapes,
   content: @Composable() () -> Unit,
 ) {
-  // check for darkTheme in case of future dark theme
-  val colors = LightColorPalette
-  val typography = DefaultEverliTypography
-  val shapes = DefaultEverliShapes
-  val dimensions = DefaultEverliDimensions
-
   // N.B. currently we extend MaterialTheme, with time we might end up replacing it
   CompositionLocalProvider(
     LocalEverliColors provides colors,
@@ -30,7 +28,17 @@ fun EverliTheme(
       content = content
     )
   }
+}
 
+@Composable
+fun DefaultTheme(content: @Composable () -> Unit) {
+  EverliTheme(
+    colors = LightColorPalette,
+    typography = DefaultEverliTypography,
+    dimensions = DefaultEverliDimensions,
+    shapes = DefaultEverliShapes,
+    content = content,
+  )
 }
 
 /**

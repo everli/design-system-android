@@ -15,7 +15,7 @@ import com.everli.designsystem.core.theme.StateColor
 import com.everli.designsystem.helper.empty
 
 /**
- * Button Component, wrapper for Material [Button]
+ * Button Component, wrapper for Material [EverliButton]
  *
  *
  * @param onClick called when pressed
@@ -30,7 +30,7 @@ import com.everli.designsystem.helper.empty
  * if no content is provided, a simple [Text] with given [text] will be rendered
  */
 @Composable
-fun Button(
+fun EverliButton(
   onClick: () -> Unit,
   modifier: Modifier = Modifier,
   text: String = String.empty,
