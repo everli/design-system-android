@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.GridCells
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.material.Card
 import androidx.compose.material.Tab
@@ -20,7 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.everli.designsystem.core.theme.Green100
+import com.everli.designsystem.core.theme.EverliTheme
 import com.everli.designsystem.core.theme.White
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
@@ -68,6 +69,16 @@ fun ColorsGrid(colors: List<ColorModel>) {
   }
 }
 
+@Composable
+@ExperimentalFoundationApi
+fun ColorsList(colors: List<ColorModel>) {
+  LazyColumn() {
+    items(colors.size) { index ->
+      ColorItem(colors[index])
+    }
+  }
+}
+
 @ExperimentalPagerApi
 @ExperimentalFoundationApi
 @Composable
@@ -78,7 +89,7 @@ fun ColorsPlayground() {
 
   Column {
     TabRow(
-      backgroundColor = Green100,
+      backgroundColor = EverliTheme.colors.buttons.primary.background.enabled,
       contentColor = White,
       selectedTabIndex = pagerState.currentPage,
       indicator = { tabPositions ->
