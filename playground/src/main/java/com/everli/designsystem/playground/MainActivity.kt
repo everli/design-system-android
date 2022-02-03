@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -19,7 +18,12 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.everli.designsystem.components.button.Button
+import com.everli.designsystem.components.button.ButtonStyle
 import com.everli.designsystem.core.theme.EverliTheme
+import com.everli.designsystem.core.theme.Green100
+import com.everli.designsystem.core.theme.White
+import com.everli.designsystem.playground.button.ButtonsPlayground
 import com.everli.designsystem.playground.color.ColorsPlayground
 import com.everli.designsystem.playground.typography.TypographyPlayground
 import com.google.accompanist.pager.ExperimentalPagerApi
@@ -46,7 +50,7 @@ class MainActivity : ComponentActivity() {
 fun App() {
   val systemUiController = rememberSystemUiController()
   systemUiController.setSystemBarsColor(
-    color = EverliTheme.colors.green100
+    color = Green100
   )
   Navigation()
 }
@@ -60,20 +64,19 @@ fun Home(navController: NavController) {
     HomeButton(
       text = "\uD83D\uDD24 TYPOGRAPHY",
       onClick = { navController.navigate(Destinations.TYPOGRAPHY) })
+    HomeButton(
+      text = "\uD83C\uDD92 BUTTONS",
+      onClick = { navController.navigate(Destinations.BUTTONS) })
   }
 }
 
 @Composable
 fun HomeButton(text: String, onClick: () -> Unit) {
   Button(
-    colors = ButtonDefaults.buttonColors(
-      backgroundColor = EverliTheme.colors.green100,
-      contentColor = EverliTheme.colors.white),
     onClick = onClick,
     modifier = Modifier
       .fillMaxWidth()
       .padding(16.dp)
-      .height(54.dp)
   ) {
     Text(text = text)
   }
@@ -88,6 +91,7 @@ fun Navigation() {
     composable(Destinations.HOME) { Home(navController) }
     composable(Destinations.COLORS) { ColorsPlayground() }
     composable(Destinations.TYPOGRAPHY) { TypographyPlayground() }
+    composable(Destinations.BUTTONS) { ButtonsPlayground() }
   }
 }
 
@@ -96,6 +100,7 @@ object Destinations {
   const val HOME = "Home"
   const val COLORS = "Colors"
   const val TYPOGRAPHY = "Typography"
+  const val BUTTONS = "Buttons"
 
 }
 
@@ -106,3 +111,4 @@ fun HomePreview() {
     Home(rememberNavController())
   }
 }
+
