@@ -28,12 +28,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.everli.designsystem.components.button.EverliButton
-import com.everli.designsystem.core.theme.DefaultEverliTypography
 import com.everli.designsystem.core.theme.DefaultTheme
-import com.everli.designsystem.core.theme.Green100
-import com.everli.designsystem.core.theme.Red20
-import com.everli.designsystem.core.theme.Teal20
-import com.everli.designsystem.core.theme.White
+import com.everli.designsystem.core.constants.EverliColors
+import com.everli.designsystem.core.theme.DefaultTypography
 import com.everli.designsystem.playground.button.ButtonsPlayground
 import com.everli.designsystem.playground.color.ColorsPlayground
 import com.everli.designsystem.playground.theme.ThemePlaygroundContent
@@ -60,12 +57,11 @@ class MainActivity : ComponentActivity() {
 @ExperimentalPagerApi
 @ExperimentalFoundationApi
 fun App() {
-  var theme by remember { mutableStateOf(Themes.DEFAULT) }
+  var theme by remember { mutableStateOf(Themes.DEMAND) }
 
   val mockPrimary: Color = when (theme) {
-    Themes.DEFAULT -> Green100
-    Themes.TOXIC_PINK -> Red20
-    Themes.BLUE_WAVES -> Teal20
+    Themes.DEMAND -> EverliColors.Green100
+    Themes.SUPPLY -> EverliColors.Violet100
   }
 
   // handled separately as it outside the main composable
@@ -82,24 +78,18 @@ fun App() {
           verticalAlignment = Alignment.CenterVertically,
           horizontalArrangement = Arrangement.Center,
         ) {
-          Text(text = "\uD83C\uDFA8", color = White, style = DefaultEverliTypography.bodyRegular)
-          TextButton(onClick = { theme = Themes.DEFAULT }) {
+          Text(text = "\uD83C\uDFA8", color = EverliColors.White, style = DefaultTypography.bodyRegular)
+          TextButton(onClick = { theme = Themes.DEMAND }) {
             Text(
-              text = "Default",
-              color = White,
-              style = DefaultEverliTypography.bodyRegular)
+              text = "Demand",
+              color = EverliColors.White,
+              style = DefaultTypography.bodyRegular)
           }
-          TextButton(onClick = { theme = Themes.TOXIC_PINK }) {
+          TextButton(onClick = { theme = Themes.SUPPLY }) {
             Text(
-              text = "ToxicPink",
-              color = White,
-              style = DefaultEverliTypography.bodyRegular)
-          }
-          TextButton(onClick = { theme = Themes.BLUE_WAVES }) {
-            Text(
-              text = "BlueWaves",
-              color = White,
-              style = DefaultEverliTypography.bodyRegular)
+              text = "Supply",
+              color = EverliColors.White,
+              style = DefaultTypography.bodyRegular)
           }
         }
       }

@@ -39,9 +39,8 @@ private val bodySmallFontSize = 14.sp
 private val captionLineHeight = 18.sp
 private val captionFontSize = 12.sp
 
-// Everli Typography
 @Immutable
-data class EverliTypography(
+data class Typography(
   val title1Bold: TextStyle,
   val title2Bold: TextStyle,
   val title2Semibold: TextStyle,
@@ -60,7 +59,8 @@ data class EverliTypography(
   val captionRegular: TextStyle,
 )
 
-val DefaultEverliTypography = EverliTypography(
+// Default
+val DefaultTypography = Typography(
   title1Bold = TextStyle(
     fontSize = 48.sp,
     fontWeight = FontWeight.Bold,

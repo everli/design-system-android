@@ -4,24 +4,20 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+// TODO: dimensions that are not yet  tokenized, could be removed in the future
 @Immutable
-data class EverliDimensions(
+data class Dimensions(
   val button: ButtonDimensions,
 )
 
 @Immutable
 data class ButtonDimensions(
   val minWidth: Dp,
-  val minHeightSmall: Dp,
-  val minHeightDefault: Dp,
-  val minHeightLarge: Dp,
 )
 
-val DefaultEverliDimensions = EverliDimensions(
+// Default
+val DefaultDimensions = Dimensions(
   button = ButtonDimensions(
     minWidth = 112.dp,
-    minHeightSmall = 36.dp,
-    minHeightDefault = 44.dp,
-    minHeightLarge = 48.dp,
   )
 )

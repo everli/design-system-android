@@ -22,7 +22,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.everli.designsystem.core.theme.EverliTheme
-import com.everli.designsystem.core.theme.White
+import com.everli.designsystem.core.constants.EverliColors
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.pagerTabIndicatorOffset
@@ -89,8 +89,8 @@ fun ColorsPlayground() {
 
   Column {
     TabRow(
-      backgroundColor = EverliTheme.colors.buttons.primary.background.enabled,
-      contentColor = White,
+      backgroundColor = EverliTheme.button.color.primary.background.enabled,
+      contentColor = EverliColors.White,
       selectedTabIndex = pagerState.currentPage,
       indicator = { tabPositions ->
         TabRowDefaults.Indicator(

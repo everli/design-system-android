@@ -1,7 +1,7 @@
 package com.everli.designsystem.playground.typography
 
 import androidx.compose.ui.text.TextStyle
-import com.everli.designsystem.core.theme.DefaultEverliTypography
+import com.everli.designsystem.core.theme.DefaultTypography
 
 data class TypographyModel(
   val name: String,
@@ -12,85 +12,85 @@ val typographyModels = mapOf(
   "Title 1" to listOf(
     TypographyModel(
       name = "Title1 Bold",
-      style = DefaultEverliTypography.title1Bold
+      style = DefaultTypography.title1Bold
     ),
   ),
   "Title2" to listOf(
     TypographyModel(
       name = "Title2 Bold",
-      style = DefaultEverliTypography.title2Bold
+      style = DefaultTypography.title2Bold
     ),
     TypographyModel(
       name = "Title2 Semibold",
-      style = DefaultEverliTypography.title2Semibold
+      style = DefaultTypography.title2Semibold
     ),
   ),
   "Title3" to listOf(
     TypographyModel(
       name = "Title3 Bold",
-      style = DefaultEverliTypography.title3Bold
+      style = DefaultTypography.title3Bold
     ),
     TypographyModel(
       name = "Title3 Semibold",
-      style = DefaultEverliTypography.title3Semibold
+      style = DefaultTypography.title3Semibold
     ),
   ),
   "Title4" to listOf(
     TypographyModel(
       name = "Title4 Bold",
-      style = DefaultEverliTypography.title4Bold
+      style = DefaultTypography.title4Bold
     ),
     TypographyModel(
       name = "Title4 Semibold",
-      style = DefaultEverliTypography.title4Semibold
+      style = DefaultTypography.title4Semibold
     ),
     TypographyModel(
       name = "Title4 Regular",
-      style = DefaultEverliTypography.title4Regular
+      style = DefaultTypography.title4Regular
     ),
   ),
   "Subtitle" to
       listOf(
         TypographyModel(
           name = "Subtitle Semibold",
-          style = DefaultEverliTypography.subtitleSemibold
+          style = DefaultTypography.subtitleSemibold
         ),
         TypographyModel(
           name = "Subtitle Regular",
-          style = DefaultEverliTypography.subtitleRegular
+          style = DefaultTypography.subtitleRegular
         ),
       ),
   "Body" to
       listOf(
         TypographyModel(
           name = "Body Semibold",
-          style = DefaultEverliTypography.bodySemibold
+          style = DefaultTypography.bodySemibold
         ),
         TypographyModel(
           name = "Body Regular",
-          style = DefaultEverliTypography.bodyRegular
+          style = DefaultTypography.bodyRegular
         ),
       ),
   "Body Small" to
       listOf(
         TypographyModel(
           name = "Body Small Semibold",
-          style = DefaultEverliTypography.bodySmallSemibold
+          style = DefaultTypography.bodySmallSemibold
         ),
         TypographyModel(
           name = "Body Small Regular",
-          style = DefaultEverliTypography.bodySmallRegular
+          style = DefaultTypography.bodySmallRegular
         ),
       ),
   "Caption" to
       listOf(
         TypographyModel(
           name = "Caption Semibold",
-          style = DefaultEverliTypography.captionSemibold
+          style = DefaultTypography.captionSemibold
         ),
         TypographyModel(
           name = "Caption Regular",
-          style = DefaultEverliTypography.captionRegular
+          style = DefaultTypography.captionRegular
         ),
       ),
 )

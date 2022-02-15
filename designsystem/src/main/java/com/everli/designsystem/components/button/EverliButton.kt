@@ -1,15 +1,28 @@
 package com.everli.designsystem.components.button
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.layout.defaultMinSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredHeight
+import androidx.compose.foundation.layout.requiredWidth
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
+import com.everli.designsystem.core.constants.EverliIcons
+import com.everli.designsystem.core.theme.DefaultTheme
 import com.everli.designsystem.core.theme.EverliTheme
 import com.everli.designsystem.core.theme.StateColor
 import com.everli.designsystem.helper.empty
@@ -23,10 +36,12 @@ import com.everli.designsystem.helper.empty
  * note that by default the height is already set according to [EverliTheme.dimensions] via [Modifier.requiredHeight]
  * @param text text value to be displayed in case there's no content, default is empty string
  * @param variant enum value to describe the button, used to set colors and other attributes
- * @param style enum value, used to set width, height and text style
+ * @param size enum value, used to set width, height and text style
  * @param width used to control button width
  * @param enabled controls the button state
- * @param content content to be shown inside
+ * @param icon if provided, the icon will be rendered on the left with a min size of 24x24
+ * @param contentDescription if provided, will be used for the icon content description for accessibility
+ * @param content content to be shown inside the button
  * if no content is provided, a simple [Text] with given [text] will be rendered
  */
 @Composable
@@ -35,16 +50,17 @@ fun EverliButton(
   modifier: Modifier = Modifier,
   text: String = String.empty,
   variant: ButtonVariant = ButtonVariant.PRIMARY,
-  style: ButtonStyle = ButtonStyle.DEFAULT,
+  size: ButtonSize = ButtonSize.MEDIUM,
   width: Dp = EverliTheme.dimensions.button.minWidth,
   enabled: Boolean = true,
-  content: @Composable RowScope.() -> Unit = { Text(text = text, style = style.textStyle()) },
+  icon: Painter? = null,
+  contentDescription: String? = null,
+  content: @Composable RowScope.() -> Unit = { },
 ) {
   Button(
     onClick = onClick,
     enabled = enabled,
-    content = content,
-    shape = EverliTheme.shapes.roundedCornersButton,
+    shape = RoundedCornerShape(EverliTheme.radius.medium),
     colors = ButtonDefaults.buttonColors(
       backgroundColor = variant.backgroundColors().enabled,
       disabledBackgroundColor = variant.backgroundColors().disabled,
@@ -52,9 +68,27 @@ fun EverliButton(
       disabledContentColor = variant.textColors().disabled),
     modifier = modifier.then(
       Modifier
-        .requiredHeight(style.minHeight())
+        .requiredHeight(size.minHeight())
         .width(width)),
-  )
+  ) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+      icon?.let {
+        Icon(
+          painter = icon,
+          tint = variant.textColors().colorFor(enabled),
+          contentDescription = contentDescription,
+          modifier = Modifier
+            .padding(end = 8.dp)
+            .requiredHeight(24.dp)
+            .requiredWidth(24.dp),
+        )
+      }
+      if (text.isNotEmpty()) {
+        Text(text = text, style = size.textStyle())
+      }
+      content()
+    }
+  }
 }
 
 /**
@@ -63,35 +97,37 @@ fun EverliButton(
  */
 enum class ButtonVariant {
 
-  PRIMARY
+  PRIMARY,
+
 }
 
 /**
  * Used to control button height, width and text size
- * For more details see [ButtonStyle.minHeight] [ButtonStyle.textStyle]
+ * For more details see [ButtonSize.minHeight] [ButtonSize.textStyle]
  */
-enum class ButtonStyle {
+enum class ButtonSize {
 
   SMALL,
-  DEFAULT,
+  MEDIUM,
   LARGE,
+
 }
 
 @Composable
-fun ButtonStyle.minHeight(): Dp {
+fun ButtonSize.minHeight(): Dp {
   return when (this) {
-    ButtonStyle.SMALL -> EverliTheme.dimensions.button.minHeightSmall
-    ButtonStyle.DEFAULT -> EverliTheme.dimensions.button.minHeightDefault
-    ButtonStyle.LARGE -> EverliTheme.dimensions.button.minHeightDefault
+    ButtonSize.SMALL -> EverliTheme.button.size.small
+    ButtonSize.MEDIUM -> EverliTheme.button.size.medium
+    ButtonSize.LARGE -> EverliTheme.button.size.large
   }
 }
 
 @Composable
-fun ButtonStyle.textStyle(): TextStyle {
+fun ButtonSize.textStyle(): TextStyle {
   return when (this) {
-    ButtonStyle.SMALL -> EverliTheme.typography.bodySmallSemibold
-    ButtonStyle.DEFAULT -> EverliTheme.typography.bodySemibold
-    ButtonStyle.LARGE -> EverliTheme.typography.title4Bold
+    ButtonSize.SMALL -> EverliTheme.button.text.small
+    ButtonSize.MEDIUM -> EverliTheme.button.text.medium
+    ButtonSize.LARGE -> EverliTheme.button.text.large
   }
 }
 
@@ -99,8 +135,8 @@ fun ButtonStyle.textStyle(): TextStyle {
 fun ButtonVariant.backgroundColors(): StateColor {
   return when (this) {
     ButtonVariant.PRIMARY -> StateColor(
-      enabled = EverliTheme.colors.buttons.primary.background.enabled,
-      disabled = EverliTheme.colors.buttons.primary.background.disabled,
+      enabled = EverliTheme.button.color.primary.background.enabled,
+      disabled = EverliTheme.button.color.primary.background.disabled,
     )
   }
 }
@@ -109,8 +145,38 @@ fun ButtonVariant.backgroundColors(): StateColor {
 fun ButtonVariant.textColors(): StateColor {
   return when (this) {
     ButtonVariant.PRIMARY -> StateColor(
-      enabled = EverliTheme.colors.buttons.primary.text.enabled,
-      disabled = EverliTheme.colors.buttons.primary.text.disabled,
+      enabled = EverliTheme.button.color.primary.text.enabled,
+      disabled = EverliTheme.button.color.primary.text.disabled,
     )
+  }
+}
+
+@Preview
+@Composable
+fun PreviewButton() {
+  DefaultTheme {
+    Column {
+      EverliButton(
+        text = "label",
+        variant = ButtonVariant.PRIMARY,
+        size = ButtonSize.SMALL,
+        icon = EverliIcons.Cart,
+        onClick = {}
+      )
+      EverliButton(
+        text = "label",
+        variant = ButtonVariant.PRIMARY,
+        size = ButtonSize.MEDIUM,
+        icon = EverliIcons.Cart,
+        onClick = {}
+      )
+      EverliButton(
+        text = "label",
+        variant = ButtonVariant.PRIMARY,
+        size = ButtonSize.LARGE,
+        icon = EverliIcons.Cart,
+        onClick = {}
+      )
+    }
   }
 }
