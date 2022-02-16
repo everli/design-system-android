@@ -5,7 +5,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.core.graphics.ColorUtils
 import com.everli.designsystem.core.constants.EverliColors
-import com.everli.designsystem.core.theme.EverliTheme
 
 fun textColor(color: Color): Color {
   val contrast = ColorUtils.calculateContrast(color.toArgb(), EverliColors.White.toArgb())

@@ -1,7 +1,6 @@
 package com.everli.designsystem.playground.button
 
 import android.widget.Toast
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -20,6 +19,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.everli.designsystem.components.button.ButtonSize
+import com.everli.designsystem.components.button.ButtonVariant
 import com.everli.designsystem.components.button.EverliButton
 import com.everli.designsystem.core.constants.EverliColors
 import com.everli.designsystem.core.constants.EverliIcons
@@ -66,7 +66,7 @@ fun ButtonsPlayground() {
         modifier = Modifier.padding(8.dp))
     }
 
-    Text(text = "Default",
+    Text(text = "Medium",
          style = EverliTheme.typography.title4Semibold,
          color = EverliColors.Gray80)
 
@@ -126,13 +126,14 @@ fun ButtonsPlayground() {
         modifier = Modifier.padding(8.dp))
     }
 
-    Text(text = "Default Icon",
+    Text(text = "Medium Icon",
          style = EverliTheme.typography.title4Semibold,
          color = EverliColors.Gray80)
 
     Row {
       EverliButton(
         onClick = onClick,
+        variant = ButtonVariant.PRIMARY,
         size = ButtonSize.MEDIUM,
         text = "Label",
         icon = EverliIcons.Cart,
@@ -192,7 +193,7 @@ fun ButtonsPlayground() {
     }
 
 
-    Text(text = "Default Different Nested Theme",
+    Text(text = "Medium Different Nested Theme",
          style = EverliTheme.typography.title4Semibold,
          color = EverliColors.Gray80,
          modifier = Modifier.padding(top = 12.dp))

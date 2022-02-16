@@ -33,6 +33,7 @@ import com.everli.designsystem.core.constants.EverliColors
 import com.everli.designsystem.core.theme.DefaultTypography
 import com.everli.designsystem.playground.button.ButtonsPlayground
 import com.everli.designsystem.playground.color.ColorsPlayground
+import com.everli.designsystem.playground.icon.IconsPlayground
 import com.everli.designsystem.playground.theme.ThemePlaygroundContent
 import com.everli.designsystem.playground.theme.Themes
 import com.everli.designsystem.playground.theme.TokensPlayground
@@ -116,6 +117,9 @@ fun Home(navController: NavController) {
     HomeButton(
       text = "\uD83D\uDD25 TOKENS",
       onClick = { navController.navigate(Destinations.TOKENS) })
+    HomeButton(
+      text = "✔️ ICONS",
+      onClick = { navController.navigate(Destinations.ICONS) })
   }
 }
 
@@ -142,6 +146,7 @@ fun Navigation() {
     composable(Destinations.TYPOGRAPHY) { TypographyPlayground() }
     composable(Destinations.BUTTONS) { ButtonsPlayground() }
     composable(Destinations.TOKENS) { TokensPlayground() }
+    composable(Destinations.ICONS) { IconsPlayground() }
   }
 }
 
@@ -152,6 +157,7 @@ object Destinations {
   const val TYPOGRAPHY = "Typography"
   const val BUTTONS = "Buttons"
   const val TOKENS = "Tokens"
+  const val ICONS = "Icons"
 
 }
 

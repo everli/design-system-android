@@ -72,7 +72,7 @@ object EverliIcons {
     @Composable
     get() = painterResource(id = R.drawable.ico_checkmark)
 
-  val CheckmarkCircleFill: Painter
+  val CheckmarkCircleFilled: Painter
     @Composable
     get() = painterResource(id = R.drawable.ico_checkmark_circle_filled)
 

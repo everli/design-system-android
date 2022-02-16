@@ -8,9 +8,21 @@ import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 
+/**
+ * Root Composable tha provides all LocalProviders with all values
+ * need by the design system components.
+ *
+ * All parameters should map 1:1 design tokens
+ *
+ * @param everliTypography all text styles used in the design system
+ * @param buttonTheme button tokens
+ * @param dimensions misc. dimension not yet tokenized
+ * @param radius global radius tokens
+ * @param content content ot be rendered inside
+ */
 @Composable
 fun EverliTheme(
-  typography: Typography = EverliTheme.typography,
+  everliTypography: EverliTypography = EverliTheme.typography,
   buttonTheme: ButtonTheme = EverliTheme.button,
   dimensions: Dimensions = EverliTheme.dimensions,
   radius: Radius = EverliTheme.radius,
@@ -18,7 +30,7 @@ fun EverliTheme(
 ) {
   // N.B. currently we extend MaterialTheme, with time we might end up replacing it
   CompositionLocalProvider(
-    LocalEverliTypography provides typography,
+    LocalTypography provides everliTypography,
     LocalButtonTheme provides buttonTheme,
     LocalDimensions provides dimensions,
     LocalRadius provides radius,
@@ -38,7 +50,7 @@ fun EverliTheme(
 @Composable
 fun DefaultTheme(content: @Composable () -> Unit) {
   EverliTheme(
-    typography = DefaultTypography,
+    everliTypography = DefaultTypography,
     buttonTheme = DefaultButtonTheme,
     dimensions = DefaultDimensions,
     radius = DefaultRadius,
@@ -57,10 +69,10 @@ fun DefaultTheme(content: @Composable () -> Unit) {
  */
 object EverliTheme {
 
-  val typography: Typography
+  val typography: EverliTypography
     @Composable
     @ReadOnlyComposable
-    get() = LocalEverliTypography.current
+    get() = LocalTypography.current
 
   val button: ButtonTheme
     @Composable
@@ -82,8 +94,8 @@ private val LocalButtonTheme = staticCompositionLocalOf<ButtonTheme> {
   error("No ButtonTheme provided")
 }
 
-private val LocalEverliTypography = staticCompositionLocalOf<Typography> {
-  error("No Typography provided")
+private val LocalTypography = staticCompositionLocalOf<EverliTypography> {
+  error("No EverliTypography provided")
 }
 
 private val LocalDimensions = staticCompositionLocalOf<Dimensions> {
@@ -96,7 +108,7 @@ private val LocalRadius = staticCompositionLocalOf<Radius> {
 
 /**
  * A Material [Colors] implementation which sets all colors to [debugColor] to discourage usage of
- * [MaterialTheme.colors] in preference to [EverliTheme.colors].
+ * [MaterialTheme.colors] in favor of [EverliTheme] tokens.
  */
 fun debugColors(
   darkTheme: Boolean = false,

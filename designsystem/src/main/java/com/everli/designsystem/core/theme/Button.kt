@@ -1,7 +1,6 @@
 package com.everli.designsystem.core.theme
 
 import androidx.compose.runtime.Immutable
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -10,13 +9,13 @@ import com.everli.designsystem.core.constants.EverliColors
 @Immutable
 data class ButtonTheme(
   val radius: Dp,
-  val size: ButtonStyleValues<Dp>,
-  val text: ButtonStyleValues<TextStyle>,
+  val size: ButtonSizeValues<Dp>,
+  val text: ButtonSizeValues<TextStyle>,
   val color: ButtonsColors,
 )
 
 @Immutable
-data class ButtonStyleValues<T>(
+data class ButtonSizeValues<T>(
   val small: T,
   val medium: T,
   val large: T,
@@ -36,12 +35,12 @@ data class ButtonColors(
 // Default
 val DefaultButtonTheme = ButtonTheme(
   radius = DefaultRadius.medium,
-  size = ButtonStyleValues(
+  size = ButtonSizeValues(
     small = 36.dp,
     medium = 44.dp,
     large = 48.dp,
   ),
-  text = ButtonStyleValues(
+  text = ButtonSizeValues(
     small = DefaultTypography.bodySmallSemibold,
     medium = DefaultTypography.bodySemibold,
     large = DefaultTypography.subtitleSemibold,

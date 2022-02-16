@@ -28,7 +28,7 @@ fun ThemePlaygroundContent(themes: Themes, content: @Composable () -> Unit) {
 
   EverliTheme(
     buttonTheme = buttonTheme,
-    typography = DefaultTypography,
+    everliTypography = DefaultTypography,
     dimensions = DefaultDimensions,
     radius = DefaultRadius,
     content = content,

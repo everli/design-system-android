@@ -1,9 +1,7 @@
 package com.everli.designsystem.components.button
 
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
-import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.requiredWidth
@@ -18,18 +16,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.everli.designsystem.core.constants.EverliIcons
-import com.everli.designsystem.core.theme.DefaultTheme
 import com.everli.designsystem.core.theme.EverliTheme
 import com.everli.designsystem.core.theme.StateColor
 import com.everli.designsystem.helper.empty
 
 /**
- * Button Component, wrapper for Material [EverliButton]
- *
+ * Button Component, wrapper for Material [Button]
  *
  * @param onClick called when pressed
  * @param modifier modifier to be applied to the button
@@ -37,7 +31,7 @@ import com.everli.designsystem.helper.empty
  * @param text text value to be displayed in case there's no content, default is empty string
  * @param variant enum value to describe the button, used to set colors and other attributes
  * @param size enum value, used to set width, height and text style
- * @param width used to control button width
+ * @param width used to control button width, can also be controlled via [modifier]
  * @param enabled controls the button state
  * @param icon if provided, the icon will be rendered on the left with a min size of 24x24
  * @param contentDescription if provided, will be used for the icon content description for accessibility
@@ -148,35 +142,5 @@ fun ButtonVariant.textColors(): StateColor {
       enabled = EverliTheme.button.color.primary.text.enabled,
       disabled = EverliTheme.button.color.primary.text.disabled,
     )
-  }
-}
-
-@Preview
-@Composable
-fun PreviewButton() {
-  DefaultTheme {
-    Column {
-      EverliButton(
-        text = "label",
-        variant = ButtonVariant.PRIMARY,
-        size = ButtonSize.SMALL,
-        icon = EverliIcons.Cart,
-        onClick = {}
-      )
-      EverliButton(
-        text = "label",
-        variant = ButtonVariant.PRIMARY,
-        size = ButtonSize.MEDIUM,
-        icon = EverliIcons.Cart,
-        onClick = {}
-      )
-      EverliButton(
-        text = "label",
-        variant = ButtonVariant.PRIMARY,
-        size = ButtonSize.LARGE,
-        icon = EverliIcons.Cart,
-        onClick = {}
-      )
-    }
   }
 }
