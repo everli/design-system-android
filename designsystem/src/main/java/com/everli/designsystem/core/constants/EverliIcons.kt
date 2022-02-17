@@ -120,6 +120,10 @@ object EverliIcons {
     @Composable
     get() = painterResource(id = R.drawable.ico_delete)
 
+  val Download: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_download)
+
   val Docs: Painter
     @Composable
     get() = painterResource(id = R.drawable.ico_docs)
@@ -227,6 +231,10 @@ object EverliIcons {
   val PositionMarkerOutline: Painter
     @Composable
     get() = painterResource(id = R.drawable.ico_position_marker_outline)
+
+  val QuestionMark: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_question_mark)
 
   val Remove: Painter
     @Composable
