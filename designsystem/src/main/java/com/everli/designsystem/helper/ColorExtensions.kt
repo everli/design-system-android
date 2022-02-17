@@ -1,24 +1,7 @@
 package com.everli.designsystem.helper
 
 import androidx.compose.ui.graphics.Color
-import com.everli.designsystem.core.theme.Black100
-import com.everli.designsystem.core.theme.Blue100
-import com.everli.designsystem.core.theme.Gray10
-import com.everli.designsystem.core.theme.Gray100
-import com.everli.designsystem.core.theme.Gray15
-import com.everli.designsystem.core.theme.Gray40
-import com.everli.designsystem.core.theme.Gray80
-import com.everli.designsystem.core.theme.Green10
-import com.everli.designsystem.core.theme.Green100
-import com.everli.designsystem.core.theme.Green110
-import com.everli.designsystem.core.theme.Link100
-import com.everli.designsystem.core.theme.Red100
-import com.everli.designsystem.core.theme.Red20
-import com.everli.designsystem.core.theme.Teal100
-import com.everli.designsystem.core.theme.Teal20
-import com.everli.designsystem.core.theme.Violet100
-import com.everli.designsystem.core.theme.Yellow100
-import com.everli.designsystem.core.theme.Yellow20
+import com.everli.designsystem.core.constants.EverliColors
 import java.lang.Exception
 
 /**
@@ -51,24 +34,24 @@ fun Color.Companion.fromHex(hexValue: String, fallbackColor: Color = White): Col
 fun Color.Companion.fromName(name: String, fallbackColor: Color = White): Color {
   return when (name) {
     "white", "walter-white" -> White
-    "gray-10" -> Gray10
-    "gray-15" -> Gray15
-    "gray-40" -> Gray40
-    "gray-80" -> Gray80
-    "gray-100" -> Gray100
-    "black-100", "violet-black" -> Black100
-    "red-20" -> Red20
-    "red-100", "red-hot" -> Red100
-    "violet-100", "purple-rain" -> Violet100
-    "teal-20" -> Teal20
-    "teal-100", "teal-waves" -> Teal100
-    "blue-100", "blue-plus" -> Blue100
-    "green-10" -> Green10
-    "green-100", "everli-green" -> Green100
-    "green-110", "deep-green" -> Green110
-    "yellow-20" -> Yellow20
-    "yellow-100", "yellow-sun" -> Yellow100
-    "link-100", "link" -> Link100
+    "gray-10" -> EverliColors.Gray10
+    "gray-15" -> EverliColors.Gray15
+    "gray-40" -> EverliColors.Gray40
+    "gray-80" -> EverliColors.Gray80
+    "gray-100" -> EverliColors.Gray100
+    "black-100", "violet-black" -> EverliColors.Black100
+    "red-20" -> EverliColors.Red20
+    "red-100", "red-hot" -> EverliColors.Red100
+    "violet-100", "purple-rain" -> EverliColors.Violet100
+    "teal-20" -> EverliColors.Teal20
+    "teal-100", "teal-waves" -> EverliColors.Teal100
+    "blue-100", "blue-plus" -> EverliColors.Blue100
+    "green-10" -> EverliColors.Green10
+    "green-100", "everli-green" -> EverliColors.Green100
+    "green-110", "deep-green" -> EverliColors.Green110
+    "yellow-20" -> EverliColors.Yellow20
+    "yellow-100", "yellow-sun" -> EverliColors.Yellow100
+    "link-100", "link" -> EverliColors.Link100
     else -> fallbackColor
   }
 }

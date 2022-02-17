@@ -1,73 +1,50 @@
 package com.everli.designsystem.playground.theme
 
 import androidx.compose.runtime.Composable
-import com.everli.designsystem.core.theme.Black100
+import com.everli.designsystem.core.constants.EverliColors
 import com.everli.designsystem.core.theme.ButtonColors
-import com.everli.designsystem.core.theme.DefaultEverliDimensions
-import com.everli.designsystem.core.theme.DefaultEverliShapes
-import com.everli.designsystem.core.theme.DefaultEverliTypography
+import com.everli.designsystem.core.theme.DefaultButtonTheme
+import com.everli.designsystem.core.theme.DefaultDimensions
+import com.everli.designsystem.core.theme.DefaultRadius
+import com.everli.designsystem.core.theme.DefaultTypography
 import com.everli.designsystem.core.theme.EverliTheme
-import com.everli.designsystem.core.theme.Green10
-import com.everli.designsystem.core.theme.LightColorPalette
-import com.everli.designsystem.core.theme.Red20
 import com.everli.designsystem.core.theme.StateColor
-import com.everli.designsystem.core.theme.Teal20
-import com.everli.designsystem.core.theme.Violet100
-import com.everli.designsystem.core.theme.Yellow20
 
 enum class Themes {
-  DEFAULT,
-  TOXIC_PINK,
-  BLUE_WAVES,
+  DEMAND,
+  SUPPLY,
 }
 
 @Composable
 fun ThemePlaygroundContent(themes: Themes, content: @Composable () -> Unit) {
-  val colors = when (themes) {
-    Themes.DEFAULT -> {
-      LightColorPalette
+  val buttonTheme = when (themes) {
+    Themes.DEMAND -> {
+      DefaultButtonTheme
     }
-    Themes.TOXIC_PINK -> {
-      ToxicPinkColors
-    }
-    Themes.BLUE_WAVES -> {
-      BlueWavesColors
+    Themes.SUPPLY -> {
+      SupplyButtonTheme
     }
   }
 
   EverliTheme(
-    colors = colors,
-    typography = DefaultEverliTypography,
-    dimensions = DefaultEverliDimensions,
-    shapes = DefaultEverliShapes,
+    buttonTheme = buttonTheme,
+    everliTypography = DefaultTypography,
+    dimensions = DefaultDimensions,
+    radius = DefaultRadius,
     content = content,
   )
 }
 
-val ToxicPinkColors = LightColorPalette.copy(
-  buttons = LightColorPalette.buttons.copy(
+val SupplyButtonTheme = DefaultButtonTheme.copy(
+  color = DefaultButtonTheme.color.copy(
     primary = ButtonColors(
       background = StateColor(
-        enabled = Red20,
-        disabled = Yellow20,
+        enabled = EverliColors.Violet100,
+        disabled = EverliColors.Gray15,
       ),
       text = StateColor(
-        enabled = Violet100,
-        disabled = Black100,
-      )
-    )
-  ))
-
-val BlueWavesColors = LightColorPalette.copy(
-  buttons = LightColorPalette.buttons.copy(
-    primary = ButtonColors(
-      background = StateColor(
-        enabled = Teal20,
-        disabled = Green10,
-      ),
-      text = StateColor(
-        enabled = Violet100,
-        disabled = Yellow20,
+        enabled = EverliColors.White,
+        disabled = EverliColors.Gray100,
       )
     )
   ))
