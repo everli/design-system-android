@@ -11,10 +11,6 @@ fun TypedArray.getStringOrEmpty(@StyleableRes index: Int): String {
   return getString(index) ?: String.empty
 }
 
-fun TypedArray.getIntOrZero(@StyleableRes index: Int): Int {
-  return getInt(index, 0)
-}
-
 fun TypedArray.getBooleanOrTrue(@StyleableRes index: Int): Boolean {
   return getBoolean(index, true)
 }

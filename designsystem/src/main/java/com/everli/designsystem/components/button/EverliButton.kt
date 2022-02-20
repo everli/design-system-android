@@ -95,7 +95,7 @@ enum class ButtonVariant {
   PRIMARY;
 
   companion object {
-    fun getByValue(value: Int) = values().firstOrNull { it.ordinal == value } ?: PRIMARY
+    fun getByValueOrFallback(value: Int, fallback: ButtonVariant = PRIMARY) = values().firstOrNull { it.ordinal == value } ?: fallback
   }
 
 }
@@ -106,12 +106,12 @@ enum class ButtonVariant {
  */
 enum class ButtonSize {
 
-  SMALL,
+  LARGE,
   MEDIUM,
-  LARGE;
+  SMALL;
 
   companion object {
-    fun getByValue(value: Int) = values().firstOrNull { it.ordinal == value } ?: MEDIUM
+    fun getByValueOrFallback(value: Int, fallback: ButtonSize = MEDIUM) = values().firstOrNull { it.ordinal == value } ?: fallback
   }
 
 }

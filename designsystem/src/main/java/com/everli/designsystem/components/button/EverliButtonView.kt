@@ -13,7 +13,6 @@ import com.everli.designsystem.core.theme.BridgeComposable
 import com.everli.designsystem.helper.empty
 import com.everli.designsystem.helper.getBooleanOrFalse
 import com.everli.designsystem.helper.getBooleanOrTrue
-import com.everli.designsystem.helper.getIntOrZero
 import com.everli.designsystem.helper.getStringOrEmpty
 import com.google.accompanist.drawablepainter.rememberDrawablePainter
 
@@ -28,7 +27,7 @@ class EverliButtonView @JvmOverloads constructor(
 
   var text by mutableStateOf(String.empty)
   var variant by mutableStateOf(ButtonVariant.PRIMARY)
-  var size by mutableStateOf(ButtonSize.LARGE)
+  var size by mutableStateOf(ButtonSize.MEDIUM)
   var useContextTheme by mutableStateOf(false)
   var icon by mutableStateOf<Drawable?>(null)
 
@@ -42,8 +41,8 @@ class EverliButtonView @JvmOverloads constructor(
       0, 0).apply {
       try {
         text = getStringOrEmpty(R.styleable.EverliButtonView_text)
-        variant = ButtonVariant.getByValue(getIntOrZero(R.styleable.EverliButtonView_variant))
-        size = ButtonSize.getByValue(getIntOrZero(R.styleable.EverliButtonView_size))
+        variant = ButtonVariant.getByValueOrFallback(getInt(R.styleable.EverliButtonView_variant, variant.ordinal))
+        size = ButtonSize.getByValueOrFallback(getInt(R.styleable.EverliButtonView_size, size.ordinal))
         isButtonEnabled = getBooleanOrTrue(R.styleable.EverliButtonView_enabled)
         useContextTheme = getBooleanOrFalse(R.styleable.EverliButtonView_useContextTheme)
         icon = getDrawable(R.styleable.EverliButtonView_buttonIcon)
