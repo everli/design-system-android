@@ -9,9 +9,9 @@
       <enum name="primary" value="0" />
     </attr>
     <attr name="size" format="enum">
-      <enum name="small" value="0" />
-      <enum name="large" value="1" />
-      <enum name="medium" value="2" />
+      <enum name="large" value="0" />
+      <enum name="medium" value="1" />
+      <enum name="small" value="2" />
     </attr>
   </declare-styleable>
 </resources>
