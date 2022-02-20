@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="EverliButtonView">
+    <attr name="text" format="string" />
+    <attr name="enabled" format="boolean" />
+    <attr name="useContextTheme" format="boolean" />
+    <attr name="buttonIcon" format="reference" />
+    <attr name="variant" format="enum">
+      <enum name="primary" value="0" />
+    </attr>
+    <attr name="size" format="enum">
+      <enum name="small" value="0" />
+      <enum name="large" value="1" />
+      <enum name="medium" value="2" />
+    </attr>
+  </declare-styleable>
+</resources>

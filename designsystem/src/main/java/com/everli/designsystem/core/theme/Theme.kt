@@ -43,6 +43,21 @@ fun EverliTheme(
 }
 
 /**
+ * Utility data class used to pass around required theme components
+ * to create a [EverliTheme] with all props defaulting to design sytsem default values:
+ * [DefaultTypography]
+ * [DefaultButtonTheme]
+ * [DefaultDimensions]
+ * [DefaultRadius]
+ */
+data class EverliThemeComponents(
+  val everliTypography: EverliTypography = DefaultTypography,
+  val buttonTheme: ButtonTheme = DefaultButtonTheme,
+  val dimensions: Dimensions = DefaultDimensions,
+  val radius: Radius = DefaultRadius,
+)
+
+/**
  * This is the default Theme provided by the design system
  * Used it as root of your composition tree or create a new Theme
  * either based on this one or from scratch

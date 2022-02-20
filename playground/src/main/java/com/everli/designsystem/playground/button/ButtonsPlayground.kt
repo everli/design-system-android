@@ -1,8 +1,11 @@
 package com.everli.designsystem.playground.button
 
+import android.content.Context
+import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -18,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.AndroidView
 import com.everli.designsystem.components.button.ButtonSize
 import com.everli.designsystem.components.button.ButtonVariant
 import com.everli.designsystem.components.button.EverliButton
@@ -27,6 +31,7 @@ import com.everli.designsystem.core.theme.DefaultButtonTheme
 import com.everli.designsystem.core.theme.DefaultTheme
 import com.everli.designsystem.core.theme.EverliTheme
 import com.everli.designsystem.core.theme.StateColor
+import com.everli.designsystem.playground.R
 
 @Composable
 fun ButtonsPlayground() {
@@ -237,4 +242,17 @@ fun PreviewButtonPlayground() {
   DefaultTheme {
     ButtonsPlayground()
   }
+}
+
+@Preview
+@Composable
+fun PreviewXMLPlayground() {
+  AndroidView(
+    factory = { context: Context ->
+      val view = LayoutInflater.from(context)
+        .inflate(R.layout.layout_button_sample, null, false)
+      view
+    },
+    modifier = Modifier.fillMaxSize(),
+  )
 }

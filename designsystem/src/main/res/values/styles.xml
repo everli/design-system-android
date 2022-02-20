@@ -120,4 +120,23 @@
     <item name="android:fontFamily">@font/fira_regular</item>
   </style>
 
+  <!-- Theme Tokens, these values will be used for View wrappers of Compose components -->
+  <!-- Text Styles are not included -->
+  <style name="EverliTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <item name="radiusMedium">@dimen/radius_medium</item>
+
+    <!-- Button -->
+    <item name="buttonRadius">@dimen/radius_medium</item>
+
+    <item name="buttonSizeSmall">@dimen/button_size_small</item>
+    <item name="buttonSizeMedium">@dimen/button_size_medium</item>
+    <item name="buttonSizeLarge">@dimen/button_size_large</item>
+
+    <item name="buttonColorPrimaryBackgroundEnabled">@color/green_100</item>
+    <item name="buttonColorPrimaryBackgroundDisabled">@color/gray_15</item>
+    <item name="buttonColorPrimaryTextEnabled">@color/white</item>
+    <item name="buttonColorPrimaryTextDisabled">@color/gray_100</item>
+
+  </style>
+
 </resources>

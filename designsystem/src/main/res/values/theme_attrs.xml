@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <!-- Define token so clients can override for XML wrapped components -->
+  <declare-styleable name="EverliTheme">
+    <!-- Radius -->
+    <attr name="radiusMedium" format="dimension" />
+
+    <!-- Other Dimensions -->
+    <attr name="dimensionButtonMinWidth" format="dimension" />
+
+    <!-- Button -->
+    <attr name="buttonRadius" format="dimension" />
+
+    <attr name="buttonSizeSmall" format="dimension" />
+    <attr name="buttonSizeMedium" format="dimension" />
+    <attr name="buttonSizeLarge" format="dimension" />
+
+    <attr name="buttonColorPrimaryBackgroundEnabled" format="color" />
+    <attr name="buttonColorPrimaryBackgroundDisabled" format="color" />
+    <attr name="buttonColorPrimaryTextEnabled" format="color" />
+    <attr name="buttonColorPrimaryTextDisabled" format="color" />
+
+  </declare-styleable>
+
+</resources>
