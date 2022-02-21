@@ -9,7 +9,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.AbstractComposeView
 import com.everli.designsystem.core.R
-import com.everli.designsystem.core.theme.BridgeComposable
+import com.everli.designsystem.core.theme.ThemeAdapterComposable
 import com.everli.designsystem.helper.empty
 import com.everli.designsystem.helper.getBooleanOrFalse
 import com.everli.designsystem.helper.getBooleanOrTrue
@@ -54,7 +54,7 @@ class EverliButtonView @JvmOverloads constructor(
 
   @Composable
   override fun Content() {
-    BridgeComposable(useCustomTheme = useContextTheme, context = context) {
+    ThemeAdapterComposable(useCustomTheme = useContextTheme, context = context) {
       EverliButton(
         onClick = onClick,
         text = text,

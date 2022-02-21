@@ -19,12 +19,12 @@ import com.everli.designsystem.helper.getDp
  * [EverliTypography] -> Not at the moment as it is quite hard to convert from xml style
  */
 @Composable
-fun BridgeTheme(
+fun ThemeAdapter(
   context: Context,
   density: Density = Density(context),
   content: @Composable () -> Unit,
 ) {
-  val theme = BridgeTheme.createFromContextTheme(context, density)
+  val theme = ThemeAdapter.createFromContextTheme(context, density)
 
   EverliTheme(
     everliTypography = theme.everliTypography,
@@ -35,14 +35,17 @@ fun BridgeTheme(
   )
 }
 
+/**
+ * Wrapper to allows a composable to use context theme or default [EverliTheme]
+ */
 @Composable
-fun BridgeComposable(
+fun ThemeAdapterComposable(
   useCustomTheme: Boolean,
   context: Context,
   content: @Composable () -> Unit,
 ) {
   if (useCustomTheme) {
-    BridgeTheme(content = content, context = context)
+    ThemeAdapter(content = content, context = context)
   } else {
     DefaultTheme(content = content)
   }
@@ -51,7 +54,7 @@ fun BridgeComposable(
 /**
  * Factory object that creates a [EverliTheme] from declared values in current context theme
  */
-internal object BridgeTheme {
+internal object ThemeAdapter {
 
   private lateinit var everliThemeComponents: EverliThemeComponents
 
