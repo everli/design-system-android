@@ -2,6 +2,7 @@ package com.everli.designsystem.components.button
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.requiredWidth
@@ -63,7 +64,7 @@ fun EverliButton(
     modifier = modifier.then(
       Modifier
         .requiredHeight(size.minHeight())
-        .width(width)),
+        .defaultMinSize(minWidth = width)),
   ) {
     Row(verticalAlignment = Alignment.CenterVertically) {
       icon?.let {
@@ -91,7 +92,11 @@ fun EverliButton(
  */
 enum class ButtonVariant {
 
-  PRIMARY,
+  PRIMARY;
+
+  companion object {
+    fun getByValueOrFallback(value: Int, fallback: ButtonVariant = PRIMARY) = values().firstOrNull { it.ordinal == value } ?: fallback
+  }
 
 }
 
@@ -101,9 +106,13 @@ enum class ButtonVariant {
  */
 enum class ButtonSize {
 
-  SMALL,
-  MEDIUM,
   LARGE,
+  MEDIUM,
+  SMALL;
+
+  companion object {
+    fun getByValueOrFallback(value: Int, fallback: ButtonSize = MEDIUM) = values().firstOrNull { it.ordinal == value } ?: fallback
+  }
 
 }
 

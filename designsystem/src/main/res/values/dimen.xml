@@ -43,4 +43,12 @@
   <dimen name="line_height_caption">18sp</dimen>
   <dimen name="font_size_caption">12sp</dimen>
 
+  <!-- Radius -->
+  <dimen name="radius_medium">8dp</dimen>
+
+  <!-- Button Height -->
+  <dimen name="button_size_small">36dp</dimen>
+  <dimen name="button_size_medium">44dp</dimen>
+  <dimen name="button_size_large">48dp</dimen>
+
 </resources>
