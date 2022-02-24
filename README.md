@@ -141,11 +141,17 @@ To change color and size in the context of an `ImageView`:
     android:backgroundTint="@color/green_100" />
 ```
 
-### 🌗 Theme
+## 🌗 Theme
 
 The theme is defined by a quite complex but not really token structure.
 
 A token is a key-value pair that describes a specific characteristic in the design system. 
+
+**Example:**
+
+`button.color.primary.background.enabled = Green100`
+
+These are mostly used inside the design system when developing components BUT can also be changed by client apps as part of custom theme, allowing a very **granular** changes in the theme.
 
 By default the design system comes with a `DefaultTheme` to be used right away, but there is the possibility to customize each token in client apps.
 
@@ -162,7 +168,7 @@ fun EverliApp() {
 }
 ```
 
-Then inside any @Composable you will have access to any token of the design system via the `EverliTheme` object
+Then inside any `@Composable` you will have access to any token of the design system via the `EverliTheme` object
 
 ```kotlin
 @Composable
