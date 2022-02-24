@@ -58,7 +58,7 @@ All colors are normal resources stored in `colors.xml`
     android:textColor="@color/black_100" />
 ```
 
-### Typography
+### 🔤 Typography
 
 #### Compose
 
@@ -92,7 +92,7 @@ The styles are stored as xml `styles` in `styles.xml`:
 
 **Note**: All styles are accessible via the `Typography` prefix
 
-### Icons
+### 🟢 Icons
 
 Icons are defined as `vector drawables` in `/drawable`.
 
@@ -141,7 +141,7 @@ To change color and size in the context of an `ImageView`:
     android:backgroundTint="@color/green_100" />
 ```
 
-### Theme
+### 🌗 Theme
 
 The theme is defined by a quite complex but not really token structure.
 
