@@ -30,7 +30,7 @@ Atoms are standalone constants that can be used anywhere and exist outside a The
 
 ### 🎨 Colors
 
-Standalone colors are plain constants that be used anywhere
+Standalone colors are plain constants that be used anywhere.
 
 #### Compose
 
@@ -90,7 +90,7 @@ The styles are stored as xml `styles` in `styles.xml`:
     android:textColor="@color/black_100" />
 ```
 
-**Note**: All styles are accessible via the `Typography` prefix
+**Note**: All styles are accessible via the `Typography` prefix.
 
 ### 🟢 Icons
 
@@ -118,11 +118,11 @@ Icon(
         .height(64.dp))
 ```
 
-All icons are also accessible directly via `R.drawable` as usual
+All icons are also accessible directly via `R.drawable` as usual.
 
 #### XML
 
-Icons are accused normally from `/drawable` inside xml or `R.drawable` in code.
+Icons are used normally from `/drawable` inside xml or `R.drawable` in code.
 
 ```xml
 <ImageView
@@ -151,7 +151,7 @@ A token is a key-value pair that describes a specific characteristic in the desi
 
 `button.color.primary.background.enabled = Green100`
 
-These are mostly used inside the design system when developing components BUT can also be changed by client apps as part of custom theme, allowing a very **granular** changes in the theme.
+These are mostly used inside the design system when developing components BUT can also be changed by client apps as part of custom theme, allowing very **granular** changes in the theme.
 
 By default the design system comes with a `DefaultTheme` to be used right away, but there is the possibility to customize each token in client apps.
 
