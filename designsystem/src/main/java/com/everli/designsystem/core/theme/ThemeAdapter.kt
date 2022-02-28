@@ -27,7 +27,7 @@ fun ThemeAdapter(
   val theme = ThemeAdapter.createFromContextTheme(context, density)
 
   EverliTheme(
-    everliTypography = theme.everliTypography,
+    typography = theme.everliTypography,
     buttonTheme = theme.buttonTheme,
     radius = theme.radius,
     dimensions = theme.dimensions,

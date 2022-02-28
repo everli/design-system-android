@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.Color
  *
  * All parameters should map 1:1 design tokens
  *
- * @param everliTypography all text styles used in the design system
+ * @param typography all text styles used in the design system
  * @param buttonTheme button tokens
  * @param dimensions misc. dimension not yet tokenized
  * @param radius global radius tokens
@@ -22,7 +22,7 @@ import androidx.compose.ui.graphics.Color
  */
 @Composable
 fun EverliTheme(
-  everliTypography: EverliTypography = EverliTheme.typography,
+  typography: EverliTypography = EverliTheme.typography,
   buttonTheme: ButtonTheme = EverliTheme.button,
   dimensions: Dimensions = EverliTheme.dimensions,
   radius: Radius = EverliTheme.radius,
@@ -30,7 +30,7 @@ fun EverliTheme(
 ) {
   // N.B. currently we extend MaterialTheme, with time we might end up replacing it
   CompositionLocalProvider(
-    LocalTypography provides everliTypography,
+    LocalTypography provides typography,
     LocalButtonTheme provides buttonTheme,
     LocalDimensions provides dimensions,
     LocalRadius provides radius,
@@ -65,7 +65,7 @@ data class EverliThemeComponents(
 @Composable
 fun DefaultTheme(content: @Composable () -> Unit) {
   EverliTheme(
-    everliTypography = DefaultTypography,
+    typography = DefaultTypography,
     buttonTheme = DefaultButtonTheme,
     dimensions = DefaultDimensions,
     radius = DefaultRadius,
