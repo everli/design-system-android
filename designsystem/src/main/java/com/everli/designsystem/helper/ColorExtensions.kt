@@ -51,7 +51,26 @@ fun Color.Companion.fromName(name: String, fallbackColor: Color = White): Color 
     "green-110", "deep-green" -> EverliColors.Green110
     "yellow-20" -> EverliColors.Yellow20
     "yellow-100", "yellow-sun" -> EverliColors.Yellow100
-    "link-100", "link" -> EverliColors.Link100
+    "navy-100", "link" -> EverliColors.Navy100
+    "navy-110" -> EverliColors.Navy110
     else -> fallbackColor
   }
 }
+
+/**
+ * Chain colors values until a color != [Color.Unspecified] is found
+ * Most used when working with tokens to provide fallback values
+ * E.g. building up a color from local to global token:
+ * localColor.ifUnspecified(componentColor).ifUnspecified(globalColor)
+ *
+ * @param fallback [Color] to be returned if [this] is [Color.Unspecified]
+ * @return [Color] with either [fallback] or [Color.Unspecified]
+ */
+fun Color.ifUnspecified(fallback: Color) : Color {
+  return if (this == Color.Unspecified) {
+    fallback
+  } else {
+    this
+  }
+}
+

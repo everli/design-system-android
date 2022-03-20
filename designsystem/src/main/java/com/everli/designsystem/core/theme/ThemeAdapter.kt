@@ -14,8 +14,9 @@ import com.everli.designsystem.helper.getDp
  *
  * Supported Tokens:
  * [ButtonTheme] -> everything apart from text style
- * [Radius] -> fully
- * [Dimensions] -> fully
+ * [RadiusTheme] -> fully
+ * [IconTheme] -> fully
+ * [TextTheme] -> everything apart from text style
  * [EverliTypography] -> Not at the moment as it is quite hard to convert from xml style
  */
 @Composable
@@ -29,8 +30,9 @@ fun ThemeAdapter(
   EverliTheme(
     typography = theme.everliTypography,
     buttonTheme = theme.buttonTheme,
-    radius = theme.radius,
-    dimensions = theme.dimensions,
+    radiusTheme = theme.radiusTheme,
+    iconTheme = theme.iconTheme,
+    textTheme = theme.textTheme,
     content = content,
   )
 }
@@ -69,58 +71,144 @@ internal object ThemeAdapter {
 
     context.obtainStyledAttributes(R.styleable.EverliTheme).use { ta ->
       // radius
-      val radius = Radius(
-        medium = ta.getDp(R.styleable.EverliTheme_radiusMedium, density, DefaultRadius.medium)
+      val radiusTheme = RadiusTheme(
+        medium = ta.getDp(R.styleable.EverliTheme_radiusMedium, density, DefaultRadiusTheme.medium)
       )
 
-      // other dimensions
-      val dimensions = Dimensions(
-        button = ButtonDimensions(
-          minWidth = ta.getDp(R.styleable.EverliTheme_dimensionButtonMinWidth,
-                              density,
-                              DefaultDimensions.button.minWidth),
-        )
+      // text
+      val textTheme = TextTheme(
+        color = TextColors(
+          primary = ta.getComposeColor(R.styleable.EverliTheme_textColorPrimary, DefaultTextTheme.color.primary),
+          negative = ta.getComposeColor(R.styleable.EverliTheme_textColorNegative, DefaultTextTheme.color.negative),
+          special = ta.getComposeColor(R.styleable.EverliTheme_textColorSpecial, DefaultTextTheme.color.special),
+        ),
       )
 
-      // typo - not supported
-      val everliTypography = DefaultTypography
+      // icon
+      val iconTheme = IconTheme(
+        size = IconSizes(
+          small = ta.getDp(R.styleable.EverliTheme_iconSizeSmall, density, DefaultIconTheme.size.small),
+          medium = ta.getDp(R.styleable.EverliTheme_iconSizeMedium, density, DefaultIconTheme.size.medium),
+        ),
+        color = IconColors(
+          light = ta.getComposeColor(R.styleable.EverliTheme_iconColorLight, DefaultIconTheme.color.light),
+          dark = ta.getComposeColor(R.styleable.EverliTheme_iconColorDark, DefaultIconTheme.color.dark),
+          special = ta.getComposeColor(R.styleable.EverliTheme_iconColorSpecial, DefaultIconTheme.color.special),
+        ),
+      )
 
       // button
       val buttonTheme = ButtonTheme(
-        radius = radius.medium,
-        size = ButtonSizeValues(
-          small = ta.getDp(R.styleable.EverliTheme_buttonSizeSmall, density, DefaultButtonTheme.size.small),
-          medium = ta.getDp(R.styleable.EverliTheme_buttonSizeMedium, density, DefaultButtonTheme.size.medium),
-          large = ta.getDp(R.styleable.EverliTheme_buttonSizeLarge, density, DefaultButtonTheme.size.large),
-        ),
-        text = ButtonSizeValues(
+        text = ButtonTextStyles(
           small = DefaultTypography.bodySmallSemibold,
           medium = DefaultTypography.bodySemibold,
           large = DefaultTypography.subtitleSemibold,
+          color = ButtonTextColors(
+            disabled = ta.getComposeColor(R.styleable.EverliTheme_buttonTextColorDisabled,
+                                          DefaultButtonTheme.text.color.disabled),
+            link = StateColor(
+              enabled = ta.getComposeColor(R.styleable.EverliTheme_buttonTextLinkEnabled,
+                                           DefaultButtonTheme.text.color.link.enabled),
+              pressed = ta.getComposeColor(R.styleable.EverliTheme_buttonTextLinkPressed,
+                                           DefaultButtonTheme.text.color.link.pressed),
+            ),
+          ),
+          link = DefaultButtonTheme.text.link
+        ),
+        icon = ButtonIconStyles(
+          color = ButtonIconColors(
+            disabled = ta.getComposeColor(R.styleable.EverliTheme_buttonIconColorDisabled,
+                                          DefaultButtonTheme.icon.color.disabled),
+            link = StateColor(
+              enabled = ta.getComposeColor(R.styleable.EverliTheme_buttonIconColorLinkEnabled,
+                                           DefaultButtonTheme.icon.color.link.enabled),
+              pressed = ta.getComposeColor(R.styleable.EverliTheme_buttonIconColorLinkPressed,
+                                           DefaultButtonTheme.icon.color.link.pressed),
+            ),
+          ),
         ),
         color = ButtonsColors(
-          primary = ButtonColors(
+          transparent = ButtonColors(
             background = StateColor(
-              enabled = ta.getComposeColor(R.styleable.EverliTheme_buttonColorPrimaryBackgroundEnabled,
-                                           DefaultButtonTheme.color.primary.background.enabled),
-              disabled = ta.getComposeColor(R.styleable.EverliTheme_buttonColorPrimaryBackgroundDisabled,
-                                            DefaultButtonTheme.color.primary.background.disabled),
+              enabled = ta.getComposeColor(R.styleable.EverliTheme_buttonColorTransparentBackgroundEnabled,
+                                           DefaultButtonTheme.color.transparent.background.enabled),
+              disabled = ta.getComposeColor(R.styleable.EverliTheme_buttonColorTransparentBackgroundDisabled,
+                                            DefaultButtonTheme.color.transparent.background.disabled),
             ),
-            text = StateColor(
-              enabled = ta.getComposeColor(R.styleable.EverliTheme_buttonColorPrimaryTextEnabled,
-                                           DefaultButtonTheme.color.primary.text.enabled),
-              disabled = ta.getComposeColor(R.styleable.EverliTheme_buttonColorPrimaryTextDisabled,
-                                            DefaultButtonTheme.color.primary.text.disabled),
+          ),
+          fill = ButtonColors(
+            background = StateColor(
+              disabled = ta.getComposeColor(R.styleable.EverliTheme_buttonColorFillBackgroundDisabled,
+                                            DefaultButtonTheme.color.fill.background.disabled),
+            ),
+          ),
+          outline = ButtonColors(
+            border = StateColor(
+              disabled = ta.getComposeColor(R.styleable.EverliTheme_buttonColorOutlineBorderDisabled,
+                                            DefaultButtonTheme.color.outline.border.disabled),
+            ),
+          ),
+          primary = ButtonVariantValues(
+            fill = ButtonColors(
+              background = StateColor(
+                enabled = ta.getComposeColor(R.styleable.EverliTheme_buttonColorPrimaryFillBackgroundEnabled,
+                                             DefaultButtonTheme.color.primary.fill.background.enabled),
+                pressed = ta.getComposeColor(R.styleable.EverliTheme_buttonColorPrimaryFillBackgroundPressed,
+                                             DefaultButtonTheme.color.primary.fill.background.pressed),
+              ),
+            ),
+            outline = ButtonColors(
+              background = StateColor(
+                pressed = ta.getComposeColor(R.styleable.EverliTheme_buttonColorPrimaryOutlineBackgroundPressed,
+                                             DefaultButtonTheme.color.primary.outline.background.pressed),
+              ),
+              border = StateColor(
+                enabled = ta.getComposeColor(R.styleable.EverliTheme_buttonColorPrimaryOutlineBorderEnabled,
+                                             DefaultButtonTheme.color.primary.outline.border.enabled),
+              ),
+            ),
+            flat = ButtonColors(
+              background = StateColor(
+                pressed = ta.getComposeColor(R.styleable.EverliTheme_buttonColorPrimaryFlatBackgroundPressed,
+                                             DefaultButtonTheme.color.primary.flat.background.pressed),
+              ),
+            ),
+          ),
+          special = ButtonVariantValues(
+            fill = ButtonColors(
+              background = StateColor(
+                enabled = ta.getComposeColor(R.styleable.EverliTheme_buttonColorSpecialFillBackgroundEnabled,
+                                             DefaultButtonTheme.color.special.fill.background.enabled),
+                pressed = ta.getComposeColor(R.styleable.EverliTheme_buttonColorSpecialFillBackgroundPressed,
+                                             DefaultButtonTheme.color.special.fill.background.pressed),
+              ),
+            ),
+            outline = ButtonColors(
+              background = StateColor(
+                pressed = ta.getComposeColor(R.styleable.EverliTheme_buttonColorSpecialOutlineBackgroundPressed,
+                                             DefaultButtonTheme.color.special.outline.background.pressed),
+              ),
+              border = StateColor(
+                enabled = ta.getComposeColor(R.styleable.EverliTheme_buttonColorSpecialOutlineBorderEnabled,
+                                             DefaultButtonTheme.color.special.outline.border.enabled),
+              ),
+            ),
+            flat = ButtonColors(
+              background = StateColor(
+                pressed = ta.getComposeColor(R.styleable.EverliTheme_buttonColorSpecialFlatBackgroundPressed,
+                                             DefaultButtonTheme.color.special.flat.background.pressed),
+              ),
             ),
           ),
         ),
       )
 
       everliThemeComponents = EverliThemeComponents(
-        everliTypography = everliTypography,
+        everliTypography = DefaultTypography,
         buttonTheme = buttonTheme,
-        radius = radius,
-        dimensions = dimensions,
+        radiusTheme = radiusTheme,
+        iconTheme = iconTheme,
+        textTheme = textTheme,
       )
 
       return everliThemeComponents

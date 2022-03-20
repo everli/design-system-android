@@ -11,6 +11,7 @@ import androidx.compose.ui.platform.AbstractComposeView
 import com.everli.designsystem.core.R
 import com.everli.designsystem.core.theme.ThemeAdapterComposable
 import com.everli.designsystem.helper.empty
+import com.everli.designsystem.helper.enumValueOfOrFallback
 import com.everli.designsystem.helper.getBooleanOrFalse
 import com.everli.designsystem.helper.getBooleanOrTrue
 import com.everli.designsystem.helper.getStringOrEmpty
@@ -27,9 +28,11 @@ class EverliButtonView @JvmOverloads constructor(
 
   var text by mutableStateOf(String.empty)
   var variant by mutableStateOf(ButtonVariant.PRIMARY)
+  var style by mutableStateOf(ButtonStyle.FILL)
   var size by mutableStateOf(ButtonSize.MEDIUM)
   var useContextTheme by mutableStateOf(false)
   var icon by mutableStateOf<Drawable?>(null)
+  var iconPosition by mutableStateOf(IconPosition.LEFT)
 
   private var onClick by mutableStateOf({})
   private var isButtonEnabled by mutableStateOf(isEnabled)
@@ -41,11 +44,13 @@ class EverliButtonView @JvmOverloads constructor(
       0, 0).apply {
       try {
         text = getStringOrEmpty(R.styleable.EverliButtonView_text)
-        variant = ButtonVariant.getByValueOrFallback(getInt(R.styleable.EverliButtonView_variant, variant.ordinal))
-        size = ButtonSize.getByValueOrFallback(getInt(R.styleable.EverliButtonView_size, size.ordinal))
+        variant = enumValueOfOrFallback(getInt(R.styleable.EverliButtonView_btnVariant, variant.ordinal), ButtonVariant.PRIMARY)
+        style = enumValueOfOrFallback(getInt(R.styleable.EverliButtonView_btnStyle, style.ordinal), ButtonStyle.FILL)
+        size = enumValueOfOrFallback(getInt(R.styleable.EverliButtonView_btnSize, size.ordinal), ButtonSize.MEDIUM)
         isButtonEnabled = getBooleanOrTrue(R.styleable.EverliButtonView_enabled)
         useContextTheme = getBooleanOrFalse(R.styleable.EverliButtonView_useContextTheme)
-        icon = getDrawable(R.styleable.EverliButtonView_buttonIcon)
+        icon = getDrawable(R.styleable.EverliButtonView_btnIcon)
+        iconPosition = enumValueOfOrFallback(getInt(R.styleable.EverliButtonView_iconPosition, style.ordinal), IconPosition.LEFT)
       } finally {
         recycle()
       }
@@ -59,9 +64,11 @@ class EverliButtonView @JvmOverloads constructor(
         onClick = onClick,
         text = text,
         variant = variant,
+        buttonStyle = style,
         size = size,
         enabled = isButtonEnabled,
         icon = icon?.let { rememberDrawablePainter(drawable = it) },
+        iconPosition = iconPosition,
         contentDescription = contentDescription?.let { it.toString() }
       )
     }

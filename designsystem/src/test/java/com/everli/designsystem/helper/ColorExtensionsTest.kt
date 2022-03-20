@@ -81,8 +81,9 @@ internal class ColorExtensionsTest : FunSpec(
       "yellow-20" to EverliColors.Yellow20,
       "yellow-100" to EverliColors.Yellow100,
       "yellow-sun" to EverliColors.Yellow100,
-      "link-100" to EverliColors.Link100,
-      "link" to EverliColors.Link100
+      "navy-100" to EverliColors.Navy100,
+      "link" to EverliColors.Navy100,
+      "navy-110" to EverliColors.Navy110,
     ).forEach { (name, color) ->
       test("$name should be converted to $color") {
         Color.fromName(name) shouldBe color
@@ -113,6 +114,19 @@ internal class ColorExtensionsTest : FunSpec(
       test("Invalid $name, with fallback, should be converted to $fallback") {
         Color.fromName(name, fallback) shouldBe fallback
       }
+    }
+
+    test("ifUnspecified, should return first non-unspecified color") {
+      Color.Unspecified
+        .ifUnspecified(Color.Unspecified)
+        .ifUnspecified(Color.Unspecified)
+        .ifUnspecified(EverliColors.Red20) shouldBe EverliColors.Red20
+    }
+
+    test("ifUnspecified, no color should return first unspecified") {
+      Color.Unspecified
+        .ifUnspecified(Color.Unspecified)
+        .ifUnspecified(Color.Unspecified) shouldBe Color.Unspecified
     }
 
   }

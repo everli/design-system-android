@@ -40,7 +40,8 @@ val brandColors = listOf(
   ColorModel("Deep Green", EverliColors.Green110),
   ColorModel("Yellow 20", EverliColors.Yellow20),
   ColorModel("Yellow Sun", EverliColors.Yellow100),
-  ColorModel("Link", EverliColors.Link100),
+  ColorModel("Link", EverliColors.Navy100),
+  ColorModel("Navy 110", EverliColors.Navy110),
 )
 
 val devColors = listOf(
@@ -62,7 +63,8 @@ val devColors = listOf(
   ColorModel("Green 110", EverliColors.Green110),
   ColorModel("Yellow 20", EverliColors.Yellow20),
   ColorModel("Yellow 100", EverliColors.Yellow100),
-  ColorModel("Link100", EverliColors.Link100),
+  ColorModel("Navy100", EverliColors.Navy100),
+  ColorModel("Navy110", EverliColors.Navy110),
 )
 
 @Composable

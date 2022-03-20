@@ -1,59 +1,165 @@
 package com.everli.designsystem.core.theme
 
 import androidx.compose.runtime.Immutable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
 import com.everli.designsystem.core.constants.EverliColors
 
 @Immutable
 data class ButtonTheme(
-  val radius: Dp,
-  val size: ButtonSizeValues<Dp>,
-  val text: ButtonSizeValues<TextStyle>,
+  val text: ButtonTextStyles,
+  val icon: ButtonIconStyles,
   val color: ButtonsColors,
 )
 
 @Immutable
-data class ButtonSizeValues<T>(
-  val small: T,
-  val medium: T,
-  val large: T,
+data class ButtonTextStyles(
+  // generic
+  val small: TextStyle,
+  val medium: TextStyle,
+  val large: TextStyle,
+  val color: ButtonTextColors = ButtonTextColors(),
+  // variant specific
+  val link: ButtonLinkTextStyles,
+)
+
+@Immutable
+data class ButtonTextColors(
+  // generic
+  val disabled: Color = Color.Unspecified,
+  val enabled: Color = Color.Unspecified,
+  val pressed: Color = Color.Unspecified,
+  // variant specific
+  val link: StateColor = StateColor(),
+)
+
+@Immutable
+data class ButtonLinkTextStyles(
+  val large: TextStyle,
+)
+
+@Immutable
+data class ButtonIconStyles(
+  val color: ButtonIconColors = ButtonIconColors(),
+)
+
+@Immutable
+data class ButtonIconColors(
+  // generic
+  val disabled: Color = Color.Unspecified,
+  val enabled: Color = Color.Unspecified,
+  val pressed: Color = Color.Unspecified,
+  // variant specific
+  val link: StateColor = StateColor(),
 )
 
 @Immutable
 data class ButtonsColors(
-  val primary: ButtonColors,
+  // generic styles
+  val fill: ButtonColors = ButtonColors(),
+  val outline: ButtonColors = ButtonColors(),
+  val transparent: ButtonColors = ButtonColors(),
+  // variant specific
+  val primary: ButtonVariantValues<ButtonColors>,
+  val special: ButtonVariantValues<ButtonColors>,
+)
+
+@Immutable
+data class ButtonVariantValues<T>(
+  val fill: T,
+  val outline: T,
+  val flat: T,
 )
 
 @Immutable
 data class ButtonColors(
-  val background: StateColor,
-  val text: StateColor,
+  val background: StateColor = StateColor(),
+  val border: StateColor = StateColor(),
 )
 
 // Default
 val DefaultButtonTheme = ButtonTheme(
-  radius = DefaultRadius.medium,
-  size = ButtonSizeValues(
-    small = 36.dp,
-    medium = 44.dp,
-    large = 48.dp,
-  ),
-  text = ButtonSizeValues(
+  text = ButtonTextStyles(
     small = DefaultTypography.bodySmallSemibold,
     medium = DefaultTypography.bodySemibold,
     large = DefaultTypography.subtitleSemibold,
+    color = ButtonTextColors(
+      disabled = EverliColors.Gray80,
+      link = StateColor(
+        enabled = EverliColors.Navy100,
+        pressed = EverliColors.Navy110,
+      )
+    ),
+    link = ButtonLinkTextStyles(
+      large = DefaultTypography.title4Regular,
+    ),
+  ),
+  icon = ButtonIconStyles(
+    color = ButtonIconColors(
+      disabled = EverliColors.Gray80,
+      link = StateColor(
+        enabled = EverliColors.Navy100,
+        pressed = EverliColors.Navy110,
+      )
+    )
   ),
   color = ButtonsColors(
-    primary = ButtonColors(
+    transparent = ButtonColors(
       background = StateColor(
-        enabled = EverliColors.Green100,
+        enabled = EverliColors.Transparent,
+        disabled = EverliColors.Transparent,
+      )
+    ),
+    fill = ButtonColors(
+      background = StateColor(
         disabled = EverliColors.Gray15,
+      )
+    ),
+    outline = ButtonColors(
+      border = StateColor(
+        disabled = EverliColors.Gray40,
+      )
+    ),
+    primary = ButtonVariantValues(
+      fill = ButtonColors(
+        background = StateColor(
+          enabled = EverliColors.Green100,
+          pressed = EverliColors.Green110,
+        ),
       ),
-      text = StateColor(
-        enabled = EverliColors.White,
-        disabled = EverliColors.Gray100,
+      outline = ButtonColors(
+        background = StateColor(
+          pressed = EverliColors.Green10,
+        ),
+        border = StateColor(
+          enabled = EverliColors.Green100,
+        ),
+      ),
+      flat = ButtonColors(
+        background = StateColor(
+          pressed = EverliColors.Green10,
+        ),
+      ),
+    ),
+    special = ButtonVariantValues(
+      fill = ButtonColors(
+        background = StateColor(
+          enabled = EverliColors.Red100,
+          pressed = EverliColors.Red110,
+        ),
+      ),
+      outline = ButtonColors(
+        background = StateColor(
+          pressed = EverliColors.Red20,
+        ),
+        border = StateColor(
+          enabled = EverliColors.Red100,
+        ),
+      ),
+      flat = ButtonColors(
+        background = StateColor(
+          pressed = EverliColors.Red20,
+        ),
       ),
     ),
   ),

@@ -68,8 +68,8 @@ fun IconsPlayground() {
         modifier = Modifier.padding(8.dp),
       )
       EverliButton(
-        onClick = { color = EverliColors.Link100 },
-        text = "Link100",
+        onClick = { color = EverliColors.Navy100 },
+        text = "Navy100",
         modifier = Modifier.padding(8.dp),
       )
     }

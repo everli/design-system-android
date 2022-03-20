@@ -89,7 +89,7 @@ fun ColorsPlayground() {
 
   Column {
     TabRow(
-      backgroundColor = EverliTheme.button.color.primary.background.enabled,
+      backgroundColor = EverliTheme.button.color.primary.fill.background.enabled,
       contentColor = EverliColors.White,
       selectedTabIndex = pagerState.currentPage,
       indicator = { tabPositions ->

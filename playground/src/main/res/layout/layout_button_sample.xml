@@ -16,19 +16,42 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginHorizontal="12dp"
-      app:buttonIcon="@drawable/ico_add_circle"
-      app:size="large"
-      app:text="Custom with Icon"
-      app:useContextTheme="true"
-      app:variant="primary" />
+      app:btnIcon="@drawable/ico_add_circle"
+      app:btnSize="large"
+      app:btnStyle="fill"
+      app:btnVariant="primary"
+      app:text="Primary Fill with Icon"
+      app:useContextTheme="true" />
+
+    <com.everli.designsystem.components.button.EverliButtonView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="12dp"
+      app:btnSize="medium"
+      app:btnStyle="outline"
+      app:btnVariant="primary"
+      app:text="Primary Outline"
+      app:useContextTheme="true" />
+
+    <com.everli.designsystem.components.button.EverliButtonView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="12dp"
+      app:btnIcon="@drawable/ico_add"
+      app:btnSize="medium"
+      app:btnStyle="flat"
+      app:btnVariant="primary"
+      app:iconPosition="right"
+      app:text="Flat Icon Right"
+      app:useContextTheme="true" />
 
     <com.everli.designsystem.components.button.EverliButtonView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginHorizontal="12dp"
-      app:size="large"
-      app:text="default theme"
-      app:variant="primary" />
+      app:btnSize="large"
+      app:btnVariant="primary"
+      app:text="Default Theme" />
 
   </LinearLayout>
 
