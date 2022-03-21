@@ -135,7 +135,6 @@ fun EverliButton(
           Text(
             text = text,
             style = size.textStyle(variant),
-            maxLines = 1,
             overflow = TextOverflow.Ellipsis,
             modifier = Modifier.testTag(TestTags.Button.TEXT)
           )
@@ -158,6 +157,10 @@ enum class ButtonVariant {
   LINK,
 
 }
+
+fun ButtonVariant.isPrimary() : Boolean = this == ButtonVariant.PRIMARY
+fun ButtonVariant.isSpecial() : Boolean = this == ButtonVariant.SPECIAL
+fun ButtonVariant.isLink() : Boolean = this == ButtonVariant.LINK
 
 enum class ButtonStyle {
 
@@ -217,8 +220,6 @@ internal fun ButtonSize.iconSize(): Dp {
  */
 @Composable
 internal fun ButtonSize.padding(variant: ButtonVariant, isIconOnly: Boolean): PaddingValues {
-  val noHorizontalPadding = variant == ButtonVariant.LINK
-
   // icon only, keep square look
   if (isIconOnly) {
     return when (this) {
@@ -231,16 +232,16 @@ internal fun ButtonSize.padding(variant: ButtonVariant, isIconOnly: Boolean): Pa
   // else apply padding
   return when (this) {
     ButtonSize.SMALL -> PaddingValues(
-      horizontal = if (noHorizontalPadding) 0.dp else 12.dp,
+      horizontal = if (variant.isLink()) 0.dp else 12.dp,
       vertical = 6.dp,
     )
     ButtonSize.MEDIUM -> PaddingValues(
-      horizontal = if (noHorizontalPadding) 0.dp else 16.dp,
+      horizontal = if (variant.isLink()) 0.dp else 16.dp,
       vertical = 10.dp,
     )
     ButtonSize.LARGE -> PaddingValues(
-      horizontal = if (noHorizontalPadding) 0.dp else 16.dp,
-      vertical = 12.dp,
+      horizontal = if (variant.isLink()) 0.dp else 16.dp,
+      vertical = if (variant.isLink()) 10.dp else 12.dp,
     )
   }
 }
