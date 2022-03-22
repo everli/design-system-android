@@ -1,6 +1,7 @@
 package com.everli.designsystem.components.button
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.interaction.Interaction
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.PaddingValues
@@ -31,10 +32,8 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.everli.designsystem.core.theme.DefaultTheme
 import com.everli.designsystem.core.theme.EverliTheme
 import com.everli.designsystem.core.theme.StateColor
 import com.everli.designsystem.helper.TestTags
@@ -43,49 +42,74 @@ import com.everli.designsystem.helper.empty
 import com.everli.designsystem.helper.ifUnspecified
 
 /**
- * Button Component, wrapper for Material [Button]
+ * Button Component with custom content as parameter via [content]
+ * Wrapper for [EverliButtonInternal]
  *
  * @param onClick called when pressed
  * @param modifier modifier to be applied to the button
- * @param text text value to be displayed in case there's no content, default is empty string
  * @param variant enum value to describe the button, used to set colors and other attributes
  * @param buttonStyle enum value to describe the button style, used to set layout attributes
  * @param size enum value, used to set sizes for the container, text and icon
  * @param enabled controls the button state
- * @param icon if provided, the icon will be at the given [iconPosition] with default left
- * @param iconPosition position where [icon] will be rendered
- * @param contentDescription if provided, will be used for the icon content description for accessibility
- * @param content content to be shown inside the button, [content] will be shown only if [text] is empty
+ * @param content content to be shown inside the button
  */
-
-@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun EverliButton(
   onClick: () -> Unit,
   modifier: Modifier = Modifier,
-  text: String = String.empty,
   variant: ButtonVariant = ButtonVariant.PRIMARY,
   buttonStyle: ButtonStyle = ButtonStyle.FILL,
   size: ButtonSize = ButtonSize.MEDIUM,
   enabled: Boolean = true,
+  content: @Composable (RowScope.() -> Unit) = { },
+) {
+  EverliButtonInternal(
+    onClick = onClick,
+    modifier = modifier,
+    variant = variant,
+    buttonStyle = buttonStyle,
+    size = size,
+    enabled = enabled,
+    content = content,
+  )
+}
+
+/**
+ * Button Component with support for [text] and [icon]
+ * Wrapper for [EverliButtonInternal]
+ *
+ * @param onClick called when pressed
+ * @param modifier modifier to be applied to the button
+ * @param variant enum value to describe the button, used to set colors and other attributes
+ * @param buttonStyle enum value to describe the button style, used to set layout attributes
+ * @param size enum value, used to set sizes for the container, text and icon
+ * @param enabled controls the button state
+ * @param text text value to be displayed in case there's no content, default is empty string
+ * @param icon if provided, the icon will be at the given [iconPosition] with default left
+ * @param iconPosition position where [icon] will be rendered
+ * @param contentDescription if provided, will be used for the icon content description for accessibility
+ */
+@Composable
+fun EverliButton(
+  onClick: () -> Unit,
+  modifier: Modifier = Modifier,
+  variant: ButtonVariant = ButtonVariant.PRIMARY,
+  buttonStyle: ButtonStyle = ButtonStyle.FILL,
+  size: ButtonSize = ButtonSize.MEDIUM,
+  enabled: Boolean = true,
+  text: String = String.empty,
   icon: Painter? = null,
   iconPosition: IconPosition = IconPosition.LEFT,
   contentDescription: String? = null,
-  content: @Composable (RowScope.() -> Unit)? = null,
 ) {
 
-  // handle pressed
+  // handle pressed for icon
   val interactionSource = remember { MutableInteractionSource() }
   val isPressed by interactionSource.collectIsPressedAsState()
 
-  // get colors based on params
-  val backgroundColors = backgroundColors(variant = variant, style = buttonStyle)
-  val borderColors = borderColors(variant = variant, style = buttonStyle)
-  val textColors = textColors(variant = variant, style = buttonStyle)
   val iconColors = iconColors(variant = variant, style = buttonStyle)
-
   // used later to configure some paddings
-  val isIconOnly = icon != null && text.isEmpty() && content == null
+  val isIconOnly = icon != null && text.isEmpty()
 
   val iconContent: @Composable () -> Unit = {
     icon?.let {
@@ -101,6 +125,76 @@ fun EverliButton(
     }
   }
 
+  EverliButtonInternal(
+    onClick = onClick,
+    modifier = modifier,
+    variant = variant,
+    buttonStyle = buttonStyle,
+    size = size,
+    enabled = enabled,
+    contentPadding = size.padding(variant = variant, isIconOnly = isIconOnly)
+  ) {
+    Row(
+      verticalAlignment = Alignment.CenterVertically) {
+      if (iconPosition.isLeft()) {
+        iconContent()
+      }
+
+      if (text.isNotEmpty()) {
+        Text(
+          text = text,
+          style = size.textStyle(variant),
+          textAlign = TextAlign.Center,
+          overflow = TextOverflow.Ellipsis,
+          modifier = Modifier.testTag(TestTags.Button.TEXT)
+        )
+      }
+
+      if (iconPosition.isRight()) {
+        iconContent()
+      }
+    }
+  }
+}
+
+/**
+ * Internal Button Component used to share implementation between different buttons
+ * Wrapper for Material [Button]
+ *
+ * @param onClick called when pressed
+ * @param modifier modifier to be applied to the button
+ * @param variant enum value to describe the button, used to set colors and other attributes
+ * @param buttonStyle enum value to describe the button style, used to set layout attributes
+ * @param size enum value, used to set sizes for the container, text and icon
+ * @param enabled controls the button state
+ * @param interactionSource the [MutableInteractionSource] representing the stream of
+ * [Interaction]s for this Button. You can create and pass in your own remembered
+ * [MutableInteractionSource] if you want to observe [Interaction]s and customize the
+ * appearance/behavior of this Button in different [Interaction]s.
+ * @param content content to be shown inside the button
+ */
+@OptIn(ExperimentalMaterialApi::class)
+@Composable
+internal fun EverliButtonInternal(
+  onClick: () -> Unit,
+  modifier: Modifier = Modifier,
+  variant: ButtonVariant = ButtonVariant.PRIMARY,
+  buttonStyle: ButtonStyle = ButtonStyle.FILL,
+  size: ButtonSize = ButtonSize.MEDIUM,
+  enabled: Boolean = true,
+  interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
+  contentPadding: PaddingValues = size.padding(variant = variant),
+  content: @Composable (RowScope.() -> Unit) = { },
+) {
+
+  // handle pressed
+  val isPressed by interactionSource.collectIsPressedAsState()
+
+  // get colors based on params
+  val backgroundColors = backgroundColors(variant = variant, style = buttonStyle)
+  val borderColors = borderColors(variant = variant, style = buttonStyle)
+  val textColors = textColors(variant = variant, style = buttonStyle)
+
   // TODO: LocalRippleTheme TBD, need to talk with Ric
   // LocalMinimumTouchTargetEnforcement set to false to override Material behavior
   CompositionLocalProvider(
@@ -114,7 +208,7 @@ fun EverliButton(
       border = buttonStyle.border(borderColors.forEnabled(enabled)),
       interactionSource = interactionSource,
       elevation = null,
-      contentPadding = size.padding(variant, isIconOnly),
+      contentPadding = contentPadding,
       colors = ButtonDefaults.buttonColors(
         backgroundColor = backgroundColors.forPressed(isPressed),
         disabledBackgroundColor = backgroundColors.forEnabled(enabled),
@@ -126,28 +220,7 @@ fun EverliButton(
           .defaultMinSize(minHeight = 1.dp, minWidth = 1.dp) // done to override material default min sizes
           .testTag(TestTags.Button.CONTAINER)),
     ) {
-      Row(
-        verticalAlignment = Alignment.CenterVertically) {
-        if (iconPosition == IconPosition.LEFT) {
-          iconContent()
-        }
-
-        if (text.isNotEmpty()) {
-          Text(
-            text = text,
-            style = size.textStyle(variant),
-            textAlign = TextAlign.Center,
-            overflow = TextOverflow.Ellipsis,
-            modifier = Modifier.testTag(TestTags.Button.TEXT)
-          )
-        } else {
-          content?.let { it() }
-        }
-
-        if (iconPosition == IconPosition.RIGHT) {
-          iconContent()
-        }
-      }
+      content()
     }
   }
 }
@@ -160,9 +233,9 @@ enum class ButtonVariant {
 
 }
 
-fun ButtonVariant.isPrimary() : Boolean = this == ButtonVariant.PRIMARY
-fun ButtonVariant.isSpecial() : Boolean = this == ButtonVariant.SPECIAL
-fun ButtonVariant.isLink() : Boolean = this == ButtonVariant.LINK
+fun ButtonVariant.isPrimary(): Boolean = this == ButtonVariant.PRIMARY
+fun ButtonVariant.isSpecial(): Boolean = this == ButtonVariant.SPECIAL
+fun ButtonVariant.isLink(): Boolean = this == ButtonVariant.LINK
 
 enum class ButtonStyle {
 
@@ -186,6 +259,9 @@ enum class IconPosition {
   RIGHT,
 
 }
+
+fun IconPosition.isLeft() = this == IconPosition.LEFT
+fun IconPosition.isRight() = this == IconPosition.RIGHT
 
 /**
  * Get text style based on [ButtonSize] and [ButtonVariant]
@@ -221,7 +297,7 @@ internal fun ButtonSize.iconSize(): Dp {
  * The sizes are not fetched from the theme
  */
 @Composable
-internal fun ButtonSize.padding(variant: ButtonVariant, isIconOnly: Boolean): PaddingValues {
+internal fun ButtonSize.padding(variant: ButtonVariant, isIconOnly: Boolean = false): PaddingValues {
   // icon only, keep square look
   if (isIconOnly) {
     return when (this) {

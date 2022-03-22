@@ -6,9 +6,26 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import com.everli.designsystem.helper.empty
 
-/**
- * Wrapper for [EverliButton] setting the [ButtonVariant] to [ButtonVariant.PRIMARY]
- */
+@Composable
+fun PrimaryButton(
+  onClick: () -> Unit,
+  modifier: Modifier = Modifier,
+  buttonStyle: ButtonStyle = ButtonStyle.FILL,
+  size: ButtonSize = ButtonSize.MEDIUM,
+  enabled: Boolean = true,
+  content: @Composable (RowScope.() -> Unit) = { },
+) {
+  EverliButton(
+    onClick = onClick,
+    modifier = modifier,
+    variant = ButtonVariant.PRIMARY,
+    buttonStyle = buttonStyle,
+    size = size,
+    enabled = enabled,
+    content = content,
+  )
+}
+
 @Composable
 fun PrimaryButton(
   onClick: () -> Unit,
@@ -20,7 +37,6 @@ fun PrimaryButton(
   icon: Painter? = null,
   iconPosition: IconPosition = IconPosition.LEFT,
   contentDescription: String? = null,
-  content: @Composable (RowScope.() -> Unit)? = null,
 ) {
   EverliButton(
     onClick = onClick,
@@ -33,13 +49,29 @@ fun PrimaryButton(
     icon = icon,
     iconPosition = iconPosition,
     contentDescription = contentDescription,
+  )
+}
+
+@Composable
+fun SpecialButton(
+  onClick: () -> Unit,
+  modifier: Modifier = Modifier,
+  buttonStyle: ButtonStyle = ButtonStyle.FILL,
+  size: ButtonSize = ButtonSize.MEDIUM,
+  enabled: Boolean = true,
+  content: @Composable (RowScope.() -> Unit) = { },
+) {
+  EverliButton(
+    onClick = onClick,
+    modifier = modifier,
+    variant = ButtonVariant.SPECIAL,
+    buttonStyle = buttonStyle,
+    size = size,
+    enabled = enabled,
     content = content,
   )
 }
 
-/**
- * Wrapper for [EverliButton] setting the [ButtonVariant] to [ButtonVariant.SPECIAL]
- */
 @Composable
 fun SpecialButton(
   onClick: () -> Unit,
@@ -51,7 +83,6 @@ fun SpecialButton(
   icon: Painter? = null,
   iconPosition: IconPosition = IconPosition.LEFT,
   contentDescription: String? = null,
-  content: @Composable (RowScope.() -> Unit)? = null,
 ) {
   EverliButton(
     onClick = onClick,
@@ -64,14 +95,9 @@ fun SpecialButton(
     icon = icon,
     iconPosition = iconPosition,
     contentDescription = contentDescription,
-    content = content,
   )
 }
 
-/**
- * Wrapper for [EverliButton] setting the [ButtonVariant] to [ButtonVariant.LINK]
- * and limiting the style only to [ButtonStyle.FLAT]
- */
 @Composable
 fun LinkButton(
   onClick: () -> Unit,
@@ -82,7 +108,6 @@ fun LinkButton(
   icon: Painter? = null,
   iconPosition: IconPosition = IconPosition.LEFT,
   contentDescription: String? = null,
-  content: @Composable (RowScope.() -> Unit)? = null,
 ) {
   EverliButton(
     onClick = onClick,
@@ -95,6 +120,5 @@ fun LinkButton(
     icon = icon,
     iconPosition = iconPosition,
     contentDescription = contentDescription,
-    content = content,
   )
 }

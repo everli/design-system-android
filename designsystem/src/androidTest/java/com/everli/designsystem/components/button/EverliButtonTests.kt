@@ -93,7 +93,7 @@ class EverliButtonTests {
   }
 
   @Test
-  fun when_no_text_but_custom_content_it_should_be_visible() {
+  fun when_custom_content_it_should_be_visible() {
     val context = InstrumentationRegistry.getInstrumentation().targetContext
 
     rule.setContent {
