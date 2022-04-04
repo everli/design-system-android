@@ -8,6 +8,8 @@ import androidx.compose.ui.graphics.Color
 object EverliColors {
   val White = Color.White
 
+  val Transparent = Color.Transparent
+
   val Gray10 = Color(0xFFF8F7F8)
   val Gray15 = Color(0xFFEBE7EB)
   val Gray40 = Color(0xFFE3DFE3)
@@ -18,6 +20,7 @@ object EverliColors {
 
   val Red20 = Color(0xFFFFCEDC)
   val Red100 = Color(0xFFDC325F)
+  val Red110 = Color(0xFFB71E49)
 
   val Violet100 = Color(0xFF8A3264)
 
@@ -33,7 +36,8 @@ object EverliColors {
   val Yellow20 = Color(0xFFFFF6DC)
   val Yellow100 = Color(0xFFFFD050)
 
-  val Link100 = Color(0xFF1A73E8)
+  val Navy100 = Color(0xFF1A73E8)
+  val Navy110 = Color(0xFF0D4A9A)
 
 
   // Design system "brand" names
@@ -46,5 +50,5 @@ object EverliColors {
   val EverliGreen = Green100
   val DeepGreen = Green110
   val YellowSun = Yellow100
-  val Link = Link100
+  val Link = Navy100
 }

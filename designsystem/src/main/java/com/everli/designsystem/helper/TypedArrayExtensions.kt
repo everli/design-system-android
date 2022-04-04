@@ -45,4 +45,3 @@ fun TypedArray.getDp(
     fallbackDp
   }
 }
-

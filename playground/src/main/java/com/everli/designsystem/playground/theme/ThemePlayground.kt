@@ -1,19 +1,18 @@
 package com.everli.designsystem.playground.theme
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.everli.designsystem.components.button.EverliButton
 import com.everli.designsystem.core.constants.EverliColors
-import com.everli.designsystem.core.theme.ButtonColors
 import com.everli.designsystem.core.theme.DefaultButtonTheme
-import com.everli.designsystem.core.theme.DefaultDimensions
-import com.everli.designsystem.core.theme.DefaultRadius
+import com.everli.designsystem.core.theme.DefaultIconTheme
+import com.everli.designsystem.core.theme.DefaultRadiusTheme
+import com.everli.designsystem.core.theme.DefaultTextTheme
 import com.everli.designsystem.core.theme.DefaultTheme
 import com.everli.designsystem.core.theme.DefaultTypography
 import com.everli.designsystem.core.theme.EverliTheme
-import com.everli.designsystem.core.theme.StateColor
 
 enum class Themes {
   DEMAND,
@@ -34,25 +33,42 @@ fun ThemePlaygroundContent(themes: Themes, content: @Composable () -> Unit) {
   EverliTheme(
     buttonTheme = buttonTheme,
     typography = DefaultTypography,
-    dimensions = DefaultDimensions,
-    radius = DefaultRadius,
+    radiusTheme = DefaultRadiusTheme,
+    iconTheme = DefaultIconTheme,
+    textTheme = DefaultTextTheme,
     content = content,
   )
 }
 
+// TODO: ask Ric if this is part of the colors
+val purple80 =  Color(0xFFB45A8C)
+val purple20 =  Color(0xFFF3EBF0)
+
 val SupplyButtonTheme = DefaultButtonTheme.copy(
   color = DefaultButtonTheme.color.copy(
-    primary = ButtonColors(
-      background = StateColor(
-        enabled = EverliColors.Violet100,
-        disabled = EverliColors.Gray15,
+    primary = DefaultButtonTheme.color.primary.copy(
+      fill = DefaultButtonTheme.color.primary.fill.copy(
+        background = DefaultButtonTheme.color.primary.fill.background.copy(
+          enabled = EverliColors.Violet100,
+          pressed = purple80,
+        ),
       ),
-      text = StateColor(
-        enabled = EverliColors.White,
-        disabled = EverliColors.Gray100,
-      )
-    )
-  ))
+      outline = DefaultButtonTheme.color.primary.outline.copy(
+        background = DefaultButtonTheme.color.primary.outline.background.copy(
+          pressed = purple20,
+        ),
+        border = DefaultButtonTheme.color.primary.outline.border.copy(
+          enabled = purple80,
+        ),
+      ),
+      flat = DefaultButtonTheme.color.primary.flat.copy(
+        background = DefaultButtonTheme.color.primary.flat.background.copy(
+          pressed = purple20,
+        ),
+      ),
+    ),
+  ),
+)
 
 @Preview
 @Composable

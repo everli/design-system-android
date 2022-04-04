@@ -5,11 +5,11 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 @Immutable
-data class Radius(
+data class RadiusTheme(
   val medium: Dp,
 )
 
 // Default
-val DefaultRadius = Radius(
+val DefaultRadiusTheme = RadiusTheme(
   medium = 8.dp,
 )

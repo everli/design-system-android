@@ -49,7 +49,8 @@ class SampleComposeTest {
         colorResource(id = R.color.yellow_20) shouldBe EverliColors.Yellow20
         colorResource(id = R.color.yellow_100) shouldBe EverliColors.Yellow100
 
-        colorResource(id = R.color.link_100) shouldBe EverliColors.Link100
+        colorResource(id = R.color.navy_100) shouldBe EverliColors.Navy100
+        colorResource(id = R.color.navy_110) shouldBe EverliColors.Navy110
       }
     }
   }

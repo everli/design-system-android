@@ -4,14 +4,26 @@
     <attr name="text" format="string" />
     <attr name="enabled" format="boolean" />
     <attr name="useContextTheme" format="boolean" />
-    <attr name="buttonIcon" format="reference" />
-    <attr name="variant" format="enum">
+    <attr name="btnIcon" format="reference" />
+    <attr name="btnVariant" format="enum">
       <enum name="primary" value="0" />
+      <enum name="special" value="1" />
+      <enum name="link" value="2" />
     </attr>
-    <attr name="size" format="enum">
+    <attr name="btnStyle" format="enum">
+      <enum name="fill" value="0" />
+      <enum name="outline" value="1" />
+      <enum name="flat" value="2" />
+    </attr>
+    <attr name="btnSize" format="enum">
       <enum name="large" value="0" />
       <enum name="medium" value="1" />
       <enum name="small" value="2" />
+    </attr>
+
+    <attr name="iconPosition" format="enum">
+      <enum name="left" value="0" />
+      <enum name="right" value="1" />
     </attr>
   </declare-styleable>
 </resources>
