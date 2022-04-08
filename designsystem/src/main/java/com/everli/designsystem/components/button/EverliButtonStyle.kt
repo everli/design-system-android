@@ -2,7 +2,6 @@ package com.everli.designsystem.components.button
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
@@ -136,7 +135,6 @@ internal fun backgroundColors(
       }
       ButtonVariant.BLIK -> when (style) {
         ButtonStyle.FILL -> blik.fill.background.merge(fill.background)
-        ButtonStyle.OUTLINE -> blik.outline.background.merge(outline.background)
         else -> StateColor() // not supported
       }
     }
@@ -173,15 +171,15 @@ internal fun borderColors(
         else -> StateColor()
       }
       ButtonVariant.FACEBOOK -> when (style) {
-        ButtonStyle.OUTLINE -> facebook.outline.border.merge(outline.borderDark)
+        ButtonStyle.OUTLINE -> facebook.outline.border.merge(outline.borderDark).merge(outline.border)
         else -> StateColor()
       }
       ButtonVariant.GOOGLE -> when (style) {
-        ButtonStyle.OUTLINE -> google.outline.border.merge(outline.borderDark)
+        ButtonStyle.OUTLINE -> google.outline.border.merge(outline.borderDark).merge(outline.border)
         else -> StateColor()
       }
       ButtonVariant.APPLE -> when (style) {
-        ButtonStyle.OUTLINE -> apple.outline.border.merge(outline.borderDark)
+        ButtonStyle.OUTLINE -> apple.outline.border.merge(outline.borderDark).merge(outline.border)
         else -> StateColor()
       }
       else -> StateColor()

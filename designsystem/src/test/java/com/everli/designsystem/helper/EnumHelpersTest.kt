@@ -1,9 +1,6 @@
 package com.everli.designsystem.helper
 
-import androidx.compose.ui.graphics.Color
-import com.everli.designsystem.core.constants.EverliColors
 import io.kotest.core.spec.style.FunSpec
-import io.kotest.matchers.shouldBe
 
 enum class DummyEnum {
   RED,
@@ -22,7 +19,7 @@ class EnumHelpersTest : FunSpec(
       999 to DummyEnum.RED,
     ).forEach { (ordinal, value) ->
       test("enumValueOfOrFallback for $ordinal should be expected $value") {
-        val ce = enumValueOfOrFallback<DummyEnum>(ordinal, DummyEnum.RED)
+        enumValueOfOrFallback(ordinal, DummyEnum.RED)
       }
     }
   }

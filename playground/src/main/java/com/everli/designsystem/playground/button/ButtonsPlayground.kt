@@ -76,7 +76,7 @@ fun ButtonSection(
 ) {
   Column {
     Row(modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
-      EverliButton(
+      EverliButton.Button(
         onClick = onClick(),
         variant = variant,
         buttonStyle = buttonStyle,
@@ -84,7 +84,7 @@ fun ButtonSection(
         text = buttonText(),
         modifier = Modifier.padding(horizontal = 8.dp)
       )
-      EverliButton(
+      EverliButton.Button(
         onClick = onClick(),
         variant = variant,
         buttonStyle = buttonStyle,
@@ -106,7 +106,7 @@ fun ButtonSectionWithIcon(
   Column {
     Row(modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
       Row(modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
-        EverliButton(
+        EverliButton.Button(
           onClick = onClick(),
           variant = variant,
           buttonStyle = buttonStyle,
@@ -116,7 +116,7 @@ fun ButtonSectionWithIcon(
           iconPosition = IconPosition.LEFT,
           modifier = Modifier.padding(horizontal = 8.dp)
         )
-        EverliButton(
+        EverliButton.Button(
           onClick = onClick(),
           variant = variant,
           buttonStyle = buttonStyle,
@@ -141,7 +141,7 @@ fun ButtonSectionIconOnly(
   Column {
     Row(modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
       Row(modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
-        EverliButton(
+        EverliButton.Button(
           onClick = onClick(),
           variant = variant,
           buttonStyle = buttonStyle,
@@ -150,7 +150,7 @@ fun ButtonSectionIconOnly(
           iconPosition = IconPosition.LEFT,
           modifier = Modifier.padding(horizontal = 8.dp)
         )
-        EverliButton(
+        EverliButton.Button(
           onClick = onClick(),
           variant = variant,
           buttonStyle = buttonStyle,
@@ -172,7 +172,7 @@ fun ButtonSectionFullWidth(
   size: ButtonSize,
 ) {
   Column {
-    EverliButton(
+    EverliButton.Button(
       onClick = onClick(),
       variant = variant,
       buttonStyle = buttonStyle,
@@ -182,7 +182,7 @@ fun ButtonSectionFullWidth(
         .fillMaxWidth()
         .padding(8.dp),
     )
-    EverliButton(
+    EverliButton.Button(
       onClick = onClick(),
       variant = variant,
       buttonStyle = buttonStyle,
@@ -193,7 +193,7 @@ fun ButtonSectionFullWidth(
         .padding(8.dp),
       enabled = false,
     )
-    EverliButton(
+    EverliButton.Button(
       onClick = onClick(),
       variant = variant,
       buttonStyle = buttonStyle,
@@ -205,7 +205,7 @@ fun ButtonSectionFullWidth(
         .fillMaxWidth()
         .padding(8.dp),
     )
-    EverliButton(
+    EverliButton.Button(
       onClick = onClick(),
       variant = variant,
       buttonStyle = buttonStyle,
@@ -229,7 +229,7 @@ fun ButtonSectionIconRightAndSpecial(
   Column {
     Row(modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
       Row(modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
-        EverliButton(
+        EverliButton.Button(
           onClick = onClick(),
           variant = variant,
           buttonStyle = buttonStyle,
@@ -239,7 +239,7 @@ fun ButtonSectionIconRightAndSpecial(
           iconPosition = IconPosition.RIGHT,
           modifier = Modifier.padding(horizontal = 8.dp)
         )
-        EverliButton(
+        EverliButton.Button(
           onClick = onClick(),
           variant = variant,
           buttonStyle = buttonStyle,
@@ -250,7 +250,7 @@ fun ButtonSectionIconRightAndSpecial(
           modifier = Modifier.padding(horizontal = 8.dp),
           enabled = false,
         )
-        EverliButton(
+        EverliButton.Button(
           onClick = onClick(),
           variant = variant,
           buttonStyle = buttonStyle,
@@ -260,7 +260,7 @@ fun ButtonSectionIconRightAndSpecial(
         )
       }
     }
-    EverliButton(
+    EverliButton.Button(
       onClick = onClick(),
       variant = variant,
       buttonStyle = buttonStyle,

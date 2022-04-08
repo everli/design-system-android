@@ -31,6 +31,7 @@ import com.everli.designsystem.components.button.EverliButton
 import com.everli.designsystem.core.theme.DefaultTheme
 import com.everli.designsystem.core.constants.EverliColors
 import com.everli.designsystem.core.theme.DefaultTypography
+import com.everli.designsystem.playground.button.BrandButtonPlayground
 import com.everli.designsystem.playground.button.ButtonsPlayground
 import com.everli.designsystem.playground.color.ColorsPlayground
 import com.everli.designsystem.playground.icon.IconsPlayground
@@ -128,7 +129,7 @@ fun Home(navController: NavController) {
 
 @Composable
 fun HomeButton(text: String, onClick: () -> Unit) {
-  EverliButton(
+  EverliButton.Button(
     onClick = onClick,
     modifier = Modifier
       .fillMaxWidth()
@@ -148,7 +149,7 @@ fun Navigation() {
     composable(Destinations.COLORS) { ColorsPlayground() }
     composable(Destinations.TYPOGRAPHY) { TypographyPlayground() }
     composable(Destinations.BUTTONS) { ButtonsPlayground() }
-    composable(Destinations.BRAND_BUTTONS) { ButtonsPlayground() }
+    composable(Destinations.BRAND_BUTTONS) { BrandButtonPlayground() }
     composable(Destinations.TOKENS) { TokensPlayground() }
     composable(Destinations.ICONS) { IconsPlayground() }
   }

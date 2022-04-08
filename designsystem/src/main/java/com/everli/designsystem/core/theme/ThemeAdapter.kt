@@ -202,6 +202,7 @@ internal object ThemeAdapter {
               ),
             ),
           ),
+          overlay = DefaultButtonTheme.color.overlay,
         ),
       )
 

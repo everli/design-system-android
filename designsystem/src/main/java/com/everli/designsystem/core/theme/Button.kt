@@ -74,7 +74,7 @@ data class ButtonsColors(
   val apple: ButtonVariantValues<ButtonColors> = ButtonVariantValues.withColors(),
   val blik: ButtonVariantValues<ButtonColors> = ButtonVariantValues.withColors(),
   // misc
-  val overlay: StateColor = StateColor(),
+  val overlay: Float,
 )
 
 @Immutable
@@ -160,7 +160,8 @@ val DefaultButtonTheme = ButtonTheme(
         disabled = EverliColors.Gray40,
       ),
       borderDark = StateColor(
-        enabled = EverliColors.Black100
+        enabled = EverliColors.Black100,
+        pressed = EverliColors.Black100,
       ),
     ),
     primary = ButtonVariantValues(
@@ -209,6 +210,7 @@ val DefaultButtonTheme = ButtonTheme(
       fill = ButtonColors(
         background = StateColor(
           enabled = EverliColors.Facebook,
+          pressed = EverliColors.Facebook,
         ),
       ),
     ),
@@ -216,6 +218,7 @@ val DefaultButtonTheme = ButtonTheme(
       fill = ButtonColors(
         background = StateColor(
           enabled = EverliColors.Google,
+          pressed = EverliColors.Google,
         ),
       ),
     ),
@@ -223,6 +226,7 @@ val DefaultButtonTheme = ButtonTheme(
       fill = ButtonColors(
         background = StateColor(
           enabled = EverliColors.Apple,
+          pressed = EverliColors.Apple,
         ),
       ),
     ),
@@ -230,8 +234,10 @@ val DefaultButtonTheme = ButtonTheme(
       fill = ButtonColors(
         background = StateColor(
           enabled = EverliColors.Blink,
+          pressed = EverliColors.Blink,
         ),
       ),
     ),
+    overlay = 0.4f,
   ),
 )

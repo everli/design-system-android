@@ -16,11 +16,14 @@ import androidx.test.platform.app.InstrumentationRegistry
 import com.everli.designsystem.core.constants.EverliIcons
 import com.everli.designsystem.core.theme.DefaultButtonTheme
 import com.everli.designsystem.core.theme.DefaultIconTheme
+import com.everli.designsystem.core.theme.DefaultRadiusTheme
 import com.everli.designsystem.core.theme.DefaultTextTheme
 import com.everli.designsystem.core.theme.DefaultTheme
+import com.everli.designsystem.core.theme.EverliTheme
 import com.everli.designsystem.core.theme.StateColor
 import com.everli.designsystem.helper.TestTags
 import com.everli.designsystem.helper.ifUnspecified
+import com.everli.designsystem.helper.toRoundedShape
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNotBe
 import org.junit.Rule
@@ -44,10 +47,10 @@ class EverliButtonTests {
     rule.setContent {
       CompositionLocalProvider(LocalContext provides context) {
         DefaultTheme {
-          PrimaryButton(
+          EverliButton.Primary(
             onClick = { /*TODO*/ },
             text = TEST_BUTTON_TEXT,
-            icon = EverliIcons.Checkmark,
+            icon = EverliIcons.Check,
           )
         }
       }
@@ -72,7 +75,7 @@ class EverliButtonTests {
     rule.setContent {
       CompositionLocalProvider(LocalContext provides context) {
         DefaultTheme {
-          PrimaryButton(
+          EverliButton.Primary(
             onClick = { /*TODO*/ },
             text = TEST_BUTTON_TEXT,
           )
@@ -99,7 +102,7 @@ class EverliButtonTests {
     rule.setContent {
       CompositionLocalProvider(LocalContext provides context) {
         DefaultTheme {
-          PrimaryButton(
+          EverliButton.Primary(
             onClick = { /*TODO*/ },
           ) {
             Text(modifier = Modifier.testTag(TEST_CUSTOM_CONTENT), text = TEST_BUTTON_TEXT)
@@ -130,10 +133,10 @@ class EverliButtonTests {
     rule.setContent {
       CompositionLocalProvider(LocalContext provides context) {
         DefaultTheme {
-          PrimaryButton(
+          EverliButton.Primary(
             onClick = { /*TODO*/ },
             text = TEST_BUTTON_TEXT,
-            icon = EverliIcons.Checkmark,
+            icon = EverliIcons.Check,
             enabled = false,
           )
         }
@@ -153,10 +156,10 @@ class EverliButtonTests {
     rule.setContent {
       CompositionLocalProvider(LocalContext provides context) {
         DefaultTheme {
-          ButtonSize.SMALL.textStyle(variant = ButtonVariant.PRIMARY) shouldBe DefaultButtonTheme.text.small
-          ButtonSize.MEDIUM.textStyle(variant = ButtonVariant.PRIMARY) shouldBe DefaultButtonTheme.text.medium
-          ButtonSize.LARGE.textStyle(variant = ButtonVariant.PRIMARY) shouldBe DefaultButtonTheme.text.large
-          ButtonSize.LARGE.textStyle(variant = ButtonVariant.LINK) shouldBe DefaultButtonTheme.text.link.large
+          ButtonSize.SMALL.textStyle() shouldBe DefaultButtonTheme.text.small
+          ButtonSize.MEDIUM.textStyle() shouldBe DefaultButtonTheme.text.medium
+          ButtonSize.LARGE.textStyle() shouldBe DefaultButtonTheme.text.large
+          ButtonSize.LARGE.textStyle(true) shouldBe DefaultButtonTheme.text.link.large
         }
       }
     }
@@ -217,6 +220,29 @@ class EverliButtonTests {
             backgroundColors(ButtonVariant.LINK, ButtonStyle.FILL) shouldBe transparent.background
             backgroundColors(ButtonVariant.LINK, ButtonStyle.OUTLINE) shouldBe transparent.background
             backgroundColors(ButtonVariant.LINK, ButtonStyle.FLAT) shouldBe transparent.background
+
+            backgroundColors(ButtonVariant.FACEBOOK, ButtonStyle.FILL) shouldBe
+                facebook.fill.background.merge(fill.background)
+            backgroundColors(ButtonVariant.FACEBOOK, ButtonStyle.OUTLINE) shouldBe
+                facebook.outline.background.merge(outline.background)
+            backgroundColors(ButtonVariant.FACEBOOK, ButtonStyle.FLAT) shouldBe StateColor()
+
+            backgroundColors(ButtonVariant.GOOGLE, ButtonStyle.FILL) shouldBe
+                google.fill.background.merge(fill.background)
+            backgroundColors(ButtonVariant.GOOGLE, ButtonStyle.OUTLINE) shouldBe
+                google.outline.background.merge(outline.background)
+            backgroundColors(ButtonVariant.GOOGLE, ButtonStyle.FLAT) shouldBe StateColor()
+
+            backgroundColors(ButtonVariant.APPLE, ButtonStyle.FILL) shouldBe
+                apple.fill.background.merge(fill.background)
+            backgroundColors(ButtonVariant.APPLE, ButtonStyle.OUTLINE) shouldBe
+                apple.outline.background.merge(outline.background)
+            backgroundColors(ButtonVariant.APPLE, ButtonStyle.FLAT) shouldBe StateColor()
+
+            backgroundColors(ButtonVariant.BLIK, ButtonStyle.FILL) shouldBe
+                blik.fill.background.merge(fill.background)
+            backgroundColors(ButtonVariant.BLIK, ButtonStyle.OUTLINE) shouldBe StateColor()
+            backgroundColors(ButtonVariant.BLIK, ButtonStyle.FLAT) shouldBe StateColor()
           }
         }
       }
@@ -244,6 +270,25 @@ class EverliButtonTests {
             borderColors(ButtonVariant.LINK, ButtonStyle.FILL) shouldBe StateColor()
             borderColors(ButtonVariant.LINK, ButtonStyle.OUTLINE) shouldBe StateColor()
             borderColors(ButtonVariant.LINK, ButtonStyle.FLAT) shouldBe StateColor()
+
+            borderColors(ButtonVariant.FACEBOOK, ButtonStyle.OUTLINE) shouldBe
+                facebook.outline.border.merge(outline.borderDark).merge(outline.border)
+            borderColors(ButtonVariant.FACEBOOK, ButtonStyle.FILL) shouldBe StateColor()
+            borderColors(ButtonVariant.FACEBOOK, ButtonStyle.FLAT) shouldBe StateColor()
+
+            borderColors(ButtonVariant.GOOGLE, ButtonStyle.OUTLINE) shouldBe
+                google.outline.border.merge(outline.borderDark).merge(outline.border)
+            borderColors(ButtonVariant.GOOGLE, ButtonStyle.FILL) shouldBe StateColor()
+            borderColors(ButtonVariant.GOOGLE, ButtonStyle.FLAT) shouldBe StateColor()
+
+            borderColors(ButtonVariant.APPLE, ButtonStyle.OUTLINE) shouldBe
+                apple.outline.border.merge(outline.borderDark).merge(outline.border)
+            borderColors(ButtonVariant.APPLE, ButtonStyle.FILL) shouldBe StateColor()
+            borderColors(ButtonVariant.APPLE, ButtonStyle.FLAT) shouldBe StateColor()
+
+            borderColors(ButtonVariant.BLIK, ButtonStyle.OUTLINE) shouldBe StateColor()
+            borderColors(ButtonVariant.BLIK, ButtonStyle.FILL) shouldBe StateColor()
+            borderColors(ButtonVariant.BLIK, ButtonStyle.FLAT) shouldBe StateColor()
           }
         }
       }
@@ -311,6 +356,62 @@ class EverliButtonTests {
               disabled = link.disabled.ifUnspecified(disabled),
               pressed = link.pressed.ifUnspecified(pressed),
             )
+
+            textColors(ButtonVariant.FACEBOOK, ButtonStyle.FILL) shouldBe StateColor(
+              enabled = enabled.ifUnspecified(DefaultTextTheme.color.negative),
+              disabled = disabled.ifUnspecified(DefaultTextTheme.color.negative),
+              pressed = pressed.ifUnspecified(DefaultTextTheme.color.negative),
+            )
+
+            textColors(ButtonVariant.FACEBOOK, ButtonStyle.OUTLINE) shouldBe StateColor(
+              enabled = enabled.ifUnspecified(EverliTheme.text.color.primary),
+              disabled = disabled.ifUnspecified(EverliTheme.text.color.primary),
+              pressed = pressed.ifUnspecified(EverliTheme.text.color.primary),
+            )
+
+            textColors(ButtonVariant.FACEBOOK, ButtonStyle.FLAT) shouldBe StateColor()
+
+            textColors(ButtonVariant.GOOGLE, ButtonStyle.FILL) shouldBe StateColor(
+              enabled = enabled.ifUnspecified(DefaultTextTheme.color.negative),
+              disabled = disabled.ifUnspecified(DefaultTextTheme.color.negative),
+              pressed = pressed.ifUnspecified(DefaultTextTheme.color.negative),
+            )
+
+            textColors(ButtonVariant.GOOGLE, ButtonStyle.OUTLINE) shouldBe StateColor(
+              enabled = enabled.ifUnspecified(EverliTheme.text.color.primary),
+              disabled = disabled.ifUnspecified(EverliTheme.text.color.primary),
+              pressed = pressed.ifUnspecified(EverliTheme.text.color.primary),
+            )
+
+            textColors(ButtonVariant.GOOGLE, ButtonStyle.FLAT) shouldBe StateColor()
+
+            textColors(ButtonVariant.APPLE, ButtonStyle.FILL) shouldBe StateColor(
+              enabled = enabled.ifUnspecified(DefaultTextTheme.color.negative),
+              disabled = disabled.ifUnspecified(DefaultTextTheme.color.negative),
+              pressed = pressed.ifUnspecified(DefaultTextTheme.color.negative),
+            )
+
+            textColors(ButtonVariant.APPLE, ButtonStyle.OUTLINE) shouldBe StateColor(
+              enabled = enabled.ifUnspecified(EverliTheme.text.color.primary),
+              disabled = disabled.ifUnspecified(EverliTheme.text.color.primary),
+              pressed = pressed.ifUnspecified(EverliTheme.text.color.primary),
+            )
+
+            textColors(ButtonVariant.APPLE, ButtonStyle.FLAT) shouldBe StateColor()
+
+            textColors(ButtonVariant.BLIK, ButtonStyle.FILL) shouldBe StateColor(
+              enabled = enabled.ifUnspecified(DefaultTextTheme.color.negative),
+              disabled = disabled.ifUnspecified(DefaultTextTheme.color.negative),
+              pressed = pressed.ifUnspecified(DefaultTextTheme.color.negative),
+            )
+
+            textColors(ButtonVariant.BLIK, ButtonStyle.OUTLINE) shouldBe StateColor(
+              enabled = enabled.ifUnspecified(EverliTheme.text.color.primary),
+              disabled = disabled.ifUnspecified(EverliTheme.text.color.primary),
+              pressed = pressed.ifUnspecified(EverliTheme.text.color.primary),
+            )
+
+            textColors(ButtonVariant.BLIK, ButtonStyle.FLAT) shouldBe StateColor()
           }
         }
       }
@@ -343,42 +444,105 @@ class EverliButtonTests {
               pressed = pressed.ifUnspecified(DefaultIconTheme.color.dark),
             )
 
-            textColors(ButtonVariant.SPECIAL, ButtonStyle.FILL) shouldBe StateColor(
+            iconColors(ButtonVariant.SPECIAL, ButtonStyle.FILL) shouldBe StateColor(
               enabled = enabled.ifUnspecified(DefaultIconTheme.color.light),
               disabled = disabled.ifUnspecified(DefaultIconTheme.color.light),
               pressed = pressed.ifUnspecified(DefaultIconTheme.color.light),
             )
 
-            textColors(ButtonVariant.SPECIAL, ButtonStyle.OUTLINE) shouldBe StateColor(
+            iconColors(ButtonVariant.SPECIAL, ButtonStyle.OUTLINE) shouldBe StateColor(
               enabled = enabled.ifUnspecified(DefaultIconTheme.color.dark),
               disabled = disabled.ifUnspecified(DefaultIconTheme.color.dark),
               pressed = pressed.ifUnspecified(DefaultIconTheme.color.dark),
             )
 
-            textColors(ButtonVariant.SPECIAL, ButtonStyle.FLAT) shouldBe StateColor(
+            iconColors(ButtonVariant.SPECIAL, ButtonStyle.FLAT) shouldBe StateColor(
               enabled = enabled.ifUnspecified(DefaultIconTheme.color.special),
               disabled = disabled.ifUnspecified(DefaultIconTheme.color.special),
               pressed = pressed.ifUnspecified(DefaultIconTheme.color.special),
             )
 
-            textColors(ButtonVariant.LINK, ButtonStyle.FILL) shouldBe StateColor(
+            iconColors(ButtonVariant.LINK, ButtonStyle.FILL) shouldBe StateColor(
               enabled = link.enabled.ifUnspecified(enabled),
               disabled = link.disabled.ifUnspecified(disabled),
               pressed = link.pressed.ifUnspecified(pressed),
             )
 
-            textColors(ButtonVariant.LINK, ButtonStyle.OUTLINE) shouldBe StateColor(
+            iconColors(ButtonVariant.LINK, ButtonStyle.OUTLINE) shouldBe StateColor(
               enabled = link.enabled.ifUnspecified(enabled),
               disabled = link.disabled.ifUnspecified(disabled),
               pressed = link.pressed.ifUnspecified(pressed),
             )
 
-            textColors(ButtonVariant.LINK, ButtonStyle.FLAT) shouldBe StateColor(
+            iconColors(ButtonVariant.LINK, ButtonStyle.FLAT) shouldBe StateColor(
               enabled = link.enabled.ifUnspecified(enabled),
               disabled = link.disabled.ifUnspecified(disabled),
               pressed = link.pressed.ifUnspecified(pressed),
             )
+
+            iconColors(ButtonVariant.FACEBOOK, ButtonStyle.OUTLINE) shouldBe StateColor(
+              enabled = facebook.outline.enabled.ifUnspecified(enabled),
+              disabled = facebook.outline.disabled.ifUnspecified(disabled),
+              pressed = facebook.outline.pressed.ifUnspecified(pressed),
+            )
+
+            iconColors(ButtonVariant.FACEBOOK, ButtonStyle.FILL) shouldBe StateColor(
+              enabled = enabled.ifUnspecified(DefaultIconTheme.color.light),
+              disabled = disabled.ifUnspecified(DefaultIconTheme.color.light),
+              pressed = pressed.ifUnspecified(DefaultIconTheme.color.light),
+            )
+
+            iconColors(ButtonVariant.APPLE, ButtonStyle.OUTLINE) shouldBe StateColor(
+              enabled = enabled.ifUnspecified(DefaultIconTheme.color.dark),
+              disabled = disabled.ifUnspecified(DefaultIconTheme.color.dark),
+              pressed = pressed.ifUnspecified(DefaultIconTheme.color.dark),
+            )
+
+            iconColors(ButtonVariant.APPLE, ButtonStyle.FILL) shouldBe StateColor(
+              enabled = enabled.ifUnspecified(DefaultIconTheme.color.light),
+              disabled = disabled.ifUnspecified(DefaultIconTheme.color.light),
+              pressed = pressed.ifUnspecified(DefaultIconTheme.color.light),
+            )
+
+            iconColors(ButtonVariant.GOOGLE, ButtonStyle.FILL) shouldBe StateColor()
+            iconColors(ButtonVariant.GOOGLE, ButtonStyle.OUTLINE) shouldBe StateColor()
+            iconColors(ButtonVariant.GOOGLE, ButtonStyle.FLAT) shouldBe StateColor()
+
+            iconColors(ButtonVariant.BLIK, ButtonStyle.FILL) shouldBe StateColor()
+            iconColors(ButtonVariant.BLIK, ButtonStyle.OUTLINE) shouldBe StateColor()
+            iconColors(ButtonVariant.BLIK, ButtonStyle.FLAT) shouldBe StateColor()
           }
+        }
+      }
+    }
+  }
+
+  @Test
+  fun shape_should_be_based_on_theme_if_icon_only() {
+    val context = InstrumentationRegistry.getInstrumentation().targetContext
+
+    rule.setContent {
+      CompositionLocalProvider(LocalContext provides context) {
+        DefaultTheme {
+          ButtonVariant.PRIMARY.shape(isIconOnly = true) shouldBe DefaultRadiusTheme.medium.toRoundedShape()
+          ButtonVariant.SPECIAL.shape(isIconOnly = false) shouldBe DefaultRadiusTheme.medium.toRoundedShape()
+
+          ButtonVariant.SPECIAL.shape(isIconOnly = true) shouldBe DefaultRadiusTheme.medium.toRoundedShape()
+          ButtonVariant.LINK.shape(isIconOnly = false) shouldBe DefaultRadiusTheme.medium.toRoundedShape()
+
+          ButtonVariant.LINK.shape(isIconOnly = true) shouldBe DefaultRadiusTheme.medium.toRoundedShape()
+
+          ButtonVariant.FACEBOOK.shape(isIconOnly = false) shouldBe DefaultRadiusTheme.medium.toRoundedShape()
+          ButtonVariant.FACEBOOK.shape(isIconOnly = true) shouldBe DefaultRadiusTheme.full.toRoundedShape()
+
+          ButtonVariant.GOOGLE.shape(isIconOnly = false) shouldBe DefaultRadiusTheme.medium.toRoundedShape()
+          ButtonVariant.GOOGLE.shape(isIconOnly = true) shouldBe DefaultRadiusTheme.full.toRoundedShape()
+
+          ButtonVariant.APPLE.shape(isIconOnly = false) shouldBe DefaultRadiusTheme.medium.toRoundedShape()
+          ButtonVariant.APPLE.shape(isIconOnly = true) shouldBe DefaultRadiusTheme.full.toRoundedShape()
+
+          ButtonVariant.BLIK.shape(isIconOnly = false) shouldBe DefaultRadiusTheme.medium.toRoundedShape()
+          ButtonVariant.BLIK.shape(isIconOnly = true) shouldBe DefaultRadiusTheme.full.toRoundedShape()
         }
       }
     }

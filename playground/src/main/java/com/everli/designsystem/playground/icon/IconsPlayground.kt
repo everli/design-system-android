@@ -41,13 +41,13 @@ fun IconsPlayground() {
       horizontalArrangement = Arrangement.Center,
       verticalAlignment = Alignment.CenterVertically,
       modifier = Modifier.fillMaxWidth()) {
-      EverliButton(
+      EverliButton.Button(
         onClick = { size -= 4.dp },
         text = "Decrease",
         modifier = Modifier.padding(8.dp),
       )
       Text(text = size.toString(), style = EverliTheme.typography.bodySemibold)
-      EverliButton(
+      EverliButton.Button(
         onClick = { size += 4.dp },
         text = "Increase",
         modifier = Modifier.padding(8.dp),
@@ -57,17 +57,17 @@ fun IconsPlayground() {
     Row(
       horizontalArrangement = Arrangement.Center,
       modifier = Modifier.fillMaxWidth()) {
-      EverliButton(
+      EverliButton.Button(
         onClick = { color = EverliColors.Black100 },
         text = "Black100",
         modifier = Modifier.padding(8.dp),
       )
-      EverliButton(
+      EverliButton.Button(
         onClick = { color = EverliColors.Green100 },
         text = "Green100",
         modifier = Modifier.padding(8.dp),
       )
-      EverliButton(
+      EverliButton.Button(
         onClick = { color = EverliColors.Navy100 },
         text = "Navy100",
         modifier = Modifier.padding(8.dp),
