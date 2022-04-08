@@ -329,12 +329,38 @@ fun BlikSection() {
     Row {
       EverliButton.Blik(
         onClick = { },
+        text = "Button",
+        style = BrandButtonStyle.OUTLINE,
+        modifier = Modifier.padding(8.dp)
+      )
+      EverliButton.Blik(
+        onClick = { },
+        text = "Button",
+        style = BrandButtonStyle.OUTLINE,
+        enabled = false,
+        modifier = Modifier.padding(8.dp)
+      )
+    }
+    Row {
+      EverliButton.Blik(
+        onClick = { },
         style = BrandButtonStyle.FILL,
         modifier = Modifier.padding(8.dp)
       )
       EverliButton.Blik(
         onClick = { },
         style = BrandButtonStyle.FILL,
+        enabled = false,
+        modifier = Modifier.padding(8.dp)
+      )
+      EverliButton.Blik(
+        onClick = { },
+        style = BrandButtonStyle.OUTLINE,
+        modifier = Modifier.padding(8.dp)
+      )
+      EverliButton.Blik(
+        onClick = { },
+        style = BrandButtonStyle.OUTLINE,
         enabled = false,
         modifier = Modifier.padding(8.dp)
       )
@@ -351,6 +377,23 @@ fun BlikSection() {
       onClick = { },
       text = "Button",
       style = BrandButtonStyle.FILL,
+      enabled = false,
+      modifier = Modifier
+        .fillMaxWidth()
+        .padding(8.dp)
+    )
+    EverliButton.Blik(
+      onClick = { },
+      text = "Button",
+      style = BrandButtonStyle.OUTLINE,
+      modifier = Modifier
+        .fillMaxWidth()
+        .padding(8.dp)
+    )
+    EverliButton.Blik(
+      onClick = { },
+      text = "Button",
+      style = BrandButtonStyle.OUTLINE,
       enabled = false,
       modifier = Modifier
         .fillMaxWidth()

@@ -135,6 +135,7 @@ internal fun backgroundColors(
       }
       ButtonVariant.BLIK -> when (style) {
         ButtonStyle.FILL -> blik.fill.background.merge(fill.background)
+        ButtonStyle.OUTLINE -> blik.outline.background.merge(outline.background)
         else -> StateColor() // not supported
       }
     }
@@ -180,6 +181,10 @@ internal fun borderColors(
       }
       ButtonVariant.APPLE -> when (style) {
         ButtonStyle.OUTLINE -> apple.outline.border.merge(outline.borderDark).merge(outline.border)
+        else -> StateColor()
+      }
+      ButtonVariant.BLIK -> when (style) {
+        ButtonStyle.OUTLINE -> blik.outline.border.merge(outline.borderDark).merge(outline.border)
         else -> StateColor()
       }
       else -> StateColor()

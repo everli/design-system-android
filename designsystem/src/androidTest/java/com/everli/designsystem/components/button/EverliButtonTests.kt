@@ -241,7 +241,8 @@ class EverliButtonTests {
 
             backgroundColors(ButtonVariant.BLIK, ButtonStyle.FILL) shouldBe
                 blik.fill.background.merge(fill.background)
-            backgroundColors(ButtonVariant.BLIK, ButtonStyle.OUTLINE) shouldBe StateColor()
+            backgroundColors(ButtonVariant.BLIK, ButtonStyle.OUTLINE) shouldBe
+                blik.outline.background.merge(outline.background)
             backgroundColors(ButtonVariant.BLIK, ButtonStyle.FLAT) shouldBe StateColor()
           }
         }
@@ -286,7 +287,8 @@ class EverliButtonTests {
             borderColors(ButtonVariant.APPLE, ButtonStyle.FILL) shouldBe StateColor()
             borderColors(ButtonVariant.APPLE, ButtonStyle.FLAT) shouldBe StateColor()
 
-            borderColors(ButtonVariant.BLIK, ButtonStyle.OUTLINE) shouldBe StateColor()
+            borderColors(ButtonVariant.BLIK, ButtonStyle.OUTLINE) shouldBe
+                blik.outline.border.merge(outline.borderDark).merge(outline.border)
             borderColors(ButtonVariant.BLIK, ButtonStyle.FILL) shouldBe StateColor()
             borderColors(ButtonVariant.BLIK, ButtonStyle.FLAT) shouldBe StateColor()
           }
