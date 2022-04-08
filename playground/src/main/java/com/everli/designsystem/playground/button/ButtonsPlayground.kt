@@ -47,14 +47,8 @@ import com.google.accompanist.pager.pagerTabIndicatorOffset
 import com.google.accompanist.pager.rememberPagerState
 import kotlinx.coroutines.launch
 
-@Composable
-fun onClick(): () -> Unit {
-  val context = LocalContext.current
 
-  return {
-    Toast.makeText(context, "Primary clicked!", Toast.LENGTH_SHORT).show()
-  }
-}
+fun onClick() = {}
 
 fun buttonText() = "Button"
 

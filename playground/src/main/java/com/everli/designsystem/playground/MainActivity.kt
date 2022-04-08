@@ -1,6 +1,7 @@
 package com.everli.designsystem.playground
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -21,6 +22,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -31,7 +33,10 @@ import com.everli.designsystem.components.button.EverliButton
 import com.everli.designsystem.core.theme.DefaultTheme
 import com.everli.designsystem.core.constants.EverliColors
 import com.everli.designsystem.core.theme.DefaultTypography
+import com.everli.designsystem.playground.button.ButtonStatePlayground
 import com.everli.designsystem.playground.button.ButtonsPlayground
+import com.everli.designsystem.playground.button.buttonText
+import com.everli.designsystem.playground.button.onClick
 import com.everli.designsystem.playground.color.ColorsPlayground
 import com.everli.designsystem.playground.icon.IconsPlayground
 import com.everli.designsystem.playground.theme.ThemePlaygroundContent
@@ -115,6 +120,9 @@ fun Home(navController: NavController) {
       text = "\uD83C\uDD92 BUTTONS",
       onClick = { navController.navigate(Destinations.BUTTONS) })
     HomeButton(
+      text = "\uD83C\uDD92 BUTTON STATE",
+      onClick = { navController.navigate(Destinations.BUTTON_STATE) })
+    HomeButton(
       text = "\uD83D\uDD25 TOKENS",
       onClick = { navController.navigate(Destinations.TOKENS) })
     HomeButton(
@@ -129,10 +137,9 @@ fun HomeButton(text: String, onClick: () -> Unit) {
     onClick = onClick,
     modifier = Modifier
       .fillMaxWidth()
-      .padding(16.dp)
-  ) {
-    Text(text = text)
-  }
+      .padding(16.dp),
+    text = text,
+  )
 }
 
 @ExperimentalFoundationApi
@@ -145,6 +152,7 @@ fun Navigation() {
     composable(Destinations.COLORS) { ColorsPlayground() }
     composable(Destinations.TYPOGRAPHY) { TypographyPlayground() }
     composable(Destinations.BUTTONS) { ButtonsPlayground() }
+    composable(Destinations.BUTTON_STATE) { ButtonStatePlayground() }
     composable(Destinations.TOKENS) { TokensPlayground() }
     composable(Destinations.ICONS) { IconsPlayground() }
   }
@@ -156,6 +164,7 @@ object Destinations {
   const val COLORS = "Colors"
   const val TYPOGRAPHY = "Typography"
   const val BUTTONS = "Buttons"
+  const val BUTTON_STATE = "Button State"
   const val TOKENS = "Tokens"
   const val ICONS = "Icons"
 
@@ -174,12 +183,5 @@ fun AppPreview() {
 fun HomePreview() {
   DefaultTheme {
     Home(rememberNavController())
-  }
-}
-
-@Composable
-fun TestSome() {
-  EverliButton(onClick = {}) {
-    Text("Wow")
   }
 }

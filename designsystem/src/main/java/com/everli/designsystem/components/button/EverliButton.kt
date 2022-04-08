@@ -3,6 +3,9 @@ package com.everli.designsystem.components.button
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.interaction.Interaction
 import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsDraggedAsState
+import androidx.compose.foundation.interaction.collectIsFocusedAsState
+import androidx.compose.foundation.interaction.collectIsHoveredAsState
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -101,6 +104,7 @@ fun EverliButton(
   icon: Painter? = null,
   iconPosition: IconPosition = IconPosition.LEFT,
   contentDescription: String? = null,
+  withRipple: Boolean = false,
 ) {
 
   // handle pressed for icon
@@ -132,6 +136,7 @@ fun EverliButton(
     buttonStyle = buttonStyle,
     size = size,
     enabled = enabled,
+    withRipple = withRipple,
     contentPadding = size.padding(variant = variant, isIconOnly = isIconOnly)
   ) {
     Row(
@@ -184,6 +189,7 @@ internal fun EverliButtonInternal(
   enabled: Boolean = true,
   interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
   contentPadding: PaddingValues = size.padding(variant = variant),
+  withRipple: Boolean = false,
   content: @Composable (RowScope.() -> Unit) = { },
 ) {
 
@@ -197,30 +203,58 @@ internal fun EverliButtonInternal(
 
   // TODO: LocalRippleTheme TBD, need to talk with Ric
   // LocalMinimumTouchTargetEnforcement set to false to override Material behavior
-  CompositionLocalProvider(
-    LocalRippleTheme provides ClearRippleTheme,
-    LocalMinimumTouchTargetEnforcement provides false,
-  ) {
-    Button(
-      onClick = onClick,
-      enabled = enabled,
-      shape = RoundedCornerShape(EverliTheme.radius.medium),
-      border = buttonStyle.border(borderColors.forEnabled(enabled)),
-      interactionSource = interactionSource,
-      elevation = null,
-      contentPadding = contentPadding,
-      colors = ButtonDefaults.buttonColors(
-        backgroundColor = backgroundColors.forPressed(isPressed),
-        disabledBackgroundColor = backgroundColors.forEnabled(enabled),
-        contentColor = textColors.forPressed(isPressed),
-        disabledContentColor = textColors.forEnabled(enabled)
-      ),
-      modifier = modifier.then( // N.B. order is very important
-        Modifier
-          .defaultMinSize(minHeight = 1.dp, minWidth = 1.dp) // done to override material default min sizes
-          .testTag(TestTags.Button.CONTAINER)),
+  if (withRipple) {
+    CompositionLocalProvider(
+      LocalMinimumTouchTargetEnforcement provides false,
     ) {
-      content()
+      Button(
+        onClick = onClick,
+        enabled = enabled,
+        shape = RoundedCornerShape(EverliTheme.radius.medium),
+        border = buttonStyle.border(borderColors.forEnabled(enabled)),
+        interactionSource = interactionSource,
+        elevation = null,
+        contentPadding = contentPadding,
+        colors = ButtonDefaults.buttonColors(
+          backgroundColor = backgroundColors.forPressed(isPressed),
+          disabledBackgroundColor = backgroundColors.forEnabled(enabled),
+          contentColor = textColors.forPressed(isPressed),
+          disabledContentColor = textColors.forEnabled(enabled)
+        ),
+        modifier = modifier.then( // N.B. order is very important
+          Modifier
+            .defaultMinSize(minHeight = 1.dp, minWidth = 1.dp) // done to override material default min sizes
+            .testTag(TestTags.Button.CONTAINER)),
+      ) {
+        content()
+      }
+    }
+  } else {
+    CompositionLocalProvider(
+      LocalMinimumTouchTargetEnforcement provides false,
+      LocalRippleTheme provides ClearRippleTheme,
+    ) {
+      Button(
+        onClick = onClick,
+        enabled = enabled,
+        shape = RoundedCornerShape(EverliTheme.radius.medium),
+        border = buttonStyle.border(borderColors.forEnabled(enabled)),
+        interactionSource = interactionSource,
+        elevation = null,
+        contentPadding = contentPadding,
+        colors = ButtonDefaults.buttonColors(
+          backgroundColor = backgroundColors.forPressed(isPressed),
+          disabledBackgroundColor = backgroundColors.forEnabled(enabled),
+          contentColor = textColors.forPressed(isPressed),
+          disabledContentColor = textColors.forEnabled(enabled)
+        ),
+        modifier = modifier.then( // N.B. order is very important
+          Modifier
+            .defaultMinSize(minHeight = 1.dp, minWidth = 1.dp) // done to override material default min sizes
+            .testTag(TestTags.Button.CONTAINER)),
+      ) {
+        content()
+      }
     }
   }
 }
