@@ -7,7 +7,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import com.everli.designsystem.helper.empty
 
 @Composable
-fun PrimaryButton(
+fun EverliButton.PrimaryButton(
   onClick: () -> Unit,
   modifier: Modifier = Modifier,
   buttonStyle: ButtonStyle = ButtonStyle.FILL,

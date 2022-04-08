@@ -1,5 +1,6 @@
 package com.everli.designsystem.core.theme
 
+import android.widget.Button
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
@@ -51,17 +52,29 @@ data class ButtonIconColors(
   val pressed: Color = Color.Unspecified,
   // variant specific
   val link: StateColor = StateColor(),
+  val facebook: FacebookButtonIconColors = FacebookButtonIconColors(),
+)
+
+@Immutable
+data class FacebookButtonIconColors(
+  val outline: StateColor = StateColor(),
 )
 
 @Immutable
 data class ButtonsColors(
   // generic styles
   val fill: ButtonColors = ButtonColors(),
-  val outline: ButtonColors = ButtonColors(),
+  val outline: OutlineButtonColors = OutlineButtonColors(),
   val transparent: ButtonColors = ButtonColors(),
   // variant specific
-  val primary: ButtonVariantValues<ButtonColors>,
-  val special: ButtonVariantValues<ButtonColors>,
+  val primary: ButtonVariantValues<ButtonColors> = ButtonVariantValues.withColors(),
+  val special: ButtonVariantValues<ButtonColors> = ButtonVariantValues.withColors(),
+  val facebook: ButtonVariantValues<ButtonColors> = ButtonVariantValues.withColors(),
+  val google: ButtonVariantValues<ButtonColors> = ButtonVariantValues.withColors(),
+  val apple: ButtonVariantValues<ButtonColors> = ButtonVariantValues.withColors(),
+  val blik: ButtonVariantValues<ButtonColors> = ButtonVariantValues.withColors(),
+  // misc
+  val overlay: StateColor = StateColor(),
 )
 
 @Immutable
@@ -69,12 +82,34 @@ data class ButtonVariantValues<T>(
   val fill: T,
   val outline: T,
   val flat: T,
-)
+) {
+
+  companion object {
+
+    /**
+     * Create default empty with [ButtonColors] to facilitate initialization
+     */
+    fun withColors() = ButtonVariantValues(
+      fill = ButtonColors(),
+      outline = ButtonColors(),
+      flat = ButtonColors(),
+    )
+
+  }
+}
 
 @Immutable
 data class ButtonColors(
   val background: StateColor = StateColor(),
   val border: StateColor = StateColor(),
+)
+
+@Immutable
+data class OutlineButtonColors(
+  val background: StateColor = StateColor(),
+  val border: StateColor = StateColor(),
+  // only used by brand variants
+  val borderDark: StateColor = StateColor(),
 )
 
 // Default
@@ -100,8 +135,13 @@ val DefaultButtonTheme = ButtonTheme(
       link = StateColor(
         enabled = EverliColors.Navy100,
         pressed = EverliColors.Navy110,
-      )
-    )
+      ),
+      facebook = FacebookButtonIconColors(
+        outline = StateColor(
+          enabled = EverliColors.Facebook,
+        ),
+      ),
+    ),
   ),
   color = ButtonsColors(
     transparent = ButtonColors(
@@ -115,10 +155,13 @@ val DefaultButtonTheme = ButtonTheme(
         disabled = EverliColors.Gray15,
       )
     ),
-    outline = ButtonColors(
+    outline = OutlineButtonColors(
       border = StateColor(
         disabled = EverliColors.Gray40,
-      )
+      ),
+      borderDark = StateColor(
+        enabled = EverliColors.Black100
+      ),
     ),
     primary = ButtonVariantValues(
       fill = ButtonColors(
@@ -159,6 +202,34 @@ val DefaultButtonTheme = ButtonTheme(
       flat = ButtonColors(
         background = StateColor(
           pressed = EverliColors.Red20,
+        ),
+      ),
+    ),
+    facebook = ButtonVariantValues.withColors().copy(
+      fill = ButtonColors(
+        background = StateColor(
+          enabled = EverliColors.Facebook,
+        ),
+      ),
+    ),
+    google = ButtonVariantValues.withColors().copy(
+      fill = ButtonColors(
+        background = StateColor(
+          enabled = EverliColors.Google,
+        ),
+      ),
+    ),
+    apple = ButtonVariantValues.withColors().copy(
+      fill = ButtonColors(
+        background = StateColor(
+          enabled = EverliColors.Apple,
+        ),
+      ),
+    ),
+    blik = ButtonVariantValues.withColors().copy(
+      fill = ButtonColors(
+        background = StateColor(
+          enabled = EverliColors.Blink,
         ),
       ),
     ),

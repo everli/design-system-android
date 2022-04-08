@@ -1,6 +1,5 @@
 package com.everli.designsystem.components.button
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.interaction.Interaction
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
@@ -10,7 +9,6 @@ import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.ExperimentalMaterialApi
@@ -27,19 +25,19 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.everli.designsystem.core.theme.EverliTheme
-import com.everli.designsystem.core.theme.StateColor
 import com.everli.designsystem.helper.TestTags
 import com.everli.designsystem.helper.applyIf
 import com.everli.designsystem.helper.empty
-import com.everli.designsystem.helper.ifUnspecified
+
+object EverliButton {
+
+}
 
 /**
  * Button Component with custom content as parameter via [content]
@@ -132,7 +130,8 @@ fun EverliButton(
     buttonStyle = buttonStyle,
     size = size,
     enabled = enabled,
-    contentPadding = size.padding(variant = variant, isIconOnly = isIconOnly)
+    contentPadding = size.padding(isLink = variant.isLink(), isIconOnly = isIconOnly),
+    shape = variant.shape(isIconOnly = isIconOnly),
   ) {
     Row(
       verticalAlignment = Alignment.CenterVertically) {
@@ -143,7 +142,7 @@ fun EverliButton(
       if (text.isNotEmpty()) {
         Text(
           text = text,
-          style = size.textStyle(variant),
+          style = size.textStyle(variant.isLink()),
           textAlign = TextAlign.Center,
           overflow = TextOverflow.Ellipsis,
           modifier = Modifier.testTag(TestTags.Button.TEXT)
@@ -183,7 +182,8 @@ internal fun EverliButtonInternal(
   size: ButtonSize = ButtonSize.MEDIUM,
   enabled: Boolean = true,
   interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
-  contentPadding: PaddingValues = size.padding(variant = variant),
+  contentPadding: PaddingValues = size.padding(isLink = variant.isLink()),
+  shape: Shape = variant.shape(isIconOnly = false),
   content: @Composable (RowScope.() -> Unit) = { },
 ) {
 
@@ -204,7 +204,7 @@ internal fun EverliButtonInternal(
     Button(
       onClick = onClick,
       enabled = enabled,
-      shape = RoundedCornerShape(EverliTheme.radius.medium),
+      shape = shape,
       border = buttonStyle.border(borderColors.forEnabled(enabled)),
       interactionSource = interactionSource,
       elevation = null,
@@ -222,312 +222,6 @@ internal fun EverliButtonInternal(
     ) {
       content()
     }
-  }
-}
-
-enum class ButtonVariant {
-
-  PRIMARY,
-  SPECIAL,
-  LINK,
-
-}
-
-fun ButtonVariant.isPrimary(): Boolean = this == ButtonVariant.PRIMARY
-fun ButtonVariant.isSpecial(): Boolean = this == ButtonVariant.SPECIAL
-fun ButtonVariant.isLink(): Boolean = this == ButtonVariant.LINK
-
-enum class ButtonStyle {
-
-  FILL,
-  OUTLINE,
-  FLAT,
-
-}
-
-enum class ButtonSize {
-
-  LARGE,
-  MEDIUM,
-  SMALL;
-
-}
-
-enum class IconPosition {
-
-  LEFT,
-  RIGHT,
-
-}
-
-fun IconPosition.isLeft() = this == IconPosition.LEFT
-fun IconPosition.isRight() = this == IconPosition.RIGHT
-
-/**
- * Get text style based on [ButtonSize] and [ButtonVariant]
- * The styles will be fetched from [EverliTheme.button]
- */
-@Composable
-internal fun ButtonSize.textStyle(variant: ButtonVariant): TextStyle {
-  return when (this) {
-    ButtonSize.SMALL -> EverliTheme.button.text.small
-    ButtonSize.MEDIUM -> EverliTheme.button.text.medium
-    ButtonSize.LARGE -> when (variant) {
-      ButtonVariant.LINK -> EverliTheme.button.text.link.large
-      else -> EverliTheme.button.text.large
-    }
-  }
-}
-
-/**
- * Get icon size based on [ButtonSize]
- * The sizes will be fetched from [EverliTheme.icon]
- */
-@Composable
-internal fun ButtonSize.iconSize(): Dp {
-  return when (this) {
-    ButtonSize.SMALL -> EverliTheme.icon.size.small
-    ButtonSize.MEDIUM -> EverliTheme.icon.size.medium
-    ButtonSize.LARGE -> EverliTheme.icon.size.medium
-  }
-}
-
-/**
- * Get content padding based on [ButtonSize], [ButtonVariant] and if the button is icon only
- * The sizes are not fetched from the theme
- */
-@Composable
-internal fun ButtonSize.padding(variant: ButtonVariant, isIconOnly: Boolean = false): PaddingValues {
-  // icon only, keep square look
-  if (isIconOnly) {
-    return when (this) {
-      ButtonSize.SMALL -> PaddingValues(8.dp)
-      ButtonSize.MEDIUM -> PaddingValues(10.dp)
-      ButtonSize.LARGE -> PaddingValues(14.dp)
-    }
-  }
-
-  // else apply padding
-  return when (this) {
-    ButtonSize.SMALL -> PaddingValues(
-      horizontal = if (variant.isLink()) 0.dp else 12.dp,
-      vertical = 6.dp,
-    )
-    ButtonSize.MEDIUM -> PaddingValues(
-      horizontal = if (variant.isLink()) 0.dp else 16.dp,
-      vertical = 10.dp,
-    )
-    ButtonSize.LARGE -> PaddingValues(
-      horizontal = if (variant.isLink()) 0.dp else 16.dp,
-      vertical = if (variant.isLink()) 10.dp else 12.dp,
-    )
-  }
-}
-
-/**
- * Get border based on [ButtonStyle]
- * At the moment, only [ButtonStyle.OUTLINE] will be created with border
- */
-@Composable
-internal fun ButtonStyle.border(color: Color): BorderStroke? {
-  return when (this) {
-    ButtonStyle.OUTLINE -> BorderStroke(1.dp, color)
-    else -> null
-  }
-}
-
-/**
- * Get background colors based on [ButtonVariant] and [ButtonStyle]
- *
- * The order in which the colors are applied is the following:
- * 1. [EverliTheme.button.color.{variant}.{style}.background] -> variant specific colors
- * 2. [EverliTheme.button.color.{style}.background] -> button style colors
- *
- * That is, if colors in [1] are [Color.Unspecified] they will be merged with colors in [2]
- *
- * Set [1] for granular control over the variant
- * Or use [2] for generic/shared colors
- *
- * Special case for [ButtonVariant.LINK], the colors will always be transparent
- */
-@Composable
-internal fun backgroundColors(
-  variant: ButtonVariant,
-  style: ButtonStyle,
-): StateColor {
-  with(EverliTheme.button.color) {
-    return when (variant) {
-      ButtonVariant.PRIMARY -> when (style) {
-        ButtonStyle.FILL -> primary.fill.background.merge(fill.background)
-        ButtonStyle.OUTLINE -> primary.outline.background.merge(outline.background)
-        ButtonStyle.FLAT -> primary.flat.background.merge(transparent.background)
-      }
-      ButtonVariant.SPECIAL -> when (style) {
-        ButtonStyle.FILL -> special.fill.background.merge(fill.background)
-        ButtonStyle.OUTLINE -> special.outline.background.merge(outline.background)
-        ButtonStyle.FLAT -> special.flat.background.merge(transparent.background)
-      }
-      ButtonVariant.LINK -> transparent.background
-    }
-  }
-}
-
-/**
- * Get border colors based on [ButtonVariant] and [ButtonStyle]
- *
- * The order in which the colors are applied is the following:
- * 1. [EverliTheme.button.color.{variant}.{style}.border] -> variant specific colors
- * 2. [EverliTheme.button.color.{style}.border] -> button style colors
- *
- * That is, if colors in [1] are [Color.Unspecified] they will be merged with colors in [2]
- *
- * Set [1] for granular control over the variant
- * Or use [2] for generic/shared colors
- *
- * Special case for [ButtonVariant.LINK], no border is used, a default [StateColor] is returned
- */
-@Composable
-internal fun borderColors(
-  variant: ButtonVariant,
-  style: ButtonStyle,
-): StateColor {
-  with(EverliTheme.button.color) {
-    return when (variant) {
-      ButtonVariant.PRIMARY -> when (style) {
-        ButtonStyle.OUTLINE -> primary.outline.border.merge(outline.border)
-        else -> StateColor()
-      }
-      ButtonVariant.SPECIAL -> when (style) {
-        ButtonStyle.OUTLINE -> special.outline.border.merge(outline.border)
-        else -> StateColor()
-      }
-      else -> StateColor()
-    }
-  }
-}
-
-/**
- * Get text colors based on [ButtonVariant] and [ButtonStyle]
- *
- * The order in which the colors are applied is the following:
- * 1. [EverliTheme.button.text.color] -> button specific text colors
- * 2. [EverliTheme.text.color]] -> global text colors
- *
- * That is, if colors in [1] are [Color.Unspecified] they will be merged with colors in [2]
- *
- * Set [1] for granular control over the variant
- * Or use [2] for generic/shared colors
- */
-@Composable
-internal fun textColors(
-  variant: ButtonVariant,
-  style: ButtonStyle,
-): StateColor {
-  with(EverliTheme.button.text.color) {
-    return when (variant) {
-      ButtonVariant.PRIMARY -> when (style) {
-        ButtonStyle.FILL -> StateColor(
-          enabled = enabled.ifUnspecified(EverliTheme.text.color.negative),
-          disabled = disabled.ifUnspecified(EverliTheme.text.color.negative),
-          pressed = pressed.ifUnspecified(EverliTheme.text.color.negative),
-        )
-        else -> StateColor(
-          enabled = enabled.ifUnspecified(EverliTheme.text.color.primary),
-          disabled = disabled.ifUnspecified(EverliTheme.text.color.primary),
-          pressed = pressed.ifUnspecified(EverliTheme.text.color.primary),
-        )
-      }
-      ButtonVariant.SPECIAL -> when (style) {
-        ButtonStyle.FILL -> StateColor(
-          enabled = enabled.ifUnspecified(EverliTheme.text.color.negative),
-          disabled = disabled.ifUnspecified(EverliTheme.text.color.negative),
-          pressed = pressed.ifUnspecified(EverliTheme.text.color.negative),
-        )
-        ButtonStyle.OUTLINE -> StateColor(
-          enabled = enabled.ifUnspecified(EverliTheme.text.color.primary),
-          disabled = disabled.ifUnspecified(EverliTheme.text.color.primary),
-          pressed = pressed.ifUnspecified(EverliTheme.text.color.primary),
-        )
-        ButtonStyle.FLAT -> StateColor(
-          enabled = enabled.ifUnspecified(EverliTheme.text.color.special),
-          disabled = disabled.ifUnspecified(EverliTheme.text.color.special),
-          pressed = pressed.ifUnspecified(EverliTheme.text.color.special),
-        )
-      }
-      ButtonVariant.LINK -> {
-        StateColor(
-          enabled = link.enabled.ifUnspecified(enabled),
-          disabled = link.disabled.ifUnspecified(disabled),
-          pressed = link.pressed.ifUnspecified(pressed),
-        )
-      }
-    }
-  }
-}
-
-/**
- * Get icon colors based on [ButtonVariant] and [ButtonStyle]
- *
- * The order in which the colors are applied is the following:
- * 1. [EverliTheme.button.icon.color] -> button specific icon colors
- * 2. [EverliTheme.icon.color] -> global icon colors
- *
- * That is, if colors in [1] are [Color.Unspecified] they will be merged with colors in [2]
- *
- * Set [1] for granular control over the variant
- * Or use [2] for generic/shared colors
- */
-@Composable
-internal fun iconColors(
-  variant: ButtonVariant,
-  style: ButtonStyle,
-): StateColor {
-  with(EverliTheme.button.icon.color) {
-    return when (variant) {
-      ButtonVariant.PRIMARY -> when (style) {
-        ButtonStyle.FILL -> StateColor(
-          enabled = enabled.ifUnspecified(EverliTheme.icon.color.light),
-          disabled = disabled.ifUnspecified(EverliTheme.icon.color.light),
-          pressed = pressed.ifUnspecified(EverliTheme.icon.color.light),
-        )
-        else -> StateColor(
-          enabled = enabled.ifUnspecified(EverliTheme.icon.color.dark),
-          disabled = disabled.ifUnspecified(EverliTheme.icon.color.dark),
-          pressed = pressed.ifUnspecified(EverliTheme.icon.color.dark),
-        )
-      }
-      ButtonVariant.SPECIAL -> when (style) {
-        ButtonStyle.FILL -> StateColor(
-          enabled = enabled.ifUnspecified(EverliTheme.icon.color.light),
-          disabled = disabled.ifUnspecified(EverliTheme.icon.color.light),
-          pressed = pressed.ifUnspecified(EverliTheme.icon.color.light),
-        )
-        ButtonStyle.OUTLINE -> StateColor(
-          enabled = enabled.ifUnspecified(EverliTheme.icon.color.dark),
-          disabled = disabled.ifUnspecified(EverliTheme.icon.color.dark),
-          pressed = pressed.ifUnspecified(EverliTheme.icon.color.dark),
-        )
-        ButtonStyle.FLAT -> StateColor(
-          enabled = enabled.ifUnspecified(EverliTheme.icon.color.special),
-          disabled = disabled.ifUnspecified(EverliTheme.icon.color.special),
-          pressed = pressed.ifUnspecified(EverliTheme.icon.color.special),
-        )
-      }
-      ButtonVariant.LINK -> {
-        StateColor(
-          enabled = link.enabled.ifUnspecified(enabled),
-          disabled = link.disabled.ifUnspecified(disabled),
-          pressed = link.pressed.ifUnspecified(pressed),
-        )
-      }
-    }
-  }
-}
-
-internal fun IconPosition.padding(): PaddingValues {
-  return when (this) {
-    IconPosition.LEFT -> PaddingValues(end = 8.dp)
-    IconPosition.RIGHT -> PaddingValues(start = 8.dp)
   }
 }
 

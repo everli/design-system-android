@@ -115,6 +115,9 @@ fun Home(navController: NavController) {
       text = "\uD83C\uDD92 BUTTONS",
       onClick = { navController.navigate(Destinations.BUTTONS) })
     HomeButton(
+      text = "\uD83C\uDD92 BRAND BUTTONS",
+      onClick = { navController.navigate(Destinations.BRAND_BUTTONS) })
+    HomeButton(
       text = "\uD83D\uDD25 TOKENS",
       onClick = { navController.navigate(Destinations.TOKENS) })
     HomeButton(
@@ -145,6 +148,7 @@ fun Navigation() {
     composable(Destinations.COLORS) { ColorsPlayground() }
     composable(Destinations.TYPOGRAPHY) { TypographyPlayground() }
     composable(Destinations.BUTTONS) { ButtonsPlayground() }
+    composable(Destinations.BRAND_BUTTONS) { ButtonsPlayground() }
     composable(Destinations.TOKENS) { TokensPlayground() }
     composable(Destinations.ICONS) { IconsPlayground() }
   }
@@ -156,6 +160,7 @@ object Destinations {
   const val COLORS = "Colors"
   const val TYPOGRAPHY = "Typography"
   const val BUTTONS = "Buttons"
+  const val BRAND_BUTTONS = "Brand Buttons"
   const val TOKENS = "Tokens"
   const val ICONS = "Icons"
 
@@ -174,12 +179,5 @@ fun AppPreview() {
 fun HomePreview() {
   DefaultTheme {
     Home(rememberNavController())
-  }
-}
-
-@Composable
-fun TestSome() {
-  EverliButton(onClick = {}) {
-    Text("Wow")
   }
 }

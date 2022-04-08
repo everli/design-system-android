@@ -53,6 +53,10 @@ fun Color.Companion.fromName(name: String, fallbackColor: Color = White): Color 
     "yellow-100", "yellow-sun" -> EverliColors.Yellow100
     "navy-100", "link" -> EverliColors.Navy100
     "navy-110" -> EverliColors.Navy110
+    "facebook" -> EverliColors.Facebook
+    "google" -> EverliColors.Google
+    "apple" -> EverliColors.Apple
+    "blink" -> EverliColors.Blink
     else -> fallbackColor
   }
 }
