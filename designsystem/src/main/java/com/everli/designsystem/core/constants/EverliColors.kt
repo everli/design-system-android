@@ -42,7 +42,7 @@ object EverliColors {
   val Facebook = Color(0xFF2374E1)
   val Google = Black100
   val Apple = Black100
-  val Blink = Color(0xFFE5005D)
+  val Blik = Color(0xFFE5005D)
 
   // Design system "brand" names
   val WalterWhite = White

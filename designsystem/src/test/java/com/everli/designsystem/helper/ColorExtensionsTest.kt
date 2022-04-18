@@ -87,7 +87,7 @@ internal class ColorExtensionsTest : FunSpec(
       "facebook" to EverliColors.Facebook,
       "google" to EverliColors.Google,
       "apple" to EverliColors.Apple,
-      "blink" to EverliColors.Blink,
+      "blik" to EverliColors.Blik,
     ).forEach { (name, color) ->
       test("$name should be converted to $color") {
         Color.fromName(name) shouldBe color

@@ -1,6 +1,5 @@
 package com.everli.designsystem.core.theme
 
-import android.widget.Button
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
@@ -233,8 +232,8 @@ val DefaultButtonTheme = ButtonTheme(
     blik = ButtonVariantValues.withColors().copy(
       fill = ButtonColors(
         background = StateColor(
-          enabled = EverliColors.Blink,
-          pressed = EverliColors.Blink,
+          enabled = EverliColors.Blik,
+          pressed = EverliColors.Blik,
         ),
       ),
     ),

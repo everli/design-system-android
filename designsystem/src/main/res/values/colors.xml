@@ -37,7 +37,7 @@
   <color name="facebook">#FF2374E1</color>
   <color name="google">@color/black_100</color>
   <color name="apple">@color/black_100</color>
-  <color name="blink">#FFE5005D</color>
+  <color name="blik">#FFE5005D</color>
 
   <!-- Brand Names -->
   <color name="walter_white">@color/white</color>
