@@ -37,6 +37,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.everli.designsystem.core.constants.EverliColors
 import com.everli.designsystem.core.theme.EverliTheme
 import com.everli.designsystem.core.theme.StateColor
 import com.everli.designsystem.helper.TestTags
@@ -105,6 +106,7 @@ fun EverliButton(
   iconPosition: IconPosition = IconPosition.LEFT,
   contentDescription: String? = null,
   withRipple: Boolean = false,
+  withCustomRipple: Boolean = false,
 ) {
 
   // handle pressed for icon
@@ -137,6 +139,7 @@ fun EverliButton(
     size = size,
     enabled = enabled,
     withRipple = withRipple,
+    withCustomRipple = withCustomRipple,
     contentPadding = size.padding(variant = variant, isIconOnly = isIconOnly)
   ) {
     Row(
@@ -190,6 +193,7 @@ internal fun EverliButtonInternal(
   interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
   contentPadding: PaddingValues = size.padding(variant = variant),
   withRipple: Boolean = false,
+  withCustomRipple: Boolean = false,
   content: @Composable (RowScope.() -> Unit) = { },
 ) {
 
@@ -203,7 +207,8 @@ internal fun EverliButtonInternal(
 
   // TODO: LocalRippleTheme TBD, need to talk with Ric
   // LocalMinimumTouchTargetEnforcement set to false to override Material behavior
-  if (withRipple) {
+
+  if (withRipple && !withCustomRipple) {
     CompositionLocalProvider(
       LocalMinimumTouchTargetEnforcement provides false,
     ) {
@@ -217,6 +222,33 @@ internal fun EverliButtonInternal(
         contentPadding = contentPadding,
         colors = ButtonDefaults.buttonColors(
           backgroundColor = backgroundColors.forPressed(isPressed),
+          disabledBackgroundColor = backgroundColors.forEnabled(enabled),
+          contentColor = textColors.forPressed(isPressed),
+          disabledContentColor = textColors.forEnabled(enabled)
+        ),
+        modifier = modifier.then( // N.B. order is very important
+          Modifier
+            .defaultMinSize(minHeight = 1.dp, minWidth = 1.dp) // done to override material default min sizes
+            .testTag(TestTags.Button.CONTAINER)),
+      ) {
+        content()
+      }
+    }
+  } else if (withRipple && withCustomRipple) {
+    CompositionLocalProvider(
+      LocalMinimumTouchTargetEnforcement provides false,
+      LocalRippleTheme provides CustomRippleTheme,
+    ) {
+      Button(
+        onClick = onClick,
+        enabled = enabled,
+        shape = RoundedCornerShape(EverliTheme.radius.medium),
+        border = buttonStyle.border(borderColors.forEnabled(enabled)),
+        interactionSource = interactionSource,
+        elevation = null,
+        contentPadding = contentPadding,
+        colors = ButtonDefaults.buttonColors(
+          backgroundColor = backgroundColors.enabled,
           disabledBackgroundColor = backgroundColors.forEnabled(enabled),
           contentColor = textColors.forPressed(isPressed),
           disabledContentColor = textColors.forEnabled(enabled)
@@ -577,5 +609,20 @@ object ClearRippleTheme : RippleTheme {
     focusedAlpha = 0.0f,
     hoveredAlpha = 0.0f,
     pressedAlpha = 0.0f,
+  )
+}
+
+object CustomRippleTheme : RippleTheme {
+
+  @Composable
+  override fun defaultColor(): Color = RippleTheme.defaultRippleColor(
+    EverliColors.Green110,
+    lightTheme = true
+  )
+
+  @Composable
+  override fun rippleAlpha() = RippleTheme.defaultRippleAlpha(
+    EverliColors.Green110,
+    lightTheme = true
   )
 }

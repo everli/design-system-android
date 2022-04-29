@@ -9,13 +9,20 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonColors
 import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.LocalMinimumTouchTargetEnforcement
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
+import androidx.compose.material.ripple.LocalRippleTheme
+import androidx.compose.material.ripple.RippleAlpha
+import androidx.compose.material.ripple.RippleTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.everli.designsystem.components.button.ButtonStyle
+import com.everli.designsystem.components.button.CustomRippleTheme
 import com.everli.designsystem.components.button.EverliButton
 import com.everli.designsystem.components.button.PrimaryButton
 import com.everli.designsystem.core.constants.EverliColors
@@ -51,7 +58,9 @@ fun ButtonStatePlayground() {
     }
 
     EverliButton(
-      modifier = Modifier.padding(4.dp).fillMaxWidth(),
+      modifier = Modifier
+        .padding(4.dp)
+        .fillMaxWidth(),
       onClick = { /*TODO*/ },
       text = "Button")
 
@@ -107,11 +116,72 @@ fun ButtonStatePlayground() {
         text = "Button")
     }
 
-    EverliButton(
-      modifier = Modifier.padding(4.dp).fillMaxWidth(),
-      onClick = { /*TODO*/ },
-      withRipple = true,
-      text = "Button")
+
+    Text("4. Material ripple BUT with green110")
+
+    CompositionLocalProvider(
+      LocalRippleTheme provides CustomRippleTheme,
+    ) {
+
+      Row {
+        Button(
+          modifier = Modifier.padding(4.dp),
+          onClick = { /*TODO*/ },
+          colors = ButtonDefaults.buttonColors(
+            backgroundColor = EverliTheme.button.color.primary.fill.background.enabled,
+            contentColor = EverliColors.White,
+          )
+        ) {
+          Text(text = "Material")
+        }
+
+        EverliButton(
+          modifier = Modifier
+            .padding(4.dp),
+          buttonStyle = ButtonStyle.FILL,
+          onClick = { /*TODO*/ },
+          withRipple = true,
+          withCustomRipple = true,
+          text = "Everli")
+
+        EverliButton(
+          modifier = Modifier
+            .padding(4.dp),
+          buttonStyle = ButtonStyle.OUTLINE,
+          onClick = { /*TODO*/ },
+          withRipple = true,
+          withCustomRipple = true,
+          text = "Everli")
+      }
+
+      Button(
+        modifier = Modifier
+          .padding(8.dp)
+          .fillMaxWidth(),
+        onClick = { /*TODO*/ },
+        colors = ButtonDefaults.buttonColors(
+          backgroundColor = EverliTheme.button.color.primary.fill.background.enabled,
+          contentColor = EverliColors.White,
+        )
+      ) {
+        Text(text = "Button")
+      }
+    }
 
   }
+}
+
+object CustomRippleTheme : RippleTheme {
+
+  @Composable
+  override fun defaultColor(): Color = RippleTheme.defaultRippleColor(
+    EverliColors.Green110,
+    lightTheme = true
+  )
+
+  @Composable
+  override fun rippleAlpha() = RippleTheme.defaultRippleAlpha(
+    EverliColors.Green110,
+    lightTheme = true
+  )
 }
