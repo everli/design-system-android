@@ -31,6 +31,7 @@ import com.everli.designsystem.components.button.EverliButton
 import com.everli.designsystem.core.theme.DefaultTheme
 import com.everli.designsystem.core.constants.EverliColors
 import com.everli.designsystem.core.theme.DefaultTypography
+import com.everli.designsystem.playground.button.BrandButtonPlayground
 import com.everli.designsystem.playground.button.ButtonsPlayground
 import com.everli.designsystem.playground.color.ColorsPlayground
 import com.everli.designsystem.playground.icon.IconsPlayground
@@ -115,6 +116,9 @@ fun Home(navController: NavController) {
       text = "\uD83C\uDD92 BUTTONS",
       onClick = { navController.navigate(Destinations.BUTTONS) })
     HomeButton(
+      text = "\uD83C\uDD92 BRAND BUTTONS",
+      onClick = { navController.navigate(Destinations.BRAND_BUTTONS) })
+    HomeButton(
       text = "\uD83D\uDD25 TOKENS",
       onClick = { navController.navigate(Destinations.TOKENS) })
     HomeButton(
@@ -125,7 +129,7 @@ fun Home(navController: NavController) {
 
 @Composable
 fun HomeButton(text: String, onClick: () -> Unit) {
-  EverliButton(
+  EverliButton.Button(
     onClick = onClick,
     modifier = Modifier
       .fillMaxWidth()
@@ -145,6 +149,7 @@ fun Navigation() {
     composable(Destinations.COLORS) { ColorsPlayground() }
     composable(Destinations.TYPOGRAPHY) { TypographyPlayground() }
     composable(Destinations.BUTTONS) { ButtonsPlayground() }
+    composable(Destinations.BRAND_BUTTONS) { BrandButtonPlayground() }
     composable(Destinations.TOKENS) { TokensPlayground() }
     composable(Destinations.ICONS) { IconsPlayground() }
   }
@@ -156,6 +161,7 @@ object Destinations {
   const val COLORS = "Colors"
   const val TYPOGRAPHY = "Typography"
   const val BUTTONS = "Buttons"
+  const val BRAND_BUTTONS = "Brand Buttons"
   const val TOKENS = "Tokens"
   const val ICONS = "Icons"
 
@@ -174,12 +180,5 @@ fun AppPreview() {
 fun HomePreview() {
   DefaultTheme {
     Home(rememberNavController())
-  }
-}
-
-@Composable
-fun TestSome() {
-  EverliButton(onClick = {}) {
-    Text("Wow")
   }
 }

@@ -53,6 +53,41 @@
       app:btnVariant="primary"
       app:text="Default Theme" />
 
+    <com.everli.designsystem.components.button.EverliButtonView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="12dp"
+      app:btnIcon="@drawable/logo_facebook"
+      app:btnSize="large"
+      app:btnVariant="facebook"
+      app:text="Default Theme" />
+
+    <com.everli.designsystem.components.button.EverliButtonView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="12dp"
+      app:btnIcon="@drawable/logo_google"
+      app:btnSize="medium"
+      app:btnVariant="google"
+      app:text="Default Theme" />
+
+    <com.everli.designsystem.components.button.EverliButtonView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="12dp"
+      app:btnIcon="@drawable/logo_payment_blik"
+      app:btnSize="medium"
+      app:btnVariant="blik" />
+
+    <com.everli.designsystem.components.button.EverliButtonView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="12dp"
+      app:btnIcon="@drawable/logo_apple"
+      app:btnSize="medium"
+      app:btnVariant="apple"
+      app:text="Disabled" />
+
   </LinearLayout>
 
 </ScrollView>

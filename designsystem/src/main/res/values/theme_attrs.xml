@@ -6,6 +6,7 @@
   <declare-styleable name="EverliTheme">
     <!-- Radius -->
     <attr name="radiusMedium" format="dimension" />
+    <attr name="radiusFull" format="dimension" />
 
     <!-- Text -->
     <attr name="textColorPrimary" format="color" />

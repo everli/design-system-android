@@ -51,6 +51,11 @@ class SampleComposeTest {
 
         colorResource(id = R.color.navy_100) shouldBe EverliColors.Navy100
         colorResource(id = R.color.navy_110) shouldBe EverliColors.Navy110
+
+        colorResource(id = R.color.facebook) shouldBe EverliColors.Facebook
+        colorResource(id = R.color.google) shouldBe EverliColors.Google
+        colorResource(id = R.color.apple) shouldBe EverliColors.Apple
+        colorResource(id = R.color.blik) shouldBe EverliColors.Blik
       }
     }
   }

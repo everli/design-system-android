@@ -60,7 +60,7 @@ class EverliButtonView @JvmOverloads constructor(
   @Composable
   override fun Content() {
     ThemeAdapterComposable(useCustomTheme = useContextTheme, context = context) {
-      EverliButton(
+      EverliButton.Button(
         onClick = onClick,
         text = text,
         variant = variant,

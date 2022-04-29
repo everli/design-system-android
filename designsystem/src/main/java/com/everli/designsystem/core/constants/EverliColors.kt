@@ -39,6 +39,10 @@ object EverliColors {
   val Navy100 = Color(0xFF1A73E8)
   val Navy110 = Color(0xFF0D4A9A)
 
+  val Facebook = Color(0xFF2374E1)
+  val Google = Black100
+  val Apple = Black100
+  val Blik = Color(0xFFE5005D)
 
   // Design system "brand" names
   val WalterWhite = White

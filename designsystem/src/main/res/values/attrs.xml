@@ -9,6 +9,10 @@
       <enum name="primary" value="0" />
       <enum name="special" value="1" />
       <enum name="link" value="2" />
+      <enum name="facebook" value="3" />
+      <enum name="google" value="4" />
+      <enum name="apple" value="5" />
+      <enum name="blik" value="6" />
     </attr>
     <attr name="btnStyle" format="enum">
       <enum name="fill" value="0" />

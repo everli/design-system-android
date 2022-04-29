@@ -36,6 +36,14 @@ object EverliIcons {
     @Composable
     get() = painterResource(id = R.drawable.ico_alert)
 
+  val ArrowDownCircle: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_arrow_down_circle)
+
+  val ArrowExternal: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_arrow_external)
+
   val ArrowLeft: Painter
     @Composable
     get() = painterResource(id = R.drawable.ico_arrow_left)
@@ -48,9 +56,21 @@ object EverliIcons {
     @Composable
     get() = painterResource(id = R.drawable.ico_arrow_right)
 
+  val ArrowRightCircle: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_arrow_right_circle)
+
+  val ArrowTopCircle: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_arrow_top_circle)
+
   val AskQuestion: Painter
     @Composable
     get() = painterResource(id = R.drawable.ico_ask_question)
+
+  val Basket: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_basket)
 
   val Cart: Painter
     @Composable
@@ -68,9 +88,17 @@ object EverliIcons {
     @Composable
     get() = painterResource(id = R.drawable.ico_chat)
 
-  val Checkmark: Painter
+  val Check: Painter
     @Composable
-    get() = painterResource(id = R.drawable.ico_checkmark)
+    get() = painterResource(id = R.drawable.ico_check)
+
+  val CheckCircleFilled: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_checkmark_circle_filled)
+
+  val CheckCircleOutline: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_checkmark_circle_outline)
 
   val CheckmarkCircleFilled: Painter
     @Composable
@@ -100,6 +128,10 @@ object EverliIcons {
     @Composable
     get() = painterResource(id = R.drawable.ico_clock)
 
+  val ClockFilled: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_clock_filled)
+
   val Close: Painter
     @Composable
     get() = painterResource(id = R.drawable.ico_close)
@@ -119,6 +151,10 @@ object EverliIcons {
   val Delete: Painter
     @Composable
     get() = painterResource(id = R.drawable.ico_delete)
+
+  val Delivery: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_delivery)
 
   val Download: Painter
     @Composable
@@ -196,13 +232,37 @@ object EverliIcons {
     @Composable
     get() = painterResource(id = R.drawable.ico_info)
 
+  val InfoCircleFilled: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_info_circle_filled)
+
+  val InfoCircleOutline: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_info_circle_outline)
+
   val Invoice: Painter
     @Composable
     get() = painterResource(id = R.drawable.ico_invoice)
 
+  val Label: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_label)
+
+  val Link: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_link)
+
   val Menu: Painter
     @Composable
     get() = painterResource(id = R.drawable.ico_menu)
+
+  val More: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_more)
+
+  val Note: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_note)
 
   val NoteProduct: Painter
     @Composable
@@ -232,9 +292,13 @@ object EverliIcons {
     @Composable
     get() = painterResource(id = R.drawable.ico_position_marker_outline)
 
-  val QuestionMark: Painter
+  val QuestionCircleFilled: Painter
     @Composable
-    get() = painterResource(id = R.drawable.ico_question_mark)
+    get() = painterResource(id = R.drawable.ico_question_circle_filled)
+
+  val QuestionCircleOutline: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_question_circle_outilne)
 
   val Remove: Painter
     @Composable
@@ -243,6 +307,10 @@ object EverliIcons {
   val Replacements: Painter
     @Composable
     get() = painterResource(id = R.drawable.ico_replacements)
+
+  val Rocket: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_rocket)
 
   val Save: Painter
     @Composable
@@ -268,6 +336,10 @@ object EverliIcons {
     @Composable
     get() = painterResource(id = R.drawable.ico_shopping_list)
 
+  val Star: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_star)
+
   val User: Painter
     @Composable
     get() = painterResource(id = R.drawable.ico_user)
@@ -279,6 +351,22 @@ object EverliIcons {
   val Wallet: Painter
     @Composable
     get() = painterResource(id = R.drawable.ico_wallet)
+
+  val Write: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_write)
+
+  val X: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_x)
+
+  val XCircleFilled: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_x_circle_filled)
+
+  val XCircleOutline: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.ico_x_circle_outline)
 
   val Zoom: Painter
     @Composable

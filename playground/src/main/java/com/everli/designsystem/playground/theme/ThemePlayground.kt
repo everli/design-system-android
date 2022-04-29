@@ -76,13 +76,13 @@ fun InnerCustomTheme() {
   DefaultTheme {
     Column {
       // Default Theme
-      EverliButton(onClick = { /*TODO*/ }, text = "Default Theme")
+      EverliButton.Button(onClick = { /*TODO*/ }, text = "Default Theme")
 
       // Inner custom theme
       EverliTheme(
         buttonTheme = SupplyButtonTheme,
       ) {
-        EverliButton(onClick = { /*TODO*/ }, text = "Custom Theme")
+        EverliButton.Button(onClick = { /*TODO*/ }, text = "Custom Theme")
       }
     }
   }

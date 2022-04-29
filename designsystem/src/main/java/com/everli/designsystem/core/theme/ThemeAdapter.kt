@@ -72,7 +72,8 @@ internal object ThemeAdapter {
     context.obtainStyledAttributes(R.styleable.EverliTheme).use { ta ->
       // radius
       val radiusTheme = RadiusTheme(
-        medium = ta.getDp(R.styleable.EverliTheme_radiusMedium, density, DefaultRadiusTheme.medium)
+        medium = ta.getDp(R.styleable.EverliTheme_radiusMedium, density, DefaultRadiusTheme.medium),
+        full = ta.getDp(R.styleable.EverliTheme_radiusFull, density, DefaultRadiusTheme.full)
       )
 
       // text
@@ -142,11 +143,12 @@ internal object ThemeAdapter {
                                             DefaultButtonTheme.color.fill.background.disabled),
             ),
           ),
-          outline = ButtonColors(
+          outline = OutlineButtonColors(
             border = StateColor(
               disabled = ta.getComposeColor(R.styleable.EverliTheme_buttonColorOutlineBorderDisabled,
                                             DefaultButtonTheme.color.outline.border.disabled),
             ),
+            borderDark = DefaultButtonTheme.color.outline.borderDark,
           ),
           primary = ButtonVariantValues(
             fill = ButtonColors(
@@ -200,6 +202,7 @@ internal object ThemeAdapter {
               ),
             ),
           ),
+          overlay = DefaultButtonTheme.color.overlay,
         ),
       )
 
