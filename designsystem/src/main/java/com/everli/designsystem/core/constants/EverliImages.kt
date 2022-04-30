@@ -10,6 +10,42 @@ import com.everli.designsystem.core.R
  */
 object EverliImages {
 
+  val BenefitDistance: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.img_benefit_distance)
+
+  val BenefitSaving: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.img_benefit_saving)
+
+  val BenefitTime: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.img_benefit_time)
+
+  val BenefitWeight: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.img_benefit_weight)
+
+  val Delivery: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.img_delivery)
+
+  val DeliveryFast: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.img_delivery_fast)
+
+  val FeeCash: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.img_fee_cash)
+
+  val FeeService: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.img_fee_service)
+
+  val FeeSurcharge: Painter
+    @Composable
+    get() = painterResource(id = R.drawable.img_fee_surcharge)
+
   val Items: Painter
     @Composable
     get() = painterResource(id = R.drawable.img_items)
