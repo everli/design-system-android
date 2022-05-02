@@ -298,7 +298,7 @@ object EverliIcons {
 
   val QuestionCircleOutline: Painter
     @Composable
-    get() = painterResource(id = R.drawable.ico_question_circle_outilne)
+    get() = painterResource(id = R.drawable.ico_question_circle_outline)
 
   val Remove: Painter
     @Composable
