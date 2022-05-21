@@ -49,7 +49,7 @@ val SupplyButtonTheme = DefaultButtonTheme.copy(
     primary = DefaultButtonTheme.color.primary.copy(
       fill = DefaultButtonTheme.color.primary.fill.copy(
         background = DefaultButtonTheme.color.primary.fill.background.copy(
-          enabled = EverliColors.Violet100,
+          enabled = EverliColors.Purple100,
           pressed = purple80,
         ),
       ),

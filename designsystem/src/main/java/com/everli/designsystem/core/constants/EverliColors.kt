@@ -3,9 +3,10 @@ package com.everli.designsystem.core.constants
 import androidx.compose.ui.graphics.Color
 
 /**
- * All colors constants provided by the design system
+ * All compose constants provided by the design system
  */
 object EverliColors {
+
   val White = Color.White
 
   val Transparent = Color.Transparent
@@ -22,7 +23,7 @@ object EverliColors {
   val Red100 = Color(0xFFDC325F)
   val Red110 = Color(0xFFB71E49)
 
-  val Violet100 = Color(0xFF8A3264)
+  val Purple100 = Color(0xFF8A3264)
 
   val Teal20 = Color(0xFFDAF4F4)
   val Teal100 = Color(0xFF46C6C6)
@@ -44,15 +45,4 @@ object EverliColors {
   val Apple = Black100
   val Blik = Color(0xFFE5005D)
 
-  // Design system "brand" names
-  val WalterWhite = White
-  val VioletBlack = Black100
-  val RedHot = Red100
-  val PurpleRain = Violet100
-  val TealWaves = Teal100
-  val BluePlus = Blue100
-  val EverliGreen = Green100
-  val DeepGreen = Green110
-  val YellowSun = Yellow100
-  val Link = Navy100
 }

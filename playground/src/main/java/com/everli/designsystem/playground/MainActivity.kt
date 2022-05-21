@@ -63,7 +63,7 @@ fun App() {
 
   val mockPrimary: Color = when (theme) {
     Themes.DEMAND -> EverliColors.Green100
-    Themes.SUPPLY -> EverliColors.Violet100
+    Themes.SUPPLY -> EverliColors.Purple100
   }
 
   // handled separately as it outside the main composable
