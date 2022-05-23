@@ -5,6 +5,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.core.graphics.ColorUtils
 import com.everli.designsystem.core.constants.EverliColor
 import com.everli.designsystem.core.constants.EverliColors
+import com.everli.designsystem.helper.toColor
 
 fun textColor(color: Color): Color {
   val contrast = ColorUtils.calculateContrast(color.toArgb(), EverliColors.White.toArgb())
@@ -24,6 +25,6 @@ data class ColorModel(
 val colors = EverliColor.values()
   .filter { color -> color != EverliColor.TRANSPARENT }
   .map { color ->
-    ColorModel(name = color.designName, color = color.color, textColor = textColor(color.color))
+    ColorModel(name = color.designName, color = color.toColor(), textColor = textColor(color.toColor()))
   }
 

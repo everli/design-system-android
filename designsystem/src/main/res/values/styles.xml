@@ -2,121 +2,121 @@
 <resources>
 
   <!-- Typography -->
-  <style name="Typography" />
+  <style name="EverliTypography" />
 
   <!-- Title1 -->
-  <style name="Typography.Title1">
-    <item name="lineHeight">@dimen/line_height_title1</item>
+  <style name="EverliTypography.Title1">
+    <item name="lineHeight">@dimen/lineHeightTitle1</item>
   </style>
 
-  <style name="Typography.Title1.Bold">
-    <item name="android:textSize">@dimen/font_size_title1_bold</item>
+  <style name="EverliTypography.Title1.Bold">
+    <item name="android:textSize">@dimen/fontSizeTitle1Bold</item>
     <item name="android:fontFamily">@font/isidora_bold</item>
   </style>
 
   <!-- Title2 -->
-  <style name="Typography.Title2">
-    <item name="lineHeight">@dimen/line_height_title2</item>
+  <style name="EverliTypography.Title2">
+    <item name="lineHeight">@dimen/lineHeightTitle2</item>
   </style>
 
-  <style name="Typography.Title2.Bold">
-    <item name="android:textSize">@dimen/font_size_title2_bold</item>
+  <style name="EverliTypography.Title2.Bold">
+    <item name="android:textSize">@dimen/fontSizeTitle2Bold</item>
     <item name="android:fontFamily">@font/isidora_bold</item>
   </style>
 
-  <style name="Typography.Title2.Semibold">
-    <item name="android:textSize">@dimen/font_size_title2_semibold</item>
+  <style name="EverliTypography.Title2.Semibold">
+    <item name="android:textSize">@dimen/fontSizeTitle2Semibold</item>
     <item name="android:fontFamily">@font/fira_semibold</item>
   </style>
 
   <!-- Title3 -->
-  <style name="Typography.Title3">
-    <item name="lineHeight">@dimen/line_height_title3</item>
+  <style name="EverliTypography.Title3">
+    <item name="lineHeight">@dimen/lineHeightTitle3</item>
   </style>
 
-  <style name="Typography.Title3.Bold">
-    <item name="android:textSize">@dimen/font_size_title3_bold</item>
+  <style name="EverliTypography.Title3.Bold">
+    <item name="android:textSize">@dimen/fontSizeTitle3Bold</item>
     <item name="android:fontFamily">@font/isidora_bold</item>
   </style>
 
-  <style name="Typography.Title3.Semibold">
-    <item name="android:textSize">@dimen/font_size_title3_semibold</item>
+  <style name="EverliTypography.Title3.Semibold">
+    <item name="android:textSize">@dimen/fontSizeTitle3Semibold</item>
     <item name="android:fontFamily">@font/fira_semibold</item>
   </style>
 
   <!-- Title4 -->
-  <style name="Typography.Title4">
-    <item name="lineHeight">@dimen/line_height_title4</item>
+  <style name="EverliTypography.Title4">
+    <item name="lineHeight">@dimen/lineHeightTitle4</item>
   </style>
 
-  <style name="Typography.Title4.Bold">
-    <item name="android:textSize">@dimen/font_size_title4_bold</item>
+  <style name="EverliTypography.Title4.Bold">
+    <item name="android:textSize">@dimen/fontSizeTitle4Bold</item>
     <item name="android:fontFamily">@font/isidora_bold</item>
   </style>
 
-  <style name="Typography.Title4.Semibold">
-    <item name="android:textSize">@dimen/font_size_title4_semibold</item>
+  <style name="EverliTypography.Title4.Semibold">
+    <item name="android:textSize">@dimen/fontSizeTitle4Semibold</item>
     <item name="android:fontFamily">@font/fira_semibold</item>
   </style>
 
-  <style name="Typography.Title4.Regular">
-    <item name="android:textSize">@dimen/font_size_title4_regular</item>
+  <style name="EverliTypography.Title4.Regular">
+    <item name="android:textSize">@dimen/fontSizeTitle4Regular</item>
     <item name="android:fontFamily">@font/fira_regular</item>
   </style>
 
   <!-- Subtitle -->
-  <style name="Typography.Subtitle">
-    <item name="lineHeight">@dimen/line_height_subtitle</item>
-    <item name="android:textSize">@dimen/font_size_subtitle</item>
+  <style name="EverliTypography.Subtitle">
+    <item name="lineHeight">@dimen/lineHeightSubtitle</item>
+    <item name="android:textSize">@dimen/fontSizeSubtitle</item>
   </style>
 
-  <style name="Typography.Subtitle.Semibold">
+  <style name="EverliTypography.Subtitle.Semibold">
     <item name="android:fontFamily">@font/fira_semibold</item>
   </style>
 
-  <style name="Typography.Subtitle.Regular">
+  <style name="EverliTypography.Subtitle.Regular">
     <item name="android:fontFamily">@font/fira_regular</item>
   </style>
 
   <!-- Body -->
-  <style name="Typography.Body">
-    <item name="lineHeight">@dimen/line_height_body</item>
-    <item name="android:textSize">@dimen/font_size_body</item>
+  <style name="EverliTypography.Body">
+    <item name="lineHeight">@dimen/lineHeightBody</item>
+    <item name="android:textSize">@dimen/fontSizeBody</item>
   </style>
 
-  <style name="Typography.Body.Semibold">
+  <style name="EverliTypography.Body.Semibold">
     <item name="android:fontFamily">@font/fira_semibold</item>
   </style>
 
-  <style name="Typography.Body.Regular">
+  <style name="EverliTypography.Body.Regular">
     <item name="android:fontFamily">@font/fira_regular</item>
   </style>
 
   <!-- Body Small -->
-  <style name="Typography.BodySmall">
-    <item name="lineHeight">@dimen/line_height_body_small</item>
-    <item name="android:textSize">@dimen/font_size_body_small</item>
+  <style name="EverliTypography.BodySmall">
+    <item name="lineHeight">@dimen/lineHeightBodySmall</item>
+    <item name="android:textSize">@dimen/fontSizeBodySmall</item>
   </style>
 
-  <style name="Typography.BodySmall.Semibold">
+  <style name="EverliTypography.BodySmall.Semibold">
     <item name="android:fontFamily">@font/fira_semibold</item>
   </style>
 
-  <style name="Typography.BodySmall.Regular">
+  <style name="EverliTypography.BodySmall.Regular">
     <item name="android:fontFamily">@font/fira_regular</item>
   </style>
 
   <!-- Caption -->
-  <style name="Typography.Caption">
-    <item name="lineHeight">@dimen/line_height_caption</item>
-    <item name="android:textSize">@dimen/font_size_caption</item>
+  <style name="EverliTypography.Caption">
+    <item name="lineHeight">@dimen/lineHeightCaption</item>
+    <item name="android:textSize">@dimen/fontSizeCaption</item>
   </style>
 
-  <style name="Typography.Caption.Semibold">
+  <style name="EverliTypography.Caption.Semibold">
     <item name="android:fontFamily">@font/fira_semibold</item>
   </style>
 
-  <style name="Typography.Caption.Regular">
+  <style name="EverliTypography.Caption.Regular">
     <item name="android:fontFamily">@font/fira_regular</item>
   </style>
 
@@ -125,7 +125,9 @@
   <style name="EverliTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
 
     <!-- Radius -->
-    <item name="radiusMedium">@dimen/radius_medium</item>
+    <item name="radiusMedium">@dimen/radiusMedium</item>
+    <item name="radiusFull">@dimen/radiusFull</item>
+
 
 <!--    &lt;!&ndash; Button &ndash;&gt;-->
 <!--    <item name="buttonRadius">@dimen/radius_medium</item>-->

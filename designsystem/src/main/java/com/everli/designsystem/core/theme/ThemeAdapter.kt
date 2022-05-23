@@ -101,9 +101,9 @@ internal object ThemeAdapter {
       // button
       val buttonTheme = ButtonTheme(
         text = ButtonTextStyles(
-          small = DefaultTypography.bodySmallSemibold,
-          medium = DefaultTypography.bodySemibold,
-          large = DefaultTypography.subtitleSemibold,
+          small = DefaultButtonTheme.text.small,
+          medium = DefaultButtonTheme.text.medium,
+          large = DefaultButtonTheme.text.large,
           color = ButtonTextColors(
             disabled = ta.getComposeColor(R.styleable.EverliTheme_buttonTextColorDisabled,
                                           DefaultButtonTheme.text.color.disabled),

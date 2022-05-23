@@ -1,6 +1,11 @@
 package com.everli.designsystem.playground.theme
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.material.Button
+import androidx.compose.material.Checkbox
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
@@ -41,8 +46,8 @@ fun ThemePlaygroundContent(themes: Themes, content: @Composable () -> Unit) {
 }
 
 // TODO: ask Ric if this is part of the colors
-val purple80 =  Color(0xFFB45A8C)
-val purple20 =  Color(0xFFF3EBF0)
+val purple80 = Color(0xFFB45A8C)
+val purple20 = Color(0xFFF3EBF0)
 
 val SupplyButtonTheme = DefaultButtonTheme.copy(
   color = DefaultButtonTheme.color.copy(
@@ -83,6 +88,10 @@ fun InnerCustomTheme() {
         buttonTheme = SupplyButtonTheme,
       ) {
         EverliButton.Button(onClick = { /*TODO*/ }, text = "Custom Theme")
+      }
+      
+      Button(onClick = { /*TODO*/ }) {
+        Text(text = "saww")
       }
     }
   }

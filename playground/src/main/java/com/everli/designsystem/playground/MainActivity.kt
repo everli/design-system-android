@@ -80,18 +80,18 @@ fun App() {
           verticalAlignment = Alignment.CenterVertically,
           horizontalArrangement = Arrangement.Center,
         ) {
-          Text(text = "\uD83C\uDFA8", color = EverliColors.White, style = DefaultTypography.bodyRegular)
+          Text(text = "\uD83C\uDFA8", color = EverliColors.White, style = DefaultTypography.body.regular)
           TextButton(onClick = { theme = Themes.DEMAND }) {
             Text(
               text = "Demand",
               color = EverliColors.White,
-              style = DefaultTypography.bodyRegular)
+              style = DefaultTypography.body.regular)
           }
           TextButton(onClick = { theme = Themes.SUPPLY }) {
             Text(
               text = "Supply",
               color = EverliColors.White,
-              style = DefaultTypography.bodyRegular)
+              style = DefaultTypography.body.regular)
           }
         }
       }

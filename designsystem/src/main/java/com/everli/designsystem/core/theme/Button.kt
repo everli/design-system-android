@@ -114,9 +114,9 @@ data class OutlineButtonColors(
 // Default
 val DefaultButtonTheme = ButtonTheme(
   text = ButtonTextStyles(
-    small = DefaultTypography.bodySmallSemibold,
-    medium = DefaultTypography.bodySemibold,
-    large = DefaultTypography.subtitleSemibold,
+    small = DefaultTypography.bodySmall.semibold,
+    medium = DefaultTypography.body.semibold,
+    large = DefaultTypography.subtitle.semibold,
     color = ButtonTextColors(
       disabled = EverliColors.Gray80,
       link = StateColor(
@@ -125,7 +125,7 @@ val DefaultButtonTheme = ButtonTheme(
       )
     ),
     link = ButtonLinkTextStyles(
-      large = DefaultTypography.title4Regular,
+      large = DefaultTypography.title4.regular,
     ),
   ),
   icon = ButtonIconStyles(
