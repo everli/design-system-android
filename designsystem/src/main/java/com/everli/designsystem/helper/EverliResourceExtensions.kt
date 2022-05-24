@@ -2,7 +2,7 @@ package com.everli.designsystem.helper
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.painter.Painter
-import com.everli.designsystem.core.R
+import com.everli.designsystem.R
 import com.everli.designsystem.core.constants.EverliResource
 import com.everli.designsystem.core.constants.EverliResources
 

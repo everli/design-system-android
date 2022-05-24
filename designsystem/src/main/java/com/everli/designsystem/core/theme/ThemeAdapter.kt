@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.Density
 import androidx.core.content.res.use
-import com.everli.designsystem.core.R
+import com.everli.designsystem.R
 import com.everli.designsystem.helper.getComposeColor
 import com.everli.designsystem.helper.getDp
 

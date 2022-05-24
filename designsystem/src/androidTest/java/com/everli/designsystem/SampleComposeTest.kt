@@ -5,7 +5,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.test.platform.app.InstrumentationRegistry
-import com.everli.designsystem.core.R
+import com.everli.designsystem.R
 import com.everli.designsystem.core.constants.EverliColors
 import io.kotest.matchers.shouldBe
 import org.junit.Rule

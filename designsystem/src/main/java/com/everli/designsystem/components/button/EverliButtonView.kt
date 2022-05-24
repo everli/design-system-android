@@ -8,7 +8,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.AbstractComposeView
-import com.everli.designsystem.core.R
+import com.everli.designsystem.R
 import com.everli.designsystem.core.theme.ThemeAdapterComposable
 import com.everli.designsystem.helper.empty
 import com.everli.designsystem.helper.enumValueOfOrFallback

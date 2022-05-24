@@ -5,7 +5,7 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.everli.designsystem.core.R
+import com.everli.designsystem.R
 
 /**
  * All TextStyles constants provided by the design system

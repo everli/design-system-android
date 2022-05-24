@@ -3,7 +3,7 @@ package com.everli.designsystem.core.constants
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
-import com.everli.designsystem.core.R
+import com.everli.designsystem.R
 
 object EverliResources {
 
