@@ -47,5 +47,9 @@
   <dimen name="radiusMedium">8dp</dimen>
   <dimen name="radiusFull">40dp</dimen>
 
+  <!-- Icon -->
+  <dimen name="iconSizeSmall">18dp</dimen>
+  <dimen name="iconSizeMedium">24dp</dimen>
+
 
 </resources>

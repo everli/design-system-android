@@ -128,18 +128,78 @@
     <item name="radiusMedium">@dimen/radiusMedium</item>
     <item name="radiusFull">@dimen/radiusFull</item>
 
+    <!-- Icon -->
+    <item name="iconSizeSmall">@dimen/iconSizeSmall</item>
+    <item name="iconSizeMedium">@dimen/iconSizeMedium</item>
+    <item name="iconColorDark">@color/black_100</item>
+    <item name="iconColorLight">@color/white</item>
+    <item name="iconColorSpecial">@color/red_100</item>
 
-<!--    &lt;!&ndash; Button &ndash;&gt;-->
-<!--    <item name="buttonRadius">@dimen/radius_medium</item>-->
+    <!-- Text -->
+    <item name="textColorPrimary">@color/black_100</item>
+    <item name="textColorNegative">@color/white</item>
+    <item name="textColorSpecial">@color/red_100</item>
 
-<!--    <item name="buttonSizeSmall">@dimen/button_size_small</item>-->
-<!--    <item name="buttonSizeMedium">@dimen/button_size_medium</item>-->
-<!--    <item name="buttonSizeLarge">@dimen/button_size_large</item>-->
+    <!-- Button Text -->
+    <item name="buttonTextColorDisabled">@color/gray_80</item>
+    <item name="buttonTextLinkEnabled">@color/navy_100</item>
+    <item name="buttonTextLinkPressed">@color/navy_110</item>
 
-<!--    <item name="buttonColorPrimaryBackgroundEnabled">@color/green_100</item>-->
-<!--    <item name="buttonColorPrimaryBackgroundDisabled">@color/gray_15</item>-->
-<!--    <item name="buttonColorPrimaryTextEnabled">@color/white</item>-->
-<!--    <item name="buttonColorPrimaryTextDisabled">@color/gray_100</item>-->
+    <!-- Button Icon -->
+    <item name="buttonIconColorDisabled">@color/gray_80</item>
+    <item name="buttonIconColorLinkEnabled">@color/navy_100</item>
+    <item name="buttonIconColorLinkPressed">@color/navy_110</item>
+    <item name="buttonIconColorFacebookOutlineEnabled">@color/facebook</item>
+
+    <!-- Button Color -->
+    <!-- Button Color Transparent -->
+    <item name="buttonColorTransparentBackgroundEnabled">@color/transparent</item>
+    <item name="buttonColorTransparentBackgroundDisabled">@color/transparent</item>
+
+    <!-- Button Color Fill -->
+    <item name="buttonColorFillBackgroundDisabled">@color/gray_15</item>
+
+    <!-- Button Color Outline -->
+    <item name="buttonColorOutlineBorderDisabled">@color/gray_40</item>
+    <item name="buttonColorOutlineBorderDarkEnabled">@color/black_100</item>
+    <item name="buttonColorOutlineBorderDarkPressed">@color/black_100</item>
+
+    <!-- Button Color Primary -->
+    <item name="buttonColorPrimaryFillBackgroundEnabled">@color/green_100</item>
+    <item name="buttonColorPrimaryFillBackgroundPressed">@color/green_110</item>
+
+    <item name="buttonColorPrimaryOutlineBackgroundPressed">@color/green_10</item>
+    <item name="buttonColorPrimaryOutlineBorderEnabled">@color/green_100</item>
+
+    <item name="buttonColorPrimaryFlatBackgroundPressed">@color/green_10</item>
+
+    <!-- Button Color Special -->
+    <item name="buttonColorSpecialFillBackgroundEnabled">@color/red_100</item>
+    <item name="buttonColorSpecialFillBackgroundPressed">@color/red_110</item>
+
+    <item name="buttonColorSpecialOutlineBackgroundPressed">@color/red_20</item>
+    <item name="buttonColorSpecialOutlineBorderEnabled">@color/red_100</item>
+
+    <item name="buttonColorSpecialFlatBackgroundPressed">@color/red_20</item>
+
+    <!-- Button Color Facebook -->
+    <item name="buttonColorFacebookFillBackgroundEnabled">@color/facebook</item>
+    <item name="buttonColorFacebookFillBackgroundPressed">@color/facebook</item>
+
+    <!-- Button Color Google -->
+    <item name="buttonColorGoogleFillBackgroundEnabled">@color/google</item>
+    <item name="buttonColorGoogleFillBackgroundPressed">@color/google</item>
+
+    <!-- Button Color Apple -->
+    <item name="buttonColorAppleFillBackgroundEnabled">@color/apple</item>
+    <item name="buttonColorAppleFillBackgroundPressed">@color/apple</item>
+
+    <!-- Button Color Blik -->
+    <item name="buttonColorBlikFillBackgroundEnabled">@color/blik</item>
+    <item name="buttonColorBlikFillBackgroundPressed">@color/blik</item>
+
+    <!-- Button Color Overlay -->
+    <item name="buttonColorOverlay">0.4</item>
 
   </style>
 
