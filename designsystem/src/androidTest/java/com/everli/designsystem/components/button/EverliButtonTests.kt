@@ -13,7 +13,6 @@ import androidx.compose.ui.test.assertIsNotEnabled
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.test.platform.app.InstrumentationRegistry
-import com.everli.designsystem.core.constants.EverliIcons
 import com.everli.designsystem.core.theme.DefaultButtonTheme
 import com.everli.designsystem.core.theme.DefaultIconTheme
 import com.everli.designsystem.core.theme.DefaultRadiusTheme

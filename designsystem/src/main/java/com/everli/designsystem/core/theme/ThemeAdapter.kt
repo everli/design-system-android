@@ -101,9 +101,9 @@ internal object ThemeAdapter {
       // button
       val buttonTheme = ButtonTheme(
         text = ButtonTextStyles(
-          small = DefaultTypography.bodySmallSemibold,
-          medium = DefaultTypography.bodySemibold,
-          large = DefaultTypography.subtitleSemibold,
+          small = DefaultButtonTheme.text.small,
+          medium = DefaultButtonTheme.text.medium,
+          large = DefaultButtonTheme.text.large,
           color = ButtonTextColors(
             disabled = ta.getComposeColor(R.styleable.EverliTheme_buttonTextColorDisabled,
                                           DefaultButtonTheme.text.color.disabled),
@@ -125,6 +125,12 @@ internal object ThemeAdapter {
                                            DefaultButtonTheme.icon.color.link.enabled),
               pressed = ta.getComposeColor(R.styleable.EverliTheme_buttonIconColorLinkPressed,
                                            DefaultButtonTheme.icon.color.link.pressed),
+            ),
+            facebook = FacebookButtonIconColors(
+              outline = StateColor(
+                enabled = ta.getComposeColor(R.styleable.EverliTheme_buttonIconColorFacebookOutlineEnabled,
+                                             DefaultButtonTheme.icon.color.facebook.outline.enabled),
+              ),
             ),
           ),
         ),
@@ -199,6 +205,46 @@ internal object ThemeAdapter {
               background = StateColor(
                 pressed = ta.getComposeColor(R.styleable.EverliTheme_buttonColorSpecialFlatBackgroundPressed,
                                              DefaultButtonTheme.color.special.flat.background.pressed),
+              ),
+            ),
+          ),
+          facebook = ButtonVariantValues.withColors().copy(
+            fill = ButtonColors(
+              background = StateColor(
+                enabled = ta.getComposeColor(R.styleable.EverliTheme_buttonColorFacebookFillBackgroundEnabled,
+                                             DefaultButtonTheme.color.facebook.fill.background.enabled),
+                pressed = ta.getComposeColor(R.styleable.EverliTheme_buttonColorFacebookFillBackgroundPressed,
+                                             DefaultButtonTheme.color.facebook.fill.background.pressed),
+              ),
+            ),
+          ),
+          google = ButtonVariantValues.withColors().copy(
+            fill = ButtonColors(
+              background = StateColor(
+                enabled = ta.getComposeColor(R.styleable.EverliTheme_buttonColorGoogleFillBackgroundEnabled,
+                                             DefaultButtonTheme.color.google.fill.background.enabled),
+                pressed = ta.getComposeColor(R.styleable.EverliTheme_buttonColorGoogleFillBackgroundPressed,
+                                             DefaultButtonTheme.color.google.fill.background.pressed),
+              ),
+            ),
+          ),
+          apple = ButtonVariantValues.withColors().copy(
+            fill = ButtonColors(
+              background = StateColor(
+                enabled = ta.getComposeColor(R.styleable.EverliTheme_buttonColorAppleFillBackgroundEnabled,
+                                             DefaultButtonTheme.color.apple.fill.background.enabled),
+                pressed = ta.getComposeColor(R.styleable.EverliTheme_buttonColorAppleFillBackgroundPressed,
+                                             DefaultButtonTheme.color.apple.fill.background.pressed),
+              ),
+            ),
+          ),
+          blik = ButtonVariantValues.withColors().copy(
+            fill = ButtonColors(
+              background = StateColor(
+                enabled = ta.getComposeColor(R.styleable.EverliTheme_buttonColorBlikFillBackgroundEnabled,
+                                             DefaultButtonTheme.color.blik.fill.background.enabled),
+                pressed = ta.getComposeColor(R.styleable.EverliTheme_buttonColorBlikFillBackgroundPressed,
+                                             DefaultButtonTheme.color.blik.fill.background.pressed),
               ),
             ),
           ),

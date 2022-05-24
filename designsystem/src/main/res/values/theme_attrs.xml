@@ -28,20 +28,23 @@
     <attr name="buttonTextLinkPressed" format="color" />
 
     <!-- Button Icon -->
-    <attr name="buttonIconColorDisabled" format="color"/>
-    <attr name="buttonIconColorLinkEnabled" format="color"/>
-    <attr name="buttonIconColorLinkPressed" format="color"/>
+    <attr name="buttonIconColorDisabled" format="color" />
+    <attr name="buttonIconColorLinkEnabled" format="color" />
+    <attr name="buttonIconColorLinkPressed" format="color" />
+    <attr name="buttonIconColorFacebookOutlineEnabled" format="color" />
 
     <!-- Button Color -->
     <!-- Button Color Transparent -->
-    <attr name="buttonColorTransparentBackgroundEnabled" format="color"/>
-    <attr name="buttonColorTransparentBackgroundDisabled" format="color"/>
+    <attr name="buttonColorTransparentBackgroundEnabled" format="color" />
+    <attr name="buttonColorTransparentBackgroundDisabled" format="color" />
 
     <!-- Button Color Fill -->
-    <attr name="buttonColorFillBackgroundDisabled" format="color"/>
+    <attr name="buttonColorFillBackgroundDisabled" format="color" />
 
     <!-- Button Color Outline -->
-    <attr name="buttonColorOutlineBorderDisabled" format="color"/>
+    <attr name="buttonColorOutlineBorderDisabled" format="color" />
+    <attr name="buttonColorOutlineBorderDarkEnabled" format="color" />
+    <attr name="buttonColorOutlineBorderDarkPressed" format="color" />
 
     <!-- Button Color Primary -->
     <attr name="buttonColorPrimaryFillBackgroundEnabled" format="color" />
@@ -60,6 +63,25 @@
     <attr name="buttonColorSpecialOutlineBorderEnabled" format="color" />
 
     <attr name="buttonColorSpecialFlatBackgroundPressed" format="color" />
+
+    <!-- Button Color Overlay -->
+    <attr name="buttonColorOverlay" format="float" />
+
+    <!-- Button Color Facebook -->
+    <attr name="buttonColorFacebookFillBackgroundEnabled" format="color" />
+    <attr name="buttonColorFacebookFillBackgroundPressed" format="color" />
+
+    <!-- Button Color Google -->
+    <attr name="buttonColorGoogleFillBackgroundEnabled" format="color" />
+    <attr name="buttonColorGoogleFillBackgroundPressed" format="color" />
+
+    <!-- Button Color Apple -->
+    <attr name="buttonColorAppleFillBackgroundEnabled" format="color" />
+    <attr name="buttonColorAppleFillBackgroundPressed" format="color" />
+
+    <!-- Button Color Blik -->
+    <attr name="buttonColorBlikFillBackgroundEnabled" format="color" />
+    <attr name="buttonColorBlikFillBackgroundPressed" format="color" />
 
   </declare-styleable>
 

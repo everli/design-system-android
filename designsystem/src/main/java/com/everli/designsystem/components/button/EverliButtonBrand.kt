@@ -2,7 +2,7 @@ package com.everli.designsystem.components.button
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.everli.designsystem.core.constants.EverliLogos
+import com.everli.designsystem.core.constants.EverliResources
 import com.everli.designsystem.helper.empty
 
 @Composable
@@ -24,7 +24,7 @@ fun EverliButton.Facebook(
     buttonStyle = style.toButtonStyle(),
     size = size.toButtonSize(),
     enabled = enabled,
-    icon = EverliLogos.Facebook,
+    icon = EverliResources.Logos.Facebook,
     iconPosition = iconPosition,
     contentDescription = contentDescription,
   )
@@ -49,7 +49,7 @@ fun EverliButton.Google(
     buttonStyle = style.toButtonStyle(),
     size = size.toButtonSize(),
     enabled = enabled,
-    icon = EverliLogos.Google,
+    icon = EverliResources.Logos.Google,
     iconPosition = iconPosition,
     contentDescription = contentDescription,
   )
@@ -74,7 +74,7 @@ fun EverliButton.Apple(
     buttonStyle = style.toButtonStyle(),
     size = size.toButtonSize(),
     enabled = enabled,
-    icon = EverliLogos.Apple,
+    icon = EverliResources.Logos.Apple,
     iconPosition = iconPosition,
     contentDescription = contentDescription,
   )
@@ -99,7 +99,7 @@ fun EverliButton.Blik(
     buttonStyle = style.toButtonStyle(),
     size = size.toButtonSize(),
     enabled = enabled,
-    icon = EverliLogos.PaymentBlik,
+    icon = EverliResources.Logos.PaymentBlik,
     iconPosition = iconPosition,
     contentDescription = contentDescription,
   )

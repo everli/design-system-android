@@ -1,4 +1,4 @@
 package com.everli.designsystem.helper
 
-val String.Companion.empty: String
+internal val String.Companion.empty: String
   get() = ""

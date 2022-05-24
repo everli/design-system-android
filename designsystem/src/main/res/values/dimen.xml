@@ -4,51 +4,52 @@
   <!-- Typography -->
 
   <!-- Title1 -->
-  <dimen name="line_height_title1">68sp</dimen>
+  <dimen name="lineHeightTitle1">68sp</dimen>
 
-  <dimen name="font_size_title1_bold">48sp</dimen>
+  <dimen name="fontSizeTitle1Bold">48sp</dimen>
 
   <!-- Title2 -->
-  <dimen name="line_height_title2">52sp</dimen>
+  <dimen name="lineHeightTitle2">52sp</dimen>
 
-  <dimen name="font_size_title2_bold">37sp</dimen>
-  <dimen name="font_size_title2_semibold">36sp</dimen>
+  <dimen name="fontSizeTitle2Bold">37sp</dimen>
+  <dimen name="fontSizeTitle2Semibold">36sp</dimen>
 
   <!-- Title3 -->
-  <dimen name="line_height_title3">40sp</dimen>
+  <dimen name="lineHeightTitle3">40sp</dimen>
 
-  <dimen name="font_size_title3_bold">29sp</dimen>
-  <dimen name="font_size_title3_semibold">28sp</dimen>
+  <dimen name="fontSizeTitle3Bold">29sp</dimen>
+  <dimen name="fontSizeTitle3Semibold">28sp</dimen>
 
   <!-- Title4 -->
-  <dimen name="line_height_title4">32sp</dimen>
+  <dimen name="lineHeightTitle4">32sp</dimen>
 
-  <dimen name="font_size_title4_bold">23sp</dimen>
-  <dimen name="font_size_title4_semibold">22sp</dimen>
-  <dimen name="font_size_title4_regular">22sp</dimen>
+  <dimen name="fontSizeTitle4Bold">23sp</dimen>
+  <dimen name="fontSizeTitle4Semibold">22sp</dimen>
+  <dimen name="fontSizeTitle4Regular">22sp</dimen>
 
   <!-- Subtitle -->
-  <dimen name="line_height_subtitle">28sp</dimen>
-  <dimen name="font_size_subtitle">18sp</dimen>
+  <dimen name="lineHeightSubtitle">28sp</dimen>
+  <dimen name="fontSizeSubtitle">18sp</dimen>
 
   <!-- Body -->
-  <dimen name="line_height_body">24sp</dimen>
-  <dimen name="font_size_body">16sp</dimen>
+  <dimen name="lineHeightBody">24sp</dimen>
+  <dimen name="fontSizeBody">16sp</dimen>
 
   <!-- Body Small -->
-  <dimen name="line_height_body_small">22sp</dimen>
-  <dimen name="font_size_body_small">14sp</dimen>
+  <dimen name="lineHeightBodySmall">22sp</dimen>
+  <dimen name="fontSizeBodySmall">14sp</dimen>
 
   <!-- Caption Small -->
-  <dimen name="line_height_caption">18sp</dimen>
-  <dimen name="font_size_caption">12sp</dimen>
+  <dimen name="lineHeightCaption">18sp</dimen>
+  <dimen name="fontSizeCaption">12sp</dimen>
 
   <!-- Radius -->
-  <dimen name="radius_medium">8dp</dimen>
+  <dimen name="radiusMedium">8dp</dimen>
+  <dimen name="radiusFull">40dp</dimen>
 
-  <!-- Button Height -->
-  <dimen name="button_size_small">36dp</dimen>
-  <dimen name="button_size_medium">44dp</dimen>
-  <dimen name="button_size_large">48dp</dimen>
+  <!-- Icon -->
+  <dimen name="iconSizeSmall">18dp</dimen>
+  <dimen name="iconSizeMedium">24dp</dimen>
+
 
 </resources>

@@ -17,11 +17,7 @@ import androidx.compose.material.TabRow
 import androidx.compose.material.TabRowDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -34,13 +30,10 @@ import com.everli.designsystem.components.button.ButtonVariant
 import com.everli.designsystem.components.button.EverliButton
 import com.everli.designsystem.components.button.IconPosition
 import com.everli.designsystem.core.constants.EverliColors
-import com.everli.designsystem.core.constants.EverliIcons
-import com.everli.designsystem.core.theme.DefaultButtonTheme
+import com.everli.designsystem.core.constants.EverliResources
 import com.everli.designsystem.core.theme.DefaultTheme
 import com.everli.designsystem.core.theme.EverliTheme
-import com.everli.designsystem.core.theme.StateColor
 import com.everli.designsystem.playground.R
-import com.everli.designsystem.playground.color.ColorsGrid
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.pagerTabIndicatorOffset
@@ -61,7 +54,7 @@ fun buttonText() = "Button"
 @Composable
 fun SubHeaderText(text: String) {
   Text(
-    style = EverliTheme.typography.subtitleSemibold,
+    style = EverliTheme.typography.subtitle.semibold,
     color = EverliColors.Gray80,
     text = text,
     modifier = Modifier.padding(8.dp)
@@ -112,7 +105,7 @@ fun ButtonSectionWithIcon(
           buttonStyle = buttonStyle,
           size = size,
           text = buttonText(),
-          icon = EverliIcons.Cart,
+          icon = EverliResources.Icons.Basket,
           iconPosition = IconPosition.LEFT,
           modifier = Modifier.padding(horizontal = 8.dp)
         )
@@ -122,7 +115,7 @@ fun ButtonSectionWithIcon(
           buttonStyle = buttonStyle,
           size = size,
           text = buttonText(),
-          icon = EverliIcons.Cart,
+          icon = EverliResources.Icons.Basket,
           iconPosition = IconPosition.LEFT,
           modifier = Modifier.padding(horizontal = 8.dp),
           enabled = false,
@@ -146,7 +139,7 @@ fun ButtonSectionIconOnly(
           variant = variant,
           buttonStyle = buttonStyle,
           size = size,
-          icon = EverliIcons.Cart,
+          icon = EverliResources.Icons.Basket,
           iconPosition = IconPosition.LEFT,
           modifier = Modifier.padding(horizontal = 8.dp)
         )
@@ -155,7 +148,7 @@ fun ButtonSectionIconOnly(
           variant = variant,
           buttonStyle = buttonStyle,
           size = size,
-          icon = EverliIcons.Cart,
+          icon = EverliResources.Icons.Basket,
           iconPosition = IconPosition.LEFT,
           modifier = Modifier.padding(horizontal = 8.dp),
           enabled = false,
@@ -199,7 +192,7 @@ fun ButtonSectionFullWidth(
       buttonStyle = buttonStyle,
       size = size,
       text = buttonText(),
-      icon = EverliIcons.Cart,
+      icon = EverliResources.Icons.Basket,
       iconPosition = IconPosition.LEFT,
       modifier = Modifier
         .fillMaxWidth()
@@ -211,7 +204,7 @@ fun ButtonSectionFullWidth(
       buttonStyle = buttonStyle,
       size = size,
       text = buttonText(),
-      icon = EverliIcons.Cart,
+      icon = EverliResources.Icons.Basket,
       iconPosition = IconPosition.RIGHT,
       modifier = Modifier
         .fillMaxWidth()
@@ -235,7 +228,7 @@ fun ButtonSectionIconRightAndSpecial(
           buttonStyle = buttonStyle,
           size = size,
           text = buttonText(),
-          icon = EverliIcons.Cart,
+          icon = EverliResources.Icons.Basket,
           iconPosition = IconPosition.RIGHT,
           modifier = Modifier.padding(horizontal = 8.dp)
         )
@@ -245,7 +238,7 @@ fun ButtonSectionIconRightAndSpecial(
           buttonStyle = buttonStyle,
           size = size,
           text = buttonText(),
-          icon = EverliIcons.Cart,
+          icon = EverliResources.Icons.Basket,
           iconPosition = IconPosition.RIGHT,
           modifier = Modifier.padding(horizontal = 8.dp),
           enabled = false,

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <!-- Dev Friendly Names -->
+
   <color name="white">#FFFFFFFF</color>
 
   <color name="transparent">@android:color/transparent</color>
@@ -15,9 +15,9 @@
 
   <color name="red_20">#FFFFCEDC</color>
   <color name="red_100">#FFDC325F</color>
-  
-  <color name="violet_100">#FF8A3264</color>
-  <color name="violet_110">#FFB71E49</color>
+  <color name="red_110">#FFB71E49</color>
+
+  <color name="purple_100">#FF8A3264</color>
 
   <color name="teal_20">#FFDAF4F4</color>
   <color name="teal_100">#FF46C6C6</color>
@@ -38,17 +38,5 @@
   <color name="google">@color/black_100</color>
   <color name="apple">@color/black_100</color>
   <color name="blik">#FFE5005D</color>
-
-  <!-- Brand Names -->
-  <color name="walter_white">@color/white</color>
-  <color name="violet_black">@color/black_100</color>
-  <color name="red_hot">@color/red_100</color>
-  <color name="purple_rain">@color/violet_100</color>
-  <color name="teal_waves">@color/teal_100</color>
-  <color name="blue_plus">@color/blue_100</color>
-  <color name="everli_green">@color/green_100</color>
-  <color name="deep_green">@color/green_110</color>
-  <color name="yellow_sun">@color/yellow_100</color>
-  <color name="link">@color/navy_100</color>
 
 </resources>

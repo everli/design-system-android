@@ -46,7 +46,7 @@ fun IconsPlayground() {
         text = "Decrease",
         modifier = Modifier.padding(8.dp),
       )
-      Text(text = size.toString(), style = EverliTheme.typography.bodySemibold)
+      Text(text = size.toString(), style = EverliTheme.typography.body.semibold)
       EverliButton.Button(
         onClick = { size += 4.dp },
         text = "Increase",
@@ -87,7 +87,7 @@ fun IconsPlayground() {
               .width(size)
               .height(size)
               .animateContentSize())
-          Text(text = data[index].name, style = EverliTheme.typography.bodySmallSemibold)
+          Text(text = data[index].name, style = EverliTheme.typography.bodySmall.semibold)
         }
       }
     }

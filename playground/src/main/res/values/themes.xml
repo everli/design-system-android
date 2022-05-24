@@ -14,7 +14,7 @@
     <!-- Customize your material theme here. -->
 
     <!-- Design system specific -->
-    <item name="buttonColorPrimaryFillBackgroundEnabled">@color/violet_100</item>
+    <item name="buttonColorPrimaryFillBackgroundEnabled">@color/purple_100</item>
     <item name="buttonColorPrimaryFillBackgroundPressed">@color/purple_80</item>
     <item name="buttonColorPrimaryOutlineBackgroundPressed">@color/purple_20</item>
     <item name="buttonColorPrimaryOutlineBorderEnabled">@color/purple_80</item>

@@ -44,7 +44,7 @@ fun TypographyPlayground() {
             text = name,
             modifier = Modifier.padding(8.dp),
             color = EverliColors.Green100,
-            style = EverliTheme.typography.subtitleSemibold)
+            style = EverliTheme.typography.subtitle.semibold)
         }
       }
       items(values) {
@@ -57,7 +57,7 @@ fun TypographyPlayground() {
 @Preview(showBackground = true)
 @Composable
 fun TypographyItemPreview() {
-  TypographyItem(typographyModel = TypographyModel("Title 3 Semibold", DefaultTypography.title3Semibold))
+  TypographyItem(typographyModel = TypographyModel("Title 3 Semibold", DefaultTypography.title3.semibold))
 }
 
 @ExperimentalFoundationApi

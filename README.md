@@ -96,7 +96,7 @@ The styles are stored as xml `styles` in `styles.xml`:
 
 Icons are defined as `vector drawables` in `/drawable`.
 
-**Note**: All icons by default are `24x24` and have a tint of `Black100` (#302030), you can change the based on the context (using Compose modifiers or xml attributes).
+**Note**: All icons by default are `24x24` and have a tint of `Black100` (@color/black_100), you can change the based on the context (using Compose modifiers or xml attributes).
 
 #### Compose
 

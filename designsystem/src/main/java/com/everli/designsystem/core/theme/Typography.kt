@@ -5,41 +5,97 @@ import androidx.compose.ui.text.TextStyle
 import com.everli.designsystem.core.constants.EverliTypography
 
 @Immutable
+data class Title1(
+  val bold: TextStyle,
+)
+
+@Immutable
+data class Title2(
+  val bold: TextStyle,
+  val semibold: TextStyle,
+)
+
+@Immutable
+data class Title3(
+  val bold: TextStyle,
+  val semibold: TextStyle,
+)
+
+@Immutable
+data class Title4(
+  val bold: TextStyle,
+  val semibold: TextStyle,
+  val regular: TextStyle,
+)
+
+@Immutable
+data class Subtitle(
+  val semibold: TextStyle,
+  val regular: TextStyle,
+)
+
+@Immutable
+data class Body(
+  val semibold: TextStyle,
+  val regular: TextStyle,
+)
+
+@Immutable
+data class BodySmall(
+  val semibold: TextStyle,
+  val regular: TextStyle,
+)
+
+@Immutable
+data class Caption(
+  val semibold: TextStyle,
+  val regular: TextStyle,
+)
+
+@Immutable
 data class EverliTypography(
-  val title1Bold: TextStyle,
-  val title2Bold: TextStyle,
-  val title2Semibold: TextStyle,
-  val title3Bold: TextStyle,
-  val title3Semibold: TextStyle,
-  val title4Bold: TextStyle,
-  val title4Semibold: TextStyle,
-  val title4Regular: TextStyle,
-  val subtitleSemibold: TextStyle,
-  val subtitleRegular: TextStyle,
-  val bodySemibold: TextStyle,
-  val bodyRegular: TextStyle,
-  val bodySmallSemibold: TextStyle,
-  val bodySmallRegular: TextStyle,
-  val captionSemibold: TextStyle,
-  val captionRegular: TextStyle,
+  val title1: Title1,
+  val title2: Title2,
+  val title3: Title3,
+  val title4: Title4,
+  val subtitle: Subtitle,
+  val body: Body,
+  val bodySmall: BodySmall,
+  val caption: Caption,
 )
 
 // Default
 val DefaultTypography = EverliTypography(
-  title1Bold = EverliTypography.Title1.Bold,
-  title2Bold = EverliTypography.Title2.Bold,
-  title2Semibold = EverliTypography.Title2.Semibold,
-  title3Bold = EverliTypography.Title3.Bold,
-  title3Semibold = EverliTypography.Title3.Semibold,
-  title4Bold = EverliTypography.Title4.Bold,
-  title4Semibold = EverliTypography.Title4.Semibold,
-  title4Regular = EverliTypography.Title4.Regular,
-  subtitleSemibold = EverliTypography.Subtitle.Semibold,
-  subtitleRegular = EverliTypography.Subtitle.Regular,
-  bodySemibold = EverliTypography.Body.Semibold,
-  bodyRegular = EverliTypography.Body.Regular,
-  bodySmallSemibold = EverliTypography.BodySmall.Semibold,
-  bodySmallRegular = EverliTypography.BodySmall.Regular,
-  captionSemibold = EverliTypography.Caption.Semibold,
-  captionRegular = EverliTypography.Caption.Regular,
+  title1 = Title1(
+    bold = EverliTypography.Title1.Bold,
+  ),
+  title2 = Title2(
+    bold = EverliTypography.Title2.Bold,
+    semibold = EverliTypography.Title2.Semibold,
+  ),
+  title3 = Title3(
+    bold = EverliTypography.Title3.Bold,
+    semibold = EverliTypography.Title3.Semibold,
+  ),
+  title4 = Title4(
+    bold = EverliTypography.Title4.Bold,
+    semibold = EverliTypography.Title4.Semibold,
+    regular = EverliTypography.Title4.Regular,
+  ),
+  subtitle = Subtitle(
+    semibold = EverliTypography.Subtitle.Semibold,
+    regular = EverliTypography.Subtitle.Regular,
+  ),
+  body = Body(
+    semibold = EverliTypography.Body.Semibold,
+    regular = EverliTypography.Body.Regular,
+  ),
+  bodySmall = BodySmall(
+    semibold = EverliTypography.BodySmall.Semibold,
+    regular = EverliTypography.BodySmall.Regular,
+  ),
+  caption = Caption(
+    semibold = EverliTypography.Caption.Semibold,
+    regular = EverliTypography.Caption.Regular,
+  ),
 )
