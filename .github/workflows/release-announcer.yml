@@ -1,0 +1,96 @@
+on:
+    release:
+        types: [published]
+name: Release Announcer
+jobs:
+    slackNotification:
+        name: Slack Notification
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Get release
+              id: get_release
+              uses: bruceadams/get-release@v1.2.3
+              env:
+                  GITHUB_TOKEN: ${{ github.token }}
+
+            - name: Parse release body
+              run:  echo "RELEASE_BODY=\`\`\`$( echo '${{ toJSON(steps.get_release.outputs.body) }}' | sed -r 's/(")(.*)(")/\2/g' )\`\`\`" >> $GITHUB_ENV
+
+            - name: Slack Notification - Header message
+              uses: archive/github-actions-slack@v2.4.0
+              id: header-message
+              with:
+                  slack-function: send-message
+                  slack-bot-user-oauth-access-token: ${{ secrets.DEMAND_RELEASE_ANNOUNCER_SLACK_BOT_TOKEN }}
+                  slack-channel: CBPCZ5CN9
+                  slack-optional-username: Release Announcer
+                  slack-optional-icon_url: https://emoji.slack-edge.com/T043A2WKC/androcket/ea95d3e810262e99.png
+                  slack-optional-unfurl_links: false
+                  slack-optional-unfurl_media: false
+                  slack-text: "Design System Android `${{ steps.get_release.outputs.name }}` released!"
+                  slack-optional-blocks: |
+                      [
+                          {
+                            "type": "section",
+                            "text": {
+                              "type": "mrkdwn",
+                              "text": "Design System Android `${{ steps.get_release.outputs.name }}` released!"
+                            }
+                          },
+                          {
+                            "type": "section",
+                            "text": {
+                              "type": "mrkdwn",
+                              "text": "${{ steps.get_release.outputs.html_url }}"
+                            }
+                          },
+                          {
+                            "type": "section",
+                            "fields": [
+                              {
+                                "type": "mrkdwn",
+                                "text": "*Tag*"
+                              },
+                              {
+                                "type": "mrkdwn",
+                                "text": "*Publisher*"
+                              },
+                              {
+                                "type": "plain_text",
+                                "text": "${{ steps.get_release.outputs.tag_name }}"
+                              },
+                              {
+                                "type": "plain_text",
+                                "text": "${{ fromJSON(steps.get_release.outputs.author).login }}"
+                              }
+                            ]
+                          }
+                        ]
+
+            - name: Slack Notification - Thread message
+              uses: archive/github-actions-slack@v2.4.0
+              id: thread-message
+              with:
+                  slack-function: send-message
+                  slack-bot-user-oauth-access-token: ${{ secrets.DEMAND_RELEASE_ANNOUNCER_SLACK_BOT_TOKEN }}
+                  slack-channel: CBPCZ5CN9
+                  slack-optional-username: Release Announcer
+                  slack-optional-icon_url: https://emoji.slack-edge.com/T043A2WKC/androcket/ea95d3e810262e99.png
+                  slack-optional-unfurl_links: false
+                  slack-optional-unfurl_media: false
+                  slack-optional-thread_ts: ${{ fromJson(steps.header-message.outputs.slack-result).response.message.ts }}
+                  slack-text: "<Something went wrong sending the body>"
+                  slack-optional-blocks: |
+                      [
+                          {
+                            "type": "section",
+                            "text": {
+                              "type": "mrkdwn",
+                              "text": "${{ env.RELEASE_BODY }}"
+                            }
+                          }
+                        ]
+                      
