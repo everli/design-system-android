@@ -140,6 +140,7 @@
       android:text="Caption Regular"
       android:textColor="@color/black_100" />
 
+
   </LinearLayout>
 
 </ScrollView>

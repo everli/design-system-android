@@ -258,5 +258,4 @@ fun EverliResource.toResourceId(): Int {
     EverliResource.LOGO_TWITTER -> R.drawable.logo_twitter
     EverliResource.LOGO_WAZE -> R.drawable.logo_waze
   }
-
 }

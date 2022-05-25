@@ -8,7 +8,10 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.material.Icon
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
@@ -30,7 +33,10 @@ import androidx.navigation.compose.rememberNavController
 import com.everli.designsystem.components.button.EverliButton
 import com.everli.designsystem.core.theme.DefaultTheme
 import com.everli.designsystem.core.constants.EverliColors
+import com.everli.designsystem.core.constants.EverliResources
 import com.everli.designsystem.core.theme.DefaultTypography
+import com.everli.designsystem.core.theme.EverliTheme
+import com.everli.designsystem.core.theme.EverliTypography
 import com.everli.designsystem.playground.button.BrandButtonPlayground
 import com.everli.designsystem.playground.button.ButtonsPlayground
 import com.everli.designsystem.playground.color.ColorsPlayground
