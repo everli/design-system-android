@@ -1,0 +1,48 @@
+/**
+ * Create variables with empty default values
+ * signing.keyId: the ID of the GPG key pair, the last eight characters of its fingerprint
+ * signing.password: the passphrase of the key pair
+ * signing.secretKeyRingFile: private key file
+ * osshrUsername and ossrhPassword: account details for MavenCentral
+ * sonatypeStagingProfileId: found in the url of https://s01.oss.sonatype.org/ after sign in
+ */
+ext["signing.keyId"] = ''
+ext["signing.password"] = ''
+ext["signing.secretKeyRingFile"] = ''
+ext["ossrhUsername"] = ''
+ext["ossrhPassword"] = ''
+ext["sonatypeStagingProfileId"] = ''
+
+/**
+ * Try to fetch the values of the variables from a local.properties file in the root of the project if it exists,
+ * otherwise you’ll look for them in the environment variables.
+ * The former lets you easily input these values locally on your machine, for CI.
+ */
+File secretPropsFile = project.rootProject.file('local.properties')
+if (secretPropsFile.exists()) {
+  // Read local.properties file first if it exists
+  Properties p = new Properties()
+  new FileInputStream(secretPropsFile).withCloseable { is -> p.load(is) }
+  p.each { name, value -> ext[name] = value }
+} else {
+  // Use system environment variables
+  ext["ossrhUsername"] = System.getenv('OSSRH_USERNAME')
+  ext["ossrhPassword"] = System.getenv('OSSRH_PASSWORD')
+  ext["sonatypeStagingProfileId"] = System.getenv('SONATYPE_STAGING_PROFILE_ID')
+  ext["signing.keyId"] = System.getenv('SIGNING_KEY_ID')
+  ext["signing.password"] = System.getenv('SIGNING_PASSWORD')
+  ext["signing.secretKeyRingFile"] = System.getenv('SIGNING_SECRET_KEY_RING_FILE')
+}
+
+// Set up Sonatype repository
+nexusPublishing {
+  repositories {
+    sonatype {
+      stagingProfileId = sonatypeStagingProfileId
+      username = ossrhUsername
+      password = ossrhPassword
+      nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
+      snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+    }
+  }
+}

@@ -3,6 +3,14 @@ plugins {
   id 'kotlin-android'
 }
 
+ext {
+  PUBLISH_GROUP_ID = 'com.everli'
+  PUBLISH_VERSION = '0.1.0'
+  PUBLISH_ARTIFACT_ID = 'designsystem'
+}
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
+
 android {
   namespace = 'com.everli.designsystem'
 
