@@ -1,6 +1,6 @@
 package com.everli.designsystem.helper
 
-import com.everli.designsystem.core.R
+import com.everli.designsystem.R
 import com.everli.designsystem.core.constants.EverliColor
 import com.everli.designsystem.core.constants.EverliColors
 import io.kotest.core.spec.style.FunSpec

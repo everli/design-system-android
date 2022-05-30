@@ -1,7 +1,7 @@
 package com.everli.designsystem.helper
 
 import androidx.compose.ui.graphics.Color
-import com.everli.designsystem.core.R
+import com.everli.designsystem.R
 import com.everli.designsystem.core.constants.EverliColor
 import com.everli.designsystem.core.constants.EverliColors
 

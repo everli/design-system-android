@@ -2,7 +2,7 @@ package com.everli.designsystem.helper
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.painter.Painter
-import com.everli.designsystem.core.R
+import com.everli.designsystem.R
 import com.everli.designsystem.core.constants.EverliResource
 import com.everli.designsystem.core.constants.EverliResources
 
@@ -258,5 +258,4 @@ fun EverliResource.toResourceId(): Int {
     EverliResource.LOGO_TWITTER -> R.drawable.logo_twitter
     EverliResource.LOGO_WAZE -> R.drawable.logo_waze
   }
-
 }

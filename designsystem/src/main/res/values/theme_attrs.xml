@@ -2,7 +2,7 @@
 <resources>
 
   <!-- Define token so clients can override for XML wrapped components -->
-  <!-- N.B. not are tokens are supported in XML -->
+  <!-- N.B. not all tokens are supported in XML -->
   <declare-styleable name="EverliTheme">
     <!-- Radius -->
     <attr name="radiusMedium" format="dimension" />
