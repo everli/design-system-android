@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <!-- Typography -->
+
+  <!-- Title1 -->
+  <dimen name="lineHeightTitle1">68sp</dimen>
+
+  <dimen name="fontSizeTitle1Bold">48sp</dimen>
+
+  <!-- Title2 -->
+  <dimen name="lineHeightTitle2">52sp</dimen>
+
+  <dimen name="fontSizeTitle2Bold">37sp</dimen>
+  <dimen name="fontSizeTitle2Semibold">36sp</dimen>
+
+  <!-- Title3 -->
+  <dimen name="lineHeightTitle3">40sp</dimen>
+
+  <dimen name="fontSizeTitle3Bold">29sp</dimen>
+  <dimen name="fontSizeTitle3Semibold">28sp</dimen>
+
+  <!-- Title4 -->
+  <dimen name="lineHeightTitle4">32sp</dimen>
+
+  <dimen name="fontSizeTitle4Bold">23sp</dimen>
+  <dimen name="fontSizeTitle4Semibold">22sp</dimen>
+  <dimen name="fontSizeTitle4Regular">22sp</dimen>
+
+  <!-- Subtitle -->
+  <dimen name="lineHeightSubtitle">28sp</dimen>
+  <dimen name="fontSizeSubtitle">18sp</dimen>
+
+  <!-- Body -->
+  <dimen name="lineHeightBody">24sp</dimen>
+  <dimen name="fontSizeBody">16sp</dimen>
+
+  <!-- Body Small -->
+  <dimen name="lineHeightBodySmall">22sp</dimen>
+  <dimen name="fontSizeBodySmall">14sp</dimen>
+
+  <!-- Caption Small -->
+  <dimen name="lineHeightCaption">18sp</dimen>
+  <dimen name="fontSizeCaption">12sp</dimen>
+
+  <!-- Radius -->
+  <dimen name="radiusMedium">8dp</dimen>
+  <dimen name="radiusFull">40dp</dimen>
+
+  <!-- Icon -->
+  <dimen name="iconSizeSmall">18dp</dimen>
+  <dimen name="iconSizeMedium">24dp</dimen>
+
+
+</resources>

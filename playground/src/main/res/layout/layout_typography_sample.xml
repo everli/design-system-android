@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
+
+    <TextView
+      style="@style/EverliTypography.Title1.Bold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:text="Title1 Bold"
+      android:textColor="@color/black_100" />
+
+    <TextView
+      style="@style/EverliTypography.Title2.Bold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:text="Title2 Bold"
+      android:textColor="@color/black_100" />
+
+    <TextView
+      style="@style/EverliTypography.Title2.Semibold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:text="Title2 Semibold"
+      android:textColor="@color/black_100" />
+
+    <TextView
+      style="@style/EverliTypography.Title3.Bold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:text="Title3 Bold"
+      android:textColor="@color/black_100" />
+
+    <TextView
+      style="@style/EverliTypography.Title3.Semibold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:text="Title3 Semibold"
+      android:textColor="@color/black_100" />
+
+    <TextView
+      style="@style/EverliTypography.Title4.Bold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:text="Title4 Bold"
+      android:textColor="@color/black_100" />
+
+    <TextView
+      style="@style/EverliTypography.Title4.Semibold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:text="Title4 Semibold"
+      android:textColor="@color/black_100" />
+
+    <TextView
+      style="@style/EverliTypography.Title4.Regular"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:text="Title4 Regular"
+      android:textColor="@color/black_100" />
+
+    <TextView
+      style="@style/EverliTypography.Subtitle.Semibold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:text="Subtitle Semibold"
+      android:textColor="@color/black_100" />
+
+    <TextView
+      style="@style/EverliTypography.Subtitle.Regular"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:text="Subtitle Regular"
+      android:textColor="@color/black_100" />
+
+    <TextView
+      style="@style/EverliTypography.Body.Semibold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:text="Body Semibold"
+      android:textColor="@color/black_100" />
+
+    <TextView
+      style="@style/EverliTypography.Body.Regular"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:text="Body Regular"
+      android:textColor="@color/black_100" />
+
+    <TextView
+      style="@style/EverliTypography.BodySmall.Semibold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:text="Body Small Semibold"
+      android:textColor="@color/black_100" />
+
+    <TextView
+      style="@style/EverliTypography.BodySmall.Regular"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:text="Body Small Regular"
+      android:textColor="@color/black_100" />
+
+    <TextView
+      style="@style/EverliTypography.Caption.Semibold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:text="Caption Semibold"
+      android:textColor="@color/black_100" />
+
+    <TextView
+      style="@style/EverliTypography.Caption.Regular"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:text="Caption Regular"
+      android:textColor="@color/black_100" />
+
+
+  </LinearLayout>
+
+</ScrollView>
+

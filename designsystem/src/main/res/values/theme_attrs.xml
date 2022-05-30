@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <!-- Define token so clients can override for XML wrapped components -->
+  <!-- N.B. not all tokens are supported in XML -->
+  <declare-styleable name="EverliTheme">
+    <!-- Radius -->
+    <attr name="radiusMedium" format="dimension" />
+    <attr name="radiusFull" format="dimension" />
+
+    <!-- Text -->
+    <attr name="textColorPrimary" format="color" />
+    <attr name="textColorNegative" format="color" />
+    <attr name="textColorSpecial" format="color" />
+
+    <!-- Icon -->
+    <attr name="iconSizeSmall" format="dimension" />
+    <attr name="iconSizeMedium" format="dimension" />
+    <attr name="iconColorLight" format="color" />
+    <attr name="iconColorDark" format="color" />
+    <attr name="iconColorSpecial" format="color" />
+
+    <!-- Button -->
+
+    <!-- Button Text -->
+    <attr name="buttonTextColorDisabled" format="color" />
+    <attr name="buttonTextLinkEnabled" format="color" />
+    <attr name="buttonTextLinkPressed" format="color" />
+
+    <!-- Button Icon -->
+    <attr name="buttonIconColorDisabled" format="color" />
+    <attr name="buttonIconColorLinkEnabled" format="color" />
+    <attr name="buttonIconColorLinkPressed" format="color" />
+    <attr name="buttonIconColorFacebookOutlineEnabled" format="color" />
+
+    <!-- Button Color -->
+    <!-- Button Color Transparent -->
+    <attr name="buttonColorTransparentBackgroundEnabled" format="color" />
+    <attr name="buttonColorTransparentBackgroundDisabled" format="color" />
+
+    <!-- Button Color Fill -->
+    <attr name="buttonColorFillBackgroundDisabled" format="color" />
+
+    <!-- Button Color Outline -->
+    <attr name="buttonColorOutlineBorderDisabled" format="color" />
+    <attr name="buttonColorOutlineBorderDarkEnabled" format="color" />
+    <attr name="buttonColorOutlineBorderDarkPressed" format="color" />
+
+    <!-- Button Color Primary -->
+    <attr name="buttonColorPrimaryFillBackgroundEnabled" format="color" />
+    <attr name="buttonColorPrimaryFillBackgroundPressed" format="color" />
+
+    <attr name="buttonColorPrimaryOutlineBackgroundPressed" format="color" />
+    <attr name="buttonColorPrimaryOutlineBorderEnabled" format="color" />
+
+    <attr name="buttonColorPrimaryFlatBackgroundPressed" format="color" />
+
+    <!-- Button Color Special -->
+    <attr name="buttonColorSpecialFillBackgroundEnabled" format="color" />
+    <attr name="buttonColorSpecialFillBackgroundPressed" format="color" />
+
+    <attr name="buttonColorSpecialOutlineBackgroundPressed" format="color" />
+    <attr name="buttonColorSpecialOutlineBorderEnabled" format="color" />
+
+    <attr name="buttonColorSpecialFlatBackgroundPressed" format="color" />
+
+    <!-- Button Color Overlay -->
+    <attr name="buttonColorOverlay" format="float" />
+
+    <!-- Button Color Facebook -->
+    <attr name="buttonColorFacebookFillBackgroundEnabled" format="color" />
+    <attr name="buttonColorFacebookFillBackgroundPressed" format="color" />
+
+    <!-- Button Color Google -->
+    <attr name="buttonColorGoogleFillBackgroundEnabled" format="color" />
+    <attr name="buttonColorGoogleFillBackgroundPressed" format="color" />
+
+    <!-- Button Color Apple -->
+    <attr name="buttonColorAppleFillBackgroundEnabled" format="color" />
+    <attr name="buttonColorAppleFillBackgroundPressed" format="color" />
+
+    <!-- Button Color Blik -->
+    <attr name="buttonColorBlikFillBackgroundEnabled" format="color" />
+    <attr name="buttonColorBlikFillBackgroundPressed" format="color" />
+
+  </declare-styleable>
+
+</resources>
