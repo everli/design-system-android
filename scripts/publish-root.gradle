@@ -5,6 +5,7 @@
  * signing.secretKeyRingFile: private key file
  * osshrUsername and ossrhPassword: account details for MavenCentral
  * sonatypeStagingProfileId: found in the url of https://s01.oss.sonatype.org/ after sign in
+ * snapshot: if true, snapshot will be added ot version name and artifacts will be pushed to the snapshot repo
  */
 ext["signing.keyId"] = ''
 ext["signing.password"] = ''
@@ -12,6 +13,7 @@ ext["signing.secretKeyRingFile"] = ''
 ext["ossrhUsername"] = ''
 ext["ossrhPassword"] = ''
 ext["sonatypeStagingProfileId"] = ''
+ext["snapshot"] = ''
 
 /**
  * Try to fetch the values of the variables from a local.properties file in the root of the project if it exists,
@@ -34,8 +36,17 @@ if (secretPropsFile.exists()) {
   ext["signing.secretKeyRingFile"] = System.getenv('SIGNING_SECRET_KEY_RING_FILE')
 }
 
+var isSnapshot = snapshot == "true"
+
+if (isSnapshot) {
+  ext["rootVersionName"] = snapshotVersionName
+} else {
+  ext["rootVersionName"] = versionName
+}
+
 // Set up Sonatype repository
 nexusPublishing {
+  useStaging.set(!isSnapshot)
   repositories {
     sonatype {
       stagingProfileId = sonatypeStagingProfileId
