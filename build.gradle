@@ -1,7 +1,7 @@
 ext {
   versionMajor = 0
   versionMinor = 1
-  versionPatch = 0
+  versionPatch = 1
   versionName = "${versionMajor}.${versionMinor}.${versionPatch}"
   snapshotVersionName = "${versionMajor}.${versionMinor}.${versionPatch}-SNAPSHOT"
 }
