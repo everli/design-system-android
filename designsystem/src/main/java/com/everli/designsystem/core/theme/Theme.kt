@@ -11,7 +11,7 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 
 /**
- * Root Composable tha provides all LocalProviders with all values need by the design system components.
+ * Root Composable that provides all LocalProviders with all values need by the design system components.
  * All parameters should map 1:1 design tokens provided by design
  *
  * @param typography all text styles used in the design system

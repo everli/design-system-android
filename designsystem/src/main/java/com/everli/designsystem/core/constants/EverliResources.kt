@@ -5,8 +5,15 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import com.everli.designsystem.R
 
+/**
+ * All resources available in the design system grouped by type
+ */
 object EverliResources {
 
+  /**
+   * All icons are by default 24x24 with Black100 tint
+   * You can control size and tint using components such as the Icon
+   */
   object Icons {
 
     val Add: Painter
