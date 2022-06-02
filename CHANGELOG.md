@@ -1,6 +1,6 @@
 v0.1.1-tiny-docs / 2022-06-02
 ==================
-* milestone [v0.1.0-tiny-docs](https://github.com/everli/design-system-android/milestone/4)
+* milestone [v0.1.1-tiny-docs](https://github.com/everli/design-system-android/milestone/4)
 * [CHANGED] Revamped README.md
 * [CHANGED] Renamed `ThemeAdapter` to `EverliThemeAdapter`
 * [FIXED] Missing env variable in build script
