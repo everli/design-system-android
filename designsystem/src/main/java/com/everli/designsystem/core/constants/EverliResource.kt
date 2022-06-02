@@ -134,7 +134,7 @@ enum class EverliResource(val designName: String) {
      * @return [EverliResource] for given [name] or [fallback]
      */
     fun fromString(name: String, fallback: EverliResource = IMG_ITEMS): EverliResource {
-      return EverliResource.values().associateBy(EverliResource::designName)[name] ?: fallback
+      return values().associateBy(EverliResource::designName)[name] ?: fallback
     }
 
   }

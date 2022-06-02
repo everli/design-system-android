@@ -20,12 +20,12 @@ import com.everli.designsystem.helper.getDp
  * [EverliTypography] -> Not at the moment as it is quite hard to convert from xml style
  */
 @Composable
-fun ThemeAdapter(
+fun EverliThemeAdapter(
   context: Context,
   density: Density = Density(context),
   content: @Composable () -> Unit,
 ) {
-  val theme = ThemeAdapter.createFromContextTheme(context, density)
+  val theme = EverliThemeAdapter.createFromContextTheme(context, density)
 
   EverliTheme(
     typography = theme.everliTypography,
@@ -47,7 +47,7 @@ fun ThemeAdapterComposable(
   content: @Composable () -> Unit,
 ) {
   if (useCustomTheme) {
-    ThemeAdapter(content = content, context = context)
+    EverliThemeAdapter(content = content, context = context)
   } else {
     DefaultTheme(content = content)
   }
@@ -56,7 +56,7 @@ fun ThemeAdapterComposable(
 /**
  * Factory object that creates a [EverliTheme] from declared values in current context theme
  */
-internal object ThemeAdapter {
+internal object EverliThemeAdapter {
 
   private lateinit var everliThemeComponents: EverliThemeComponents
 
