@@ -37,6 +37,8 @@ object EverliColors {
   val Yellow20 = Color(0xFFFFF6DC)
   val Yellow100 = Color(0xFFFFD050)
 
+  val Orange100 = Color(0xFFFF6200)
+
   val Navy100 = Color(0xFF1A73E8)
   val Navy110 = Color(0xFF0D4A9A)
 
