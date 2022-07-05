@@ -37,6 +37,8 @@ enum class EverliColor(val designName: String) {
   YELLOW_20(designName = "yellow-20"),
   YELLOW_100(designName = "yellow-100"),
 
+  ORANGE_100(designName = "orange-100"),
+
   NAVY_100(designName = "navy-100"),
   NAVY_110(designName = "navy-110"),
 
