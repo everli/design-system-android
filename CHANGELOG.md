@@ -1,3 +1,8 @@
+v0.1.2-orange / 2022-07-05
+==================
+* milestone [v0.1.2-orange](https://github.com/everli/design-system-android/milestone/5)
+* [ADDED] New orange-100 color
+
 v0.1.1-tiny-docs / 2022-06-02
 ==================
 * milestone [v0.1.1-tiny-docs](https://github.com/everli/design-system-android/milestone/4)
