@@ -30,6 +30,7 @@ fun EverliColor.toColor(): Color {
     EverliColor.GREEN_110 -> EverliColors.Green110
     EverliColor.YELLOW_20 -> EverliColors.Yellow20
     EverliColor.YELLOW_100 -> EverliColors.Yellow100
+    EverliColor.ORANGE_100 -> EverliColors.Orange100
     EverliColor.NAVY_100 -> EverliColors.Navy100
     EverliColor.NAVY_110 -> EverliColors.Navy110
     EverliColor.FACEBOOK -> EverliColors.Facebook
@@ -64,6 +65,7 @@ fun EverliColor.toResourceId(): Int {
     EverliColor.GREEN_110 -> R.color.green_110
     EverliColor.YELLOW_20 -> R.color.yellow_20
     EverliColor.YELLOW_100 -> R.color.yellow_100
+    EverliColor.ORANGE_100 -> R.color.orange_100
     EverliColor.NAVY_100 -> R.color.navy_100
     EverliColor.NAVY_110 -> R.color.navy_110
     EverliColor.FACEBOOK -> R.color.facebook
