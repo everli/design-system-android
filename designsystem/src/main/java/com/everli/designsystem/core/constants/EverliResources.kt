@@ -55,6 +55,10 @@ object EverliResources {
     val ArrowRightCircle: Painter
       @Composable
       get() = painterResource(id = R.drawable.ico_arrow_right_circle)
+    
+    val ArrowTop: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_arrow_top)
 
     val ArrowTopCircle: Painter
       @Composable
@@ -400,9 +404,29 @@ object EverliResources {
       @Composable
       get() = painterResource(id = R.drawable.img_items)
 
+    val MailSent: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.img_mail_sent)
+
     val Money: Painter
       @Composable
       get() = painterResource(id = R.drawable.img_money)
+
+    val MoodAverage: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.img_mood_average)
+
+    val MoodBad: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.img_mood_bad)
+
+    val MoodGood: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.img_mood_good)
+
+    val OrderInProgress: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.img_order_in_progress)
 
     val Piggy: Painter
       @Composable
@@ -411,6 +435,23 @@ object EverliResources {
     val Relax: Painter
       @Composable
       get() = painterResource(id = R.drawable.img_relax)
+
+    val Saving: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.img_saving)
+
+    val ShopperHero: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.img_shopper_hero)
+
+    val ShopperSmiling: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.img_shopper_smiling)
+
+    val ShopperBag: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.img_shopping_bag)
+
   }
 
   object Logos {
@@ -454,6 +495,10 @@ object EverliResources {
     val GoogleMapsApp: Painter
       @Composable
       get() = painterResource(id = R.drawable.logo_google_maps_app)
+    
+    val Instagram: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.logo_instagram)
 
     val PaymentAmex: Painter
       @Composable
