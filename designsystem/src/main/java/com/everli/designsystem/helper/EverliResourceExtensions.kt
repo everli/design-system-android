@@ -12,6 +12,7 @@ import com.everli.designsystem.core.constants.EverliResources
 @Composable
 fun EverliResource.toPainter(): Painter {
   return when (this) {
+    EverliResource.NONE -> EmptyPainter
     EverliResource.ICO_ADD -> EverliResources.Icons.Add
     EverliResource.ICO_ADD_CIRCLE -> EverliResources.Icons.AddCircle
     EverliResource.ICO_ALERT -> EverliResources.Icons.Alert
@@ -130,15 +131,26 @@ fun EverliResource.toPainter(): Painter {
     EverliResource.LOGO_PWRD_BY_GOOGLE -> EverliResources.Logos.PwrdByGoogle
     EverliResource.LOGO_TWITTER -> EverliResources.Logos.Twitter
     EverliResource.LOGO_WAZE -> EverliResources.Logos.Waze
+    EverliResource.ICO_ARROW_TOP -> EverliResources.Icons.ArrowTop
+    EverliResource.IMG_MAIL_SENT -> EverliResources.Images.MailSent
+    EverliResource.IMG_MOOD_AVERAGE -> EverliResources.Images.MoodAverage
+    EverliResource.IMG_MOOD_BAD -> EverliResources.Images.MoodBad
+    EverliResource.IMG_MOOD_GOOD -> EverliResources.Images.MoodGood
+    EverliResource.IMG_ORDER_IN_PROGRESS -> EverliResources.Images.OrderInProgress
+    EverliResource.IMG_SAVING -> EverliResources.Images.Saving
+    EverliResource.IMG_SHOPPER_HERO -> EverliResources.Images.ShopperHero
+    EverliResource.IMG_SHOPPER_SMILING -> EverliResources.Images.ShopperSmiling
+    EverliResource.IMG_SHOPPING_BAG -> EverliResources.Images.ShopperBag
+    EverliResource.LOGO_INSTAGRAM -> EverliResources.Logos.Instagram
   }
 }
 
 /**
  * Return a resource id based on [EverliResource]
  */
-@Composable
 fun EverliResource.toResourceId(): Int {
   return when (this) {
+    EverliResource.NONE -> 0
     EverliResource.ICO_ADD -> R.drawable.ico_add
     EverliResource.ICO_ADD_CIRCLE -> R.drawable.ico_add_circle
     EverliResource.ICO_ALERT -> R.drawable.ico_alert
@@ -257,5 +269,16 @@ fun EverliResource.toResourceId(): Int {
     EverliResource.LOGO_PWRD_BY_GOOGLE -> R.drawable.logo_pwrd_by_google
     EverliResource.LOGO_TWITTER -> R.drawable.logo_twitter
     EverliResource.LOGO_WAZE -> R.drawable.logo_waze
+    EverliResource.ICO_ARROW_TOP -> R.drawable.ico_arrow_top
+    EverliResource.IMG_MAIL_SENT -> R.drawable.img_mail_sent
+    EverliResource.IMG_MOOD_AVERAGE -> R.drawable.img_mood_average
+    EverliResource.IMG_MOOD_BAD -> R.drawable.img_mood_bad
+    EverliResource.IMG_MOOD_GOOD -> R.drawable.img_mood_good
+    EverliResource.IMG_ORDER_IN_PROGRESS -> R.drawable.img_order_in_progress
+    EverliResource.IMG_SAVING -> R.drawable.img_saving
+    EverliResource.IMG_SHOPPER_HERO -> R.drawable.img_shopper_hero
+    EverliResource.IMG_SHOPPER_SMILING -> R.drawable.img_shopper_smiling
+    EverliResource.IMG_SHOPPING_BAG -> R.drawable.img_shopping_bag
+    EverliResource.LOGO_INSTAGRAM -> R.drawable.logo_instagram
   }
 }
