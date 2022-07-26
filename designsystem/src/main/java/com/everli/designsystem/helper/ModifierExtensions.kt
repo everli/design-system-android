@@ -5,14 +5,14 @@ import androidx.compose.ui.Modifier
 /**
  * Apply a [Modifier] if a given condition is meet
  *
+ * @param condition to match condition
  * @param modifier modifier to be applied
- * @param predicate to match condition
  *
- * @return [this].then([modifier]) if the [predicate] is meet, [this] without applying [modifier]
+ * @return [modifier] if the [condition] is meet, else [this] without applying [modifier]
  */
-fun Modifier.applyIf(modifier: Modifier, predicate: () -> Boolean) : Modifier {
-  return if (predicate()) {
-    this.then(modifier)
+fun Modifier.applyIf(condition: Boolean, modifier: Modifier.() -> Modifier): Modifier {
+  return if (condition) {
+    modifier()
   } else {
     this
   }
@@ -21,14 +21,14 @@ fun Modifier.applyIf(modifier: Modifier, predicate: () -> Boolean) : Modifier {
 /**
  * Apply a [Modifier] if a given condition is meet
  *
+ * @param condition to match condition
  * @param modifier modifier to be applied
- * @param condition to match
  *
- * @return [this].then([modifier]) if the [condition] is meet, [this] without applying [modifier]
+ * @return [modifier] if the [condition] is meet, else [this] without applying [modifier]
  */
-fun Modifier.applyIf(modifier: Modifier, condition: Boolean) : Modifier {
+fun Modifier.applyIf(condition: Boolean, modifier: Modifier): Modifier {
   return if (condition) {
-    this.then(modifier)
+    then(modifier)
   } else {
     this
   }
