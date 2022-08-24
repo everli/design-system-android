@@ -16,7 +16,24 @@ enum class ButtonStyle {
 
   FILL,
   OUTLINE,
-  FLAT,
+  FLAT;
+
+  companion object {
+
+    /**
+     * Convert string to a [ButtonStyle]
+     *
+     * @param name name of the style
+     * @param fallback used in case the conversion fails, default value [ButtonStyle.FILL]
+     * @return [ButtonStyle] for given [name] or [fallback]
+     */
+    fun fromString(name: String, fallback: ButtonStyle = FILL): ButtonStyle {
+      return values().associateBy(ButtonStyle::name)[name.uppercase()] ?: fallback
+    }
+
+  }
+
+  override fun toString(): String = name.lowercase()
 
 }
 
