@@ -1,7 +1,5 @@
 package com.everli.designsystem.components.button
 
-import com.everli.designsystem.helper.DummyEnum
-import com.everli.designsystem.helper.enumValueOfOrFallback
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
 
@@ -68,6 +66,26 @@ internal class EverliButtonConstantsTest : FunSpec(
     ).forEach { (style, expected) ->
       test("BrandButtonStyle.toButtonStyle() for $style should be $expected") {
         style.toButtonStyle() shouldBe expected
+      }
+    }
+
+    listOf(
+      "fill" to ButtonStyle.FILL,
+      "outline" to ButtonStyle.OUTLINE,
+      "flat" to ButtonStyle.FLAT,
+    ).forEach { (name, expected) ->
+      test("ButtonStyle.fromString() for $name should be $expected") {
+        ButtonStyle.fromString(name) shouldBe expected
+      }
+    }
+
+    listOf(
+      ButtonStyle.FILL to "fill",
+      ButtonStyle.OUTLINE to "outline",
+      ButtonStyle.FLAT to "flat",
+    ).forEach { (enumValue, expectedName) ->
+      test("ButtonStyle.ToString() for $enumValue should be $expectedName") {
+        enumValue.toString() shouldBe expectedName
       }
     }
   }

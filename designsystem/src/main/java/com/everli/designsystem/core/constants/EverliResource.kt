@@ -1,7 +1,10 @@
 package com.everli.designsystem.core.constants
 
+import com.everli.designsystem.helper.empty
+
 enum class EverliResource(val designName: String) {
 
+  NONE(designName = String.empty),
   ICO_ADD(designName = "ico-add"),
   ICO_ADD_CIRCLE(designName = "ico-add-circle"),
   ICO_ALERT(designName = "ico-alert"),
@@ -12,6 +15,7 @@ enum class EverliResource(val designName: String) {
   ICO_ARROW_LEFT_CIRCLE(designName = "ico-arrow-left-circle"),
   ICO_ARROW_RIGHT(designName = "ico-arrow-right"),
   ICO_ARROW_RIGHT_CIRCLE(designName = "ico-arrow-right-circle"),
+  ICO_ARROW_TOP(designName = "ico-arrow-top"),
   ICO_ARROW_TOP_CIRCLE(designName = "ico-arrow-top-circle"),
   ICO_ASK_QUESTION(designName = "ico-ask-question"),
   ICO_BASKET(designName = "ico-basket"),
@@ -97,9 +101,18 @@ enum class EverliResource(val designName: String) {
   IMG_FEE_SURCHARGE(designName = "img-fee-surcharge"),
   IMG_FRESH(designName = "img-fresh"),
   IMG_ITEMS(designName = "img-items"),
+  IMG_MAIL_SENT(designName = "img_mail_sent"),
   IMG_MONEY(designName = "img-money"),
+  IMG_MOOD_AVERAGE(designName = "img-mood-average"),
+  IMG_MOOD_BAD(designName = "img-mood-bad"),
+  IMG_MOOD_GOOD(designName = "img-mood-good"),
   IMG_PIGGY(designName = "img-piggy"),
+  IMG_ORDER_IN_PROGRESS(designName = "img-order-in-progress"),
   IMG_RELAX(designName = "img-relax"),
+  IMG_SAVING(designName = "img-saving"),
+  IMG_SHOPPER_HERO(designName = "img-shopper-hero"),
+  IMG_SHOPPER_SMILING(designName = "img-shopper-smiling"),
+  IMG_SHOPPING_BAG(designName = "img-shopping-bag"),
   LOGO_APPLE(designName = "logo-apple"),
   LOGO_APPLE_MAPS_APP(designName = "logo-apple-maps-app"),
   LOGO_EVERLI_APP(designName = "logo-everli-app"),
@@ -110,6 +123,7 @@ enum class EverliResource(val designName: String) {
   LOGO_FACEBOOK(designName = "logo-facebook"),
   LOGO_GOOGLE(designName = "logo-google"),
   LOGO_GOOGLE_MAPS_APP(designName = "logo-google-maps-app"),
+  LOGO_INSTAGRAM(designName = "logo-instagram"),
   LOGO_PAYMENT_AMEX(designName = "logo-payment-amex"),
   LOGO_PAYMENT_APPLE_PAY(designName = "logo-payment-apple-pay"),
   LOGO_PAYMENT_BLIK(designName = "logo-payment-blik"),

@@ -1,3 +1,10 @@
+v0.1.3-mystic-remora / 2022-08-24
+==================
+* milestone [v0.1.2-orange](https://github.com/everli/design-system-android/milestone/6)
+* [ADDED] More images in `EverliResources`
+* [ADDED] `ButtonStyle.fromString()` and `ButtonStyle.toString()` utility methods
+* [CHANGED] Parameters order in `Modifier.applyIf()`
+
 v0.1.2-orange / 2022-07-05
 ==================
 * milestone [v0.1.2-orange](https://github.com/everli/design-system-android/milestone/5)
