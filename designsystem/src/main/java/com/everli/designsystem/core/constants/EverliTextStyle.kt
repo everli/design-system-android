@@ -22,7 +22,7 @@ enum class EverliTextStyle(val designName: String) {
   companion object {
 
     /**
-     * Convert a resource name as string to a [EverliTextStyle]
+     * Convert a text style name as string to a [EverliTextStyle]
      * If the conversion fails, [fallback] will be returned
      * If [fallback] is not provided, [BODY_REGULAR] will be returned
      *
