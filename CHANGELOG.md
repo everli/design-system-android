@@ -1,6 +1,11 @@
+v0.1.4-birds-of-paradise / 2022-09-09
+==================
+* milestone [v0.1.4-birds-of-paradise](https://github.com/everli/design-system-android/milestone/7)
+* [ADDED] `EverliTextStyle` enum
+
 v0.1.3-mystic-remora / 2022-08-24
 ==================
-* milestone [v0.1.2-orange](https://github.com/everli/design-system-android/milestone/6)
+* milestone [v0.1.3-mystic-remora](https://github.com/everli/design-system-android/milestone/6)
 * [ADDED] More images in `EverliResources`
 * [ADDED] `ButtonStyle.fromString()` and `ButtonStyle.toString()` utility methods
 * [CHANGED] Parameters order in `Modifier.applyIf()`
