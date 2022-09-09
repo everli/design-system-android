@@ -3,7 +3,7 @@ package com.everli.designsystem.core.constants
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
 
-internal class DesignColorTests : FunSpec({
+internal class EverliColorTests : FunSpec({
 
   listOf(
     "white" to EverliColor.WHITE,
