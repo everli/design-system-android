@@ -31,7 +31,6 @@ enum class EverliTextStyle(val designName: String) {
      * @return [EverliTextStyle] for given [name] or [fallback]
      */
     fun fromString(name: String, fallback: EverliTextStyle = BODY_REGULAR): EverliTextStyle {
-      val ce = values().associateBy(EverliTextStyle::designName)
       return values().associateBy(EverliTextStyle::designName)[name] ?: fallback
     }
 
