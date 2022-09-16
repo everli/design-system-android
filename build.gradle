@@ -60,3 +60,5 @@ apply from: "${rootDir}/scripts/publish-root.gradle"
 task clean(type: Delete) {
   delete rootProject.buildDir
 }
+
+tasks.getByPath(":designsystem:preBuild").dependsOn addKtlintCheckGitPreCommitHook
