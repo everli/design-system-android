@@ -27,4 +27,3 @@ val colors = EverliColor.values()
   .map { color ->
     ColorModel(name = color.designName, color = color.toColor(), textColor = textColor(color.toColor()))
   }
-

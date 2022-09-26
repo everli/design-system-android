@@ -1,15 +1,18 @@
+apply plugin: "org.jlleitschuh.gradle.ktlint"
+
 ext {
   versionMajor = 0
   versionMinor = 1
-  versionPatch = 4
+  versionPatch = 5
   versionName = "${versionMajor}.${versionMinor}.${versionPatch}"
   snapshotVersionName = "${versionMajor}.${versionMinor}.${versionPatch}-SNAPSHOT"
 }
 
 buildscript {
   ext {
-    compose_version = '1.1.1'
-    kotlin_version = '1.6.10'
+    compose_version = '1.2.1'
+    compose_compiler_version = '1.3.1'
+    kotlin_version = '1.7.10'
     gradle_nexus_version = '1.1.0'
     accompanist_version = '0.23.1'
     android_gradle_version = '7.2.0'
@@ -25,6 +28,7 @@ buildscript {
     androidx_navigation_version = '2.5.0-rc01'
     androidx_lifecycle_runtime_ktx = '2.4.1'
     androidx_activity_compose = '1.4.0'
+    ktlint_plugin_version = "10.3.0"
   }
   repositories {
     maven { url "https://plugins.gradle.org/m2/" }
@@ -35,6 +39,19 @@ buildscript {
     classpath "com.android.tools.build:gradle:$android_gradle_version"
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     classpath "io.github.gradle-nexus:publish-plugin:$gradle_nexus_version"
+    classpath "org.jlleitschuh.gradle:ktlint-gradle:$ktlint_plugin_version"
+  }
+}
+
+subprojects {
+  apply plugin: "org.jlleitschuh.gradle.ktlint"
+
+  ktlint {
+    verbose = true
+    android = true
+    outputToConsole = true
+    outputColorName = "RED"
+
   }
 }
 
@@ -44,3 +61,5 @@ apply from: "${rootDir}/scripts/publish-root.gradle"
 task clean(type: Delete) {
   delete rootProject.buildDir
 }
+
+tasks.getByPath(":designsystem:preBuild").dependsOn addKtlintCheckGitPreCommitHook

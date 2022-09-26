@@ -50,47 +50,47 @@ val typographyModels = mapOf(
     ),
   ),
   "Subtitle" to
-      listOf(
-        TypographyModel(
-          name = "Subtitle Semibold",
-          style = EverliTypography.Subtitle.Semibold
-        ),
-        TypographyModel(
-          name = "Subtitle Regular",
-          style = EverliTypography.Subtitle.Regular
-        ),
+    listOf(
+      TypographyModel(
+        name = "Subtitle Semibold",
+        style = EverliTypography.Subtitle.Semibold
       ),
+      TypographyModel(
+        name = "Subtitle Regular",
+        style = EverliTypography.Subtitle.Regular
+      ),
+    ),
   "Body" to
-      listOf(
-        TypographyModel(
-          name = "Body Semibold",
-          style = EverliTypography.Body.Semibold
-        ),
-        TypographyModel(
-          name = "Body Regular",
-          style = EverliTypography.Body.Regular
-        ),
+    listOf(
+      TypographyModel(
+        name = "Body Semibold",
+        style = EverliTypography.Body.Semibold
       ),
+      TypographyModel(
+        name = "Body Regular",
+        style = EverliTypography.Body.Regular
+      ),
+    ),
   "Body Small" to
-      listOf(
-        TypographyModel(
-          name = "Body Small Semibold",
-          style = EverliTypography.BodySmall.Semibold
-        ),
-        TypographyModel(
-          name = "Body Small Regular",
-          style = EverliTypography.BodySmall.Regular
-        ),
+    listOf(
+      TypographyModel(
+        name = "Body Small Semibold",
+        style = EverliTypography.BodySmall.Semibold
       ),
+      TypographyModel(
+        name = "Body Small Regular",
+        style = EverliTypography.BodySmall.Regular
+      ),
+    ),
   "Caption" to
-      listOf(
-        TypographyModel(
-          name = "Caption Semibold",
-          style = EverliTypography.Caption.Semibold
-        ),
-        TypographyModel(
-          name = "Caption Regular",
-          style = EverliTypography.Caption.Regular
-        ),
+    listOf(
+      TypographyModel(
+        name = "Caption Semibold",
+        style = EverliTypography.Caption.Semibold
       ),
+      TypographyModel(
+        name = "Caption Regular",
+        style = EverliTypography.Caption.Regular
+      ),
+    ),
 )

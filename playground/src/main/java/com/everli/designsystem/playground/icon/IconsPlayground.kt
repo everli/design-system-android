@@ -9,8 +9,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.GridCells
-import androidx.compose.foundation.lazy.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -30,7 +30,6 @@ import com.everli.designsystem.core.theme.EverliTheme
 @ExperimentalFoundationApi
 @Composable
 fun IconsPlayground() {
-
   var size by remember { mutableStateOf(24.dp) }
   var color by remember { mutableStateOf(EverliColors.Black100) }
 
@@ -40,7 +39,8 @@ fun IconsPlayground() {
     Row(
       horizontalArrangement = Arrangement.Center,
       verticalAlignment = Alignment.CenterVertically,
-      modifier = Modifier.fillMaxWidth()) {
+      modifier = Modifier.fillMaxWidth(),
+    ) {
       EverliButton.Button(
         onClick = { size -= 4.dp },
         text = "Decrease",
@@ -56,7 +56,8 @@ fun IconsPlayground() {
 
     Row(
       horizontalArrangement = Arrangement.Center,
-      modifier = Modifier.fillMaxWidth()) {
+      modifier = Modifier.fillMaxWidth(),
+    ) {
       EverliButton.Button(
         onClick = { color = EverliColors.Black100 },
         text = "Black100",
@@ -75,7 +76,8 @@ fun IconsPlayground() {
     }
 
     LazyVerticalGrid(
-      cells = GridCells.Fixed(2)) {
+      columns = GridCells.Fixed(2),
+    ) {
       items(data.size) { index ->
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
           Icon(
@@ -86,7 +88,8 @@ fun IconsPlayground() {
               .padding(8.dp)
               .width(size)
               .height(size)
-              .animateContentSize())
+              .animateContentSize(),
+          )
           Text(text = data[index].name, style = EverliTheme.typography.bodySmall.semibold)
         }
       }

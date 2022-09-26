@@ -28,11 +28,10 @@ fun Color.Companion.fromHex(hexValue: String, fallbackColor: Color = White): Col
  * @param fallback [Color] to be returned if [this] is [Color.Unspecified]
  * @return [Color] with either [fallback] or [Color.Unspecified]
  */
-fun Color.ifUnspecified(fallback: Color) : Color {
+fun Color.ifUnspecified(fallback: Color): Color {
   return if (this == Color.Unspecified) {
     fallback
   } else {
     this
   }
 }
-

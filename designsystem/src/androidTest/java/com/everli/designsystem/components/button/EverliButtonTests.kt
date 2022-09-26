@@ -204,45 +204,45 @@ class EverliButtonTests {
         DefaultTheme {
           with(DefaultButtonTheme.color) {
             backgroundColors(ButtonVariant.PRIMARY, ButtonStyle.FILL) shouldBe
-                primary.fill.background.merge(fill.background)
+              primary.fill.background.merge(fill.background)
             backgroundColors(ButtonVariant.PRIMARY, ButtonStyle.OUTLINE) shouldBe
-                primary.outline.background.merge(outline.background)
+              primary.outline.background.merge(outline.background)
             backgroundColors(ButtonVariant.PRIMARY, ButtonStyle.FLAT) shouldBe
-                primary.flat.background.merge(transparent.background)
+              primary.flat.background.merge(transparent.background)
 
             backgroundColors(ButtonVariant.SPECIAL, ButtonStyle.FILL) shouldBe
-                special.fill.background.merge(fill.background)
+              special.fill.background.merge(fill.background)
             backgroundColors(ButtonVariant.SPECIAL, ButtonStyle.OUTLINE) shouldBe
-                special.outline.background.merge(outline.background)
+              special.outline.background.merge(outline.background)
             backgroundColors(ButtonVariant.SPECIAL, ButtonStyle.FLAT) shouldBe
-                special.flat.background.merge(transparent.background)
+              special.flat.background.merge(transparent.background)
 
             backgroundColors(ButtonVariant.LINK, ButtonStyle.FILL) shouldBe transparent.background
             backgroundColors(ButtonVariant.LINK, ButtonStyle.OUTLINE) shouldBe transparent.background
             backgroundColors(ButtonVariant.LINK, ButtonStyle.FLAT) shouldBe transparent.background
 
             backgroundColors(ButtonVariant.FACEBOOK, ButtonStyle.FILL) shouldBe
-                facebook.fill.background.merge(fill.background)
+              facebook.fill.background.merge(fill.background)
             backgroundColors(ButtonVariant.FACEBOOK, ButtonStyle.OUTLINE) shouldBe
-                facebook.outline.background.merge(outline.background)
+              facebook.outline.background.merge(outline.background)
             backgroundColors(ButtonVariant.FACEBOOK, ButtonStyle.FLAT) shouldBe StateColor()
 
             backgroundColors(ButtonVariant.GOOGLE, ButtonStyle.FILL) shouldBe
-                google.fill.background.merge(fill.background)
+              google.fill.background.merge(fill.background)
             backgroundColors(ButtonVariant.GOOGLE, ButtonStyle.OUTLINE) shouldBe
-                google.outline.background.merge(outline.background)
+              google.outline.background.merge(outline.background)
             backgroundColors(ButtonVariant.GOOGLE, ButtonStyle.FLAT) shouldBe StateColor()
 
             backgroundColors(ButtonVariant.APPLE, ButtonStyle.FILL) shouldBe
-                apple.fill.background.merge(fill.background)
+              apple.fill.background.merge(fill.background)
             backgroundColors(ButtonVariant.APPLE, ButtonStyle.OUTLINE) shouldBe
-                apple.outline.background.merge(outline.background)
+              apple.outline.background.merge(outline.background)
             backgroundColors(ButtonVariant.APPLE, ButtonStyle.FLAT) shouldBe StateColor()
 
             backgroundColors(ButtonVariant.BLIK, ButtonStyle.FILL) shouldBe
-                blik.fill.background.merge(fill.background)
+              blik.fill.background.merge(fill.background)
             backgroundColors(ButtonVariant.BLIK, ButtonStyle.OUTLINE) shouldBe
-                blik.outline.background.merge(outline.background)
+              blik.outline.background.merge(outline.background)
             backgroundColors(ButtonVariant.BLIK, ButtonStyle.FLAT) shouldBe StateColor()
           }
         }
@@ -259,12 +259,12 @@ class EverliButtonTests {
         DefaultTheme {
           with(DefaultButtonTheme.color) {
             borderColors(ButtonVariant.PRIMARY, ButtonStyle.OUTLINE) shouldBe
-                primary.outline.border.merge(outline.border)
+              primary.outline.border.merge(outline.border)
             borderColors(ButtonVariant.PRIMARY, ButtonStyle.FILL) shouldBe StateColor()
             borderColors(ButtonVariant.PRIMARY, ButtonStyle.FLAT) shouldBe StateColor()
 
             borderColors(ButtonVariant.SPECIAL, ButtonStyle.OUTLINE) shouldBe
-                special.outline.border.merge(outline.border)
+              special.outline.border.merge(outline.border)
             borderColors(ButtonVariant.SPECIAL, ButtonStyle.FILL) shouldBe StateColor()
             borderColors(ButtonVariant.SPECIAL, ButtonStyle.FLAT) shouldBe StateColor()
 
@@ -273,22 +273,22 @@ class EverliButtonTests {
             borderColors(ButtonVariant.LINK, ButtonStyle.FLAT) shouldBe StateColor()
 
             borderColors(ButtonVariant.FACEBOOK, ButtonStyle.OUTLINE) shouldBe
-                facebook.outline.border.merge(outline.borderDark).merge(outline.border)
+              facebook.outline.border.merge(outline.borderDark).merge(outline.border)
             borderColors(ButtonVariant.FACEBOOK, ButtonStyle.FILL) shouldBe StateColor()
             borderColors(ButtonVariant.FACEBOOK, ButtonStyle.FLAT) shouldBe StateColor()
 
             borderColors(ButtonVariant.GOOGLE, ButtonStyle.OUTLINE) shouldBe
-                google.outline.border.merge(outline.borderDark).merge(outline.border)
+              google.outline.border.merge(outline.borderDark).merge(outline.border)
             borderColors(ButtonVariant.GOOGLE, ButtonStyle.FILL) shouldBe StateColor()
             borderColors(ButtonVariant.GOOGLE, ButtonStyle.FLAT) shouldBe StateColor()
 
             borderColors(ButtonVariant.APPLE, ButtonStyle.OUTLINE) shouldBe
-                apple.outline.border.merge(outline.borderDark).merge(outline.border)
+              apple.outline.border.merge(outline.borderDark).merge(outline.border)
             borderColors(ButtonVariant.APPLE, ButtonStyle.FILL) shouldBe StateColor()
             borderColors(ButtonVariant.APPLE, ButtonStyle.FLAT) shouldBe StateColor()
 
             borderColors(ButtonVariant.BLIK, ButtonStyle.OUTLINE) shouldBe
-                blik.outline.border.merge(outline.borderDark).merge(outline.border)
+              blik.outline.border.merge(outline.borderDark).merge(outline.border)
             borderColors(ButtonVariant.BLIK, ButtonStyle.FILL) shouldBe StateColor()
             borderColors(ButtonVariant.BLIK, ButtonStyle.FLAT) shouldBe StateColor()
           }

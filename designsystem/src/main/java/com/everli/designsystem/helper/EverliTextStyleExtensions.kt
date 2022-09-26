@@ -1,6 +1,5 @@
 package com.everli.designsystem.helper
 
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.TextStyle
 import com.everli.designsystem.R
 import com.everli.designsystem.core.constants.EverliTextStyle

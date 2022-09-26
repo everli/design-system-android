@@ -24,7 +24,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.composed
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
@@ -141,7 +140,8 @@ object EverliButton {
       shape = variant.shape(isIconOnly = isIconOnly),
     ) {
       Row(
-        verticalAlignment = Alignment.CenterVertically) {
+        verticalAlignment = Alignment.CenterVertically
+      ) {
         if (iconPosition.isLeft()) {
           iconContent()
         }
@@ -342,9 +342,12 @@ object EverliButton {
         modifier = modifier.then( // N.B. order is very important
           Modifier
             .defaultMinSize(minHeight = 1.dp, minWidth = 1.dp) // done to override material default min sizes
-            .applyIf(condition = variant.isBrand().and(isPressed.or(enabled.not())),
-                     modifier = Modifier.alpha(EverliTheme.button.color.overlay))
-            .testTag(TestTags.Button.CONTAINER)),
+            .applyIf(
+              condition = variant.isBrand().and(isPressed.or(enabled.not())),
+              modifier = Modifier.alpha(EverliTheme.button.color.overlay)
+            )
+            .testTag(TestTags.Button.CONTAINER)
+        ),
       ) {
         content()
       }

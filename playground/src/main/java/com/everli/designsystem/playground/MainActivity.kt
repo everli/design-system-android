@@ -1,5 +1,6 @@
 package com.everli.designsystem.playground
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -8,10 +9,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.material.Icon
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
@@ -33,10 +31,7 @@ import androidx.navigation.compose.rememberNavController
 import com.everli.designsystem.components.button.EverliButton
 import com.everli.designsystem.core.theme.DefaultTheme
 import com.everli.designsystem.core.constants.EverliColors
-import com.everli.designsystem.core.constants.EverliResources
 import com.everli.designsystem.core.theme.DefaultTypography
-import com.everli.designsystem.core.theme.EverliTheme
-import com.everli.designsystem.core.theme.EverliTypography
 import com.everli.designsystem.playground.button.BrandButtonPlayground
 import com.everli.designsystem.playground.button.ButtonsPlayground
 import com.everli.designsystem.playground.color.ColorsPlayground
@@ -61,6 +56,7 @@ class MainActivity : ComponentActivity() {
 
 }
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 @ExperimentalPagerApi
 @ExperimentalFoundationApi
@@ -75,7 +71,7 @@ fun App() {
   // handled separately as it outside the main composable
   val systemUiController = rememberSystemUiController()
   systemUiController.setSystemBarsColor(
-    color = mockPrimary
+    color = mockPrimary,
   )
 
   Scaffold(
@@ -91,17 +87,19 @@ fun App() {
             Text(
               text = "Demand",
               color = EverliColors.White,
-              style = DefaultTypography.body.regular)
+              style = DefaultTypography.body.regular,
+            )
           }
           TextButton(onClick = { theme = Themes.SUPPLY }) {
             Text(
               text = "Supply",
               color = EverliColors.White,
-              style = DefaultTypography.body.regular)
+              style = DefaultTypography.body.regular,
+            )
           }
         }
       }
-    }
+    },
   ) {
     ThemePlaygroundContent(theme) {
       Navigation()
@@ -114,22 +112,28 @@ fun Home(navController: NavController) {
   Column {
     HomeButton(
       text = "\uD83C\uDFA8 COLORS",
-      onClick = { navController.navigate(Destinations.COLORS) })
+      onClick = { navController.navigate(Destinations.COLORS) },
+    )
     HomeButton(
       text = "\uD83D\uDD24 TYPOGRAPHY",
-      onClick = { navController.navigate(Destinations.TYPOGRAPHY) })
+      onClick = { navController.navigate(Destinations.TYPOGRAPHY) },
+    )
     HomeButton(
       text = "\uD83C\uDD92 BUTTONS",
-      onClick = { navController.navigate(Destinations.BUTTONS) })
+      onClick = { navController.navigate(Destinations.BUTTONS) },
+    )
     HomeButton(
       text = "\uD83C\uDD92 BRAND BUTTONS",
-      onClick = { navController.navigate(Destinations.BRAND_BUTTONS) })
+      onClick = { navController.navigate(Destinations.BRAND_BUTTONS) },
+    )
     HomeButton(
       text = "\uD83D\uDD25 TOKENS",
-      onClick = { navController.navigate(Destinations.TOKENS) })
+      onClick = { navController.navigate(Destinations.TOKENS) },
+    )
     HomeButton(
       text = "✔️ ICONS",
-      onClick = { navController.navigate(Destinations.ICONS) })
+      onClick = { navController.navigate(Destinations.ICONS) },
+    )
   }
 }
 
@@ -139,7 +143,7 @@ fun HomeButton(text: String, onClick: () -> Unit) {
     onClick = onClick,
     modifier = Modifier
       .fillMaxWidth()
-      .padding(16.dp)
+      .padding(16.dp),
   ) {
     Text(text = text)
   }

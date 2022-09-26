@@ -277,42 +277,48 @@ fun ButtonSizeSection(
       .padding(bottom = 16.dp)
       .verticalScroll(rememberScrollState()),
     horizontalAlignment = Alignment.CenterHorizontally,
-    verticalArrangement = Arrangement.spacedBy(0.dp)) {
+    verticalArrangement = Arrangement.spacedBy(0.dp)
+  ) {
 
     SubHeaderText(text = "Text")
 
     ButtonSection(
       variant = buttonVariant,
       buttonStyle = buttonStyle,
-      size = buttonSize)
+      size = buttonSize
+    )
 
     SubHeaderText(text = "Text & Icon")
 
     ButtonSectionWithIcon(
       variant = buttonVariant,
       buttonStyle = buttonStyle,
-      size = buttonSize)
+      size = buttonSize
+    )
 
     SubHeaderText(text = "Icon")
 
     ButtonSectionIconOnly(
       variant = buttonVariant,
       buttonStyle = buttonStyle,
-      size = buttonSize)
+      size = buttonSize
+    )
 
     SubHeaderText(text = "Full Width")
 
     ButtonSectionFullWidth(
       variant = buttonVariant,
       buttonStyle = buttonStyle,
-      size = buttonSize)
+      size = buttonSize
+    )
 
     SubHeaderText(text = "Icon Right & Short/Long Text")
 
     ButtonSectionIconRightAndSpecial(
       variant = buttonVariant,
       buttonStyle = buttonStyle,
-      size = buttonSize)
+      size = buttonSize
+    )
   }
 }
 

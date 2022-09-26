@@ -41,7 +41,8 @@ class EverliButtonView @JvmOverloads constructor(
     context.theme.obtainStyledAttributes(
       attrs,
       R.styleable.EverliButtonView,
-      0, 0).apply {
+      0, 0
+    ).apply {
       try {
         text = getStringOrEmpty(R.styleable.EverliButtonView_text)
         variant = enumValueOfOrFallback(getInt(R.styleable.EverliButtonView_btnVariant, variant.ordinal), ButtonVariant.PRIMARY)
@@ -84,4 +85,3 @@ class EverliButtonView @JvmOverloads constructor(
   }
 
 }
-
