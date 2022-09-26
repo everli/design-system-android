@@ -2,9 +2,6 @@ package com.everli.designsystem.playground.theme
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Button
-import androidx.compose.material.Checkbox
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
@@ -89,7 +86,7 @@ fun InnerCustomTheme() {
       ) {
         EverliButton.Button(onClick = { /*TODO*/ }, text = "Custom Theme")
       }
-      
+
       Button(onClick = { /*TODO*/ }) {
         Text(text = "saww")
       }

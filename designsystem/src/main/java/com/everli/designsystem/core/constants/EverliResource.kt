@@ -75,6 +75,7 @@ enum class EverliResource(val designName: String) {
   ICO_REMOVE(designName = "ico-remove"),
   ICO_REPLACEMENTS(designName = "ico-replacements"),
   ICO_ROCKET(designName = "ico-rocket"),
+  ICO_SATISFACTION(designName = "ico-satisfaction"),
   ICO_SAVE(designName = "ico-save"),
   ICO_SEARCH(designName = "ico-search"),
   ICO_SETTINGS(designName = "ico-settings"),

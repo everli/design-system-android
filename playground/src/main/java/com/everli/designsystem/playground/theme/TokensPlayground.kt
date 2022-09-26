@@ -19,7 +19,8 @@ fun TokensPlayground() {
     horizontalAlignment = Alignment.CenterHorizontally,
     modifier = Modifier
       .fillMaxHeight()
-      .fillMaxWidth()) {
+      .fillMaxWidth()
+  ) {
     Text("\uD83D\uDEA7 Work in progress \uD83D\uDEA7", modifier = Modifier)
   }
 }

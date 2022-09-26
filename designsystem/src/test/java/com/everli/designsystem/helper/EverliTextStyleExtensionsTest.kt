@@ -55,5 +55,5 @@ internal class EverliTextStyleExtensionsTest : FunSpec(
         everliTextStyle.toResourceId() shouldBe resourceId
       }
     }
-  }
+  },
 )
