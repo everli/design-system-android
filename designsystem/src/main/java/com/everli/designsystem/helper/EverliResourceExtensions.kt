@@ -82,6 +82,7 @@ fun EverliResource.toPainter(): Painter {
     EverliResource.ICO_REMOVE -> EverliResources.Icons.Remove
     EverliResource.ICO_REPLACEMENTS -> EverliResources.Icons.Replacements
     EverliResource.ICO_ROCKET -> EverliResources.Icons.Rocket
+    EverliResource.ICO_SATISFACTION -> EverliResources.Icons.Satisfaction
     EverliResource.ICO_SAVE -> EverliResources.Icons.Save
     EverliResource.ICO_SEARCH -> EverliResources.Icons.Search
     EverliResource.ICO_SETTINGS -> EverliResources.Icons.Settings
@@ -220,6 +221,7 @@ fun EverliResource.toResourceId(): Int {
     EverliResource.ICO_REMOVE -> R.drawable.ico_remove
     EverliResource.ICO_REPLACEMENTS -> R.drawable.ico_replacements
     EverliResource.ICO_ROCKET -> R.drawable.ico_rocket
+    EverliResource.ICO_SATISFACTION -> R.drawable.ico_satisfaction
     EverliResource.ICO_SAVE -> R.drawable.ico_save
     EverliResource.ICO_SEARCH -> R.drawable.ico_search
     EverliResource.ICO_SETTINGS -> R.drawable.ico_settings

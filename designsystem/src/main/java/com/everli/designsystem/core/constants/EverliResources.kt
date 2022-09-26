@@ -296,6 +296,10 @@ object EverliResources {
       @Composable
       get() = painterResource(id = R.drawable.ico_rocket)
 
+    val Satisfaction: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_satisfaction)
+
     val Save: Painter
       @Composable
       get() = painterResource(id = R.drawable.ico_save)
