@@ -1,3 +1,12 @@
+v0.1.5-sol-ring / 2022-09-26
+==================
+* milestone [v0.1.5-sol-ring](https://github.com/everli/design-system-android/milestone/8)
+* [ADDED] `KtLint` to the project
+* [ADDED] `ico-satisfaction`
+* [CHANGED] `EverliTextStyle` design names
+* [CHANGED] Compose version to `1.2.1`
+* [CHANGED] Kotlin version to `1.7.10`
+
 v0.1.4-birds-of-paradise / 2022-09-09
 ==================
 * milestone [v0.1.4-birds-of-paradise](https://github.com/everli/design-system-android/milestone/7)
