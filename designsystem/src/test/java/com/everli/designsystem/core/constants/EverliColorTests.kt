@@ -38,12 +38,12 @@ internal class EverliColorTests : FunSpec({
   }
 
   listOf(
-  "",
-  "nice-color",
-  "best color",
-  "123",
-  "#FFFFFF",
-  "#ffffff",
+    "",
+    "nice-color",
+    "best color",
+    "123",
+    "#FFFFFF",
+    "#ffffff",
   ).forEach { name ->
     test("Invalid $name, without fallback, should return ${EverliColor.WHITE}") {
       EverliColor.fromString(name) shouldBe EverliColor.WHITE

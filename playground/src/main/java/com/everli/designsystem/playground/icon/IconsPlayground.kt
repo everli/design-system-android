@@ -40,7 +40,8 @@ fun IconsPlayground() {
     Row(
       horizontalArrangement = Arrangement.Center,
       verticalAlignment = Alignment.CenterVertically,
-      modifier = Modifier.fillMaxWidth()) {
+      modifier = Modifier.fillMaxWidth()
+    ) {
       EverliButton.Button(
         onClick = { size -= 4.dp },
         text = "Decrease",
@@ -56,7 +57,8 @@ fun IconsPlayground() {
 
     Row(
       horizontalArrangement = Arrangement.Center,
-      modifier = Modifier.fillMaxWidth()) {
+      modifier = Modifier.fillMaxWidth()
+    ) {
       EverliButton.Button(
         onClick = { color = EverliColors.Black100 },
         text = "Black100",
@@ -75,7 +77,8 @@ fun IconsPlayground() {
     }
 
     LazyVerticalGrid(
-      cells = GridCells.Fixed(2)) {
+      cells = GridCells.Fixed(2)
+    ) {
       items(data.size) { index ->
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
           Icon(
@@ -86,7 +89,8 @@ fun IconsPlayground() {
               .padding(8.dp)
               .width(size)
               .height(size)
-              .animateContentSize())
+              .animateContentSize()
+          )
           Text(text = data[index].name, style = EverliTheme.typography.bodySmall.semibold)
         }
       }

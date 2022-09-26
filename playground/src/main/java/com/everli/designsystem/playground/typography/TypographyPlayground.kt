@@ -39,12 +39,14 @@ fun TypographyPlayground() {
       stickyHeader {
         Surface(
           color = EverliColors.White,
-          modifier = Modifier.fillMaxWidth()) {
+          modifier = Modifier.fillMaxWidth()
+        ) {
           Text(
             text = name,
             modifier = Modifier.padding(8.dp),
             color = EverliColors.Green100,
-            style = EverliTheme.typography.subtitle.semibold)
+            style = EverliTheme.typography.subtitle.semibold
+          )
         }
       }
       items(values) {

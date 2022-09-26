@@ -55,7 +55,7 @@ object EverliResources {
     val ArrowRightCircle: Painter
       @Composable
       get() = painterResource(id = R.drawable.ico_arrow_right_circle)
-    
+
     val ArrowTop: Painter
       @Composable
       get() = painterResource(id = R.drawable.ico_arrow_top)
@@ -296,6 +296,10 @@ object EverliResources {
       @Composable
       get() = painterResource(id = R.drawable.ico_rocket)
 
+    val Satisfaction: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_satisfaction)
+
     val Save: Painter
       @Composable
       get() = painterResource(id = R.drawable.ico_save)
@@ -495,7 +499,7 @@ object EverliResources {
     val GoogleMapsApp: Painter
       @Composable
       get() = painterResource(id = R.drawable.logo_google_maps_app)
-    
+
     val Instagram: Painter
       @Composable
       get() = painterResource(id = R.drawable.logo_instagram)

@@ -8,6 +8,6 @@ package com.everli.designsystem.helper
  *
  * @return
  */
-inline fun <reified T: Enum<T>> enumValueOfOrFallback(value: Int, fallback: T): T {
+inline fun <reified T : Enum<T>> enumValueOfOrFallback(value: Int, fallback: T): T {
   return enumValues<T>().firstOrNull { it.ordinal == value } ?: fallback
 }
