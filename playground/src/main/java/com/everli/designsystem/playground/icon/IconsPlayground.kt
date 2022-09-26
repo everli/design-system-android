@@ -30,7 +30,6 @@ import com.everli.designsystem.core.theme.EverliTheme
 @ExperimentalFoundationApi
 @Composable
 fun IconsPlayground() {
-
   var size by remember { mutableStateOf(24.dp) }
   var color by remember { mutableStateOf(EverliColors.Black100) }
 
@@ -40,7 +39,7 @@ fun IconsPlayground() {
     Row(
       horizontalArrangement = Arrangement.Center,
       verticalAlignment = Alignment.CenterVertically,
-      modifier = Modifier.fillMaxWidth()
+      modifier = Modifier.fillMaxWidth(),
     ) {
       EverliButton.Button(
         onClick = { size -= 4.dp },
@@ -57,7 +56,7 @@ fun IconsPlayground() {
 
     Row(
       horizontalArrangement = Arrangement.Center,
-      modifier = Modifier.fillMaxWidth()
+      modifier = Modifier.fillMaxWidth(),
     ) {
       EverliButton.Button(
         onClick = { color = EverliColors.Black100 },
@@ -77,7 +76,7 @@ fun IconsPlayground() {
     }
 
     LazyVerticalGrid(
-      columns = GridCells.Fixed(2)) {
+      columns = GridCells.Fixed(2),
     ) {
       items(data.size) { index ->
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
@@ -89,7 +88,7 @@ fun IconsPlayground() {
               .padding(8.dp)
               .width(size)
               .height(size)
-              .animateContentSize()
+              .animateContentSize(),
           )
           Text(text = data[index].name, style = EverliTheme.typography.bodySmall.semibold)
         }
