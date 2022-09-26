@@ -6,8 +6,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.GridCells
-import androidx.compose.foundation.lazy.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -51,7 +51,7 @@ fun ColorItem(colorModel: ColorModel) {
 @ExperimentalFoundationApi
 fun ColorsGrid(colors: List<ColorModel>) {
   LazyVerticalGrid(
-    cells = GridCells.Fixed(2)
+    columns = GridCells.Fixed(2)
   ) {
     items(colors.size) { index ->
       ColorItem(colors[index])
