@@ -1,3 +1,8 @@
+v0.1.6-command-tower / 2022-10-03
+==================
+* milestone [v0.1.6-command-tower](https://github.com/everli/design-system-android/milestone/9)
+* [ADDED] useSupportLibrary [true] for vectorDrawables
+
 v0.1.5-sol-ring / 2022-09-26
 ==================
 * milestone [v0.1.5-sol-ring](https://github.com/everli/design-system-android/milestone/8)
