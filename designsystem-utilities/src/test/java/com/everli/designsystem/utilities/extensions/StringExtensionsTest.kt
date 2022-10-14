@@ -10,7 +10,7 @@ class StringExtensionsTest : FunSpec(
     }
 
     test("When using String.whitespace, a whitespace string should be returned") {
-      String.empty shouldBe " "
+      String.whitespace shouldBe " "
     }
   },
 )
