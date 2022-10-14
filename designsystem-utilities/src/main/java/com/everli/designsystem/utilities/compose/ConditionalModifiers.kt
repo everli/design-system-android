@@ -33,7 +33,3 @@ fun Modifier.applyIf(condition: Boolean, modifier: Modifier): Modifier {
     this
   }
 }
-
-/**
- * Padding
- */

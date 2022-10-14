@@ -74,3 +74,17 @@ fun EverliColor.toResourceId(): Int {
     EverliColor.BLIK -> R.color.blik
   }
 }
+
+/**
+ * Nullable override for [toColor]
+ */
+fun EverliColor?.toColor(fallback: Color = EverliColors.Transparent): Color {
+  return this?.toColor() ?: fallback
+}
+
+/**
+ * Nullable override for [toResourceId]
+ */
+fun EverliColor?.toResourceId(fallback: Int = R.id.none): Int {
+  return this?.toResourceId() ?: fallback
+}

@@ -5,18 +5,22 @@ import androidx.compose.ui.graphics.Color
 /**
  * Convert a hex value string to a [Color]
  * If the conversion fails, [fallbackColor] will be returned
+ * if [hexValue] is null, [fallbackColor] will be returned
  * If [fallbackColor] is not provided, [Color.White] will be returned
  *
  * @param hexValue hex value e.g. #FFFFFF, #ffd6ffc2
  * @param fallbackColor used in case the conversion fails, default value [Color.White]
  * @return [Color] for given [hexValue] or [fallbackColor]
  */
-fun Color.Companion.fromHex(hexValue: String, fallbackColor: Color = White): Color {
-  return try {
-    Color(android.graphics.Color.parseColor(hexValue))
-  } catch (exception: Exception) {
-    fallbackColor
-  }
+fun Color.Companion.fromHex(hexValue: String?, fallbackColor: Color = White): Color {
+  return hexValue?.let {
+    return try {
+      Color(android.graphics.Color.parseColor(hexValue))
+    } catch (exception: Exception) {
+      fallbackColor
+    }
+  } ?: fallbackColor
+
 }
 
 /**

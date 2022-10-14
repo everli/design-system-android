@@ -44,6 +44,7 @@
   <dimen name="fontSizeCaption">12sp</dimen>
 
   <!-- Radius -->
+  <dimen name="radiusSmall">3dp</dimen>
   <dimen name="radiusMedium">8dp</dimen>
   <dimen name="radiusFull">40dp</dimen>
 
