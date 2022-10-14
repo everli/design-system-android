@@ -1,32 +1,26 @@
 plugins {
   id 'com.android.library'
-  id 'kotlin-android'
+  id 'org.jetbrains.kotlin.android'
 }
 
 ext {
   PUBLISH_GROUP_ID = 'com.everli'
   PUBLISH_VERSION = rootVersionName
-  PUBLISH_ARTIFACT_ID = 'designsystem'
+  PUBLISH_ARTIFACT_ID = 'designsystem-utilities'
 }
 
 apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
 
 android {
-  namespace = 'com.everli.designsystem'
-
+  namespace 'com.everli.designsystem.utilities'
   compileSdk 32
 
   defaultConfig {
     minSdk 21
     targetSdk 32
-    versionCode 1
-    versionName "1.0"
 
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     consumerProguardFiles "consumer-rules.pro"
-    vectorDrawables {
-      useSupportLibrary true
-    }
   }
 
   buildTypes {
@@ -41,8 +35,8 @@ android {
   }
   kotlinOptions {
     jvmTarget = '1.8'
-    freeCompilerArgs += '-Xopt-in=kotlin.RequiresOptIn'
   }
+
   buildFeatures {
     compose true
   }
@@ -63,17 +57,12 @@ android {
 }
 
 dependencies {
-  implementation project(path: ':designsystem-utilities')
+
   // Test -> Kotest
   testImplementation "org.junit.jupiter:junit-jupiter:$junit_jupiter_version"
   testImplementation "io.kotest:kotest-runner-junit5:$kotest_version"
   testImplementation "io.kotest.extensions:kotest-extensions-robolectric:$kotest_roboelectric_version"
   testImplementation "io.kotest:kotest-assertions-core:$kotest_version"
-  // Android Test -> JUnit4
-  androidTestImplementation "io.kotest:kotest-assertions-core:$kotest_version"
-  androidTestImplementation "androidx.test.ext:junit:$androidx_test_ext_version"
-  androidTestImplementation "androidx.test.espresso:espresso-core:$androidx_test_espresso_core_version"
-  androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
 
   // Debug
   debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
@@ -88,8 +77,5 @@ dependencies {
   implementation "androidx.compose.ui:ui:$compose_version"
   implementation "androidx.compose.material:material:$compose_version"
   implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
-
-  // Accompanist
-  implementation "com.google.accompanist:accompanist-drawablepainter:$accompanist_version"
 
 }

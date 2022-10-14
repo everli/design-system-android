@@ -1,4 +1,4 @@
-package com.everli.designsystem.helper
+package com.everli.designsystem.utilities.extensions
 
 import android.content.res.TypedArray
 import androidx.annotation.StyleableRes

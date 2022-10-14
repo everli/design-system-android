@@ -22,8 +22,8 @@ import com.everli.designsystem.core.theme.DefaultTheme
 import com.everli.designsystem.core.theme.EverliTheme
 import com.everli.designsystem.core.theme.StateColor
 import com.everli.designsystem.helper.TestTags
-import com.everli.designsystem.helper.ifUnspecified
-import com.everli.designsystem.helper.toRoundedShape
+import com.everli.designsystem.utilities.extensions.ifUnspecified
+import com.everli.designsystem.utilities.extensions.toRoundedShape
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNotBe
 import org.junit.Rule

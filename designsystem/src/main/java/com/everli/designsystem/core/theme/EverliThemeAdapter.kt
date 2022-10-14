@@ -5,8 +5,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.Density
 import androidx.core.content.res.use
 import com.everli.designsystem.R
-import com.everli.designsystem.helper.getComposeColor
-import com.everli.designsystem.helper.getDp
+import com.everli.designsystem.utilities.extensions.getComposeColor
+import com.everli.designsystem.utilities.extensions.getDp
 
 /**
  * An implementation of [EverliTheme] that loads tokens from XML values

@@ -1,4 +1,4 @@
-package com.everli.designsystem.helper
+package com.everli.designsystem.utilities
 
 /**
  * Return enum value or fallback value based on enum ordinal value (int value)

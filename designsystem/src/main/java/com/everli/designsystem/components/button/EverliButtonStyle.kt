@@ -10,8 +10,8 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.everli.designsystem.core.theme.EverliTheme
 import com.everli.designsystem.core.theme.StateColor
-import com.everli.designsystem.helper.ifUnspecified
-import com.everli.designsystem.helper.toRoundedShape
+import com.everli.designsystem.utilities.extensions.ifUnspecified
+import com.everli.designsystem.utilities.extensions.toRoundedShape
 
 /**
  * Get text style based on [ButtonSize]

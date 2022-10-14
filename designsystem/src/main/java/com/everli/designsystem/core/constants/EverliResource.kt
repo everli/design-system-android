@@ -1,6 +1,6 @@
 package com.everli.designsystem.core.constants
 
-import com.everli.designsystem.helper.empty
+import com.everli.designsystem.utilities.extensions.empty
 
 enum class EverliResource(val designName: String) {
 
