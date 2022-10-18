@@ -39,6 +39,7 @@ class SampleComposeTest {
         colorResource(id = R.color.teal_20) shouldBe EverliColors.Teal20
         colorResource(id = R.color.teal_100) shouldBe EverliColors.Teal100
 
+        colorResource(id = R.color.blue_20) shouldBe EverliColors.Blue20
         colorResource(id = R.color.blue_100) shouldBe EverliColors.Blue100
 
         colorResource(id = R.color.green_10) shouldBe EverliColors.Green10
