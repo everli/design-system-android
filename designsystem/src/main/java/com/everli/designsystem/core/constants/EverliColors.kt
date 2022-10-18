@@ -28,6 +28,7 @@ object EverliColors {
   val Teal20 = Color(0xFFDAF4F4)
   val Teal100 = Color(0xFF46C6C6)
 
+  val Blue20 = Color(0xFFC4DADE)
   val Blue100 = Color(0xFF006E81)
 
   val Green10 = Color(0xFFD6FFC2)
