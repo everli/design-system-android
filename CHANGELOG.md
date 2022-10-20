@@ -1,3 +1,8 @@
+v0.1.7-mind-stone / 2022-10-20
+==================
+* milestone [v0.1.7-mind-stone](https://github.com/everli/design-system-android/milestone/10)
+* [ADDED] New `blue-20` color
+* 
 v0.1.6-command-tower / 2022-10-03
 ==================
 * milestone [v0.1.6-command-tower](https://github.com/everli/design-system-android/milestone/9)
