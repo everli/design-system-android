@@ -19,6 +19,7 @@ internal class EverliColorTests : FunSpec({
     "purple-100" to EverliColor.PURPLE_100,
     "teal-20" to EverliColor.TEAL_20,
     "teal-100" to EverliColor.TEAL_100,
+    "blue-20" to EverliColor.BLUE_20,
     "blue-100" to EverliColor.BLUE_100,
     "green-10" to EverliColor.GREEN_10,
     "green-100" to EverliColor.GREEN_100,
