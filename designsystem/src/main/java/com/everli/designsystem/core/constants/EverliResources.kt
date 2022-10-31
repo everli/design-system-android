@@ -518,4 +518,6 @@ object EverliResources {
 
   }
 
+  object Images
+
 }
