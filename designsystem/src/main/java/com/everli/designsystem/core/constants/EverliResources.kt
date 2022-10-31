@@ -80,6 +80,10 @@ object EverliResources {
       @Composable
       get() = painterResource(id = R.drawable.ico_cash)
 
+    val CashOut: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_cash_out)
+
     val Cashback: Painter
       @Composable
       get() = painterResource(id = R.drawable.ico_cashback)
@@ -156,6 +160,10 @@ object EverliResources {
       @Composable
       get() = painterResource(id = R.drawable.ico_docs)
 
+    val Dollar: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_dollar)
+
     val Download: Painter
       @Composable
       get() = painterResource(id = R.drawable.ico_download)
@@ -171,6 +179,18 @@ object EverliResources {
     val Empty: Painter
       @Composable
       get() = painterResource(id = R.drawable.ico_empty)
+
+    val Euro: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_euro)
+
+    val EyeHyde: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_eye_hyde)
+
+    val EyeShow: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_eye_show)
 
     val FavoriteFilled: Painter
       @Composable
@@ -284,6 +304,10 @@ object EverliResources {
       @Composable
       get() = painterResource(id = R.drawable.ico_question_circle_outilne)
 
+    val Refund: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_refund)
+
     val Remove: Painter
       @Composable
       get() = painterResource(id = R.drawable.ico_remove)
@@ -328,6 +352,50 @@ object EverliResources {
       @Composable
       get() = painterResource(id = R.drawable.ico_star)
 
+    val SupplyArmchair: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_supply_armchair)
+
+    val SupplyBonusFire: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_supply_bonus_fire)
+
+    val SupplyBonusStar: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_supply_bonus_star)
+
+    val SupplyCalendar: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_supply_calendar)
+
+    val SupplyCart: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_supply_cart)
+
+    val SupplyMaternity: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_supply_maternity)
+
+    val SupplyQuantity: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_supply_quantity)
+
+    val SupplyReplacement: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_supply_replacement)
+
+    val SupplyScooter: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_supply_scooter)
+
+    val SupplySickness: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_supply_sickness)
+
+    val SupplyStats: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_supply_stats)
+
     val User: Painter
       @Composable
       get() = painterResource(id = R.drawable.ico_user)
@@ -359,102 +427,6 @@ object EverliResources {
     val Zoom: Painter
       @Composable
       get() = painterResource(id = R.drawable.ico_zoom)
-
-  }
-
-  object Images {
-
-    val BenefitDistance: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_benefit_distance)
-
-    val BenefitSaving: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_benefit_saving)
-
-    val BenefitTime: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_benefit_time)
-
-    val BenefitWeight: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_benefit_weight)
-
-    val Delivery: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_delivery)
-
-    val DeliveryFast: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_delivery_fast)
-
-    val FeeCash: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_fee_cash)
-
-    val FeeService: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_fee_service)
-
-    val FeeSurcharge: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_fee_surcharge)
-
-    val Fresh: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_fresh)
-
-    val Items: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_items)
-
-    val MailSent: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_mail_sent)
-
-    val Money: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_money)
-
-    val MoodAverage: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_mood_average)
-
-    val MoodBad: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_mood_bad)
-
-    val MoodGood: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_mood_good)
-
-    val OrderInProgress: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_order_in_progress)
-
-    val Piggy: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_piggy)
-
-    val Relax: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_relax)
-
-    val Saving: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_saving)
-
-    val ShopperHero: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_shopper_hero)
-
-    val ShopperSmiling: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_shopper_smiling)
-
-    val ShopperBag: Painter
-      @Composable
-      get() = painterResource(id = R.drawable.img_shopping_bag)
 
   }
 
