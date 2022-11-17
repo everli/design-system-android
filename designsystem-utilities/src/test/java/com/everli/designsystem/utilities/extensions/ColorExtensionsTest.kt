@@ -18,6 +18,7 @@ internal class ColorExtensionsTest : FunSpec(
       "#FFFF0000" to Color.Red,
       "#ff0000" to Color.Red,
       "#ffff0000" to Color.Red,
+      null to Color.White,
     ).forEach { (hex, color) ->
       test("$hex should be converted to $color") {
         Color.fromHex(hex) shouldBe color

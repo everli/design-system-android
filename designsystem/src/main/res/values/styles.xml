@@ -125,6 +125,7 @@
   <style name="EverliTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
 
     <!-- Radius -->
+    <item name="radiusSmall">@dimen/radiusMedium</item>
     <item name="radiusMedium">@dimen/radiusMedium</item>
     <item name="radiusFull">@dimen/radiusFull</item>
 
