@@ -43,6 +43,7 @@ enum class EverliResource(val designName: String) {
   ICO_DOCS(designName = "ico-docs"),
   ICO_DOLLAR(designName = "ico-dollar"),
   ICO_DOWNLOAD(designName = "ico-download"),
+  ICO_ECO(designName = "ico-eco"),
   ICO_EDIT(designName = "ico-edit"),
   ICO_EMAIL(designName = "ico-email"),
   ICO_EMPTY(designName = "ico-empty"),

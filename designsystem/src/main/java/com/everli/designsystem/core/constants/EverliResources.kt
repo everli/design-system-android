@@ -168,6 +168,10 @@ object EverliResources {
       @Composable
       get() = painterResource(id = R.drawable.ico_download)
 
+    val Eco: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_eco)
+
     val Edit: Painter
       @Composable
       get() = painterResource(id = R.drawable.ico_edit)

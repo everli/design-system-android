@@ -49,6 +49,7 @@ fun EverliResource.toPainter(): Painter {
     EverliResource.ICO_DELIVERY -> EverliResources.Icons.Delivery
     EverliResource.ICO_DOCS -> EverliResources.Icons.Docs
     EverliResource.ICO_DOWNLOAD -> EverliResources.Icons.Download
+    EverliResource.ICO_ECO -> EverliResources.Icons.Eco
     EverliResource.ICO_EDIT -> EverliResources.Icons.Edit
     EverliResource.ICO_EMAIL -> EverliResources.Icons.Email
     EverliResource.ICO_EMPTY -> EverliResources.Icons.Empty
@@ -182,6 +183,7 @@ fun EverliResource.toResourceId(): Int {
     EverliResource.ICO_DELIVERY -> R.drawable.ico_delivery
     EverliResource.ICO_DOCS -> R.drawable.ico_docs
     EverliResource.ICO_DOWNLOAD -> R.drawable.ico_download
+    EverliResource.ICO_ECO -> R.drawable.ico_eco
     EverliResource.ICO_EDIT -> R.drawable.ico_edit
     EverliResource.ICO_EMAIL -> R.drawable.ico_email
     EverliResource.ICO_EMPTY -> R.drawable.ico_empty
