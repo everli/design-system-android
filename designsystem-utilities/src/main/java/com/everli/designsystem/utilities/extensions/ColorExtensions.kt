@@ -13,14 +13,15 @@ import androidx.compose.ui.graphics.Color
  * @return [Color] for given [hexValue] or [fallbackColor]
  */
 fun Color.Companion.fromHex(hexValue: String?, fallbackColor: Color = White): Color {
-  return hexValue?.let {
-    return try {
-      Color(android.graphics.Color.parseColor(hexValue))
-    } catch (exception: Exception) {
-      fallbackColor
-    }
-  } ?: fallbackColor
+  if (hexValue == null) {
+    return fallbackColor
+  }
 
+  return try {
+    Color(android.graphics.Color.parseColor(hexValue))
+  } catch (exception: Exception) {
+    fallbackColor
+  }
 }
 
 /**
