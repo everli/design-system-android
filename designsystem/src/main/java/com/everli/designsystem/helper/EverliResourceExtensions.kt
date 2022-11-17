@@ -5,6 +5,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import com.everli.designsystem.R
 import com.everli.designsystem.core.constants.EverliResource
 import com.everli.designsystem.core.constants.EverliResources
+import com.everli.designsystem.utilities.compose.EmptyPainter
 
 /**
  * Return a [Painter] based on [EverliResource]

@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "design-system-android"
 include ':playground'
 include ':designsystem'
+include ':designsystem-utilities'

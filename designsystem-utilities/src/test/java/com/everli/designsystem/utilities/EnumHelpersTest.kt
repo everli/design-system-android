@@ -1,4 +1,4 @@
-package com.everli.designsystem.helper
+package com.everli.designsystem.utilities
 
 import io.kotest.core.spec.style.FunSpec
 
@@ -22,5 +22,5 @@ class EnumHelpersTest : FunSpec(
         enumValueOfOrFallback(ordinal, DummyEnum.RED)
       }
     }
-  }
+  },
 )

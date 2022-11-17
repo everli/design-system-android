@@ -1,4 +1,4 @@
-package com.everli.designsystem.helper
+package com.everli.designsystem.utilities.extensions
 
 import androidx.compose.ui.graphics.Color
 

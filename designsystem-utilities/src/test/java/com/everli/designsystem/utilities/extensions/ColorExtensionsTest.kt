@@ -1,7 +1,6 @@
-package com.everli.designsystem.helper
+package com.everli.designsystem.utilities.extensions
 
 import androidx.compose.ui.graphics.Color
-import com.everli.designsystem.core.constants.EverliColors
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.extensions.robolectric.RobolectricTest
 import io.kotest.matchers.shouldBe
@@ -11,14 +10,14 @@ internal class ColorExtensionsTest : FunSpec(
   {
 
     listOf(
-      "#FFFFFF" to EverliColors.White,
-      "#FFFFFFFF" to EverliColors.White,
-      "#ffffff" to EverliColors.White,
-      "#FFffffff" to EverliColors.White,
-      "#64C828" to EverliColors.Green100,
-      "#FF64C828" to EverliColors.Green100,
-      "#64c828" to EverliColors.Green100,
-      "#FF64c828" to EverliColors.Green100,
+      "#FFFFFF" to Color.White,
+      "#FFFFFFFF" to Color.White,
+      "#ffffff" to Color.White,
+      "#FFffffff" to Color.White,
+      "#FF0000" to Color.Red,
+      "#FFFF0000" to Color.Red,
+      "#ff0000" to Color.Red,
+      "#ffff0000" to Color.Red,
     ).forEach { (hex, color) ->
       test("$hex should be converted to $color") {
         Color.fromHex(hex) shouldBe color
@@ -35,18 +34,18 @@ internal class ColorExtensionsTest : FunSpec(
       "#FFFFF",
     ).forEach { hex ->
       test("When converting: $hex, without fallback, should return Color.White") {
-        Color.fromHex(hex) shouldBe EverliColors.White
+        Color.fromHex(hex) shouldBe Color.White
       }
     }
 
     listOf(
-      "" to EverliColors.Red100,
-      "1" to EverliColors.Green100,
-      "123" to EverliColors.Red100,
-      "ffffff" to EverliColors.White,
-      "FFFFFF" to EverliColors.Black100,
-      "#FFFFFFF" to EverliColors.Yellow100,
-      "#FFFFF" to EverliColors.Red100,
+      "" to Color.Red,
+      "1" to Color.Red,
+      "123" to Color.Red,
+      "ffffff" to Color.Red,
+      "FFFFFF" to Color.Red,
+      "#FFFFFFF" to Color.Red,
+      "#FFFFF" to Color.Red,
     ).forEach { (hex, fallback) ->
       test("Invalid $hex, with fallback, should be converted to $fallback") {
         Color.fromHex(hex, fallback) shouldBe fallback
@@ -57,7 +56,7 @@ internal class ColorExtensionsTest : FunSpec(
       Color.Unspecified
         .ifUnspecified(Color.Unspecified)
         .ifUnspecified(Color.Unspecified)
-        .ifUnspecified(EverliColors.Red20) shouldBe EverliColors.Red20
+        .ifUnspecified(Color.Red) shouldBe Color.Red
     }
 
     test("ifUnspecified, no color should return first unspecified") {
@@ -66,5 +65,5 @@ internal class ColorExtensionsTest : FunSpec(
         .ifUnspecified(Color.Unspecified) shouldBe Color.Unspecified
     }
 
-  }
+  },
 )

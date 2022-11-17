@@ -30,6 +30,7 @@ In module `build.gradle`
 
 ```groovy
 implementation "implementation "com.everli:designsystem:${latest_version}"
+implementation "implementation "com.everli:designsystem-utilities:${latest_version}"
 ````
 
 ### Latest SNAPSHOT
@@ -46,7 +47,10 @@ In module `build.gradle`
 
 ```groovy
 implementation implementation "com.everli:designsystem:${latest_version}-SNAPSHOT"
+implementation implementation "com.everli:designsystem-utilities:${latest_version}-SNAPSHOT"
 ````
+
+ℹ️ `designsystem-utilities` can be used as a stand alone library. It's use as an helper library.
 
 ## Documentation
 
