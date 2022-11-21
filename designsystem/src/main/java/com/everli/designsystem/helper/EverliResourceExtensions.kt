@@ -5,6 +5,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import com.everli.designsystem.R
 import com.everli.designsystem.core.constants.EverliResource
 import com.everli.designsystem.core.constants.EverliResources
+import com.everli.designsystem.utilities.compose.EmptyPainter
 
 /**
  * Return a [Painter] based on [EverliResource]
@@ -48,6 +49,7 @@ fun EverliResource.toPainter(): Painter {
     EverliResource.ICO_DELIVERY -> EverliResources.Icons.Delivery
     EverliResource.ICO_DOCS -> EverliResources.Icons.Docs
     EverliResource.ICO_DOWNLOAD -> EverliResources.Icons.Download
+    EverliResource.ICO_ECO -> EverliResources.Icons.Eco
     EverliResource.ICO_EDIT -> EverliResources.Icons.Edit
     EverliResource.ICO_EMAIL -> EverliResources.Icons.Email
     EverliResource.ICO_EMPTY -> EverliResources.Icons.Empty
@@ -98,20 +100,6 @@ fun EverliResource.toPainter(): Painter {
     EverliResource.ICO_X_CIRCLE_FILLED -> EverliResources.Icons.XCircleFilled
     EverliResource.ICO_X_CIRCLE_OUTLINE -> EverliResources.Icons.XCircleOutline
     EverliResource.ICO_ZOOM -> EverliResources.Icons.Zoom
-    EverliResource.IMG_BENEFIT_DISTANCE -> EverliResources.Images.BenefitDistance
-    EverliResource.IMG_BENEFIT_SAVING -> EverliResources.Images.BenefitSaving
-    EverliResource.IMG_BENEFIT_TIME -> EverliResources.Images.BenefitTime
-    EverliResource.IMG_BENEFIT_WEIGHT -> EverliResources.Images.BenefitWeight
-    EverliResource.IMG_DELIVERY -> EverliResources.Images.Delivery
-    EverliResource.IMG_DELIVERY_FAST -> EverliResources.Images.DeliveryFast
-    EverliResource.IMG_FEE_CASH -> EverliResources.Images.FeeCash
-    EverliResource.IMG_FEE_SERVICE -> EverliResources.Images.FeeService
-    EverliResource.IMG_FEE_SURCHARGE -> EverliResources.Images.FeeSurcharge
-    EverliResource.IMG_FRESH -> EverliResources.Images.Fresh
-    EverliResource.IMG_ITEMS -> EverliResources.Images.Items
-    EverliResource.IMG_MONEY -> EverliResources.Images.Money
-    EverliResource.IMG_PIGGY -> EverliResources.Images.Piggy
-    EverliResource.IMG_RELAX -> EverliResources.Images.Relax
     EverliResource.LOGO_APPLE -> EverliResources.Logos.Apple
     EverliResource.LOGO_APPLE_MAPS_APP -> EverliResources.Logos.AppleMapsApp
     EverliResource.LOGO_EVERLI_APP -> EverliResources.Logos.EverliApp
@@ -133,16 +121,24 @@ fun EverliResource.toPainter(): Painter {
     EverliResource.LOGO_TWITTER -> EverliResources.Logos.Twitter
     EverliResource.LOGO_WAZE -> EverliResources.Logos.Waze
     EverliResource.ICO_ARROW_TOP -> EverliResources.Icons.ArrowTop
-    EverliResource.IMG_MAIL_SENT -> EverliResources.Images.MailSent
-    EverliResource.IMG_MOOD_AVERAGE -> EverliResources.Images.MoodAverage
-    EverliResource.IMG_MOOD_BAD -> EverliResources.Images.MoodBad
-    EverliResource.IMG_MOOD_GOOD -> EverliResources.Images.MoodGood
-    EverliResource.IMG_ORDER_IN_PROGRESS -> EverliResources.Images.OrderInProgress
-    EverliResource.IMG_SAVING -> EverliResources.Images.Saving
-    EverliResource.IMG_SHOPPER_HERO -> EverliResources.Images.ShopperHero
-    EverliResource.IMG_SHOPPER_SMILING -> EverliResources.Images.ShopperSmiling
-    EverliResource.IMG_SHOPPING_BAG -> EverliResources.Images.ShopperBag
     EverliResource.LOGO_INSTAGRAM -> EverliResources.Logos.Instagram
+    EverliResource.ICO_CASH_OUT -> EverliResources.Icons.CashOut
+    EverliResource.ICO_DOLLAR -> EverliResources.Icons.Dollar
+    EverliResource.ICO_EURO -> EverliResources.Icons.Euro
+    EverliResource.ICO_EYE_HYDE -> EverliResources.Icons.EyeHyde
+    EverliResource.ICO_EYE_SHOW -> EverliResources.Icons.EyeShow
+    EverliResource.ICO_REFUND -> EverliResources.Icons.Refund
+    EverliResource.ICO_SUPPLY_ARMCHAIR -> EverliResources.Icons.SupplyArmchair
+    EverliResource.ICO_SUPPLY_BONUS_FIRE -> EverliResources.Icons.SupplyBonusFire
+    EverliResource.ICO_SUPPLY_BONUS_STAR -> EverliResources.Icons.SupplyBonusStar
+    EverliResource.ICO_SUPPLY_CALENDAR -> EverliResources.Icons.SupplyCalendar
+    EverliResource.ICO_SUPPLY_CART -> EverliResources.Icons.SupplyCart
+    EverliResource.ICO_SUPPLY_MATERNITY -> EverliResources.Icons.SupplyMaternity
+    EverliResource.ICO_SUPPLY_QUANTITY -> EverliResources.Icons.SupplyQuantity
+    EverliResource.ICO_SUPPLY_REPLACEMENT -> EverliResources.Icons.SupplyReplacement
+    EverliResource.ICO_SUPPLY_SCOOTER -> EverliResources.Icons.SupplyScooter
+    EverliResource.ICO_SUPPLY_SICKNESS -> EverliResources.Icons.SupplySickness
+    EverliResource.ICO_SUPPLY_STATS -> EverliResources.Icons.SupplyStats
   }
 }
 
@@ -187,6 +183,7 @@ fun EverliResource.toResourceId(): Int {
     EverliResource.ICO_DELIVERY -> R.drawable.ico_delivery
     EverliResource.ICO_DOCS -> R.drawable.ico_docs
     EverliResource.ICO_DOWNLOAD -> R.drawable.ico_download
+    EverliResource.ICO_ECO -> R.drawable.ico_eco
     EverliResource.ICO_EDIT -> R.drawable.ico_edit
     EverliResource.ICO_EMAIL -> R.drawable.ico_email
     EverliResource.ICO_EMPTY -> R.drawable.ico_empty
@@ -237,20 +234,6 @@ fun EverliResource.toResourceId(): Int {
     EverliResource.ICO_X_CIRCLE_FILLED -> R.drawable.ico_x_circle_filled
     EverliResource.ICO_X_CIRCLE_OUTLINE -> R.drawable.ico_x_circle_outline
     EverliResource.ICO_ZOOM -> R.drawable.ico_zoom
-    EverliResource.IMG_BENEFIT_DISTANCE -> R.drawable.img_benefit_distance
-    EverliResource.IMG_BENEFIT_SAVING -> R.drawable.img_benefit_saving
-    EverliResource.IMG_BENEFIT_TIME -> R.drawable.img_benefit_time
-    EverliResource.IMG_BENEFIT_WEIGHT -> R.drawable.img_benefit_weight
-    EverliResource.IMG_DELIVERY -> R.drawable.img_delivery
-    EverliResource.IMG_DELIVERY_FAST -> R.drawable.img_delivery_fast
-    EverliResource.IMG_FEE_CASH -> R.drawable.img_fee_cash
-    EverliResource.IMG_FEE_SERVICE -> R.drawable.img_fee_service
-    EverliResource.IMG_FEE_SURCHARGE -> R.drawable.img_fee_surcharge
-    EverliResource.IMG_FRESH -> R.drawable.img_fresh
-    EverliResource.IMG_ITEMS -> R.drawable.img_items
-    EverliResource.IMG_MONEY -> R.drawable.img_money
-    EverliResource.IMG_PIGGY -> R.drawable.img_piggy
-    EverliResource.IMG_RELAX -> R.drawable.img_relax
     EverliResource.LOGO_APPLE -> R.drawable.logo_apple
     EverliResource.LOGO_APPLE_MAPS_APP -> R.drawable.logo_apple_maps_app
     EverliResource.LOGO_EVERLI_APP -> R.drawable.logo_everli_app
@@ -272,15 +255,23 @@ fun EverliResource.toResourceId(): Int {
     EverliResource.LOGO_TWITTER -> R.drawable.logo_twitter
     EverliResource.LOGO_WAZE -> R.drawable.logo_waze
     EverliResource.ICO_ARROW_TOP -> R.drawable.ico_arrow_top
-    EverliResource.IMG_MAIL_SENT -> R.drawable.img_mail_sent
-    EverliResource.IMG_MOOD_AVERAGE -> R.drawable.img_mood_average
-    EverliResource.IMG_MOOD_BAD -> R.drawable.img_mood_bad
-    EverliResource.IMG_MOOD_GOOD -> R.drawable.img_mood_good
-    EverliResource.IMG_ORDER_IN_PROGRESS -> R.drawable.img_order_in_progress
-    EverliResource.IMG_SAVING -> R.drawable.img_saving
-    EverliResource.IMG_SHOPPER_HERO -> R.drawable.img_shopper_hero
-    EverliResource.IMG_SHOPPER_SMILING -> R.drawable.img_shopper_smiling
-    EverliResource.IMG_SHOPPING_BAG -> R.drawable.img_shopping_bag
     EverliResource.LOGO_INSTAGRAM -> R.drawable.logo_instagram
+    EverliResource.ICO_CASH_OUT -> R.drawable.ico_cash_out
+    EverliResource.ICO_DOLLAR -> R.drawable.ico_dollar
+    EverliResource.ICO_EURO -> R.drawable.ico_euro
+    EverliResource.ICO_EYE_HYDE -> R.drawable.ico_eye_hyde
+    EverliResource.ICO_EYE_SHOW -> R.drawable.ico_eye_show
+    EverliResource.ICO_REFUND -> R.drawable.ico_refund
+    EverliResource.ICO_SUPPLY_ARMCHAIR -> R.drawable.ico_supply_armchair
+    EverliResource.ICO_SUPPLY_BONUS_FIRE -> R.drawable.ico_supply_bonus_fire
+    EverliResource.ICO_SUPPLY_BONUS_STAR -> R.drawable.ico_supply_bonus_star
+    EverliResource.ICO_SUPPLY_CALENDAR -> R.drawable.ico_supply_calendar
+    EverliResource.ICO_SUPPLY_CART -> R.drawable.ico_supply_cart
+    EverliResource.ICO_SUPPLY_MATERNITY -> R.drawable.ico_supply_maternity
+    EverliResource.ICO_SUPPLY_QUANTITY -> R.drawable.ico_supply_quantity
+    EverliResource.ICO_SUPPLY_REPLACEMENT -> R.drawable.ico_supply_replacement
+    EverliResource.ICO_SUPPLY_SCOOTER -> R.drawable.ico_supply_scooter
+    EverliResource.ICO_SUPPLY_SICKNESS -> R.drawable.ico_supply_sickness
+    EverliResource.ICO_SUPPLY_STATS -> R.drawable.ico_supply_stats
   }
 }

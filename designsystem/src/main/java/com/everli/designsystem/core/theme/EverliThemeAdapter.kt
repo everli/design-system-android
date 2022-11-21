@@ -5,8 +5,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.Density
 import androidx.core.content.res.use
 import com.everli.designsystem.R
-import com.everli.designsystem.helper.getComposeColor
-import com.everli.designsystem.helper.getDp
+import com.everli.designsystem.utilities.extensions.getComposeColor
+import com.everli.designsystem.utilities.extensions.getDp
 
 /**
  * An implementation of [EverliTheme] that loads tokens from XML values
@@ -64,7 +64,6 @@ internal object EverliThemeAdapter {
     context: Context,
     density: Density,
   ): EverliThemeComponents {
-
     if (::everliThemeComponents.isInitialized) {
       return everliThemeComponents
     }
@@ -72,8 +71,9 @@ internal object EverliThemeAdapter {
     context.obtainStyledAttributes(R.styleable.EverliTheme).use { ta ->
       // radius
       val radiusTheme = RadiusTheme(
+        small = ta.getDp(R.styleable.EverliTheme_radiusSmall, density, DefaultRadiusTheme.small),
         medium = ta.getDp(R.styleable.EverliTheme_radiusMedium, density, DefaultRadiusTheme.medium),
-        full = ta.getDp(R.styleable.EverliTheme_radiusFull, density, DefaultRadiusTheme.full)
+        full = ta.getDp(R.styleable.EverliTheme_radiusFull, density, DefaultRadiusTheme.full),
       )
 
       // text
@@ -107,42 +107,42 @@ internal object EverliThemeAdapter {
           color = ButtonTextColors(
             disabled = ta.getComposeColor(
               R.styleable.EverliTheme_buttonTextColorDisabled,
-              DefaultButtonTheme.text.color.disabled
+              DefaultButtonTheme.text.color.disabled,
             ),
             link = StateColor(
               enabled = ta.getComposeColor(
                 R.styleable.EverliTheme_buttonTextLinkEnabled,
-                DefaultButtonTheme.text.color.link.enabled
+                DefaultButtonTheme.text.color.link.enabled,
               ),
               pressed = ta.getComposeColor(
                 R.styleable.EverliTheme_buttonTextLinkPressed,
-                DefaultButtonTheme.text.color.link.pressed
+                DefaultButtonTheme.text.color.link.pressed,
               ),
             ),
           ),
-          link = DefaultButtonTheme.text.link
+          link = DefaultButtonTheme.text.link,
         ),
         icon = ButtonIconStyles(
           color = ButtonIconColors(
             disabled = ta.getComposeColor(
               R.styleable.EverliTheme_buttonIconColorDisabled,
-              DefaultButtonTheme.icon.color.disabled
+              DefaultButtonTheme.icon.color.disabled,
             ),
             link = StateColor(
               enabled = ta.getComposeColor(
                 R.styleable.EverliTheme_buttonIconColorLinkEnabled,
-                DefaultButtonTheme.icon.color.link.enabled
+                DefaultButtonTheme.icon.color.link.enabled,
               ),
               pressed = ta.getComposeColor(
                 R.styleable.EverliTheme_buttonIconColorLinkPressed,
-                DefaultButtonTheme.icon.color.link.pressed
+                DefaultButtonTheme.icon.color.link.pressed,
               ),
             ),
             facebook = FacebookButtonIconColors(
               outline = StateColor(
                 enabled = ta.getComposeColor(
                   R.styleable.EverliTheme_buttonIconColorFacebookOutlineEnabled,
-                  DefaultButtonTheme.icon.color.facebook.outline.enabled
+                  DefaultButtonTheme.icon.color.facebook.outline.enabled,
                 ),
               ),
             ),
@@ -153,11 +153,11 @@ internal object EverliThemeAdapter {
             background = StateColor(
               enabled = ta.getComposeColor(
                 R.styleable.EverliTheme_buttonColorTransparentBackgroundEnabled,
-                DefaultButtonTheme.color.transparent.background.enabled
+                DefaultButtonTheme.color.transparent.background.enabled,
               ),
               disabled = ta.getComposeColor(
                 R.styleable.EverliTheme_buttonColorTransparentBackgroundDisabled,
-                DefaultButtonTheme.color.transparent.background.disabled
+                DefaultButtonTheme.color.transparent.background.disabled,
               ),
             ),
           ),
@@ -165,7 +165,7 @@ internal object EverliThemeAdapter {
             background = StateColor(
               disabled = ta.getComposeColor(
                 R.styleable.EverliTheme_buttonColorFillBackgroundDisabled,
-                DefaultButtonTheme.color.fill.background.disabled
+                DefaultButtonTheme.color.fill.background.disabled,
               ),
             ),
           ),
@@ -173,7 +173,7 @@ internal object EverliThemeAdapter {
             border = StateColor(
               disabled = ta.getComposeColor(
                 R.styleable.EverliTheme_buttonColorOutlineBorderDisabled,
-                DefaultButtonTheme.color.outline.border.disabled
+                DefaultButtonTheme.color.outline.border.disabled,
               ),
             ),
             borderDark = DefaultButtonTheme.color.outline.borderDark,
@@ -183,11 +183,11 @@ internal object EverliThemeAdapter {
               background = StateColor(
                 enabled = ta.getComposeColor(
                   R.styleable.EverliTheme_buttonColorPrimaryFillBackgroundEnabled,
-                  DefaultButtonTheme.color.primary.fill.background.enabled
+                  DefaultButtonTheme.color.primary.fill.background.enabled,
                 ),
                 pressed = ta.getComposeColor(
                   R.styleable.EverliTheme_buttonColorPrimaryFillBackgroundPressed,
-                  DefaultButtonTheme.color.primary.fill.background.pressed
+                  DefaultButtonTheme.color.primary.fill.background.pressed,
                 ),
               ),
             ),
@@ -195,13 +195,13 @@ internal object EverliThemeAdapter {
               background = StateColor(
                 pressed = ta.getComposeColor(
                   R.styleable.EverliTheme_buttonColorPrimaryOutlineBackgroundPressed,
-                  DefaultButtonTheme.color.primary.outline.background.pressed
+                  DefaultButtonTheme.color.primary.outline.background.pressed,
                 ),
               ),
               border = StateColor(
                 enabled = ta.getComposeColor(
                   R.styleable.EverliTheme_buttonColorPrimaryOutlineBorderEnabled,
-                  DefaultButtonTheme.color.primary.outline.border.enabled
+                  DefaultButtonTheme.color.primary.outline.border.enabled,
                 ),
               ),
             ),
@@ -209,7 +209,7 @@ internal object EverliThemeAdapter {
               background = StateColor(
                 pressed = ta.getComposeColor(
                   R.styleable.EverliTheme_buttonColorPrimaryFlatBackgroundPressed,
-                  DefaultButtonTheme.color.primary.flat.background.pressed
+                  DefaultButtonTheme.color.primary.flat.background.pressed,
                 ),
               ),
             ),
@@ -219,11 +219,11 @@ internal object EverliThemeAdapter {
               background = StateColor(
                 enabled = ta.getComposeColor(
                   R.styleable.EverliTheme_buttonColorSpecialFillBackgroundEnabled,
-                  DefaultButtonTheme.color.special.fill.background.enabled
+                  DefaultButtonTheme.color.special.fill.background.enabled,
                 ),
                 pressed = ta.getComposeColor(
                   R.styleable.EverliTheme_buttonColorSpecialFillBackgroundPressed,
-                  DefaultButtonTheme.color.special.fill.background.pressed
+                  DefaultButtonTheme.color.special.fill.background.pressed,
                 ),
               ),
             ),
@@ -231,13 +231,13 @@ internal object EverliThemeAdapter {
               background = StateColor(
                 pressed = ta.getComposeColor(
                   R.styleable.EverliTheme_buttonColorSpecialOutlineBackgroundPressed,
-                  DefaultButtonTheme.color.special.outline.background.pressed
+                  DefaultButtonTheme.color.special.outline.background.pressed,
                 ),
               ),
               border = StateColor(
                 enabled = ta.getComposeColor(
                   R.styleable.EverliTheme_buttonColorSpecialOutlineBorderEnabled,
-                  DefaultButtonTheme.color.special.outline.border.enabled
+                  DefaultButtonTheme.color.special.outline.border.enabled,
                 ),
               ),
             ),
@@ -245,7 +245,7 @@ internal object EverliThemeAdapter {
               background = StateColor(
                 pressed = ta.getComposeColor(
                   R.styleable.EverliTheme_buttonColorSpecialFlatBackgroundPressed,
-                  DefaultButtonTheme.color.special.flat.background.pressed
+                  DefaultButtonTheme.color.special.flat.background.pressed,
                 ),
               ),
             ),
@@ -255,11 +255,11 @@ internal object EverliThemeAdapter {
               background = StateColor(
                 enabled = ta.getComposeColor(
                   R.styleable.EverliTheme_buttonColorFacebookFillBackgroundEnabled,
-                  DefaultButtonTheme.color.facebook.fill.background.enabled
+                  DefaultButtonTheme.color.facebook.fill.background.enabled,
                 ),
                 pressed = ta.getComposeColor(
                   R.styleable.EverliTheme_buttonColorFacebookFillBackgroundPressed,
-                  DefaultButtonTheme.color.facebook.fill.background.pressed
+                  DefaultButtonTheme.color.facebook.fill.background.pressed,
                 ),
               ),
             ),
@@ -269,11 +269,11 @@ internal object EverliThemeAdapter {
               background = StateColor(
                 enabled = ta.getComposeColor(
                   R.styleable.EverliTheme_buttonColorGoogleFillBackgroundEnabled,
-                  DefaultButtonTheme.color.google.fill.background.enabled
+                  DefaultButtonTheme.color.google.fill.background.enabled,
                 ),
                 pressed = ta.getComposeColor(
                   R.styleable.EverliTheme_buttonColorGoogleFillBackgroundPressed,
-                  DefaultButtonTheme.color.google.fill.background.pressed
+                  DefaultButtonTheme.color.google.fill.background.pressed,
                 ),
               ),
             ),
@@ -283,11 +283,11 @@ internal object EverliThemeAdapter {
               background = StateColor(
                 enabled = ta.getComposeColor(
                   R.styleable.EverliTheme_buttonColorAppleFillBackgroundEnabled,
-                  DefaultButtonTheme.color.apple.fill.background.enabled
+                  DefaultButtonTheme.color.apple.fill.background.enabled,
                 ),
                 pressed = ta.getComposeColor(
                   R.styleable.EverliTheme_buttonColorAppleFillBackgroundPressed,
-                  DefaultButtonTheme.color.apple.fill.background.pressed
+                  DefaultButtonTheme.color.apple.fill.background.pressed,
                 ),
               ),
             ),
@@ -297,11 +297,11 @@ internal object EverliThemeAdapter {
               background = StateColor(
                 enabled = ta.getComposeColor(
                   R.styleable.EverliTheme_buttonColorBlikFillBackgroundEnabled,
-                  DefaultButtonTheme.color.blik.fill.background.enabled
+                  DefaultButtonTheme.color.blik.fill.background.enabled,
                 ),
                 pressed = ta.getComposeColor(
                   R.styleable.EverliTheme_buttonColorBlikFillBackgroundPressed,
-                  DefaultButtonTheme.color.blik.fill.background.pressed
+                  DefaultButtonTheme.color.blik.fill.background.pressed,
                 ),
               ),
             ),

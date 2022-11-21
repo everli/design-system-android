@@ -2,7 +2,7 @@ package com.everli.designsystem.core.theme
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
-import com.everli.designsystem.helper.ifUnspecified
+import com.everli.designsystem.utilities.extensions.ifUnspecified
 
 /**
  * Utility class to group colors for multiple state

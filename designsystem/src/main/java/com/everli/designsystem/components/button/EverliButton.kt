@@ -34,8 +34,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.everli.designsystem.core.theme.EverliTheme
 import com.everli.designsystem.helper.TestTags
-import com.everli.designsystem.helper.applyIf
-import com.everli.designsystem.helper.empty
+import com.everli.designsystem.utilities.compose.applyIf
+import com.everli.designsystem.utilities.extensions.empty
 
 /**
  * Wrapper for all buttons

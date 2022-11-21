@@ -1,6 +1,6 @@
 package com.everli.designsystem.core.constants
 
-import com.everli.designsystem.helper.empty
+import com.everli.designsystem.utilities.extensions.empty
 
 enum class EverliResource(val designName: String) {
 
@@ -21,6 +21,7 @@ enum class EverliResource(val designName: String) {
   ICO_BASKET(designName = "ico-basket"),
   ICO_BASKET_CIRCLE(designName = "ico-basket-circle"),
   ICO_CASH(designName = "ico-cash"),
+  ICO_CASH_OUT(designName = "ico-cash-out"),
   ICO_CASHBACK(designName = "ico-cashback"),
   ICO_CASHBACK_PLUS(designName = "ico-cashback-plus"),
   ICO_CATEGORIES(designName = "ico-categories"),
@@ -40,10 +41,15 @@ enum class EverliResource(val designName: String) {
   ICO_DELETE(designName = "ico-delete"),
   ICO_DELIVERY(designName = "ico-delivery"),
   ICO_DOCS(designName = "ico-docs"),
+  ICO_DOLLAR(designName = "ico-dollar"),
   ICO_DOWNLOAD(designName = "ico-download"),
+  ICO_ECO(designName = "ico-eco"),
   ICO_EDIT(designName = "ico-edit"),
   ICO_EMAIL(designName = "ico-email"),
   ICO_EMPTY(designName = "ico-empty"),
+  ICO_EURO(designName = "ico-euro"),
+  ICO_EYE_HYDE(designName = "ico-eye-hyde"),
+  ICO_EYE_SHOW(designName = "ico-eye-show"),
   ICO_FAVORITE_FILLED(designName = "ico-favorite-filled"),
   ICO_FAVORITE_OUTLINE(designName = "ico-favorite-outline"),
   ICO_FILTERS(designName = "ico-filters"),
@@ -72,6 +78,7 @@ enum class EverliResource(val designName: String) {
   ICO_POSITION_MARK_OUTLINE(designName = "ico-position-mark-outline"),
   ICO_QUESTION_CIRCLE_FILLED(designName = "ico-question-circle-filled"),
   ICO_QUESTION_CIRCLE_OUTILNE(designName = "ico-question-circle-outilne"),
+  ICO_REFUND(designName = "ico-refund"),
   ICO_REMOVE(designName = "ico-remove"),
   ICO_REPLACEMENTS(designName = "ico-replacements"),
   ICO_ROCKET(designName = "ico-rocket"),
@@ -83,6 +90,17 @@ enum class EverliResource(val designName: String) {
   ICO_SHIELD_PRIVACY(designName = "ico-shield-privacy"),
   ICO_SHOPPING_LIST(designName = "ico-shopping-list"),
   ICO_STAR(designName = "ico-star"),
+  ICO_SUPPLY_ARMCHAIR(designName = "ico-supply-armchair"),
+  ICO_SUPPLY_BONUS_FIRE(designName = "ico-supply-bonus-fire"),
+  ICO_SUPPLY_BONUS_STAR(designName = "ico-supply-bonus-star"),
+  ICO_SUPPLY_CALENDAR(designName = "ico-supply-calendar"),
+  ICO_SUPPLY_CART(designName = "ico-supply-cart"),
+  ICO_SUPPLY_MATERNITY(designName = "ico-supply-maternity"),
+  ICO_SUPPLY_QUANTITY(designName = "ico-supply-quantity"),
+  ICO_SUPPLY_REPLACEMENT(designName = "ico-supply-replacement"),
+  ICO_SUPPLY_SCOOTER(designName = "ico-supply-scooter"),
+  ICO_SUPPLY_SICKNESS(designName = "ico-supply-sickness"),
+  ICO_SUPPLY_STATS(designName = "ico-supply-stats"),
   ICO_USER(designName = "ico-user"),
   ICO_USER_VERIFIED(designName = "ico-user-verified"),
   ICO_WALLET(designName = "ico-wallet"),
@@ -91,29 +109,6 @@ enum class EverliResource(val designName: String) {
   ICO_X_CIRCLE_FILLED(designName = "ico-x-circle-filled"),
   ICO_X_CIRCLE_OUTLINE(designName = "ico-x-circle-outline"),
   ICO_ZOOM(designName = "ico-zoom"),
-  IMG_BENEFIT_DISTANCE(designName = "img-benefit-distance"),
-  IMG_BENEFIT_SAVING(designName = "img-benefit-saving"),
-  IMG_BENEFIT_TIME(designName = "img-benefit-time"),
-  IMG_BENEFIT_WEIGHT(designName = "img-benefit-weight"),
-  IMG_DELIVERY(designName = "img-delivery"),
-  IMG_DELIVERY_FAST(designName = "img-delivery-fast"),
-  IMG_FEE_CASH(designName = "img-fee-cash"),
-  IMG_FEE_SERVICE(designName = "img-fee-service"),
-  IMG_FEE_SURCHARGE(designName = "img-fee-surcharge"),
-  IMG_FRESH(designName = "img-fresh"),
-  IMG_ITEMS(designName = "img-items"),
-  IMG_MAIL_SENT(designName = "img_mail_sent"),
-  IMG_MONEY(designName = "img-money"),
-  IMG_MOOD_AVERAGE(designName = "img-mood-average"),
-  IMG_MOOD_BAD(designName = "img-mood-bad"),
-  IMG_MOOD_GOOD(designName = "img-mood-good"),
-  IMG_PIGGY(designName = "img-piggy"),
-  IMG_ORDER_IN_PROGRESS(designName = "img-order-in-progress"),
-  IMG_RELAX(designName = "img-relax"),
-  IMG_SAVING(designName = "img-saving"),
-  IMG_SHOPPER_HERO(designName = "img-shopper-hero"),
-  IMG_SHOPPER_SMILING(designName = "img-shopper-smiling"),
-  IMG_SHOPPING_BAG(designName = "img-shopping-bag"),
   LOGO_APPLE(designName = "logo-apple"),
   LOGO_APPLE_MAPS_APP(designName = "logo-apple-maps-app"),
   LOGO_EVERLI_APP(designName = "logo-everli-app"),
@@ -142,13 +137,13 @@ enum class EverliResource(val designName: String) {
      * Convert a resource name as string to a [EverliResource]
      * Can be used only for design system based resources
      * If the conversion fails, [fallback] will be returned
-     * If [fallback] is not provided, [IMG_ITEMS] will be returned
+     * If [fallback] is not provided, [NONE] will be returned
      *
      * @param name name of the resource e.g. "ico-basket"
-     * @param fallback used in case the conversion fails, default value [IMG_ITEMS]
+     * @param fallback used in case the conversion fails, default value [NONE]
      * @return [EverliResource] for given [name] or [fallback]
      */
-    fun fromString(name: String, fallback: EverliResource = IMG_ITEMS): EverliResource {
+    fun fromString(name: String, fallback: EverliResource = NONE): EverliResource {
       return values().associateBy(EverliResource::designName)[name] ?: fallback
     }
 

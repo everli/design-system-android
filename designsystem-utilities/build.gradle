@@ -1,0 +1,81 @@
+plugins {
+  id 'com.android.library'
+  id 'org.jetbrains.kotlin.android'
+}
+
+ext {
+  PUBLISH_GROUP_ID = 'com.everli'
+  PUBLISH_VERSION = rootVersionName
+  PUBLISH_ARTIFACT_ID = 'designsystem-utilities'
+}
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
+
+android {
+  namespace 'com.everli.designsystem.utilities'
+  compileSdk 32
+
+  defaultConfig {
+    minSdk 21
+    targetSdk 32
+
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    consumerProguardFiles "consumer-rules.pro"
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+  kotlinOptions {
+    jvmTarget = '1.8'
+  }
+
+  buildFeatures {
+    compose true
+  }
+  composeOptions {
+    kotlinCompilerExtensionVersion compose_compiler_version
+    kotlinCompilerVersion kotlin_version
+  }
+  testOptions {
+    unitTests.all {
+      useJUnitPlatform()
+    }
+  }
+  packagingOptions {
+    exclude "META-INF/licenses/**"
+    exclude "META-INF/AL2.0"
+    exclude "META-INF/LGPL2.1"
+  }
+}
+
+dependencies {
+
+  // Test -> Kotest
+  testImplementation "org.junit.jupiter:junit-jupiter:$junit_jupiter_version"
+  testImplementation "io.kotest:kotest-runner-junit5:$kotest_version"
+  testImplementation "io.kotest.extensions:kotest-extensions-robolectric:$kotest_roboelectric_version"
+  testImplementation "io.kotest:kotest-assertions-core:$kotest_version"
+
+  // Debug
+  debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+  debugImplementation("androidx.compose.ui:ui-test-manifest:$compose_version")
+
+  // Kotlin
+  implementation "androidx.core:core-ktx:$androidx_core_ktx_version"
+  implementation "androidx.appcompat:appcompat:$androidx_appcompact_version"
+
+  // Compose & Material
+  implementation "com.google.android.material:material:$material_version"
+  implementation "androidx.compose.ui:ui:$compose_version"
+  implementation "androidx.compose.material:material:$compose_version"
+  implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+
+}

@@ -5,6 +5,7 @@
   <!-- N.B. not all tokens are supported in XML -->
   <declare-styleable name="EverliTheme">
     <!-- Radius -->
+    <attr name="radiusSmall" format="dimension" />
     <attr name="radiusMedium" format="dimension" />
     <attr name="radiusFull" format="dimension" />
 

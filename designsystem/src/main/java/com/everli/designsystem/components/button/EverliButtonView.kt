@@ -10,11 +10,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.AbstractComposeView
 import com.everli.designsystem.R
 import com.everli.designsystem.core.theme.ThemeAdapterComposable
-import com.everli.designsystem.helper.empty
-import com.everli.designsystem.helper.enumValueOfOrFallback
-import com.everli.designsystem.helper.getBooleanOrFalse
-import com.everli.designsystem.helper.getBooleanOrTrue
-import com.everli.designsystem.helper.getStringOrEmpty
+import com.everli.designsystem.utilities.enumValueOfOrFallback
+import com.everli.designsystem.utilities.extensions.getBooleanOrFalse
+import com.everli.designsystem.utilities.extensions.getBooleanOrTrue
+import com.everli.designsystem.utilities.extensions.getStringOrEmpty
+import com.everli.designsystem.utilities.extensions.empty
 import com.google.accompanist.drawablepainter.rememberDrawablePainter
 
 /**
