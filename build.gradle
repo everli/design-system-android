@@ -2,8 +2,8 @@ apply plugin: "org.jlleitschuh.gradle.ktlint"
 
 ext {
   versionMajor = 0
-  versionMinor = 1
-  versionPatch = 7
+  versionMinor = 2
+  versionPatch = 0
   versionName = "${versionMajor}.${versionMinor}.${versionPatch}"
   snapshotVersionName = "${versionMajor}.${versionMinor}.${versionPatch}-SNAPSHOT"
 }
