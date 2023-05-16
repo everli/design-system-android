@@ -39,6 +39,7 @@ internal class EverliColorExtensionsTest : FunSpec(
       EverliColor.GOOGLE to EverliColors.Google,
       EverliColor.APPLE to EverliColors.Apple,
       EverliColor.BLIK to EverliColors.Blik,
+      EverliColor.EDENRED to EverliColors.Edenred,
       null to EverliColors.Transparent,
     ).forEach { (everliColor, color) ->
       test("$everliColor should be converted to $color") {
@@ -75,6 +76,7 @@ internal class EverliColorExtensionsTest : FunSpec(
       EverliColor.GOOGLE to R.color.google,
       EverliColor.APPLE to R.color.apple,
       EverliColor.BLIK to R.color.blik,
+      EverliColor.EDENRED to R.color.edenred,
       null to R.id.none,
     ).forEach { (everliColor, resourceId) ->
       test("$everliColor should be converted to $resourceId") {

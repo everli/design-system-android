@@ -129,7 +129,8 @@ enum class EverliResource(val designName: String) {
   LOGO_PAYMENT_VISA(designName = "logo-payment-visa"),
   LOGO_PWRD_BY_GOOGLE(designName = "logo-pwrd-by-google"),
   LOGO_TWITTER(designName = "logo-twitter"),
-  LOGO_WAZE(designName = "logo-waze");
+  LOGO_WAZE(designName = "logo-waze"),
+  LOGO_EDENRED(designName = "logo-edenred");
 
   companion object {
 

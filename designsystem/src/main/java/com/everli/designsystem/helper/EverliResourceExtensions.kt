@@ -139,6 +139,7 @@ fun EverliResource.toPainter(): Painter {
     EverliResource.ICO_SUPPLY_SCOOTER -> EverliResources.Icons.SupplyScooter
     EverliResource.ICO_SUPPLY_SICKNESS -> EverliResources.Icons.SupplySickness
     EverliResource.ICO_SUPPLY_STATS -> EverliResources.Icons.SupplyStats
+    EverliResource.LOGO_EDENRED -> EverliResources.Logos.Edenred
   }
 }
 
@@ -273,5 +274,6 @@ fun EverliResource.toResourceId(): Int {
     EverliResource.ICO_SUPPLY_SCOOTER -> R.drawable.ico_supply_scooter
     EverliResource.ICO_SUPPLY_SICKNESS -> R.drawable.ico_supply_sickness
     EverliResource.ICO_SUPPLY_STATS -> R.drawable.ico_supply_stats
+    EverliResource.LOGO_EDENRED -> R.drawable.logo_edenred
   }
 }
