@@ -38,6 +38,7 @@ fun EverliColor.toColor(): Color {
     EverliColor.GOOGLE -> EverliColors.Google
     EverliColor.APPLE -> EverliColors.Apple
     EverliColor.BLIK -> EverliColors.Blik
+    EverliColor.EDENRED -> EverliColors.Edenred
   }
 }
 
@@ -74,6 +75,7 @@ fun EverliColor.toResourceId(): Int {
     EverliColor.GOOGLE -> R.color.google
     EverliColor.APPLE -> R.color.apple
     EverliColor.BLIK -> R.color.blik
+    EverliColor.EDENRED -> R.color.edenred
   }
 }
 

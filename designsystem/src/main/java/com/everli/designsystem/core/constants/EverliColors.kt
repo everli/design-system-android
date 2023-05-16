@@ -47,5 +47,6 @@ object EverliColors {
   val Google = Black100
   val Apple = Black100
   val Blik = Color(0xFFE5005D)
+  val Edenred = Color(0xFFEE1122)
 
 }

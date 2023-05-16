@@ -520,8 +520,15 @@ object EverliResources {
       @Composable
       get() = painterResource(id = R.drawable.logo_waze)
 
+    val Edenred: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.logo_edenred)
+
   }
 
+  /**
+   * Extend in client project with project specific images
+   */
   object Images
 
 }

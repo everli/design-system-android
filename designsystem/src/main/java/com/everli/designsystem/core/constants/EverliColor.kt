@@ -46,7 +46,8 @@ enum class EverliColor(val designName: String) {
   FACEBOOK(designName = "facebook"),
   GOOGLE(designName = "google"),
   APPLE(designName = "apple"),
-  BLIK(designName = "blik");
+  BLIK(designName = "blik"),
+  EDENRED(designName = "edenred");
 
   companion object {
 
