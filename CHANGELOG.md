@@ -1,3 +1,10 @@
+v0.2.1-march-of-the-machines / 2023-05-16
+==================
+* milestone [v0.2.1-march-of-the-machines](https://github.com/everli/design-system-android/milestone/12)
+* [ADDED] New `Edenred` logo resource
+* [ADDED] New `Edenred` brand color
+
+* 
 v0.2.0-ravnica / 2022-11-21
 ==================
 * milestone [v0.2.0-ravnica](https://github.com/everli/design-system-android/milestone/11)
