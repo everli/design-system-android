@@ -162,5 +162,5 @@ internal fun debugColors(
   onBackground = debugColor,
   onSurface = debugColor,
   onError = debugColor,
-  isLight = !darkTheme
+  isLight = !darkTheme,
 )
