@@ -4,10 +4,8 @@ import com.everli.designsystem.R
 import com.everli.designsystem.core.constants.EverliTextStyle
 import com.everli.designsystem.core.constants.EverliTypography
 import io.kotest.core.spec.style.FunSpec
-import io.kotest.extensions.robolectric.RobolectricTest
 import io.kotest.matchers.shouldBe
 
-@RobolectricTest
 internal class EverliTextStyleExtensionsTest : FunSpec(
   {
     listOf(
