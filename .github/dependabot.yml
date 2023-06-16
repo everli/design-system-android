@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "gradle"
+    directory: "/"
+    reviewers:
+      - "everli/demand-android"
+    labels:
+      - "ready-for-code-review"
+    schedule:
+      interval: "daily"
