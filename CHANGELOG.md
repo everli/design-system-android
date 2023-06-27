@@ -1,3 +1,10 @@
+v0.3.0-tales-of-middle-earth / 2023-06-27
+==================
+* milestone [v0.3.0-tales-of-middle-earth](https://github.com/everli/design-system-android/milestone/13)
+* [ADDED] Dependabot
+* [UPDATE] `compileSdk` and ``targetSdk` to `33`
+* [UPDATE] Various dependencies
+
 v0.2.1-march-of-the-machines / 2023-05-16
 ==================
 * milestone [v0.2.1-march-of-the-machines](https://github.com/everli/design-system-android/milestone/12)

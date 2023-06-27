@@ -2,8 +2,8 @@ apply plugin: "org.jlleitschuh.gradle.ktlint"
 
 ext {
   versionMajor = 0
-  versionMinor = 2
-  versionPatch = 1
+  versionMinor = 3
+  versionPatch = 0
   versionName = "${versionMajor}.${versionMinor}.${versionPatch}"
   snapshotVersionName = "${versionMajor}.${versionMinor}.${versionPatch}-SNAPSHOT"
 }
@@ -12,6 +12,7 @@ buildscript {
   ext {
     compose_version = '1.3.1'
     compose_compiler_version = '1.3.1'
+    compose_material_version = '1.4.3'
     kotlin_version = '1.7.10'
     gradle_nexus_version = '1.3.0'
     accompanist_version = '0.30.1'
