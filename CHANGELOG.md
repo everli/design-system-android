@@ -1,3 +1,8 @@
+v0.3.1-etali-primal-storm / 2023-07-13
+==================
+* milestone [v0.3.1-etali-primal-storm](https://github.com/everli/design-system-android/milestone/14)
+* [UPDATE] `accompanist` version
+
 v0.3.0-tales-of-middle-earth / 2023-06-27
 ==================
 * milestone [v0.3.0-tales-of-middle-earth](https://github.com/everli/design-system-android/milestone/13)
