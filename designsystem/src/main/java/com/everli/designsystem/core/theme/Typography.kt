@@ -53,6 +53,12 @@ data class Caption(
 )
 
 @Immutable
+data class CaptionSmall(
+  val semibold: TextStyle,
+  val regular: TextStyle,
+)
+
+@Immutable
 data class EverliTypography(
   val title1: Title1,
   val title2: Title2,
@@ -62,6 +68,7 @@ data class EverliTypography(
   val body: Body,
   val bodySmall: BodySmall,
   val caption: Caption,
+  val captionSmall: CaptionSmall,
 )
 
 // Default
@@ -97,5 +104,9 @@ val DefaultTypography = EverliTypography(
   caption = Caption(
     semibold = EverliTypography.Caption.Semibold,
     regular = EverliTypography.Caption.Regular,
+  ),
+  captionSmall = CaptionSmall(
+    semibold = EverliTypography.CaptionSmall.Semibold,
+    regular = EverliTypography.CaptionSmall.Regular,
   ),
 )

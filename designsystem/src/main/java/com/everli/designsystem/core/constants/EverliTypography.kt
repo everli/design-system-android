@@ -170,4 +170,23 @@ object EverliTypography {
       lineHeight = captionLineHeight,
     )
   }
+
+  object CaptionSmall {
+
+    private val captionSmallLineHeight = 16.sp
+    private val captionSmallFontSize = 10.sp
+
+    val Semibold = TextStyle(
+      fontSize = captionSmallFontSize,
+      fontWeight = FontWeight.SemiBold,
+      fontFamily = Fira,
+      lineHeight = captionSmallLineHeight,
+    )
+    val Regular = TextStyle(
+      fontSize = captionSmallFontSize,
+      fontWeight = FontWeight.Normal,
+      fontFamily = Fira,
+      lineHeight = captionSmallLineHeight,
+    )
+  }
 }

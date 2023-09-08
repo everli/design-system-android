@@ -140,6 +140,22 @@
       android:text="Caption Regular"
       android:textColor="@color/black_100" />
 
+    <TextView
+      style="@style/EverliTypography.CaptionSmall.Semibold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:text="Caption Small Semibold"
+      android:textColor="@color/black_100" />
+
+    <TextView
+      style="@style/EverliTypography.CaptionSmall.Regular"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:text="Caption Small Regular"
+      android:textColor="@color/black_100" />
+
 
   </LinearLayout>
 
