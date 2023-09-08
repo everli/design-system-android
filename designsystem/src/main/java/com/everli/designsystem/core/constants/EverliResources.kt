@@ -432,6 +432,18 @@ object EverliResources {
       @Composable
       get() = painterResource(id = R.drawable.ico_zoom)
 
+    val MenuCategories: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_menu_categories)
+
+    val Deals: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_deals)
+
+    val QuickShopping: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_quick_shopping)
+
   }
 
   object Logos {
