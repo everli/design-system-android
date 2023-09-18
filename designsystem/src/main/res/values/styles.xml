@@ -120,6 +120,20 @@
     <item name="android:fontFamily">@font/fira_regular</item>
   </style>
 
+  <!-- Caption Small -->
+  <style name="EverliTypography.CaptionSmall">
+    <item name="lineHeight">@dimen/lineHeightCaptionSmall</item>
+    <item name="android:textSize">@dimen/fontSizeCaptionSmall</item>
+  </style>
+
+  <style name="EverliTypography.CaptionSmall.Semibold">
+    <item name="android:fontFamily">@font/fira_semibold</item>
+  </style>
+
+  <style name="EverliTypography.CaptionSmall.Regular">
+    <item name="android:fontFamily">@font/fira_regular</item>
+  </style>
+
   <!-- Theme Tokens, these values will be used for View wrappers of Compose components -->
   <!-- Text Styles are not included -->
   <style name="EverliTheme" parent="Theme.MaterialComponents.Light.NoActionBar">

@@ -22,6 +22,8 @@ internal class EverliTextStyleTests : FunSpec(
       "body-small-regular" to EverliTextStyle.BODY_SMALL_REGULAR,
       "caption-semibold" to EverliTextStyle.CAPTION_SEMIBOLD,
       "caption-regular" to EverliTextStyle.CAPTION_REGULAR,
+      "caption-small-semibold" to EverliTextStyle.CAPTION_SMALL_SEMIBOLD,
+      "caption-small-regular" to EverliTextStyle.CAPTION_SMALL_REGULAR,
     ).forEach { (name, textStyle) ->
       test("$name should be converted to $textStyle") {
         EverliTextStyle.fromString(name) shouldBe textStyle

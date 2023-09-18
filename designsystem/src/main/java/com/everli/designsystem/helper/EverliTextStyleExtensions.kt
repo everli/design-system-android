@@ -26,6 +26,8 @@ fun EverliTextStyle.toTextStyle(): TextStyle {
     EverliTextStyle.BODY_SMALL_REGULAR -> EverliTypography.BodySmall.Regular
     EverliTextStyle.CAPTION_SEMIBOLD -> EverliTypography.Caption.Semibold
     EverliTextStyle.CAPTION_REGULAR -> EverliTypography.Caption.Regular
+    EverliTextStyle.CAPTION_SMALL_SEMIBOLD -> EverliTypography.CaptionSmall.Semibold
+    EverliTextStyle.CAPTION_SMALL_REGULAR -> EverliTypography.CaptionSmall.Regular
   }
 }
 
@@ -50,5 +52,7 @@ fun EverliTextStyle.toResourceId(): Int {
     EverliTextStyle.BODY_SMALL_REGULAR -> R.style.EverliTypography_BodySmall_Regular
     EverliTextStyle.CAPTION_SEMIBOLD -> R.style.EverliTypography_Caption_Semibold
     EverliTextStyle.CAPTION_REGULAR -> R.style.EverliTypography_Caption_Regular
+    EverliTextStyle.CAPTION_SMALL_SEMIBOLD -> R.style.EverliTypography_CaptionSmall_Semibold
+    EverliTextStyle.CAPTION_SMALL_REGULAR -> R.style.EverliTypography_CaptionSmall_Regular
   }
 }

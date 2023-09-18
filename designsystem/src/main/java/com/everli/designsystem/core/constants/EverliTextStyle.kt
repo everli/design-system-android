@@ -17,7 +17,9 @@ enum class EverliTextStyle(val designName: String) {
   BODY_SMALL_SEMIBOLD("body-small-semibold"),
   BODY_SMALL_REGULAR("body-small-regular"),
   CAPTION_SEMIBOLD("caption-semibold"),
-  CAPTION_REGULAR("caption-regular");
+  CAPTION_REGULAR("caption-regular"),
+  CAPTION_SMALL_SEMIBOLD("caption-small-semibold"),
+  CAPTION_SMALL_REGULAR("caption-small-regular");
 
   companion object {
 
