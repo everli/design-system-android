@@ -25,6 +25,8 @@ internal class EverliTextStyleExtensionsTest : FunSpec(
       EverliTextStyle.BODY_SMALL_REGULAR to EverliTypography.BodySmall.Regular,
       EverliTextStyle.CAPTION_SEMIBOLD to EverliTypography.Caption.Semibold,
       EverliTextStyle.CAPTION_REGULAR to EverliTypography.Caption.Regular,
+      EverliTextStyle.CAPTION_SMALL_SEMIBOLD to EverliTypography.CaptionSmall.Semibold,
+      EverliTextStyle.CAPTION_SMALL_REGULAR to EverliTypography.CaptionSmall.Regular,
     ).forEach { (everliTextStyle, textStyle) ->
       test("$everliTextStyle should be converted to $textStyle") {
         everliTextStyle.toTextStyle() shouldBe textStyle
@@ -48,6 +50,8 @@ internal class EverliTextStyleExtensionsTest : FunSpec(
       EverliTextStyle.BODY_SMALL_REGULAR to R.style.EverliTypography_BodySmall_Regular,
       EverliTextStyle.CAPTION_SEMIBOLD to R.style.EverliTypography_Caption_Semibold,
       EverliTextStyle.CAPTION_REGULAR to R.style.EverliTypography_Caption_Regular,
+      EverliTextStyle.CAPTION_SMALL_SEMIBOLD to R.style.EverliTypography_CaptionSmall_Semibold,
+      EverliTextStyle.CAPTION_SMALL_REGULAR to R.style.EverliTypography_CaptionSmall_Regular,
     ).forEach { (everliTextStyle, resourceId) ->
       test("$everliTextStyle should be converted to $resourceId") {
         everliTextStyle.toResourceId() shouldBe resourceId

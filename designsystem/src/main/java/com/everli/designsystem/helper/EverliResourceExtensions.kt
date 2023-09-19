@@ -140,6 +140,11 @@ fun EverliResource.toPainter(): Painter {
     EverliResource.ICO_SUPPLY_SICKNESS -> EverliResources.Icons.SupplySickness
     EverliResource.ICO_SUPPLY_STATS -> EverliResources.Icons.SupplyStats
     EverliResource.LOGO_EDENRED -> EverliResources.Logos.Edenred
+    EverliResource.ICO_MENU_CATEGORIES -> EverliResources.Icons.MenuCategories
+    EverliResource.ICO_DEALS -> EverliResources.Icons.Deals
+    EverliResource.ICO_QUICK_SHOPPING -> EverliResources.Icons.QuickShopping
+    EverliResource.ICO_PADLOCK_OPEN -> EverliResources.Icons.PadlockOpen
+    EverliResource.ICO_PADLOCK_CLOSE -> EverliResources.Icons.PadlockClose
   }
 }
 
@@ -275,5 +280,10 @@ fun EverliResource.toResourceId(): Int {
     EverliResource.ICO_SUPPLY_SICKNESS -> R.drawable.ico_supply_sickness
     EverliResource.ICO_SUPPLY_STATS -> R.drawable.ico_supply_stats
     EverliResource.LOGO_EDENRED -> R.drawable.logo_edenred
+    EverliResource.ICO_MENU_CATEGORIES -> R.drawable.ico_menu_categories
+    EverliResource.ICO_DEALS -> R.drawable.ico_deals
+    EverliResource.ICO_QUICK_SHOPPING -> R.drawable.ico_quick_shopping
+    EverliResource.ICO_PADLOCK_OPEN -> R.drawable.ico_padlock_open
+    EverliResource.ICO_PADLOCK_CLOSE -> R.drawable.ico_padlock_close
   }
 }

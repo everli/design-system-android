@@ -284,6 +284,14 @@ object EverliResources {
       @Composable
       get() = painterResource(id = R.drawable.ico_padlock)
 
+    val PadlockOpen: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_padlock_open)
+
+    val PadlockClose: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_padlock_close)
+
     val PadlockCircle: Painter
       @Composable
       get() = painterResource(id = R.drawable.ico_padlock_circle)
@@ -431,6 +439,18 @@ object EverliResources {
     val Zoom: Painter
       @Composable
       get() = painterResource(id = R.drawable.ico_zoom)
+
+    val MenuCategories: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_menu_categories)
+
+    val Deals: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_deals)
+
+    val QuickShopping: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_quick_shopping)
 
   }
 

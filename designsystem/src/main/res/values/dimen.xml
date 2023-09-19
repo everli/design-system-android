@@ -39,9 +39,13 @@
   <dimen name="lineHeightBodySmall">22sp</dimen>
   <dimen name="fontSizeBodySmall">14sp</dimen>
 
-  <!-- Caption Small -->
+  <!-- Caption -->
   <dimen name="lineHeightCaption">18sp</dimen>
   <dimen name="fontSizeCaption">12sp</dimen>
+
+  <!-- Caption Small -->
+  <dimen name="lineHeightCaptionSmall">16sp</dimen>
+  <dimen name="fontSizeCaptionSmall">10sp</dimen>
 
   <!-- Radius -->
   <dimen name="radiusSmall">3dp</dimen>
