@@ -27,7 +27,7 @@ buildscript {
     androidx_navigation_version = '2.5.3'
     androidx_lifecycle_runtime_ktx = '2.4.1'
     androidx_activity_compose = '1.4.0'
-    ktlint_plugin_version = "10.3.0"
+    ktlint_plugin_version = "11.6.0"
   }
   repositories {
     maven { url "https://plugins.gradle.org/m2/" }
