@@ -112,6 +112,8 @@ enum class EverliResource(val designName: String) {
   ICO_MENU_CATEGORIES(designName = "ico-menu-categories"),
   ICO_DEALS(designName = "ico-deals"),
   ICO_QUICK_SHOPPING(designName = "ico-quick-shopping"),
+  ICO_PADLOCK_OPEN(designName = "ico-padlock-open"),
+  ICO_PADLOCK_CLOSE(designName = "ico-padlock-close"),
   LOGO_APPLE(designName = "logo-apple"),
   LOGO_APPLE_MAPS_APP(designName = "logo-apple-maps-app"),
   LOGO_EVERLI_APP(designName = "logo-everli-app"),
