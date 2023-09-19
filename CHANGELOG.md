@@ -1,3 +1,15 @@
+v0.3.1-wilds-of-eldraine / 2023-09-19
+==================
+* milestone [v0.4.0-wilds-of-eldraine](https://github.com/everli/design-system-android/milestone/15)
+* [UPDATE] `compose` version
+* [UPDATE] `agp` version
+* [ADDED] new icons
+
+v0.3.1-etali-primal-storm / 2023-07-13
+==================
+* milestone [v0.3.1-etali-primal-storm](https://github.com/everli/design-system-android/milestone/14)
+* [UPDATE] `accompanist` version
+
 v0.3.1-etali-primal-storm / 2023-07-13
 ==================
 * milestone [v0.3.1-etali-primal-storm](https://github.com/everli/design-system-android/milestone/14)
