@@ -284,6 +284,14 @@ object EverliResources {
       @Composable
       get() = painterResource(id = R.drawable.ico_padlock)
 
+    val PadlockOpen: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_padlock_open)
+
+    val PadlockClose: Painter
+      @Composable
+      get() = painterResource(id = R.drawable.ico_padlock_close)
+
     val PadlockCircle: Painter
       @Composable
       get() = painterResource(id = R.drawable.ico_padlock_circle)
