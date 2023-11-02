@@ -7,6 +7,7 @@
     <!-- Radius -->
     <attr name="radiusSmall" format="dimension" />
     <attr name="radiusMedium" format="dimension" />
+    <attr name="radiusLarge" format="dimension" />
     <attr name="radiusFull" format="dimension" />
 
     <!-- Text -->
