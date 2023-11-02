@@ -73,6 +73,7 @@ internal object EverliThemeAdapter {
       val radiusTheme = RadiusTheme(
         small = ta.getDp(R.styleable.EverliTheme_radiusSmall, density, DefaultRadiusTheme.small),
         medium = ta.getDp(R.styleable.EverliTheme_radiusMedium, density, DefaultRadiusTheme.medium),
+        large = ta.getDp(R.styleable.EverliTheme_radiusLarge, density, DefaultRadiusTheme.large),
         full = ta.getDp(R.styleable.EverliTheme_radiusFull, density, DefaultRadiusTheme.full),
       )
 
