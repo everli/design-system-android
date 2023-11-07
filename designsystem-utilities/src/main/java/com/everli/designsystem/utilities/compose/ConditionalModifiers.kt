@@ -33,3 +33,15 @@ fun Modifier.applyIf(condition: Boolean, modifier: Modifier): Modifier {
     this
   }
 }
+
+/**
+ * Apply a [Modifier] if the value to apply is not null
+ *
+ * @param value to apply
+ * @param modifier modifier to be applied
+ *
+ * @return [modifier] if the [value] is not null, else [this] without applying [modifier]
+ */
+fun <T> Modifier.applyIfNotNull(value: T?, modifier: Modifier.(T) -> Modifier): Modifier {
+  return value?.let { modifier(value) } ?: this
+}
