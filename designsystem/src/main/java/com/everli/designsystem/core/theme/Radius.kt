@@ -8,6 +8,7 @@ import androidx.compose.ui.unit.dp
 data class RadiusTheme(
   val small: Dp,
   val medium: Dp,
+  val large: Dp,
   val full: Dp,
 )
 
@@ -15,5 +16,6 @@ data class RadiusTheme(
 val DefaultRadiusTheme = RadiusTheme(
   small = 3.dp,
   medium = 8.dp,
+  large = 16.dp,
   full = 40.dp,
 )

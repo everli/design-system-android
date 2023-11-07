@@ -50,6 +50,7 @@
   <!-- Radius -->
   <dimen name="radiusSmall">3dp</dimen>
   <dimen name="radiusMedium">8dp</dimen>
+  <dimen name="radiusLarge">16dp</dimen>
   <dimen name="radiusFull">40dp</dimen>
 
   <!-- Icon -->

@@ -1,4 +1,9 @@
-v0.3.1-wilds-of-eldraine / 2023-09-19
+v0.4.1-bolas / 2023-11-02
+==================
+* milestone [v0.4.1-bolas](https://github.com/everli/design-system-android/milestone/16)
+* [ADDED] new radius
+
+v0.4.0-wilds-of-eldraine / 2023-09-19
 ==================
 * milestone [v0.4.0-wilds-of-eldraine](https://github.com/everli/design-system-android/milestone/15)
 * [UPDATE] `compose` version
