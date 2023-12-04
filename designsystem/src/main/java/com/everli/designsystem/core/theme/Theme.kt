@@ -1,14 +1,13 @@
 package com.everli.designsystem.core.theme
 
-import androidx.compose.material.Colors
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Shapes
-import androidx.compose.material.Typography
+import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.Typography
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Shapes
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.staticCompositionLocalOf
-import androidx.compose.ui.graphics.Color
 
 /**
  * Root Composable that provides all LocalProviders with all values need by the design system components.
@@ -29,7 +28,7 @@ fun EverliTheme(
   radiusTheme: RadiusTheme = EverliTheme.radius,
   iconTheme: IconTheme = EverliTheme.icon,
   textTheme: TextTheme = EverliTheme.text,
-  materialColors: Colors = MaterialTheme.colors,
+  materialColors: ColorScheme = MaterialTheme.colorScheme,
   materialTypography: Typography = MaterialTheme.typography,
   materialShapes: Shapes = MaterialTheme.shapes,
   content: @Composable () -> Unit,
@@ -41,7 +40,7 @@ fun EverliTheme(
     LocalIconTheme provides iconTheme,
   ) {
     MaterialTheme(
-      colors = materialColors,
+      colorScheme = materialColors,
       typography = materialTypography,
       shapes = materialShapes,
       content = content,
@@ -66,15 +65,26 @@ data class EverliThemeComponents(
 /**
  * This is the default Theme provided by the design system
  * Used it as root of your composition tree or create a new Theme
- * either based on this one or from scratch
+ * either based on this one or from scratch.
+ *
+ * N.B. the theme is a wrapper around [EverliTheme] which is a wrapper around [MaterialTheme]
+ * Material theme elements are provided with default values but can be overridden if needed
  */
 @Composable
-fun DefaultTheme(content: @Composable () -> Unit) {
+fun DefaultTheme(
+  materialColors: ColorScheme = MaterialTheme.colorScheme,
+  materialTypography: Typography = MaterialTheme.typography,
+  materialShapes: Shapes = MaterialTheme.shapes,
+  content: @Composable () -> Unit,
+) {
   EverliTheme(
     typography = DefaultTypography,
     radiusTheme = DefaultRadiusTheme,
     iconTheme = DefaultIconTheme,
     textTheme = DefaultTextTheme,
+    materialColors = materialColors,
+    materialTypography = materialTypography,
+    materialShapes = materialShapes,
     content = content,
   )
 }
@@ -126,26 +136,3 @@ private val LocalTextTheme = staticCompositionLocalOf<TextTheme> {
 private val LocalIconTheme = staticCompositionLocalOf<IconTheme> {
   error("No IconTheme provided")
 }
-
-/**
- * A Material [Colors] implementation which sets all colors to [debugColor] to discourage usage of
- * [MaterialTheme.colors] in favor of [EverliTheme] tokens.
- */
-internal fun debugColors(
-  darkTheme: Boolean = false,
-  debugColor: Color = Color.Magenta,
-) = Colors(
-  primary = debugColor,
-  primaryVariant = debugColor,
-  secondary = debugColor,
-  secondaryVariant = debugColor,
-  background = debugColor,
-  surface = debugColor,
-  error = debugColor,
-  onPrimary = debugColor,
-  onSecondary = debugColor,
-  onBackground = debugColor,
-  onSurface = debugColor,
-  onError = debugColor,
-  isLight = !darkTheme,
-)

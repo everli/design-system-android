@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package com.everli.designsystem.playground
 
 import android.annotation.SuppressLint
@@ -10,12 +12,14 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TextButton
-import androidx.compose.material.TopAppBar
+import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -85,35 +89,48 @@ fun App() {
     radiusTheme = DefaultRadiusTheme,
     iconTheme = DefaultIconTheme,
     textTheme = DefaultTextTheme,
+    materialColors = MaterialTheme.colorScheme.copy(
+      primary = mockPrimary,
+    ),
   ) {
     Scaffold(
       topBar = {
-        TopAppBar(backgroundColor = mockPrimary) {
-          Row(
-            modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center,
-          ) {
-            Text(text = "\uD83C\uDFA8", color = EverliColors.White, style = DefaultTypography.body.regular)
-            TextButton(onClick = { theme = Themes.DEMAND }) {
-              Text(
-                text = "Demand",
-                color = EverliColors.White,
-                style = DefaultTypography.body.regular,
-              )
+        TopAppBar(
+          colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = mockPrimary,
+          ),
+          title = {
+            Row(
+              modifier = Modifier.fillMaxWidth(),
+              verticalAlignment = Alignment.CenterVertically,
+              horizontalArrangement = Arrangement.Center,
+            ) {
+              Text(text = "\uD83C\uDFA8", color = EverliColors.White, style = DefaultTypography.body.regular)
+              TextButton(onClick = { theme = Themes.DEMAND }) {
+                Text(
+                  text = "Demand",
+                  color = EverliColors.White,
+                  style = DefaultTypography.body.regular,
+                )
+              }
+              TextButton(onClick = { theme = Themes.SUPPLY }) {
+                Text(
+                  text = "Supply",
+                  color = EverliColors.White,
+                  style = DefaultTypography.body.regular,
+                )
+              }
             }
-            TextButton(onClick = { theme = Themes.SUPPLY }) {
-              Text(
-                text = "Supply",
-                color = EverliColors.White,
-                style = DefaultTypography.body.regular,
-              )
-            }
-          }
-        }
+          },
+        )
       },
-    ) {
-      Navigation()
+    ) { paddingValues ->
+      Column(
+        modifier = Modifier.padding(paddingValues),
+      ) {
+        Navigation()
+      }
+
     }
   }
 }
@@ -158,10 +175,6 @@ fun EverliButton(
   onClick: () -> Unit,
 ) {
   Button(
-    colors = ButtonDefaults.buttonColors(
-      backgroundColor = EverliColors.Green100,
-      contentColor = EverliColors.White,
-    ),
     onClick = onClick,
     modifier = modifier,
   ) {
