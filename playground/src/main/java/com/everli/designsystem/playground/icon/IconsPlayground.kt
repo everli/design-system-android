@@ -22,10 +22,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.everli.designsystem.components.button.EverliButton
 import com.everli.designsystem.core.constants.EverliColors
 import com.everli.designsystem.core.theme.DefaultTheme
 import com.everli.designsystem.core.theme.EverliTheme
+import com.everli.designsystem.playground.EverliButton
 
 @ExperimentalFoundationApi
 @Composable
@@ -41,13 +41,13 @@ fun IconsPlayground() {
       verticalAlignment = Alignment.CenterVertically,
       modifier = Modifier.fillMaxWidth(),
     ) {
-      EverliButton.Button(
+      EverliButton(
         onClick = { size -= 4.dp },
         text = "Decrease",
         modifier = Modifier.padding(8.dp),
       )
       Text(text = size.toString(), style = EverliTheme.typography.body.semibold)
-      EverliButton.Button(
+      EverliButton(
         onClick = { size += 4.dp },
         text = "Increase",
         modifier = Modifier.padding(8.dp),
@@ -58,17 +58,17 @@ fun IconsPlayground() {
       horizontalArrangement = Arrangement.Center,
       modifier = Modifier.fillMaxWidth(),
     ) {
-      EverliButton.Button(
+      EverliButton(
         onClick = { color = EverliColors.Black100 },
         text = "Black100",
         modifier = Modifier.padding(8.dp),
       )
-      EverliButton.Button(
+      EverliButton(
         onClick = { color = EverliColors.Green100 },
         text = "Green100",
         modifier = Modifier.padding(8.dp),
       )
-      EverliButton.Button(
+      EverliButton(
         onClick = { color = EverliColors.Navy100 },
         text = "Navy100",
         modifier = Modifier.padding(8.dp),
