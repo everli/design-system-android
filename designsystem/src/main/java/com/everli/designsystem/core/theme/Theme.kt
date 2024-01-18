@@ -15,7 +15,6 @@ import androidx.compose.ui.graphics.Color
  * All parameters should map 1:1 design tokens provided by design
  *
  * @param typography all text styles used in the design system
- * @param buttonTheme button tokens
  * @param radiusTheme global radius tokens
  * @param textTheme global text tokens
  * @param iconTheme global icon tokens
@@ -27,7 +26,6 @@ import androidx.compose.ui.graphics.Color
 @Composable
 fun EverliTheme(
   typography: EverliTypography = EverliTheme.typography,
-  buttonTheme: ButtonTheme = EverliTheme.button,
   radiusTheme: RadiusTheme = EverliTheme.radius,
   iconTheme: IconTheme = EverliTheme.icon,
   textTheme: TextTheme = EverliTheme.text,
@@ -38,7 +36,6 @@ fun EverliTheme(
 ) {
   CompositionLocalProvider(
     LocalTypography provides typography,
-    LocalButtonTheme provides buttonTheme,
     LocalRadiusTheme provides radiusTheme,
     LocalTextTheme provides textTheme,
     LocalIconTheme provides iconTheme,
@@ -56,13 +53,11 @@ fun EverliTheme(
  * Utility data class used to pass around required theme components
  * to create a [EverliTheme] with all props defaulting to design system default values:
  * [DefaultTypography]
- * [DefaultButtonTheme]
  * [DefaultTextTheme]
  * [DefaultIconTheme]
  */
 data class EverliThemeComponents(
   val everliTypography: EverliTypography = DefaultTypography,
-  val buttonTheme: ButtonTheme = DefaultButtonTheme,
   val radiusTheme: RadiusTheme = DefaultRadiusTheme,
   val textTheme: TextTheme = DefaultTextTheme,
   val iconTheme: IconTheme = DefaultIconTheme,
@@ -77,7 +72,6 @@ data class EverliThemeComponents(
 fun DefaultTheme(content: @Composable () -> Unit) {
   EverliTheme(
     typography = DefaultTypography,
-    buttonTheme = DefaultButtonTheme,
     radiusTheme = DefaultRadiusTheme,
     iconTheme = DefaultIconTheme,
     textTheme = DefaultTextTheme,
@@ -101,11 +95,6 @@ object EverliTheme {
     @ReadOnlyComposable
     get() = LocalTypography.current
 
-  val button: ButtonTheme
-    @Composable
-    @ReadOnlyComposable
-    get() = LocalButtonTheme.current
-
   val radius: RadiusTheme
     @Composable
     @ReadOnlyComposable
@@ -120,10 +109,6 @@ object EverliTheme {
     @Composable
     @ReadOnlyComposable
     get() = LocalIconTheme.current
-}
-
-private val LocalButtonTheme = staticCompositionLocalOf<ButtonTheme> {
-  error("No ButtonTheme provided")
 }
 
 private val LocalTypography = staticCompositionLocalOf<EverliTypography> {

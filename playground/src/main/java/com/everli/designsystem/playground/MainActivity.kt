@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
@@ -28,16 +30,15 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.everli.designsystem.components.button.EverliButton
-import com.everli.designsystem.core.theme.DefaultTheme
 import com.everli.designsystem.core.constants.EverliColors
+import com.everli.designsystem.core.theme.DefaultIconTheme
+import com.everli.designsystem.core.theme.DefaultRadiusTheme
+import com.everli.designsystem.core.theme.DefaultTextTheme
+import com.everli.designsystem.core.theme.DefaultTheme
 import com.everli.designsystem.core.theme.DefaultTypography
-import com.everli.designsystem.playground.button.BrandButtonPlayground
-import com.everli.designsystem.playground.button.ButtonsPlayground
+import com.everli.designsystem.core.theme.EverliTheme
 import com.everli.designsystem.playground.color.ColorsPlayground
 import com.everli.designsystem.playground.icon.IconsPlayground
-import com.everli.designsystem.playground.theme.ThemePlaygroundContent
-import com.everli.designsystem.playground.theme.Themes
 import com.everli.designsystem.playground.theme.TokensPlayground
 import com.everli.designsystem.playground.typography.TypographyPlayground
 import com.google.accompanist.pager.ExperimentalPagerApi
@@ -54,6 +55,11 @@ class MainActivity : ComponentActivity() {
     }
   }
 
+}
+
+enum class Themes {
+  DEMAND,
+  SUPPLY,
 }
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -74,34 +80,39 @@ fun App() {
     color = mockPrimary,
   )
 
-  Scaffold(
-    topBar = {
-      TopAppBar(backgroundColor = mockPrimary) {
-        Row(
-          modifier = Modifier.fillMaxWidth(),
-          verticalAlignment = Alignment.CenterVertically,
-          horizontalArrangement = Arrangement.Center,
-        ) {
-          Text(text = "\uD83C\uDFA8", color = EverliColors.White, style = DefaultTypography.body.regular)
-          TextButton(onClick = { theme = Themes.DEMAND }) {
-            Text(
-              text = "Demand",
-              color = EverliColors.White,
-              style = DefaultTypography.body.regular,
-            )
-          }
-          TextButton(onClick = { theme = Themes.SUPPLY }) {
-            Text(
-              text = "Supply",
-              color = EverliColors.White,
-              style = DefaultTypography.body.regular,
-            )
+  EverliTheme(
+    typography = DefaultTypography,
+    radiusTheme = DefaultRadiusTheme,
+    iconTheme = DefaultIconTheme,
+    textTheme = DefaultTextTheme,
+  ) {
+    Scaffold(
+      topBar = {
+        TopAppBar(backgroundColor = mockPrimary) {
+          Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center,
+          ) {
+            Text(text = "\uD83C\uDFA8", color = EverliColors.White, style = DefaultTypography.body.regular)
+            TextButton(onClick = { theme = Themes.DEMAND }) {
+              Text(
+                text = "Demand",
+                color = EverliColors.White,
+                style = DefaultTypography.body.regular,
+              )
+            }
+            TextButton(onClick = { theme = Themes.SUPPLY }) {
+              Text(
+                text = "Supply",
+                color = EverliColors.White,
+                style = DefaultTypography.body.regular,
+              )
+            }
           }
         }
-      }
-    },
-  ) {
-    ThemePlaygroundContent(theme) {
+      },
+    ) {
       Navigation()
     }
   }
@@ -119,14 +130,6 @@ fun Home(navController: NavController) {
       onClick = { navController.navigate(Destinations.TYPOGRAPHY) },
     )
     HomeButton(
-      text = "\uD83C\uDD92 BUTTONS",
-      onClick = { navController.navigate(Destinations.BUTTONS) },
-    )
-    HomeButton(
-      text = "\uD83C\uDD92 BRAND BUTTONS",
-      onClick = { navController.navigate(Destinations.BRAND_BUTTONS) },
-    )
-    HomeButton(
       text = "\uD83D\uDD25 TOKENS",
       onClick = { navController.navigate(Destinations.TOKENS) },
     )
@@ -139,11 +142,28 @@ fun Home(navController: NavController) {
 
 @Composable
 fun HomeButton(text: String, onClick: () -> Unit) {
-  EverliButton.Button(
+  EverliButton(
     onClick = onClick,
     modifier = Modifier
       .fillMaxWidth()
       .padding(16.dp),
+    text = text,
+  )
+}
+
+@Composable
+fun EverliButton(
+  modifier: Modifier = Modifier,
+  text: String,
+  onClick: () -> Unit,
+) {
+  Button(
+    colors = ButtonDefaults.buttonColors(
+      backgroundColor = EverliColors.Green100,
+      contentColor = EverliColors.White,
+    ),
+    onClick = onClick,
+    modifier = modifier,
   ) {
     Text(text = text)
   }
@@ -158,8 +178,6 @@ fun Navigation() {
     composable(Destinations.HOME) { Home(navController) }
     composable(Destinations.COLORS) { ColorsPlayground() }
     composable(Destinations.TYPOGRAPHY) { TypographyPlayground() }
-    composable(Destinations.BUTTONS) { ButtonsPlayground() }
-    composable(Destinations.BRAND_BUTTONS) { BrandButtonPlayground() }
     composable(Destinations.TOKENS) { TokensPlayground() }
     composable(Destinations.ICONS) { IconsPlayground() }
   }
@@ -170,8 +188,6 @@ object Destinations {
   const val HOME = "Home"
   const val COLORS = "Colors"
   const val TYPOGRAPHY = "Typography"
-  const val BUTTONS = "Buttons"
-  const val BRAND_BUTTONS = "Brand Buttons"
   const val TOKENS = "Tokens"
   const val ICONS = "Icons"
 
