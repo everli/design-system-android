@@ -13,11 +13,11 @@ apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
 
 android {
   namespace 'com.everli.designsystem.utilities'
-  compileSdk 33
+  compileSdk 34
 
   defaultConfig {
     minSdk 21
-    targetSdk 33
+    targetSdk 34
 
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     consumerProguardFiles "consumer-rules.pro"
@@ -81,8 +81,8 @@ dependencies {
 
   // Compose & Material
   implementation "com.google.android.material:material:$material_version"
+  implementation "androidx.compose.material3:material3:$material3_version"
   implementation "androidx.compose.ui:ui:$compose_version"
-  implementation "androidx.compose.material:material:$compose_material_version"
   implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
 
 }
